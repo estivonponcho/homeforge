@@ -34,7 +34,9 @@ The AI search also surfaced many tiny groups and several “make money with AI�
 
 ### ESP32, Raspberry Pi, and Quadra searches
 
-Read-only search results surfaced these additional candidates. No new groups were joined from this search.
+Read-only search results surfaced these additional candidates.
+
+**Update:** Mike reports that he joined all of the ESP32, Raspberry Pi, and Inovato Quadra groups listed below. This is a membership update only; no posts or comments have been made.
 
 - **ESP32/ESP8266 projects** — public, about 57K members, 20+ posts/day: https://www.facebook.com/groups/754518470444906/
 - **ESP8266, ESP32 & Microcontrollers** — public, about 164K members, 6 posts/day: https://www.facebook.com/groups/esp8266microcontrollers/

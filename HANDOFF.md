@@ -53,6 +53,7 @@ HomeForge is **Mike Cage's affiliate + email monetization project**: a curated, 
 - Facebook research update: Mike joined the official Home Assistant group; the Ideas/Projects group's participation request is still pending. Current group observations and newly surfaced Home Server/Homelab leads are recorded in `marketing/facebook/GROUP-RESEARCH.md`. No Facebook post has been made.
 - Adjacent Facebook research added public 3D-printing and AI-automation group candidates, with visible member/post counts and direct URLs. No new groups were joined; rules still need inspection before recommending any action.
 - ESP32, Raspberry Pi, and Inovato Quadra group searches are recorded in `marketing/facebook/GROUP-RESEARCH.md`, along with contribution ideas grounded in the thermal-printer and Quadra projects. No posts or comments were made.
+- Mike reports joining the listed ESP32, Raspberry Pi, and Inovato Quadra groups; membership is recorded, but no posts or comments were made.
 
 ## PENDING — next steps (roughly in order)
 **Autonomous (an agent can do these now):**
