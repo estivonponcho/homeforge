@@ -2,7 +2,7 @@
 
 **Last updated: 2026-09-13**
 
-Some links in this project may become **affiliate links**. If you click one and
+Some of the links in this project are **affiliate links**. If you click one and
 buy something, this project may earn a commission — at **no extra cost to you**.
 The price you pay is exactly the same.
 
@@ -13,7 +13,7 @@ pay nothing at all and are recommended anyway.
 
 ## Programs this project may participate in
 
-- **Amazon Associates** (planned)
+- **Amazon Associates** — As an Amazon Associate I earn from qualifying purchases.
 - **Bambu Lab Affiliate Program**
 - **Prusa Research Affiliate Program**
 - Occasional manufacturer or retailer programs (Shelly, Emporia, etc.)

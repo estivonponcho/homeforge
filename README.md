@@ -60,7 +60,7 @@ _Local-first home automation. Bias toward Home Assistant, Zigbee/Thread/Matter, 
 - **[Aqara Door & Window Sensor](https://www.aqara.com/)** — Cheap, tiny, reliable Zigbee contact sensors. The gateway drug of home automation. _( $ )_
 - **[Aqara Presence Sensor FP2](https://www.aqara.com/en/product/presence-sensor-fp2/)** ⭐ — mMWave presence done well — knows you're in the room even when you're sitting still. Zone mapping is the killer feature. _( $$ )_
 - **[Everything Presence Lite](https://shop.everythingsmart.io/)** — Open, ESPHome-based mmWave presence board. The tinkerer's answer to closed-box presence sensors. _( $ )_
-- **[SONOFF Zigbee Temp & Humidity Sensor](https://www.amazon.com/s?k=SONOFF+Zigbee+temperature+humidity+sensor)** — Bench-tested: cheap, accurate Zigbee climate sensors with a display. Great for rooms, fridges, and the 3D-printing enclosure. _( $ )_
+- **[SONOFF Zigbee Temp & Humidity Sensor](https://www.amazon.com/s?k=SONOFF+Zigbee+temperature+humidity+sensor&tag=homeforge0a-20)** — Bench-tested: cheap, accurate Zigbee climate sensors with a display. Great for rooms, fridges, and the 3D-printing enclosure. _( $ )_
 
 ### Switches, Plugs & Power
 
@@ -80,14 +80,14 @@ _Local-first home automation. Bias toward Home Assistant, Zigbee/Thread/Matter, 
 
 ### Bench & DIY Electronics
 
-- **[ESP32 (ESP-WROOM-32) Dev Boards](https://www.amazon.com/s?k=ESP-WROOM-32+ESP32+development+board)** ⭐ — Bench-tested. Dual-core Wi-Fi + Bluetooth for a couple bucks. Buy a 2-pack — you'll always want another. _( $ )_
-- **[WeMos D1 Mini (ESP8266)](https://www.amazon.com/s?k=WeMos+D1+Mini+ESP8266)** — Bench-tested. The tiny board behind my Wi-Fi thermal-printer build. Perfect for single-purpose gadgets. _( $ )_
-- **[ELEGOO Breadboard Kit](https://www.amazon.com/s?k=ELEGOO+breadboard+kit)** — Bench-tested. Solderless boards in a few sizes. Prototype before you commit anything to solder. _( $ )_
-- **[Dupont Jumper Wire Kit](https://www.amazon.com/s?k=dupont+jumper+wires+M+F)** — Bench-tested. M/M, M/F, F/F ribbon cables. You will use every one of these and still want more. _( $ )_
-- **[0.96" OLED Display (SSD1306, I2C)](https://www.amazon.com/s?k=0.96+inch+OLED+SSD1306+I2C)** — Bench-tested. Crisp little status screens for any ESP project — two data wires and you're showing readouts. _( $ )_
-- **[Logic Level Converter (3.3V ↔ 5V)](https://www.amazon.com/s?k=logic+level+converter+TXS0108E)** — Bench-tested. The part beginners skip and then fry a board. Bridges 3.3V ESP pins to 5V peripherals safely. _( $ )_
-- **[Silicone Soldering Mat](https://www.amazon.com/s?k=silicone+soldering+mat+heat+resistant)** — Bench-tested. Heat-resistant surface with magnetic wells for screws. Saves your desk and your sanity. _( $ )_
-- **[37-in-1 Sensor Kit](https://www.amazon.com/s?k=37+in+1+sensor+kit+arduino)** — Bench-tested. A grab-bag of sensors and modules to learn with. The fastest way to find your next project. _( $ )_
+- **[ESP32 (ESP-WROOM-32) Dev Boards](https://www.amazon.com/s?k=ESP-WROOM-32+ESP32+development+board&tag=homeforge0a-20)** ⭐ — Bench-tested. Dual-core Wi-Fi + Bluetooth for a couple bucks. Buy a 2-pack — you'll always want another. _( $ )_
+- **[WeMos D1 Mini (ESP8266)](https://www.amazon.com/s?k=WeMos+D1+Mini+ESP8266&tag=homeforge0a-20)** — Bench-tested. The tiny board behind my Wi-Fi thermal-printer build. Perfect for single-purpose gadgets. _( $ )_
+- **[ELEGOO Breadboard Kit](https://www.amazon.com/s?k=ELEGOO+breadboard+kit&tag=homeforge0a-20)** — Bench-tested. Solderless boards in a few sizes. Prototype before you commit anything to solder. _( $ )_
+- **[Dupont Jumper Wire Kit](https://www.amazon.com/s?k=dupont+jumper+wires+M+F&tag=homeforge0a-20)** — Bench-tested. M/M, M/F, F/F ribbon cables. You will use every one of these and still want more. _( $ )_
+- **[0.96" OLED Display (SSD1306, I2C)](https://www.amazon.com/s?k=0.96+inch+OLED+SSD1306+I2C&tag=homeforge0a-20)** — Bench-tested. Crisp little status screens for any ESP project — two data wires and you're showing readouts. _( $ )_
+- **[Logic Level Converter (3.3V ↔ 5V)](https://www.amazon.com/s?k=logic+level+converter+TXS0108E&tag=homeforge0a-20)** — Bench-tested. The part beginners skip and then fry a board. Bridges 3.3V ESP pins to 5V peripherals safely. _( $ )_
+- **[Silicone Soldering Mat](https://www.amazon.com/s?k=silicone+soldering+mat+heat+resistant&tag=homeforge0a-20)** — Bench-tested. Heat-resistant surface with magnetic wells for screws. Saves your desk and your sanity. _( $ )_
+- **[37-in-1 Sensor Kit](https://www.amazon.com/s?k=37+in+1+sensor+kit+arduino&tag=homeforge0a-20)** — Bench-tested. A grab-bag of sensors and modules to learn with. The fastest way to find your next project. _( $ )_
 
 ## 🖥️ Homelab & Self-Hosting
 
@@ -126,8 +126,8 @@ _The boxes, drives, network, and software to run your own services and stop payi
 
 ### Bench & Maintenance
 
-- **[Phomemo D30 Label Maker](https://www.amazon.com/s?k=Phomemo+D30+label+maker)** — Bench-tested. Label your cables, drives, and bins. The cheapest upgrade to a homelab you'll actually maintain. _( $ )_
-- **[ARCTIC MX-4 Thermal Paste](https://www.amazon.com/s?k=ARCTIC+MX-4+thermal+paste)** — Bench-tested. The reliable, non-conductive default for repasting a mini PC, NAS, or GPU that's running hot. _( $ )_
+- **[Phomemo D30 Label Maker](https://www.amazon.com/s?k=Phomemo+D30+label+maker&tag=homeforge0a-20)** — Bench-tested. Label your cables, drives, and bins. The cheapest upgrade to a homelab you'll actually maintain. _( $ )_
+- **[ARCTIC MX-4 Thermal Paste](https://www.amazon.com/s?k=ARCTIC+MX-4+thermal+paste&tag=homeforge0a-20)** — Bench-tested. The reliable, non-conductive default for repasting a mini PC, NAS, or GPU that's running hot. _( $ )_
 
 ## 🧵 3D Printing
 
@@ -145,8 +145,8 @@ _Printers, filament, upgrades and tools that earn their place on the bench — t
 - **[Bambu PLA Basic](https://bambulab.com/en/filament)** — Consistent, RFID-tagged filament that the AMS reads automatically. The path of least resistance. _( $ )_
 - **[Polymaker PolyTerra PLA](https://polymaker.com/)** — Matte finish, great color range, eco-spool. A favorite for parts you want to look intentional. _( $ )_
 - **[Overture PETG](https://overture3d.com/)** ⭐ — Reliable, affordable PETG for functional parts that need to survive heat and stress. The go-to workhorse. _( $ )_
-- **[ELEGOO Rapid PETG](https://www.amazon.com/s?k=ELEGOO+Rapid+PETG+filament)** ⭐ — Bench-tested (I go through this by the case): high-speed PETG that prints clean and cheap. My default workhorse spool. _( $ )_
-- **[DEEPLEE PLA (2kg / 4kg)](https://www.amazon.com/s?k=DEEPLEE+PLA+filament)** — Bench-tested. Big-spool value PLA that winds neatly and doesn't clog. What I reach for when cost-per-gram matters. _( $ )_
+- **[ELEGOO Rapid PETG](https://www.amazon.com/s?k=ELEGOO+Rapid+PETG+filament&tag=homeforge0a-20)** ⭐ — Bench-tested (I go through this by the case): high-speed PETG that prints clean and cheap. My default workhorse spool. _( $ )_
+- **[DEEPLEE PLA (2kg / 4kg)](https://www.amazon.com/s?k=DEEPLEE+PLA+filament&tag=homeforge0a-20)** — Bench-tested. Big-spool value PLA that winds neatly and doesn't clog. What I reach for when cost-per-gram matters. _( $ )_
 
 ### Upgrades & Accessories
 
@@ -186,8 +186,8 @@ _Run models on your own hardware, and drive Claude & ChatGPT like a pro. The sam
 
 ### Learn AI
 
-- **[AI Engineering (Chip Huyen)](https://www.amazon.com/s?k=AI+Engineering+Chip+Huyen)** ⭐ — The field guide to building real products on top of foundation models. Start here if you're going pro. _( $$ )_
-- **[Hands-On Large Language Models](https://www.amazon.com/s?k=Hands-On+Large+Language+Models)** — The best illustrated, practical intro to how LLMs actually work and how to use them. _( $$ )_
+- **[AI Engineering (Chip Huyen)](https://www.amazon.com/s?k=AI+Engineering+Chip+Huyen&tag=homeforge0a-20)** ⭐ — The field guide to building real products on top of foundation models. Start here if you're going pro. _( $$ )_
+- **[Hands-On Large Language Models](https://www.amazon.com/s?k=Hands-On+Large+Language+Models&tag=homeforge0a-20)** — The best illustrated, practical intro to how LLMs actually work and how to use them. _( $$ )_
 - **[DeepLearning.AI Short Courses](https://www.deeplearning.ai/courses/)** — Free, focused, hour-long courses on prompting, RAG, agents, and more. The fastest way to skill up. _( Free )_
 - **[fast.ai](https://www.fast.ai/)** — The legendary free, top-down deep-learning course. Rigorous without being academic-for-its-own-sake. _( Free )_
 
