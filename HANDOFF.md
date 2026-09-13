@@ -23,6 +23,7 @@ HomeForge is **Mike Cage's affiliate + email monetization project**: a curated, 
 
 ## Automation already running
 - **Weekly "model-watch" cloud routine** (Anthropic cloud): `trig_01Lezgi6qximxipFCEHfXfbH` — https://claude.ai/code/routines/trig_01Lezgi6qximxipFCEHfXfbH . Every Mon ~13:00 UTC it web-searches for notable new model releases, drafts write-ups from `guides/model-watch-template.md`, and opens a PR (falls back to printing drafts). **First run Mon 2026-09-14 — verify it can access the private→now-public repo and open a PR; if not, Mike may need to connect GitHub to Claude cloud.**
+- **Weekly Codex newsletter-draft heartbeat:** `homeforge-weekly-newsletter-draft`. Every Wednesday at 9:00 a.m. Chicago time it inspects the repo and prepares one non-duplicate, source-grounded newsletter draft. It may commit/push when the tree is clean, but it must never schedule or send an email.
 
 ## HARD CONSTRAINTS (do not violate)
 - **Never publish Mike's coursework verbatim** (MIT/community-college) — copyright + program terms. Synthesize into original writing only.
@@ -37,18 +38,22 @@ HomeForge is **Mike Cage's affiliate + email monetization project**: a curated, 
 - Repo made public; GitHub Pages enabled (Actions build).
 - MIT Sloan+CSAIL credential featured accurately.
 - Weekly model-watch routine created.
+- Amazon Associates tag `homeforge0a-20` applied to all 15 Amazon links; required disclosure is live.
+- Buttondown newsletter `homeforge` is verified, branded, and connected to the homepage signup form.
+- Public Starter Kit page is live at `site/starter-kit.html`.
+- Four weekly newsletter drafts exist in `newsletters/` and in the Buttondown draft queue.
 
 ## PENDING — next steps (roughly in order)
 **Autonomous (an agent can do these now):**
 1. **Confirm the Pages deploy succeeded** and the live site renders (check the `deploy-pages.yml` run + load the URL).
-2. **Fill legal placeholders** once Mike gives them: `[your-contact-email]` (privacy.html + terms.html) and `[your-state/country]` (terms.html).
+2. **Legal placeholders are complete:** public contact is `sewer-afraid4q@icloud.com`; governing law is Illinois.
 3. **Convert `guides/` + `projects/` into individual SEO pages** on the site (currently only the README holds the full catalog). This is the #1 traffic lever. Suggested: a simple blog/section under `site/` generated from the markdown. Titles that rank, e.g. "Best Zigbee presence sensors for Home Assistant (2026)".
 4. **Add a "Verify credential →" button** to the site's About card once Mike supplies the certificate's public share/verify link (see below).
 5. **Custom domain wiring** if/when Mike buys one: set `site_url` + add a `CNAME` file in `site/`, update `picks.json`, rebuild.
 6. **Draft the health/custom-app guide** — PENDING Mike's decision on what's shareable (he wanted this featured but health data must stay private/scrubbed).
 
 **Only Mike can do (surface these ONE AT A TIME — he asked not to get a laundry list):**
-- **Email provider:** sign up (Buttondown/Kit/Beehiiv) and paste the embed into `site/index.html` at the `<!-- EMAIL FORM -->` marker (currently a demo form).
+- **Buttondown paid automation decision:** native welcome-email automations require the $29/month Automations add-on. Do not purchase without Mike's explicit confirmation. The Starter Kit is linked directly on the homepage as the no-cost fallback.
 - **Amazon Associates** application (needs live site w/ content; ⚠️ 3 qualifying sales within 180 days or account closes) + **Bambu Lab** + **Prusa** affiliate programs. Then swap tagged links into `picks.json` for every `program: Amazon/Bambu/Prusa` item and rebuild.
 - **Certificate verify link:** the GetSmarter certificate email is in **mike.cage@loves.com** (NOT the connected Gmail mikeisestivonf@gmail.com), or he can use GetSmarter's "Add to LinkedIn" and share the public credential URL. Give that link to the agent to wire into the About card.
 - **Enable 2FA** on his GetSmarter account (currently disabled) and confirm GitHub 2FA.
