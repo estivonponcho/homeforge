@@ -50,6 +50,7 @@ HomeForge is **Mike Cage's affiliate + email monetization project**: a curated, 
 - `CONTENT-STRATEGY.md` defines the watch → build → document → recommend funnel, four content clusters, a twelve-week rhythm, and the first four build concepts.
 - A first original 4:5 Facebook creative and compliant launch-copy draft exist under `marketing/facebook/`. The creative is grounded in verified claims (72 picks, four pillars, free Starter Kit). **These are drafts only and must not be posted to Mike's personal profile.**
 - Reddit account `u/Equal-Obligation-884` is logged in but has only 1 karma and no posts. r/homeassistant's current rules prohibit AI-generated responses and spam; do not publish AI-written material there. Mike should first participate genuinely in his own words.
+- Facebook research update: Mike joined the official Home Assistant group; the Ideas/Projects group's participation request is still pending. Current group observations and newly surfaced Home Server/Homelab leads are recorded in `marketing/facebook/GROUP-RESEARCH.md`. No Facebook post has been made.
 
 ## PENDING — next steps (roughly in order)
 **Autonomous (an agent can do these now):**

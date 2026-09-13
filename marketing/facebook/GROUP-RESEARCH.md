@@ -6,17 +6,19 @@ Status: not started. This is the next autonomous distribution task.
 
 These were inspected while logged into Mike's Facebook account. No group was joined and nothing was posted.
 
+Update after Mike's action: the Facebook UI now shows **Joined** for the official Home Assistant group. The Ideas/Projects group shows a participation request pending approval, so posting there may not be available yet.
+
 | Candidate | Visible fit/activity | Current read |
 |---|---|---|
-| [Home Assistant](https://www.facebook.com/groups/HomeAssistant/) | Public; about 550.8K members. The discussion feed visibly contains real troubleshooting and project posts. About page describes it as the official Facebook group for Home Assistant. | Highest reach, but treat as a place to contribute a real build or answer a question—not to paste the affiliate directory. No explicit rules were visible on the public About page; inspect the join/member rules before any action. |
-| [Home Assistant Ideas, Projects and Solutions](https://www.facebook.com/groups/652178389264909/) | Public; about 162.7K members and visible active discussion. The feed showed a current thermostat question with substantive replies. | Best thematic fit for a documented room build or automation project. Inspect group rules before joining or linking. |
+| [Home Assistant](https://www.facebook.com/groups/HomeAssistant/) | Public; about 550.8K members. The feed visibly contains real ESP32 troubleshooting and automation projects. The UI shows Mike as Joined. | Highest reach, but lead with a genuinely useful answer or finished build. The visible feed supports project/help posts; it does not justify pasting the affiliate directory. |
+| [Home Assistant Ideas, Projects and Solutions](https://www.facebook.com/groups/652178389264909/) | Public; about 162.7K members and active discussion. The feed showed a thermostat question and Zigbee/coordinator discussions. Mike's participation request is currently pending approval. | Best thematic fit for a documented room build or automation project once approved. Do not attempt to post while pending. |
 | [HASS / Home Assistant](https://www.facebook.com/groups/1216209051846537/) | Public; about 17K members in Facebook search results. | Smaller test community; research rules and recent post style before considering it. |
 
-The search did not return a useful homelab/self-hosting group for the exact query `homelab self hosting`, so that lane needs a second search pass using terms such as `Proxmox`, `NAS`, `self hosted`, and `home server`.
+Facebook's related-group panel surfaced **Home Server Setups** (public, about 424K members, 10 posts/day), **Homelabs and Home Servers** (public, about 34K members, 10 posts/day), and **UniFi Network Official** (private, about 202K members, 10 posts/day). These are discovery leads only; inspect each group's rules before joining. The exact search `homelab self hosting` returned no results.
 
 ## Recommended order
 
-Start with **Home Assistant Ideas, Projects and Solutions** once there is a finished, photographed Home Assistant build. It aligns with the current content strategy and is less overwhelming than the 550K-member official group. The first post should explain the build and invite feedback; the HomeForge link should be a secondary reference only if group rules allow it. Do not lead with affiliate picks or the Starter Kit.
+Start with the **official Home Assistant group** only after Mike has a genuinely useful, finished build or can answer a real question from personal experience. The Ideas/Projects group is the better first showcase once its pending approval clears. The first post should explain the build and invite feedback; the HomeForge link should be a secondary reference only if group rules allow it. Do not lead with affiliate picks or the Starter Kit.
 
 Separately, the [Home Assistant Community forum](https://community.home-assistant.io/) has an explicit **Share your Projects!** category with thousands of topics; it is a strong fit for a detailed build log, but forum rules and account history still need to be respected.
 
