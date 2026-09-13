@@ -16,6 +16,22 @@ Update after Mike's action: the Facebook UI now shows **Joined** for the officia
 
 Facebook's related-group panel surfaced **Home Server Setups** (public, about 424K members, 10 posts/day), **Homelabs and Home Servers** (public, about 34K members, 10 posts/day), and **UniFi Network Official** (private, about 202K members, 10 posts/day). These are discovery leads only; inspect each group's rules before joining. The exact search `homelab self hosting` returned no results.
 
+### Other relevant Facebook searches
+
+- **3D Printing Community** — public, about 530K members, 90+ posts/day: https://www.facebook.com/groups/482533505156388/
+- **3D Printing Makers Group | STL, 3MF & Projects** — public, about 96K members, 90+ posts/day: https://www.facebook.com/groups/573138351904168/
+- **3D Printing For Beginners** — public, about 138K members, 90+ posts/day: https://www.facebook.com/groups/3041147622853548/
+- **MakerWorld Projects** — public, about 26K members, 10+ posts/day: https://www.facebook.com/groups/1004868172239980/
+- **Bambu Lab MakerWorld Creators** — public, about 55K members, 8 posts/day: https://www.facebook.com/groups/790217239721779/
+- **B2B AI Automation Network (n8n, Claude, CRM Bots)** — public, about 139K members, 10+ posts/day: https://www.facebook.com/groups/1364459958209699/
+- **Claude AI Community (Anthropic)** — public, about 88K members, 9 posts/day: https://www.facebook.com/groups/aiplanetx/
+- **OpenClaw | Automation: n8n, Make | Codex | AI Agents | Claude AI** — public, about 99K members, 20+ posts/day: https://www.facebook.com/groups/1050679009595609/
+- **Agentic AI (Hermes, OpenClaw, Claude, Cowork, Google ADK, LangFlow, n8n, LangGraph)** — public, about 9.7K members, 30+ posts/day: https://www.facebook.com/groups/agentics/
+
+The AI search also surfaced many tiny groups and several “make money with AI” groups. Those are lower priority: HomeForge should lead with a real tool, workflow, or measured local-AI build—not affiliate marketing.
+
+**Best next candidates to inspect before joining:** 3D Printing Makers Group (project/tutorial fit), MakerWorld Projects (model/build fit), and Agentic AI (technical workflow fit). Check rules and recent posts first; do not join all of them at once.
+
 ## Recommended order
 
 Start with the **official Home Assistant group** only after Mike has a genuinely useful, finished build or can answer a real question from personal experience. The Ideas/Projects group is the better first showcase once its pending approval clears. The first post should explain the build and invite feedback; the HomeForge link should be a secondary reference only if group rules allow it. Do not lead with affiliate picks or the Starter Kit.
