@@ -41,7 +41,7 @@ HomeForge is **Mike Cage's affiliate + email monetization project**: a curated, 
 - Amazon Associates tag `homeforge0a-20` applied to all 15 Amazon links; required disclosure is live.
 - Buttondown newsletter `homeforge` is verified, branded, and connected to the homepage signup form.
 - Public Starter Kit page is live at `site/starter-kit.html`.
-- Four weekly newsletter drafts exist in `newsletters/` and in the Buttondown draft queue.
+- Four weekly newsletter drafts exist in `newsletters/` and are scheduled in Buttondown for 9:00 a.m. America/Chicago on 2026-09-20, 2026-09-27, 2026-10-04, and 2026-10-11. The Buttondown newsletter timezone is `America/Chicago`.
 
 ## PENDING — next steps (roughly in order)
 **Autonomous (an agent can do these now):**
