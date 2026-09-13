@@ -72,12 +72,51 @@ say "I don't know."** Everything else is refinement.
 
 ---
 
-> **[Your take — from coursework]**
-> A great addition here: a short section connecting these patterns to *why* they
-> work under the hood (tokens, context windows, attention, instruction-tuning) —
-> the kind of thing your AI coursework covers. That "here's the mechanism, not just
-> the trick" angle is what separates this from every other prompt-tips post. Point
-> me at your notes and I'll draft it.
+## The AUTOMAT framework (a reusable skeleton)
+
+When you want a checklist instead of intuition, **AUTOMAT** covers the parts a
+strong prompt almost always needs. Walk the letters and you rarely miss one:
+
+- **A — Act as a role.** Give the model a persona with the right expertise
+  ("Act as a home-network security reviewer").
+- **U — User persona.** Say who the output is *for* ("explaining to a non-technical
+  homeowner"). Same facts, very different answer.
+- **T — Targeted action.** The specific verb and deliverable ("audit these firewall
+  rules and list risks"), not a vague topic.
+- **O — Output definition.** The exact shape you'll use — table, JSON, 5 bullets,
+  a one-page brief.
+- **M — Mode / tone.** Formal, blunt, friendly, technical. Set it explicitly.
+- **A — Atypical cases.** What to do at the edges: "if a rule is ambiguous, flag it
+  rather than guess."
+- **T — Topic whitelisting.** Fence the scope and sources: "only use the config I
+  pasted; don't invent rules that aren't there."
+
+AUTOMAT and the four-part pattern up top are the same idea at two resolutions —
+use the quick version daily, reach for the full checklist when the output really
+has to land.
+
+## Going further: reasoning & verification strategies
+
+For high-stakes or multi-step work, layer these on:
+
+- **Chain of Thought (CoT).** Ask the model to reason step by step before
+  answering — better results on anything with logic, math, or planning.
+- **Tree of Thought (ToT).** For open problems, ask it to sketch a few distinct
+  approaches, compare them, then commit to the best. Slower, but it escapes the
+  first-idea trap.
+- **Source-fact verification & rating.** When accuracy matters (research summaries,
+  briefs), require the model to tie each claim to a source and rate its confidence
+  (e.g., 1–5). It surfaces the shaky claims instead of burying them.
+- **Iterative refinement (double-pass).** Have the model draft, then critique its
+  own draft against your criteria, then produce a v2. One extra pass catches a
+  surprising amount.
+- **Dataset-grounded anchoring.** Paste the actual data/context and instruct the
+  model to answer *only* from it. The single best defense against confident
+  fabrication.
+
+*These sections are informed by the author's AI & prompt-engineering coursework,
+rewritten as original explanation — the frameworks (AUTOMAT, CoT/ToT) are
+community/industry terms, not proprietary course content.*
 
 ---
 

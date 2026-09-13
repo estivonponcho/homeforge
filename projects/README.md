@@ -17,6 +17,9 @@ Each build write-up ends with a **Gear used** list that links to the relevant
   box doing real always-on work on a private mesh network.
 - [Flipper Zero + hardware hacking](flipper-and-hardware-hacking.md) — custom
   firmware, a curated toolkit, and hands-on microsoldering.
+- [Custom apps & health integrations](custom-apps-and-health-integrations.md) —
+  building full software (incl. a private, self-hosted health-data hub) when the
+  app you want doesn't exist.
 
 ## A note on safety & privacy
 
