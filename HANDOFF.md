@@ -59,7 +59,7 @@ HomeForge is **Mike Cage's affiliate + email monetization project**: a curated, 
 4. **Add a "Verify credential →" button** to the site's About card once Mike supplies the certificate's public share/verify link (see below).
 5. **Custom domain wiring** if/when Mike buys one: set `site_url` + add a `CNAME` file in `site/`, update `picks.json`, rebuild.
 6. **Draft the health/custom-app guide** — PENDING Mike's decision on what's shareable (he wanted this featured but health data must stay private/scrubbed).
-7. **Research Facebook groups and existing posts** relevant to Home Assistant, homelabs/self-hosting, functional 3D printing, and local AI. Record group URL, size/activity if visible, exact promotion/link rules, and the best content angle. Research only; do not join, post, message, or submit anything without action-time approval.
+7. **Research Facebook groups and existing posts** relevant to Home Assistant, homelabs/self-hosting, functional 3D printing, and local AI. Initial read-only findings are recorded in `marketing/facebook/GROUP-RESEARCH.md`; no group was joined and nothing was posted. Continue with rules and the Proxmox/NAS/self-hosted search lane.
 8. **Prepare a zero-spend Facebook distribution plan:** organic group participation, UTM-tagged HomeForge links, and a simple click/signup tracking sheet. Paid-ad exploration may include draft audiences, copy, and a hypothetical budget, but no campaign creation or spend.
 
 **Only Mike can do (surface these ONE AT A TIME — he asked not to get a laundry list):**
