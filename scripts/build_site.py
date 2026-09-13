@@ -206,7 +206,7 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
          'family=IBM+Plex+Sans:wght@400;500;600&display=swap">')
 
 
-def page(title, description, canonical, body, root=""):
+def page(title, description, canonical, body, root="", jsonld=""):
     desc = _html.escape(description, quote=True)
     nav = (f'<a href="{root}index.html">Home</a>'
            f'<a href="{root}picks.html">The list</a>'
@@ -231,6 +231,7 @@ def page(title, description, canonical, body, root=""):
 <meta property="og:type" content="article">
 {FONTS}
 <link rel="stylesheet" href="{root}hf.css">
+{jsonld}
 </head>
 <body>
 <header><div class="wrap bar"><a class="brand" href="{root}index.html"><span>&#9650;</span> HomeForge</a><nav class="nav">{nav}</nav></div></header>
@@ -273,9 +274,20 @@ def build_md_pages(folder, kind):
                 f'{md_to_html(md)}'
                 f'<hr><a class="cta" href="../starter-kit.html">Get the free Starter Kit &rarr;</a>'
                 f'</div>')
+        ld = [
+            {"@context": "https://schema.org", "@type": "Article", "headline": t,
+             "description": desc, "url": canonical, "mainEntityOfPage": canonical,
+             "author": {"@type": "Person", "name": "Mike Cage"},
+             "publisher": {"@type": "Organization", "name": "HomeForge"}},
+            {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "HomeForge", "item": SITE_URL},
+                {"@type": "ListItem", "position": 2, "name": kind, "item": SITE_URL + "learn.html"},
+                {"@type": "ListItem", "position": 3, "name": t, "item": canonical}]},
+        ]
+        jsonld = '<script type="application/ld+json">' + json.dumps(ld) + "</script>"
         (SITE / folder).mkdir(parents=True, exist_ok=True)
         (SITE / folder / f"{slug}.html").write_text(
-            page(f"{t} — HomeForge", desc, canonical, body, root="../"), encoding="utf-8")
+            page(f"{t} — HomeForge", desc, canonical, body, root="../", jsonld=jsonld), encoding="utf-8")
         pages.append({"slug": slug, "title": t, "desc": desc, "folder": folder,
                       "url": f"{folder}/{slug}.html"})
     return pages

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Best mini PC for a homelab (2026) — HomeForge</title>
+<meta name="description" content="You don&#x27;t need a rack and a power bill to run a homelab. A quiet little mini PC handles Home Assistant, Proxmox, a dozen Docker containers, or a Jellyfin s">
+<link rel="canonical" href="https://estivonponcho.github.io/homeforge/guides/best-mini-pc-for-a-homelab.html">
+<meta property="og:title" content="Best mini PC for a homelab (2026) — HomeForge">
+<meta property="og:description" content="You don&#x27;t need a rack and a power bill to run a homelab. A quiet little mini PC handles Home Assistant, Proxmox, a dozen Docker containers, or a Jellyfin s">
+<meta property="og:url" content="https://estivonponcho.github.io/homeforge/guides/best-mini-pc-for-a-homelab.html">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../hf.css">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "Best mini PC for a homelab (2026)", "description": "You don't need a rack and a power bill to run a homelab. A quiet little mini PC handles Home Assistant, Proxmox, a dozen Docker containers, or a Jellyfin s", "url": "https://estivonponcho.github.io/homeforge/guides/best-mini-pc-for-a-homelab.html", "mainEntityOfPage": "https://estivonponcho.github.io/homeforge/guides/best-mini-pc-for-a-homelab.html", "author": {"@type": "Person", "name": "Mike Cage"}, "publisher": {"@type": "Organization", "name": "HomeForge"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "HomeForge", "item": "https://estivonponcho.github.io/homeforge/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://estivonponcho.github.io/homeforge/learn.html"}, {"@type": "ListItem", "position": 3, "name": "Best mini PC for a homelab (2026)", "item": "https://estivonponcho.github.io/homeforge/guides/best-mini-pc-for-a-homelab.html"}]}]</script>
+</head>
+<body>
+<header><div class="wrap bar"><a class="brand" href="../index.html"><span>&#9650;</span> HomeForge</a><nav class="nav"><a href="../index.html">Home</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="../resources.html">Watch &amp; build</a><a href="../starter-kit.html">Starter kit</a></nav></div></header>
+<main class="wrap">
+<div class="article"><p class="crumb"><a href="../index.html">HomeForge</a> / <a href="../learn.html">Guides</a></p><h1>Best mini PC for a homelab (2026)</h1>
+<p>You don't need a rack and a power bill to run a homelab. A quiet little mini PC handles Home Assistant, Proxmox, a dozen Docker containers, or a Jellyfin server without breaking a sweat — and sips power doing it. Here's how to choose.</p>
+<h2>What actually matters</h2>
+<ul><li><strong>x86 vs ARM.</strong> x86 mini PCs (Intel/AMD) run everything, including apps that don't ship ARM builds. ARM boards (Raspberry Pi, etc.) are cheaper and lower power but occasionally hit "no ARM image" walls.</li><li><strong>RAM over cores.</strong> Containers and VMs eat RAM first. 16GB is a comfortable starting point; get a model with an accessible RAM slot so you can upgrade.</li><li><strong>Power draw.</strong> This box runs 24/7. A few watts difference is real money over a year — and less heat and noise.</li><li><strong>Storage.</strong> An NVMe slot beats running your OS off an SD card, which dies.</li></ul>
+<h2>The picks</h2>
+<div class="tablewrap"><table><thead><tr><th>Box</th><th>Type</th><th>Best for</th></tr></thead><tbody><tr><td><strong>Beelink Mini PC</strong></td><td>x86</td><td>The default first homelab box — quiet, cheap, runs Proxmox/Docker beautifully.</td></tr><tr><td><strong>Minisforum Mini PC</strong></td><td>x86</td><td>Step-up cores + RAM headroom when one node isn't enough.</td></tr><tr><td><strong>Raspberry Pi 5</strong></td><td>ARM</td><td>Cheapest always-on node; great with an NVMe HAT.</td></tr><tr><td><strong>Inovato Quadra</strong></td><td>ARM</td><td>Ultra-low-power utility node (DNS, VPN, monitoring) for the price of lunch.</td></tr></tbody></table></div>
+<h2>Which should you buy?</h2>
+<ul><li><strong>Your first real homelab box:</strong> a <strong>Beelink</strong> (x86, 16GB, NVMe). It just runs everything.</li><li><strong>One tiny always-on job</strong> (ad-blocking, a VPN exit, uptime monitoring): an <strong>Inovato Quadra</strong> or <strong>Raspberry Pi 5</strong> — a few watts, near-silent. (I run a Quadra for exactly this — see the <a href="../projects/quadra-homelab-node.html">build</a>.)</li><li><strong>Outgrowing one node:</strong> a <strong>Minisforum</strong> with more cores/RAM.</li></ul>
+<p>Browse the <a href="../picks.html#homelab">full homelab list</a> for storage, networking, and the self-hosted apps to put on it.</p>
+<hr>
+<p><em>HomeForge is reader-supported; some links are affiliate links, at no extra cost to you. We only recommend gear worth owning.</em></p><hr><a class="cta" href="../starter-kit.html">Get the free Starter Kit &rarr;</a></div>
+</main>
+<footer><div class="wrap">HomeForge is reader-supported; some links are affiliate links (no extra cost to you).<div class="fl"><a href="../index.html">Home</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="https://github.com/estivonponcho/homeforge/blob/main/AFFILIATE-DISCLOSURE.md">Disclosure</a><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></div></div></footer>
+</body>
+</html>
