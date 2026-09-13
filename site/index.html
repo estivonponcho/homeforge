@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HomeForge</title>
+<meta name="description" content="A hand-picked kit for the smart home, the homelab, and the 3D-printing bench — curated by someone who actually runs it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  /* ---- Tokens: light (bare :root defines the complete palette) ---- */
+  :root{
+    --ground:#F4F3F0; --surface:#FFFFFF; --surface-2:#FBF9F6;
+    --ink:#1B1712; --muted:#6E6559; --hairline:#E5E1D9;
+    --accent:#C9531B; --accent-ink:#FFFFFF; --accent-soft:#F6E7DC;
+    --tag-smart:#B8531E; --tag-lab:#1C6E79; --tag-print:#6D42B8; --tag-ai:#2D5FB0;
+    --glow:rgba(201,83,27,.28);
+    --grid:rgba(27,23,18,.035);
+    --shadow:0 1px 2px rgba(27,23,18,.05), 0 12px 32px -18px rgba(27,23,18,.20);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ground:#161309; --surface:#211C13; --surface-2:#1B1710;
+      --ink:#F1EADD; --muted:#A99C88; --hairline:#342C21;
+      --accent:#F0743A; --accent-ink:#1A1206; --accent-soft:#2B1D12;
+      --tag-smart:#F0743A; --tag-lab:#46B7C2; --tag-print:#B48CF0; --tag-ai:#7EA8F0;
+      --glow:rgba(240,116,58,.30);
+      --grid:rgba(241,234,221,.04);
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 18px 40px -20px rgba(0,0,0,.7);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#161309; --surface:#211C13; --surface-2:#1B1710;
+    --ink:#F1EADD; --muted:#A99C88; --hairline:#342C21;
+    --accent:#F0743A; --accent-ink:#1A1206; --accent-soft:#2B1D12;
+    --tag-smart:#F0743A; --tag-lab:#46B7C2; --tag-print:#B48CF0; --tag-ai:#7EA8F0;
+    --glow:rgba(240,116,58,.30);
+    --grid:rgba(241,234,221,.04);
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 18px 40px -20px rgba(0,0,0,.7);
+  }
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--ground); color:var(--ink);
+    font-family:"IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    line-height:1.55; letter-spacing:.005em;
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size:34px 34px;
+  }
+  .wrap{max-width:1080px; margin:0 auto; padding-inline:22px}
+  a{color:inherit}
+  h1,h2,h3{font-family:"Bricolage Grotesque", Georgia, serif; text-wrap:balance; margin:0}
+  .mono{font-family:"IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace}
+  .eyebrow{
+    font-family:"IBM Plex Mono", monospace; font-size:.72rem; font-weight:500;
+    letter-spacing:.18em; text-transform:uppercase; color:var(--muted);
+  }
+
+  /* ---- Top bar ---- */
+  header.bar{position:sticky; top:0; z-index:20;
+    backdrop-filter:saturate(1.2) blur(8px);
+    background:color-mix(in srgb, var(--ground) 82%, transparent);
+    border-bottom:1px solid var(--hairline)}
+  .bar .wrap{display:flex; align-items:center; gap:16px; padding-block:12px}
+  .brand{display:flex; align-items:baseline; gap:10px; font-family:"Bricolage Grotesque",serif;
+    font-weight:800; font-size:1.15rem; letter-spacing:-.01em}
+  .brand .spark{color:var(--accent)}
+  .brand small{font-family:"IBM Plex Mono",monospace; font-weight:400; font-size:.66rem;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
+  .bar nav{margin-left:auto; display:flex; align-items:center; gap:8px}
+  .ghostbtn{font-family:"IBM Plex Mono",monospace; font-size:.76rem; color:var(--ink);
+    text-decoration:none; border:1px solid var(--hairline); border-radius:8px;
+    padding:7px 11px; background:var(--surface); display:inline-flex; gap:7px; align-items:center;
+    cursor:pointer}
+  .ghostbtn:hover{border-color:var(--accent)}
+
+  /* ---- Hero ---- */
+  .hero{padding-block:64px 40px}
+  .hero .eyebrow{display:block; margin-bottom:18px}
+  .hero h1{font-size:clamp(2.3rem, 6vw, 4.1rem); line-height:1.02; font-weight:800; letter-spacing:-.02em}
+  .hero h1 em{font-style:normal; color:var(--accent)}
+  .hero p.lede{font-size:clamp(1.05rem,2.2vw,1.28rem); color:var(--muted); max-width:60ch; margin:20px 0 0}
+  .stat{margin-top:14px; font-family:"IBM Plex Mono",monospace; font-size:.8rem; color:var(--muted)}
+  .stat b{color:var(--ink)}
+
+  /* ---- Email capture ---- */
+  .capture{margin-top:30px; background:var(--surface); border:1px solid var(--hairline);
+    border-radius:16px; padding:22px; box-shadow:var(--shadow); max-width:640px;
+    position:relative; overflow:hidden}
+  .capture::before{content:""; position:absolute; inset:-1px -1px auto -1px; height:3px;
+    background:linear-gradient(90deg,var(--accent), color-mix(in srgb,var(--accent) 40%, transparent))}
+  .capture h2{font-size:1.15rem; font-weight:700; letter-spacing:-.01em}
+  .capture p{margin:6px 0 0; color:var(--muted); font-size:.92rem}
+  form.signup{display:flex; gap:10px; margin-top:16px; flex-wrap:wrap}
+  form.signup input[type=email]{flex:1 1 240px; min-width:0; padding:12px 14px; border-radius:10px;
+    border:1px solid var(--hairline); background:var(--surface-2); color:var(--ink);
+    font:inherit; font-size:.95rem}
+  form.signup input[type=email]:focus-visible{outline:2px solid var(--accent); outline-offset:1px; border-color:var(--accent)}
+  .btn{font-family:"IBM Plex Sans",sans-serif; font-weight:600; font-size:.95rem;
+    background:var(--accent); color:var(--accent-ink); border:none; border-radius:10px;
+    padding:12px 18px; cursor:pointer; box-shadow:0 0 0 0 var(--glow); transition:box-shadow .25s, transform .1s}
+  .btn:hover{box-shadow:0 8px 26px -8px var(--glow)}
+  .btn:active{transform:translateY(1px)}
+  .btn:focus-visible{outline:2px solid var(--ink); outline-offset:2px}
+  .disclaimer{margin-top:11px; font-family:"IBM Plex Mono",monospace; font-size:.68rem; color:var(--muted)}
+  .thanks{margin-top:16px; padding:14px 16px; border:1px dashed var(--accent); border-radius:10px;
+    background:var(--accent-soft); font-size:.92rem}
+  .secondary-link{display:inline-flex; align-items:center; gap:8px; margin-top:18px;
+    font-family:"IBM Plex Mono",monospace; font-size:.82rem; text-decoration:none; color:var(--ink)}
+  .secondary-link u{text-decoration-color:var(--accent); text-underline-offset:3px}
+  .secondary-link:hover{color:var(--accent)}
+
+  /* ---- Stations ---- */
+  .stations{display:grid; grid-template-columns:repeat(auto-fit, minmax(238px,1fr)); gap:18px; padding-block:24px 8px}
+  .station{background:var(--surface); border:1px solid var(--hairline); border-radius:16px;
+    padding:20px; display:flex; flex-direction:column; box-shadow:var(--shadow)}
+  .station .tag{align-self:flex-start; font-family:"IBM Plex Mono",monospace; font-size:.66rem;
+    letter-spacing:.12em; text-transform:uppercase; padding:4px 9px; border-radius:999px;
+    border:1px solid currentColor}
+  .station.smart .tag{color:var(--tag-smart)}
+  .station.lab   .tag{color:var(--tag-lab)}
+  .station.print .tag{color:var(--tag-print)}
+  .station.ai    .tag{color:var(--tag-ai)}
+  .station h3{font-size:1.35rem; font-weight:700; letter-spacing:-.01em; margin:14px 0 6px}
+  .station>p{margin:0 0 6px; color:var(--muted); font-size:.9rem; min-height:2.4em}
+  .picks{list-style:none; margin:12px 0 0; padding:0; display:flex; flex-direction:column}
+  .picks li{padding:13px 0; border-top:1px solid var(--hairline)}
+  .picks li:first-child{border-top:none}
+  .pick-top{display:flex; align-items:baseline; gap:10px; justify-content:space-between}
+  .pick-top a{font-weight:600; text-decoration:none; letter-spacing:-.01em}
+  .pick-top a:hover{color:var(--accent); text-decoration:underline; text-underline-offset:3px}
+  .tier{font-family:"IBM Plex Mono",monospace; font-size:.7rem; color:var(--muted);
+    border:1px solid var(--hairline); border-radius:6px; padding:2px 6px; white-space:nowrap; flex:none}
+  .pick blurb, .pick .blurb{display:block; color:var(--muted); font-size:.86rem; margin-top:4px}
+  .prog{font-family:"IBM Plex Mono",monospace; font-size:.64rem; color:var(--muted); margin-top:6px; display:block}
+  .prog.free{color:var(--tag-lab)}
+  .seeall{margin-top:auto; padding-top:16px}
+  .seeall a{font-family:"IBM Plex Mono",monospace; font-size:.78rem; text-decoration:none; color:var(--accent)}
+  .seeall a:hover{text-decoration:underline; text-underline-offset:3px}
+
+  /* ---- Honesty strip ---- */
+  .honest{margin-block:40px; border:1px solid var(--hairline); border-radius:16px;
+    background:var(--surface-2); padding:26px 22px}
+  .honest .eyebrow{display:block; margin-bottom:16px}
+  .honest-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px}
+  @media (max-width:820px){ .honest-grid{grid-template-columns:1fr; gap:16px} }
+  .honest h4{font-family:"Bricolage Grotesque",serif; font-weight:700; font-size:1.02rem; margin:0 0 5px}
+  .honest p{margin:0; color:var(--muted); font-size:.9rem}
+  .honest .n{font-family:"IBM Plex Mono",monospace; color:var(--accent); font-size:.8rem}
+
+  /* ---- Footer ---- */
+  footer{border-top:1px solid var(--hairline); margin-top:48px; padding-block:30px 48px; color:var(--muted)}
+  footer .wrap{display:flex; flex-wrap:wrap; gap:18px 28px; align-items:flex-start; justify-content:space-between}
+  footer .disc{max-width:60ch; font-size:.82rem}
+  footer a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--hairline)}
+  footer a:hover{border-color:var(--accent); color:var(--accent)}
+  footer .links{display:flex; gap:18px; font-family:"IBM Plex Mono",monospace; font-size:.78rem}
+
+  @media (prefers-reduced-motion:reduce){ *{transition:none!important; animation:none!important} }
+</style>
+</head>
+<body>
+<header class="bar">
+  <div class="wrap">
+    <span class="brand"><span class="spark">▲</span>HomeForge <small>self-hosted&nbsp;home</small></span>
+    <nav>
+      <button class="ghostbtn" id="theme" type="button" aria-label="Toggle color theme">◐ theme</button>
+      <a class="ghostbtn" href="https://github.com/YOUR-GH-USERNAME/homeforge" rel="noopener">★ star on github</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <span class="eyebrow">Local-first · self-hosted · made at home</span>
+    <h1>The gear that runs <em>your</em> home — not someone's cloud.</h1>
+    <p class="lede">A hand-picked kit for the overlapping worlds of the smart home, the homelab, the 3D-printing bench, and running your own AI. Every pick is something worth owning, with an honest take on why. No scraped catalogs, no padded counts.</p>
+    <p class="stat"><b>72</b> curated picks · <b>4</b> pillars · updated <span class="mono">2026&#8209;09&#8209;13</span></p>
+
+    <div class="capture">
+      <h2>Get the free Self-Hosted Home Starter Kit</h2>
+      <p>A one-page buyer's guide + wiring checklist + the 5 mistakes that cost beginners the most. No fluff, unsubscribe anytime.</p>
+      <!-- EMAIL FORM: replace this <form> with your provider's embed (Buttondown / Kit / Beehiiv). See PLAYBOOK.md §3. -->
+      <form class="signup" id="signup" novalidate>
+        <label for="email" class="mono" style="position:absolute;left:-9999px">Email address</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+        <button class="btn" type="submit">Send me the kit →</button>
+      </form>
+      <p class="disclaimer">// demo form — wire your email provider here before launch</p>
+      <a class="secondary-link" href="https://github.com/YOUR-GH-USERNAME/homeforge"><span>Prefer to browse?</span> <u>See the full list on GitHub →</u></a>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="stations">
+
+      <article class="station smart">
+        <span class="tag">🏠 Smart Home</span>
+        <h3>Local automation</h3>
+        <p>Home Assistant, Zigbee/Thread/Matter, and gear you own instead of rent.</p>
+        <ul class="picks">
+          <li class="pick">
+            <div class="pick-top"><a href="https://www.home-assistant.io/green/" rel="noopener">Home Assistant Green</a><span class="tier">$</span></div>
+            <span class="blurb">Plug in, power on, done. The default first hub.</span>
+            <span class="prog">via Official / Amazon</span>
+          </li>
+          <li class="pick">
+            <div class="pick-top"><a href="https://www.home-assistant.io/connectzbt1/" rel="noopener">Connect ZBT-1</a><span class="tier">$</span></div>
+            <span class="blurb">USB Zigbee + Thread stick. Keeps your radio off the main board.</span>
+            <span class="prog">via Official / Amazon</span>
+          </li>
+          <li class="pick">
+            <div class="pick-top"><a href="https://www.aqara.com/en/product/presence-sensor-fp2/" rel="noopener">Aqara Presence FP2</a><span class="tier">$$</span></div>
+            <span class="blurb">mmWave presence that knows you're there when you're still.</span>
+            <span class="prog">via Amazon</span>
+          </li>
+        </ul>
+        <div class="seeall"><a href="https://github.com/YOUR-GH-USERNAME/homeforge#-smart-home">See all smart-home picks →</a></div>
+      </article>
+
+      <article class="station lab">
+        <span class="tag">🖥️ Homelab</span>
+        <h3>Self-hosting</h3>
+        <p>The boxes, drives, network and software to run your own services.</p>
+        <ul class="picks">
+          <li class="pick">
+            <div class="pick-top"><a href="https://www.bee-link.com/" rel="noopener">Beelink Mini PC</a><span class="tier">$$</span></div>
+            <span class="blurb">Tiny, quiet x86 that runs Proxmox or Docker beautifully.</span>
+            <span class="prog">via Amazon</span>
+          </li>
+          <li class="pick">
+            <div class="pick-top"><a href="https://nas.ugreen.com/" rel="noopener">UGREEN NASync</a><span class="tier">$$</span></div>
+            <span class="blurb">The value NAS challenger — run TrueNAS on it if you outgrow the OS.</span>
+            <span class="prog">via Amazon</span>
+          </li>
+          <li class="pick">
+            <div class="pick-top"><a href="https://immich.app/" rel="noopener">Immich</a><span class="tier">Free</span></div>
+            <span class="blurb">Self-hosted Google Photos that's genuinely good now.</span>
+            <span class="prog free">free / open-source</span>
+          </li>
+        </ul>
+        <div class="seeall"><a href="https://github.com/YOUR-GH-USERNAME/homeforge#-homelab--self-hosting">See all homelab picks →</a></div>
+      </article>
+
+      <article class="station print">
+        <span class="tag">🧵 3D Printing</span>
+        <h3>The bench</h3>
+        <p>Printers, filament and the upgrades that actually earn their place.</p>
+        <ul class="picks">
+          <li class="pick">
+            <div class="pick-top"><a href="https://bambulab.com/en/a1-mini" rel="noopener">Bambu Lab A1 mini</a><span class="tier">$</span></div>
+            <span class="blurb">The best first printer, full stop. You print instead of tinker.</span>
+            <span class="prog">via Bambu Affiliate</span>
+          </li>
+          <li class="pick">
+            <div class="pick-top"><a href="https://bambulab.com/en/p1" rel="noopener">Bambu Lab P1S</a><span class="tier">$$</span></div>
+            <span class="blurb">Enclosed CoreXY speed for ABS/ASA. The upgrade most land on.</span>
+            <span class="prog">via Bambu Affiliate</span>
+          </li>
+          <li class="pick">
+            <div class="pick-top"><a href="https://overture3d.com/" rel="noopener">Overture PETG</a><span class="tier">$</span></div>
+            <span class="blurb">Reliable workhorse for functional parts that take heat and stress.</span>
+            <span class="prog">via Amazon</span>
+          </li>
+        </ul>
+        <div class="seeall"><a href="https://github.com/YOUR-GH-USERNAME/homeforge#-3d-printing">See all 3D-printing picks →</a></div>
+      </article>
+
+      <article class="station ai">
+        <span class="tag">🤖 AI &amp; Local LLMs</span>
+        <h3>Own your AI</h3>
+        <p>Run models on your own hardware, and drive Claude &amp; ChatGPT like a pro.</p>
+        <ul class="picks">
+          <li class="pick">
+            <div class="pick-top"><a href="https://ollama.com/" rel="noopener">Ollama</a><span class="tier">Free</span></div>
+            <span class="blurb">Run open LLMs locally with one command. Your own private AI.</span>
+            <span class="prog free">free / open-source</span>
+          </li>
+          <li class="pick">
+            <div class="pick-top"><a href="https://claude.com/claude-code" rel="noopener">Claude Code</a><span class="tier">Free / Sub</span></div>
+            <span class="blurb">Drive Claude from the terminal — the power-user way to build.</span>
+            <span class="prog">via Official</span>
+          </li>
+          <li class="pick">
+            <div class="pick-top"><a href="https://www.amazon.com/s?k=AI+Engineering+Chip+Huyen" rel="noopener">AI Engineering</a><span class="tier">$$</span></div>
+            <span class="blurb">Chip Huyen's field guide to building real LLM products.</span>
+            <span class="prog">via Amazon</span>
+          </li>
+        </ul>
+        <div class="seeall"><a href="https://github.com/YOUR-GH-USERNAME/homeforge#-ai--local-llms">See all AI picks →</a></div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="honest" style="background:var(--surface)">
+      <span class="eyebrow">From the workbench</span>
+      <div class="honest-grid">
+        <div>
+          <h4>🖥️ Quadra homelab node</h4>
+          <p>A silent, low-power ARM box on a Tailscale mesh running network-wide ad-blocking. <a href="https://github.com/YOUR-GH-USERNAME/homeforge/blob/main/projects/quadra-homelab-node.md" style="color:var(--accent)">Read the build →</a></p>
+        </div>
+        <div>
+          <h4>🐬 Flipper Zero, unlocked</h4>
+          <p>Running Momentum custom firmware for the full toolkit — and how to flash it safely. <a href="https://github.com/YOUR-GH-USERNAME/homeforge/blob/main/projects/flipper-zero-momentum.md" style="color:var(--accent)">Read the build →</a></p>
+        </div>
+        <div>
+          <h4>🤖 Managing Claude &amp; ChatGPT</h4>
+          <p>The practical guide to controlling the big models — system prompts, projects, context. <a href="https://github.com/YOUR-GH-USERNAME/homeforge/blob/main/guides/managing-claude-and-chatgpt.md" style="color:var(--accent)">Read the guide →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="honest">
+      <span class="eyebrow">How this stays honest</span>
+      <div class="honest-grid">
+        <div>
+          <h4><span class="n">01</span> &nbsp;Reader-supported, disclosed</h4>
+          <p>Some links are affiliate links, at no extra cost to you. It's always disclosed, and it's the whole business model.</p>
+        </div>
+        <div>
+          <h4><span class="n">02</span> &nbsp;No pay-for-placement</h4>
+          <p>A commission never buys a spot. Plenty of picks here (all the open-source software) pay nothing and are recommended anyway.</p>
+        </div>
+        <div>
+          <h4><span class="n">03</span> &nbsp;Curated, not scraped</h4>
+          <p>72 picks chosen by hand — many bench-tested in my own projects — not 2,000 auto-scraped listings. If it's here, it earned the slot.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="disc"><strong>HomeForge</strong> is reader-supported. As an Amazon Associate and affiliate of other programs, purchases made through some links may earn a commission at no extra cost to you. We only recommend gear worth owning.</p>
+    <div class="links">
+      <a href="https://github.com/YOUR-GH-USERNAME/homeforge">GitHub</a>
+      <a href="https://github.com/YOUR-GH-USERNAME/homeforge/blob/main/AFFILIATE-DISCLOSURE.md">Disclosure</a>
+      <a href="https://github.com/YOUR-GH-USERNAME/homeforge/blob/main/CONTRIBUTING.md">Contribute</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Theme toggle (3-state aware: default follows the OS until the user picks)
+  (function(){
+    var root=document.documentElement, key="homeforge-theme";
+    try{ var saved=localStorage.getItem(key); if(saved) root.setAttribute("data-theme",saved); }catch(e){}
+    document.getElementById("theme").addEventListener("click",function(){
+      var cur=root.getAttribute("data-theme");
+      if(!cur){ cur = matchMedia("(prefers-color-scheme: dark)").matches ? "dark":"light"; }
+      var next = cur==="dark" ? "light":"dark";
+      root.setAttribute("data-theme",next);
+      try{ localStorage.setItem(key,next); }catch(e){}
+    });
+  })();
+
+  // Demo signup handler — replace with your email provider's embed before launch.
+  (function(){
+    var form=document.getElementById("signup");
+    if(!form) return;
+    form.addEventListener("submit",function(e){
+      e.preventDefault();
+      var email=document.getElementById("email");
+      if(!email.value || email.value.indexOf("@")<0){ email.focus(); return; }
+      var box=document.createElement("div");
+      box.className="thanks";
+      box.innerHTML="✓ Nice — that's where the Starter Kit would land. <strong>This is a demo form.</strong> Wire a real provider (Buttondown / Kit / Beehiiv) here before launch — see PLAYBOOK.md §3.";
+      form.replaceWith(box);
+    });
+  })();
+</script>
+</body>
+</html>

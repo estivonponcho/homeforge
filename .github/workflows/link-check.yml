@@ -1,0 +1,49 @@
+name: Rebuild & link-check
+
+# Honest "freshness": rebuild the README from data on every change and check
+# that the links still resolve, weekly. No fake daily churn.
+
+on:
+  push:
+    paths:
+      - "data/picks.json"
+      - "scripts/build.py"
+      - ".github/workflows/link-check.yml"
+  workflow_dispatch: {}
+  schedule:
+    - cron: "0 13 * * 1" # Mondays 13:00 UTC
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Rebuild README from data/picks.json
+        run: python3 scripts/build.py
+
+      - name: Commit README if it changed
+        run: |
+          if ! git diff --quiet -- README.md; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add README.md
+            git commit -m "chore: rebuild README from picks.json"
+            git push
+          else
+            echo "README already up to date."
+          fi
+
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --no-progress --max-concurrency 4 README.md
+          fail: false
