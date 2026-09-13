@@ -5,3 +5,7 @@ __pycache__/
 .env.*
 node_modules/
 site/.vercel/
+# Internal operating notes stay outside the public repository.
+CONTENT-STRATEGY.md
+PLAYBOOK.md
+HANDOFF.md
