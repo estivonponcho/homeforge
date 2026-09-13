@@ -203,9 +203,9 @@ What this project will **never** do:
 
 ## Who curates this
 
-I hold MIT Sloan's certificate in Artificial Intelligence: Implications for Business Strategy — and I actually build this stuff: ESP firmware, a self-hosted homelab, 3D printing, board-level hardware mods, and custom apps. Everything here is gear and knowledge I use, not a scraped catalog.
+I hold the MIT Sloan + CSAIL certificate in Artificial Intelligence: Implications for Business Strategy — and I actually build this stuff: ESP firmware, a self-hosted homelab, 3D printing, board-level hardware mods, and custom apps. Everything here is gear and knowledge I use, not a scraped catalog.
 
-**Credential:** Certificate — Artificial Intelligence: Implications for Business Strategy, MIT Sloan School of Management
+**Credential:** Certificate — Artificial Intelligence: Implications for Business Strategy · MIT Sloan School of Management + CSAIL
 
 ## Contributing
 

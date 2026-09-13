@@ -132,9 +132,9 @@ capable, quiet box for it. See the [AI & Local LLMs picks](../README.md#-ai--loc
 
 ## The strategy lens: don't just use it, deploy it
 
-Prompting well is table stakes. The real question — the one MIT Sloan's
-*Artificial Intelligence: Implications for Business Strategy* program is built
-around — is **where AI actually creates value, and where it doesn't.** A few
+Prompting well is table stakes. The real question — the one MIT Sloan +
+CSAIL's *Artificial Intelligence: Implications for Business Strategy* program is
+built around — is **where AI actually creates value, and where it doesn't.** A few
 principles that separate people who *use* these tools from people who *deploy*
 them:
 
@@ -148,8 +148,8 @@ them:
 - **The advantage is workflow, not the model.** Everyone has access to the same
   models; the edge comes from how you wire them into a process nobody else has.
 
-> *This section reflects the author's MIT Sloan certificate in AI: Implications for
-> Business Strategy, written as original guidance.*
+> *This section reflects the author's MIT Sloan + CSAIL certificate in AI:
+> Implications for Business Strategy, written as original guidance.*
 
 ---
 
