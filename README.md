@@ -2,13 +2,13 @@
 
 > Own your home, your servers, and your AI — curated by someone who runs it.
 
-![Stars](https://img.shields.io/github/stars/YOUR-GH-USERNAME/homeforge?style=flat-square) ![License](https://img.shields.io/badge/list-CC--BY--4.0-blue?style=flat-square) ![Picks](https://img.shields.io/badge/curated%20picks-72-brightgreen?style=flat-square) ![Updated](https://img.shields.io/badge/updated-2026--09--13-informational?style=flat-square)
+![Stars](https://img.shields.io/github/stars/estivonponcho/homeforge?style=flat-square) ![License](https://img.shields.io/badge/list-CC--BY--4.0-blue?style=flat-square) ![Picks](https://img.shields.io/badge/curated%20picks-72-brightgreen?style=flat-square) ![Updated](https://img.shields.io/badge/updated-2026--09--13-informational?style=flat-square)
 
 A hand-picked kit for the overlapping worlds of the smart home, the homelab, the 3D-printing bench, and running your own AI. No scraped catalogs, no filler — every item here is something worth owning, with an honest one-line take on why.
 
 **Why trust this list?** It's short on purpose. Every pick is something worth owning, with an honest take on *why* and *when*. No auto-scraped listings, no padded counts. If something's here, it earned the slot.
 
-📬 **Get the free [Self-Hosted Home Starter Kit](https://YOUR-DOMAIN.example)** — a one-page buyer's guide + wiring checklist, no fluff. (Link goes to the signup page.)
+📬 **Get the free [Self-Hosted Home Starter Kit](https://estivonponcho.github.io/homeforge/)** — a one-page buyer's guide + wiring checklist, no fluff. (Link goes to the signup page.)
 
 ## Contents
 

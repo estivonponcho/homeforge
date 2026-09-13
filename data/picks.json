@@ -2,8 +2,8 @@
   "brand": "HomeForge",
   "tagline": "Own your home, your servers, and your AI — curated by someone who runs it.",
   "intro": "A hand-picked kit for the overlapping worlds of the smart home, the homelab, the 3D-printing bench, and running your own AI. No scraped catalogs, no filler — every item here is something worth owning, with an honest one-line take on why.",
-  "site_url": "https://YOUR-DOMAIN.example",
-  "repo": "YOUR-GH-USERNAME/homeforge",
+  "site_url": "https://estivonponcho.github.io/homeforge/",
+  "repo": "estivonponcho/homeforge",
   "updated": "2026-09-13",
   "author": {
     "name": "Mike",
