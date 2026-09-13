@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Managing Claude &amp; ChatGPT: the practical guide — HomeForge</title>
+<meta name="description" content="---">
+<link rel="canonical" href="https://estivonponcho.github.io/homeforge/guides/managing-claude-and-chatgpt.html">
+<meta property="og:title" content="Managing Claude &amp; ChatGPT: the practical guide — HomeForge">
+<meta property="og:description" content="---">
+<meta property="og:url" content="https://estivonponcho.github.io/homeforge/guides/managing-claude-and-chatgpt.html">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../hf.css">
+</head>
+<body>
+<header><div class="wrap bar"><a class="brand" href="../index.html"><span>&#9650;</span> HomeForge</a><nav class="nav"><a href="../index.html">Home</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="../resources.html">Watch &amp; build</a><a href="../starter-kit.html">Starter kit</a></nav></div></header>
+<main class="wrap">
+<div class="article"><p class="crumb"><a href="../index.html">HomeForge</a> / <a href="../learn.html">Guides</a></p><h1>Managing Claude &amp; ChatGPT: the practical guide</h1>
+<p><em>Most people use these tools like a search box and wonder why the output is mediocre. The people who get real work out of them treat them like a junior teammate you brief well and manage tightly. Here's how.</em></p>
+<blockquote>This guide is original writing informed by hands-on use and formal AI coursework. It teaches the <em>how</em>, not any one course's material.</blockquote>
+<hr>
+<h2>The one mental model that fixes everything</h2>
+<p>An LLM has no memory of you and no access to your intent beyond the words in its context window. <strong>Everything good comes from controlling that context.</strong> Vague in, vague out. The skill isn't "knowing the magic words" — it's consistently giving the model the right role, the right constraints, the right examples, and the right information, every time.</p>
+<p>Three levers do most of the work:</p>
+<ol><li><strong>Role &amp; standing instructions</strong> — who the model should be, every time, without you re-typing it.</li><li><strong>Context</strong> — the specific material the task needs (the doc, the data, the examples), and <em>nothing that distracts</em>.</li><li><strong>Output contract</strong> — exactly what shape you want back, and how you'll judge it.</li></ol>
+<hr>
+<h2>Claude</h2>
+<h3>Standing instructions that persist</h3>
+<ul><li><strong>Projects</strong> (claude.ai) hold a persistent set of instructions + reference files that apply to every chat in the project. Use one project per recurring job (e.g. "Newsletter drafting," "Home Assistant configs"). This is the single biggest upgrade over one-off chats.</li><li><strong>Styles</strong> let you save a writing voice and reuse it. Define your voice once.</li><li>In <a href="../picks.html#ai">Claude Code</a>, a <code>CLAUDE.md</code> file is the equivalent — durable project memory the model reads every session.</li></ul>
+<h3>Structure prompts with tags</h3>
+<p>Claude responds especially well to lightly-structured prompts. Wrapping the parts of your request in simple tags removes ambiguity about what's instruction vs. data:</p>
+<pre><code>&lt;role&gt;You are my copy editor.&lt;/role&gt;
+&lt;task&gt;Tighten the draft below without changing meaning.&lt;/task&gt;
+&lt;constraints&gt;Keep it under 200 words. Preserve the headings.&lt;/constraints&gt;
+&lt;draft&gt;
+...paste the draft...
+&lt;/draft&gt;</code></pre>
+<p>This isn't superstition — separating <em>instruction</em> from <em>content</em> is what stops the model from "answering" text that was meant to be edited.</p>
+<h3>Work in the right surface</h3>
+<ul><li><strong>Artifacts</strong> — for anything you'll iterate on (a document, a tool, a page). You get a live, editable result instead of a wall of chat text.</li><li><strong>Claude Code</strong> — for building, editing files, and automating real work on your machine. The power-user tier.</li><li><strong>Long context</strong> — Claude handles large inputs well; paste the whole doc rather than a lossy summary when the detail matters.</li></ul>
+<h3>Manage the context window</h3>
+<p>Long chats drift and pick up cruft. When a conversation gets muddy, <strong>start a fresh chat and re-state the goal</strong> — cheaper and better than fighting a polluted context. Keep one chat to one task.</p>
+<hr>
+<h2>ChatGPT</h2>
+<h3>The three features that change everything</h3>
+<ul><li><strong>Custom instructions</strong> — your standing "about me" + "how to respond." Set these once (what you do, your tools, your preferences, how blunt you want it). Every chat inherits them.</li><li><strong>Projects</strong> — group chats with shared files and instructions, like Claude's.</li><li><strong>Memory</strong> — it remembers facts across chats. Useful, but <strong>audit it</strong> — wrong or stale memories quietly degrade answers. Know how to view and prune it.</li></ul>
+<h3>GPTs and tools</h3>
+<ul><li>Custom <strong>GPTs</strong> are reusable, pre-briefed assistants for a repeated task — worth it only if you actually reuse them.</li><li>Turn on the right <strong>tools</strong> for the job (web, code/data analysis, image) and turn them off when they add noise.</li></ul>
+<hr>
+<h2>Prompting that works on both</h2>
+<p>The durable patterns live in <a href="prompting-patterns.html">prompting-patterns.md</a>. The short version:</p>
+<ul><li><strong>Give a role and a goal</strong>, not just a question.</li><li><strong>Show one example</strong> of the output you want (one good example beats three paragraphs of description).</li><li><strong>State the constraints</strong> (length, format, audience, what to avoid).</li><li><strong>Ask for the format you'll actually use</strong> (table, JSON, bullet list, a doc).</li><li><strong>Iterate deliberately</strong> — critique the output and ask for a specific revision, rather than re-rolling and hoping.</li></ul>
+<hr>
+<h2>Which model, when</h2>
+<p>A rough, honest heuristic (models change monthly — see the <a href="model-watch-template.html">model-watch template</a>):</p>
+<div class="tablewrap"><table><thead><tr><th>You want to…</th><th>Reach for</th></tr></thead><tbody><tr><td>Build, edit files, automate real work</td><td>Claude Code</td></tr><tr><td>Long, careful writing / editing</td><td>Claude (Projects + Styles)</td></tr><tr><td>Quick answers with web + data tools</td><td>ChatGPT</td></tr><tr><td>Keep everything private / offline</td><td>A <a href="../picks.html#ai">local model</a> via Ollama</td></tr><tr><td>Learn a topic deeply</td><td>Either, in "explain like I'm skeptical" mode</td></tr></tbody></table></div>
+<p>Don't be loyal to one. The pros keep two or three open and route by task.</p>
+<hr>
+<h2>Running your own (the self-hosted angle)</h2>
+<p>You don't have to rent every token. For private, offline, or high-volume work, run an open model locally — <a href="https://ollama.com/">Ollama</a> is the one-command on-ramp, <a href="https://openwebui.com/">Open WebUI</a> gives it a ChatGPT-style face, and on Apple Silicon a <a href="../picks.html#ai">Mac mini</a> is a shockingly capable, quiet box for it. See the <a href="../picks.html#ai">AI &amp; Local LLMs picks</a>.</p>
+<hr>
+<h2>The strategy lens: don't just use it, deploy it</h2>
+<p>Prompting well is table stakes. The real question — the one MIT Sloan + CSAIL's <em>Artificial Intelligence: Implications for Business Strategy</em> program is built around — is <strong>where AI actually creates value, and where it doesn't.</strong> A few principles that separate people who <em>use</em> these tools from people who <em>deploy</em> them:</p>
+<ul><li><strong>Automate the judgment-light, high-volume work first.</strong> The wins are the repetitive tasks with clear inputs and checkable outputs (drafting, triage, extraction), not the one-off high-stakes calls.</li><li><strong>Keep a human on the decisions that carry risk.</strong> Use the model to prepare and accelerate; keep a person accountable for anything with real consequences.</li><li><strong>Design for where models fail.</strong> They're confident when wrong. Build in verification (grounding, source-checking) rather than trusting fluent output.</li><li><strong>The advantage is workflow, not the model.</strong> Everyone has access to the same models; the edge comes from how you wire them into a process nobody else has.</li></ul>
+<blockquote><em>This section reflects the author's MIT Sloan + CSAIL certificate in AI: Implications for Business Strategy, written as original guidance.</em></blockquote>
+<hr>
+<p><em>Part of <a href="../picks.html">HomeForge</a> — own your home, your servers, and your AI.</em></p><hr><a class="cta" href="../starter-kit.html">Get the free Starter Kit &rarr;</a></div>
+</main>
+<footer><div class="wrap">HomeForge is reader-supported; some links are affiliate links (no extra cost to you).<div class="fl"><a href="../index.html">Home</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="https://github.com/estivonponcho/homeforge/blob/main/AFFILIATE-DISCLOSURE.md">Disclosure</a><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></div></div></footer>
+</body>
+</html>

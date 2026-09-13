@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wi-Fi Thermal Receipt Printer &quot;Message Board&quot; — HomeForge</title>
+<meta name="description" content="---">
+<link rel="canonical" href="https://estivonponcho.github.io/homeforge/projects/esp-thermal-printer.html">
+<meta property="og:title" content="Wi-Fi Thermal Receipt Printer &quot;Message Board&quot; — HomeForge">
+<meta property="og:description" content="---">
+<meta property="og:url" content="https://estivonponcho.github.io/homeforge/projects/esp-thermal-printer.html">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../hf.css">
+</head>
+<body>
+<header><div class="wrap bar"><a class="brand" href="../index.html"><span>&#9650;</span> HomeForge</a><nav class="nav"><a href="../index.html">Home</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="../resources.html">Watch &amp; build</a><a href="../starter-kit.html">Starter kit</a></nav></div></header>
+<main class="wrap">
+<div class="article"><p class="crumb"><a href="../index.html">HomeForge</a> / <a href="../learn.html">Builds</a></p><h1>Wi-Fi Thermal Receipt Printer "Message Board"</h1>
+<p><em>An ESP8266 that hosts a little web page on your network; type a message, hit send, and it prints on a thermal receipt printer — timestamped, word-wrapped, and oriented so it reads correctly as the paper feeds out.</em></p>
+<blockquote>Inspired by the thermal-printer message-board concept popularized by Peter / Urban Circles. This is my own firmware build of the idea.</blockquote>
+<hr>
+<h2>What it does</h2>
+<ul><li>Runs a <strong>web server on a WeMos D1 Mini (ESP8266)</strong> — open its address on your phone and you get a clean "Leave a Message" page (Tailwind UI, a character counter, and a confetti burst on send).</li><li>On submit, the board <strong>prints the message on a thermal receipt printer</strong> over a serial connection, stamped with the current date from an <strong>NTP time server</strong>.</li><li>It's a fun, physical little inbox — leave notes for the household, print reminders, or wire it to anything that can hit a URL.</li></ul>
+<h2>The parts that were actually interesting</h2>
+<p><strong>Printing upside-down, on purpose.</strong> Thermal printers feed paper out the top, so a normally-printed receipt comes out reading bottom-to-top. The firmware enables the printer's 180° rotation mode <em>and</em> prints the wrapped lines in reverse order, so the finished slip reads top-to-bottom in your hand. Two bugs that cancel out by design.</p>
+<p><strong>Word-wrap at 32 characters.</strong> The printer is 32 chars wide, so the firmware wraps on the last space before the limit rather than mid-word — small touch, big difference in readability.</p>
+<p><strong>Tuning the burn.</strong> Thermal print quality is all in the heat settings (heating dots / time / interval via ESC/POS commands). Getting a crisp black without scorching or ghosting took a few passes.</p>
+<p><strong>NTP + custom dates.</strong> Pulls real time from <code>pool.ntp.org</code>, and also accepts a custom date through the form for backdated slips.</p>
+<h2>What I'd change next</h2>
+<ul><li>Move Wi-Fi credentials out of the sketch into an untracked <code>secrets.h</code> (<strong>never commit credentials</strong> — see the security note below).</li><li>Add a small OLED for status, and a physical "print" button.</li><li>Expose it to Home Assistant so automations can print (e.g., "print the day's calendar at 7am").</li></ul>
+<h2>⚠️ Security note</h2>
+<p>The original sketch hardcodes the Wi-Fi SSID and password in plaintext. Before this (or any Arduino sketch) goes near a public repo, pull secrets into a separate file and add it to <code>.gitignore</code>:</p>
+<pre><code>// secrets.h  (git-ignored)
+#define WIFI_SSID     "your-ssid"
+#define WIFI_PASSWORD "your-password"</code></pre>
+<h2>Gear used</h2>
+<ul><li><a href="../picks.html#smart-home">WeMos D1 Mini (ESP8266)</a> — the board it runs on</li><li>A 58mm thermal receipt printer (serial / TTL)</li><li><a href="../picks.html#smart-home">Dupont jumper wires</a> and a <a href="../picks.html#smart-home">breadboard</a> for prototyping</li><li><a href="../picks.html#smart-home">Silicone soldering mat</a> for the final wiring</li></ul>
+<p><em>Full source lives in my Arduino sketches (credentials scrubbed before publishing).</em></p><hr><a class="cta" href="../starter-kit.html">Get the free Starter Kit &rarr;</a></div>
+</main>
+<footer><div class="wrap">HomeForge is reader-supported; some links are affiliate links (no extra cost to you).<div class="fl"><a href="../index.html">Home</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="https://github.com/estivonponcho/homeforge/blob/main/AFFILIATE-DISCLOSURE.md">Disclosure</a><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></div></div></footer>
+</body>
+</html>

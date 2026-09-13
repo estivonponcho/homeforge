@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Quadra: a 3-watt homelab node — HomeForge</title>
+<meta name="description" content="---">
+<link rel="canonical" href="https://estivonponcho.github.io/homeforge/projects/quadra-homelab-node.html">
+<meta property="og:title" content="The Quadra: a 3-watt homelab node — HomeForge">
+<meta property="og:description" content="---">
+<meta property="og:url" content="https://estivonponcho.github.io/homeforge/projects/quadra-homelab-node.html">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../hf.css">
+</head>
+<body>
+<header><div class="wrap bar"><a class="brand" href="../index.html"><span>&#9650;</span> HomeForge</a><nav class="nav"><a href="../index.html">Home</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="../resources.html">Watch &amp; build</a><a href="../starter-kit.html">Starter kit</a></nav></div></header>
+<main class="wrap">
+<div class="article"><p class="crumb"><a href="../index.html">HomeForge</a> / <a href="../learn.html">Builds</a></p><h1>The Quadra: a 3-watt homelab node</h1>
+<p><em>How a sub-$100 ARM box earns its keep as an always-on utility node — doing real work on a private mesh network while sipping about as much power as a phone charger.</em></p>
+<blockquote>Scrubbed for publication: no IP addresses, keys, ports, or hostnames. If you build one, keep yours off the public internet too.</blockquote>
+<hr>
+<h2>The idea</h2>
+<p>Not every homelab job needs a power-hungry server. A huge amount of useful always-on work — DNS, ad-blocking, monitoring, a VPN exit — is happy on a tiny, cheap, low-power ARM box. The <a href="../picks.html#homelab">Inovato Quadra</a> is one of the best value entries into that: an inexpensive ARM mini-PC that idles at just a few watts, so leaving it on 24/7 costs almost nothing.</p>
+<h2>What it runs</h2>
+<ul><li><strong>Network-wide DNS ad-blocking</strong> with <a href="../picks.html#homelab">AdGuard Home</a> — point your network's DNS at it and every device gets cleaner, ad-free browsing with zero per-device setup.</li><li><strong>Secure remote access over a mesh VPN</strong> with <a href="../picks.html#homelab">Tailscale</a> — the box is reachable from anywhere <em>without</em> opening a single port to the public internet. This is the single most important design choice here.</li><li>Headless day-to-day, with occasional <strong>VNC</strong> for a graphical session when something needs a desktop.</li></ul>
+<h2>Lessons worth passing on</h2>
+<ul><li><strong>Mesh VPN beats port-forwarding.</strong> Exposing a home box directly to the internet is how people get owned. A mesh network gives you remote access with none of that attack surface. Non-negotiable.</li><li><strong>Treat the onboard storage (eMMC) as fragile.</strong> Don't do heavy, churny writes to it; put anything write-heavy on external storage and keep the eMMC for the OS.</li><li><strong>Right-size the hardware to the job.</strong> Running AdGuard + Tailscale on a $100 ARM box instead of a full server is the difference between a few watts and a few dozen. Over a year that's real money — and real heat you don't have to deal with.</li></ul>
+<h2>What's next</h2>
+<ul><li>Add <a href="../picks.html#homelab">Uptime Kuma</a> for at-a-glance monitoring.</li><li>A scheduled config backup off the box.</li></ul>
+<h2>Gear used</h2>
+<ul><li><a href="../picks.html#homelab">Inovato Quadra</a> — the ARM node itself</li><li><a href="../picks.html#homelab">Tailscale</a> — secure mesh remote access</li><li><a href="../picks.html#homelab">AdGuard Home</a> — network-wide ad-blocking</li></ul><hr><a class="cta" href="../starter-kit.html">Get the free Starter Kit &rarr;</a></div>
+</main>
+<footer><div class="wrap">HomeForge is reader-supported; some links are affiliate links (no extra cost to you).<div class="fl"><a href="../index.html">Home</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="https://github.com/estivonponcho/homeforge/blob/main/AFFILIATE-DISCLOSURE.md">Disclosure</a><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></div></div></footer>
+</body>
+</html>

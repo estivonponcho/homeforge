@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flipper Zero &amp; hardware hacking — HomeForge</title>
+<meta name="description" content="---">
+<link rel="canonical" href="https://estivonponcho.github.io/homeforge/projects/flipper-and-hardware-hacking.html">
+<meta property="og:title" content="Flipper Zero &amp; hardware hacking — HomeForge">
+<meta property="og:description" content="---">
+<meta property="og:url" content="https://estivonponcho.github.io/homeforge/projects/flipper-and-hardware-hacking.html">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../hf.css">
+</head>
+<body>
+<header><div class="wrap bar"><a class="brand" href="../index.html"><span>&#9650;</span> HomeForge</a><nav class="nav"><a href="../index.html">Home</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="../resources.html">Watch &amp; build</a><a href="../starter-kit.html">Starter kit</a></nav></div></header>
+<main class="wrap">
+<div class="article"><p class="crumb"><a href="../index.html">HomeForge</a> / <a href="../learn.html">Builds</a></p><h1>Flipper Zero &amp; hardware hacking</h1>
+<p><em>Custom firmware, a curated toolkit, and the microsoldering skills to modify hardware at the board level. This is the "I actually open the case" end of the hobby.</em></p>
+<blockquote>Ethics first: everything here is about <strong>your own devices</strong> — custom firmware, homebrew, backups, and learning how hardware works. Not piracy, not attacking anyone else's stuff.</blockquote>
+<hr>
+<h2>Flipper Zero on custom firmware</h2>
+<p>The Flipper Zero is a pocket multi-tool for RF, NFC, infrared, GPIO, and more. The stock firmware is fine; the community firmware is where it opens up.</p>
+<ul><li><strong>Running <a href="https://momentum-fw.dev/">Momentum</a> custom firmware</strong> (dev channel) — more apps, more settings, and a faster feature pace than stock.</li><li><strong>Flashing safely:</strong> update from a downloaded firmware file via qFlipper's <em>"Install from file"</em> rather than the one-click stock updater, so you stay on the firmware channel you actually chose. (A bad flash is the main way to brick one — do it deliberately.)</li><li><strong>A curated toolkit</strong> of community resources — the excellent <a href="https://github.com/djsime1/awesome-flipperzero">awesome-flipperzero</a> list, an animation manager for custom boot/idle screens, and assorted community app packs. (These are community projects I use, not ones I wrote — credit to their authors.)</li></ul>
+<h2>Board-level modding: a Switch Lite modchip</h2>
+<p>Installing a modchip in a Nintendo Switch Lite is a genuinely advanced hardware project, and the interesting part isn't the console — it's the <strong>skill</strong>:</p>
+<ul><li><strong>Microsoldering to fine pitch points.</strong> A patched console can't be software-only; it needs a small chip wired to specific test points with very fine solder work under magnification. This is a real, transferable electronics skill.</li><li><strong>Working inside a tightly-packed device</strong> — full teardown, ribbon cables, reassembly, and getting it all back together working.</li><li><strong>Custom firmware / homebrew</strong> — the same "run what you want on hardware you own" ethos as the Flipper and the ESP boards.</li></ul>
+<blockquote>I'm deliberately keeping the console-specific details out of this write-up. The showcase here is the <strong>microsoldering and hardware-modding capability</strong>, which is what's worth demonstrating.</blockquote>
+<h2>Why this matters for the rest of the site</h2>
+<p>The same skills show up everywhere on this list: reading a datasheet, wiring to the right pins, not frying a 3.3V part with 5V, flashing firmware without bricking a board. If you can modchip a handheld, an ESPHome sensor is a relaxing afternoon.</p>
+<h2>Gear used</h2>
+<ul><li>Flipper Zero + <a href="https://momentum-fw.dev/">Momentum firmware</a></li><li>A fine-tip temperature-controlled soldering iron, flux, and magnification</li><li><a href="../picks.html#smart-home">Silicone soldering mat</a> and good tweezers</li></ul><hr><a class="cta" href="../starter-kit.html">Get the free Starter Kit &rarr;</a></div>
+</main>
+<footer><div class="wrap">HomeForge is reader-supported; some links are affiliate links (no extra cost to you).<div class="fl"><a href="../index.html">Home</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="https://github.com/estivonponcho/homeforge/blob/main/AFFILIATE-DISCLOSURE.md">Disclosure</a><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></div></div></footer>
+</body>
+</html>

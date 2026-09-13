@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prompting patterns that actually work — HomeForge</title>
+<meta name="description" content="---">
+<link rel="canonical" href="https://estivonponcho.github.io/homeforge/guides/prompting-patterns.html">
+<meta property="og:title" content="Prompting patterns that actually work — HomeForge">
+<meta property="og:description" content="---">
+<meta property="og:url" content="https://estivonponcho.github.io/homeforge/guides/prompting-patterns.html">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../hf.css">
+</head>
+<body>
+<header><div class="wrap bar"><a class="brand" href="../index.html"><span>&#9650;</span> HomeForge</a><nav class="nav"><a href="../index.html">Home</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="../resources.html">Watch &amp; build</a><a href="../starter-kit.html">Starter kit</a></nav></div></header>
+<main class="wrap">
+<div class="article"><p class="crumb"><a href="../index.html">HomeForge</a> / <a href="../learn.html">Guides</a></p><h1>Prompting patterns that actually work</h1>
+<p><em>Not "magic prompts." Reusable structures you can apply to any model, any task. Learn these six and you'll rarely need to copy someone else's prompt again.</em></p>
+<blockquote>Original writing, informed by hands-on use and formal AI coursework. The goal is to teach the underlying pattern, not hand you a fish.</blockquote>
+<hr>
+<h2>1. Role + Goal + Context + Format (the workhorse)</h2>
+<p>The backbone of a good prompt has four parts:</p>
+<ul><li><strong>Role</strong> — who the model should act as ("You are a meticulous copy editor").</li><li><strong>Goal</strong> — the actual outcome you want, stated as a result, not a topic.</li><li><strong>Context</strong> — the material and constraints the task needs.</li><li><strong>Format</strong> — the exact shape of the output you'll use.</li></ul>
+<p>Miss any one and quality drops. Most bad output is a missing <em>format</em> or a vague <em>goal</em>.</p>
+<h2>2. One good example beats a paragraph of description (few-shot)</h2>
+<p>Instead of describing the style you want, <strong>show one example</strong> of input → output. Models pattern-match far better than they follow adjectives. One worked example is worth three sentences of "make it professional but friendly."</p>
+<h2>3. Ask for the thinking, then the answer</h2>
+<p>For anything with reasoning — analysis, debugging, math, planning — tell the model to <strong>work through it step by step before giving the final answer.</strong> You get better answers <em>and</em> a visible chain you can check. For a clean final deliverable, ask it to think first, then put the final result in its own clearly-marked section.</p>
+<h2>4. Separate instructions from data</h2>
+<p>When your prompt contains both instructions <em>and</em> content to act on, mark the boundary so the model never confuses the two:</p>
+<pre><code>&lt;instructions&gt;Summarize the report below in 5 bullets.&lt;/instructions&gt;
+&lt;report&gt;
+...paste the report...
+&lt;/report&gt;</code></pre>
+<p>This is the single most reliable fix for "it answered my example instead of doing the task." (It's also a basic prompt-injection defense — untrusted content stays in the data slot.)</p>
+<h2>5. Critique-and-revise, not re-roll</h2>
+<p>Don't just regenerate and hope. <strong>Tell the model what's wrong and ask for a specific revision:</strong> "The intro is too long and the tone is stiff — cut the intro to two sentences and make it conversational." You converge on what you want in two or three passes instead of gambling on a fresh roll.</p>
+<h2>6. Give it an out</h2>
+<p>Tell the model what to do when it doesn't know: "If the answer isn't in the provided text, say 'not found' rather than guessing." This is the cheapest way to cut confident-but-wrong answers (hallucinations).</p>
+<hr>
+<h2>Putting it together</h2>
+<p>A strong prompt is usually: <strong>a role, a concrete goal, the context marked off from instructions, one example of the output, and a clear format — plus permission to say "I don't know."</strong> Everything else is refinement.</p>
+<hr>
+<h2>The AUTOMAT framework (a reusable skeleton)</h2>
+<p>When you want a checklist instead of intuition, <strong>AUTOMAT</strong> covers the parts a strong prompt almost always needs. Walk the letters and you rarely miss one:</p>
+<ul><li><strong>A — Act as a role.</strong> Give the model a persona with the right expertise ("Act as a home-network security reviewer").</li><li><strong>U — User persona.</strong> Say who the output is <em>for</em> ("explaining to a non-technical homeowner"). Same facts, very different answer.</li><li><strong>T — Targeted action.</strong> The specific verb and deliverable ("audit these firewall rules and list risks"), not a vague topic.</li><li><strong>O — Output definition.</strong> The exact shape you'll use — table, JSON, 5 bullets, a one-page brief.</li><li><strong>M — Mode / tone.</strong> Formal, blunt, friendly, technical. Set it explicitly.</li><li><strong>A — Atypical cases.</strong> What to do at the edges: "if a rule is ambiguous, flag it rather than guess."</li><li><strong>T — Topic whitelisting.</strong> Fence the scope and sources: "only use the config I pasted; don't invent rules that aren't there."</li></ul>
+<p>AUTOMAT and the four-part pattern up top are the same idea at two resolutions — use the quick version daily, reach for the full checklist when the output really has to land.</p>
+<h2>Going further: reasoning &amp; verification strategies</h2>
+<p>For high-stakes or multi-step work, layer these on:</p>
+<ul><li><strong>Chain of Thought (CoT).</strong> Ask the model to reason step by step before answering — better results on anything with logic, math, or planning.</li><li><strong>Tree of Thought (ToT).</strong> For open problems, ask it to sketch a few distinct approaches, compare them, then commit to the best. Slower, but it escapes the first-idea trap.</li><li><strong>Source-fact verification &amp; rating.</strong> When accuracy matters (research summaries, briefs), require the model to tie each claim to a source and rate its confidence (e.g., 1–5). It surfaces the shaky claims instead of burying them.</li><li><strong>Iterative refinement (double-pass).</strong> Have the model draft, then critique its own draft against your criteria, then produce a v2. One extra pass catches a surprising amount.</li><li><strong>Dataset-grounded anchoring.</strong> Paste the actual data/context and instruct the model to answer <em>only</em> from it. The single best defense against confident fabrication.</li></ul>
+<p><em>These sections are informed by the author's AI &amp; prompt-engineering coursework, rewritten as original explanation — the frameworks (AUTOMAT, CoT/ToT) are community/industry terms, not proprietary course content.</em></p>
+<hr>
+<p><em>Part of <a href="../picks.html">HomeForge</a>. See also: <a href="managing-claude-and-chatgpt.html">Managing Claude &amp; ChatGPT</a>.</em></p><hr><a class="cta" href="../starter-kit.html">Get the free Starter Kit &rarr;</a></div>
+</main>
+<footer><div class="wrap">HomeForge is reader-supported; some links are affiliate links (no extra cost to you).<div class="fl"><a href="../index.html">Home</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="https://github.com/estivonponcho/homeforge/blob/main/AFFILIATE-DISCLOSURE.md">Disclosure</a><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></div></div></footer>
+</body>
+</html>

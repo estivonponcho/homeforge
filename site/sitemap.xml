@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://estivonponcho.github.io/homeforge/</loc></url>
+  <url><loc>https://estivonponcho.github.io/homeforge/picks.html</loc></url>
+  <url><loc>https://estivonponcho.github.io/homeforge/learn.html</loc></url>
   <url><loc>https://estivonponcho.github.io/homeforge/starter-kit.html</loc></url>
   <url><loc>https://estivonponcho.github.io/homeforge/resources.html</loc></url>
   <url><loc>https://estivonponcho.github.io/homeforge/privacy.html</loc></url>
   <url><loc>https://estivonponcho.github.io/homeforge/terms.html</loc></url>
+  <url><loc>https://estivonponcho.github.io/homeforge/guides/managing-claude-and-chatgpt.html</loc></url>
+  <url><loc>https://estivonponcho.github.io/homeforge/guides/prompting-patterns.html</loc></url>
+  <url><loc>https://estivonponcho.github.io/homeforge/projects/esp-thermal-printer.html</loc></url>
+  <url><loc>https://estivonponcho.github.io/homeforge/projects/flipper-and-hardware-hacking.html</loc></url>
+  <url><loc>https://estivonponcho.github.io/homeforge/projects/quadra-homelab-node.html</loc></url>
 </urlset>
