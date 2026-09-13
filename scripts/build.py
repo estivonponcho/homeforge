@@ -65,6 +65,9 @@ def main() -> int:
     a(f"\U0001f4ec **Get the free [Self-Hosted Home Starter Kit]({data.get('site_url','#')})** "
       "— a one-page buyer's guide + wiring checklist, no fluff. (Link goes to the signup page.)")
     a("")
+    a(f"▶ **[Watch & Build]({data.get('site_url','#').rstrip('/')}/resources.html)** "
+      "— a curated video list for each HomeForge pillar, with a concrete project after every three videos.")
+    a("")
 
     # ---- Table of contents --------------------------------------------
     a("## Contents")

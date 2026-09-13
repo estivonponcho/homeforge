@@ -42,6 +42,8 @@ HomeForge is **Mike Cage's affiliate + email monetization project**: a curated, 
 - Buttondown newsletter `homeforge` is verified, branded, and connected to the homepage signup form.
 - Public Starter Kit page is live at `site/starter-kit.html`.
 - Four weekly newsletter drafts exist in `newsletters/` and are scheduled in Buttondown for 9:00 a.m. America/Chicago on 2026-09-20, 2026-09-27, 2026-10-04, and 2026-10-11. The Buttondown newsletter timezone is `America/Chicago`.
+- Added a privacy-preserving Watch & Build resource layer based on Mike's YouTube research. Raw and unrelated history was not stored or published. The public page is `site/resources.html`; citations and editorial notes are in `resources/youtube-watchlist.md`.
+- `CONTENT-STRATEGY.md` defines the watch → build → document → recommend funnel, four content clusters, a twelve-week rhythm, and the first four build concepts.
 
 ## PENDING — next steps (roughly in order)
 **Autonomous (an agent can do these now):**

@@ -10,6 +10,8 @@ A hand-picked kit for the overlapping worlds of the smart home, the homelab, the
 
 📬 **Get the free [Self-Hosted Home Starter Kit](https://estivonponcho.github.io/homeforge/)** — a one-page buyer's guide + wiring checklist, no fluff. (Link goes to the signup page.)
 
+▶ **[Watch & Build](https://estivonponcho.github.io/homeforge/resources.html)** — a curated video list for each HomeForge pillar, with a concrete project after every three videos.
+
 ## Contents
 
 - [🏠 Smart Home](#smart-home)
