@@ -2,7 +2,7 @@
 
 > Own your home, your servers, and your AI — curated by someone who runs it.
 
-![Stars](https://img.shields.io/github/stars/estivonponcho/homeforge?style=flat-square) ![License](https://img.shields.io/badge/list-CC--BY--4.0-blue?style=flat-square) ![Picks](https://img.shields.io/badge/curated%20picks-72-brightgreen?style=flat-square) ![Updated](https://img.shields.io/badge/updated-2026--09--13-informational?style=flat-square)
+![Stars](https://img.shields.io/github/stars/estivonponcho/homeforge?style=flat-square) ![License](https://img.shields.io/badge/list-CC--BY--4.0-blue?style=flat-square) ![Picks](https://img.shields.io/badge/curated%20picks-74-brightgreen?style=flat-square) ![Updated](https://img.shields.io/badge/updated-2026--09--13-informational?style=flat-square)
 
 A hand-picked kit for the overlapping worlds of the smart home, the homelab, the 3D-printing bench, and running your own AI. No scraped catalogs, no filler — every item here is something worth owning, with an honest one-line take on why.
 
@@ -48,36 +48,38 @@ _Local-first home automation. Bias toward Home Assistant, Zigbee/Thread/Matter, 
 
 ### Hubs & Coordinators
 
-- **[Home Assistant Green](https://www.home-assistant.io/green/)** ⭐ — The no-fuss way to run Home Assistant — plug in, power on, done. The default recommendation for anyone starting out. _( $ )_
+- **[Home Assistant Green](https://www.amazon.com/s?k=Home+Assistant+Green&tag=homeforge0a-20)** ⭐ — The no-fuss way to run Home Assistant — plug in, power on, done. The default recommendation for anyone starting out. _( $ )_
 - **[Home Assistant Yellow](https://www.home-assistant.io/yellow/)** — PoE, an M.2 slot, and a built-in Zigbee/Thread radio. The upgrade pick when you want one box on the network. _( $$ )_
-- **[Raspberry Pi 5](https://www.raspberrypi.com/products/raspberry-pi-5/)** — Still the most flexible base for a DIY HA server. Pair with an NVMe HAT and it flies. _( $ )_
+- **[Raspberry Pi 5](https://www.amazon.com/s?k=Raspberry+Pi+5&tag=homeforge0a-20)** — Still the most flexible base for a DIY HA server. Pair with an NVMe HAT and it flies. _( $ )_
 
 ### Radios & Coordinators
 
-- **[Home Assistant Connect ZBT-1](https://www.home-assistant.io/connectzbt1/)** ⭐ — The SkyConnect successor — a USB Zigbee + Thread stick that keeps your radio off the main board and easy to relocate. _( $ )_
-- **[Sonoff Zigbee 3.0 USB Dongle Plus (ZBDongle-E)](https://sonoff.tech/)** — The budget coordinator everyone recommends. Flash it, stick it on a USB extension, forget about it. _( $ )_
+- **[Home Assistant Connect ZBT-1](https://www.amazon.com/s?k=Home+Assistant+Connect+ZBT-1&tag=homeforge0a-20)** ⭐ — The SkyConnect successor — a USB Zigbee + Thread stick that keeps your radio off the main board and easy to relocate. _( $ )_
+- **[Sonoff Zigbee 3.0 USB Dongle Plus (ZBDongle-E)](https://www.amazon.com/s?k=Sonoff+Zigbee+3.0+USB+Dongle+Plus+%28ZBDongle-E%29&tag=homeforge0a-20)** — The budget coordinator everyone recommends. Flash it, stick it on a USB extension, forget about it. _( $ )_
 
 ### Sensors & Presence
 
-- **[Aqara Door & Window Sensor](https://www.aqara.com/)** — Cheap, tiny, reliable Zigbee contact sensors. The gateway drug of home automation. _( $ )_
-- **[Aqara Presence Sensor FP2](https://www.aqara.com/en/product/presence-sensor-fp2/)** ⭐ — mMWave presence done well — knows you're in the room even when you're sitting still. Zone mapping is the killer feature. _( $$ )_
+- **[Aqara Door & Window Sensor](https://www.amazon.com/s?k=Aqara+Door+%26+Window+Sensor&tag=homeforge0a-20)** — Cheap, tiny, reliable Zigbee contact sensors. The gateway drug of home automation. _( $ )_
+- **[Aqara Presence Sensor FP2](https://www.amazon.com/s?k=Aqara+Presence+Sensor+FP2&tag=homeforge0a-20)** ⭐ — mMWave presence done well — knows you're in the room even when you're sitting still. Zone mapping is the killer feature. _( $$ )_
 - **[Everything Presence Lite](https://shop.everythingsmart.io/)** — Open, ESPHome-based mmWave presence board. The tinkerer's answer to closed-box presence sensors. _( $ )_
 - **[SONOFF Zigbee Temp & Humidity Sensor](https://www.amazon.com/s?k=SONOFF+Zigbee+temperature+humidity+sensor&tag=homeforge0a-20)** — Bench-tested: cheap, accurate Zigbee climate sensors with a display. Great for rooms, fridges, and the 3D-printing enclosure. _( $ )_
 
 ### Switches, Plugs & Power
 
-- **[Shelly Plus 1PM](https://www.shelly.com/)** ⭐ — Relay + power metering that hides behind an existing switch. Local API, ESPHome-flashable, MQTT — the enthusiast favorite. _( $ )_
-- **[ThirdReality Zigbee Smart Plug](https://www.3reality.com/)** — Compact Zigbee plugs with power monitoring at a price that lets you buy a ten-pack. _( $ )_
-- **[Emporia Vue Energy Monitor](https://www.emporiaenergy.com/)** — Whole-panel, per-circuit energy monitoring for a fraction of the utility's price. Feeds beautifully into HA dashboards. _( $$ )_
+- **[Shelly Plus 1PM](https://www.amazon.com/s?k=Shelly+Plus+1PM&tag=homeforge0a-20)** ⭐ — Relay + power metering that hides behind an existing switch. Local API, ESPHome-flashable, MQTT — the enthusiast favorite. _( $ )_
+- **[ThirdReality Zigbee Smart Plug](https://www.amazon.com/s?k=ThirdReality+Zigbee+Smart+Plug&tag=homeforge0a-20)** — Compact Zigbee plugs with power monitoring at a price that lets you buy a ten-pack. _( $ )_
+- **[Emporia Vue Energy Monitor](https://www.amazon.com/s?k=Emporia+Vue+Energy+Monitor&tag=homeforge0a-20)** — Whole-panel, per-circuit energy monitoring for a fraction of the utility's price. Feeds beautifully into HA dashboards. _( $$ )_
 
 ### Lighting
 
-- **[Philips Hue](https://www.philips-hue.com/)** — Still the gold standard for reliable, fast smart lighting. Expensive, but it just works — and now speaks Matter. _( $$ )_
+- **[Philips Hue](https://www.amazon.com/s?k=Philips+Hue&tag=homeforge0a-20)** — Still the gold standard for reliable, fast smart lighting. Expensive, but it just works — and now speaks Matter. _( $$ )_
+- **[Govee smart lights](https://www.amazon.com/s?k=Govee+smart+lights&tag=homeforge0a-20)** — Bright, affordable smart lighting with a huge range of strips, bulbs, and room kits. A strong value pick when local control is not the only priority. _( $ )_
+- **[Tuya smart lights](https://www.amazon.com/s?k=Tuya+smart+lights&tag=homeforge0a-20)** — A broad ecosystem of affordable bulbs, switches, and light strips. Check the exact device integration before buying because Tuya hardware varies by model. _( $ )_
 - **[WLED](https://kno.wled.ge/)** — Free firmware that turns an ESP32 + LED strip into gorgeous, HA-controllable lighting. The DIY entry point. _( Free / DIY )_
 
 ### Voice & DIY
 
-- **[Home Assistant Voice Preview Edition](https://www.home-assistant.io/voice-pe/)** — Local voice control with no cloud eavesdropping. The privacy-first alternative to Alexa/Google. _( $ )_
+- **[Home Assistant Voice Preview Edition](https://www.amazon.com/s?k=Home+Assistant+Voice+Preview+Edition&tag=homeforge0a-20)** — Local voice control with no cloud eavesdropping. The privacy-first alternative to Alexa/Google. _( $ )_
 - **[ESPHome + ESP32](https://esphome.io/)** — The framework that turns cheap microcontrollers into custom HA sensors and controllers. Where the real fun starts. _( Free / DIY )_
 
 ### Bench & DIY Electronics
@@ -97,21 +99,21 @@ _The boxes, drives, network, and software to run your own services and stop payi
 
 ### Mini PCs & SBCs
 
-- **[Beelink Mini PC](https://www.bee-link.com/)** ⭐ — Tiny, quiet, cheap x86 boxes that run Proxmox or Docker beautifully. The homelab starter that isn't a Pi. _( $$ )_
-- **[Minisforum Mini PC](https://www.minisforum.com/)** — Step-up mini PCs with real cores and RAM headroom — for when one node stops being enough. _( $$ )_
+- **[Beelink Mini PC](https://www.amazon.com/s?k=Beelink+Mini+PC&tag=homeforge0a-20)** ⭐ — Tiny, quiet, cheap x86 boxes that run Proxmox or Docker beautifully. The homelab starter that isn't a Pi. _( $$ )_
+- **[Minisforum Mini PC](https://www.amazon.com/s?k=Minisforum+Mini+PC&tag=homeforge0a-20)** — Step-up mini PCs with real cores and RAM headroom — for when one node stops being enough. _( $$ )_
 - **[Inovato Quadra](https://www.inovato.com/)** — A shockingly cheap ARM box that sips power — perfect for a always-on Tailscale/AdGuard/utility node. _( $ )_
 
 ### NAS & Storage
 
-- **[Synology DiskStation](https://www.synology.com/)** — The most polished turnkey NAS. Pay the premium if you want storage that your family can use too. _( $$$ )_
-- **[UGREEN NASync](https://nas.ugreen.com/)** ⭐ — The value NAS challenger — strong hardware, and you can run TrueNAS/Unraid on it if you outgrow the stock OS. _( $$ )_
-- **[WD Red Plus NAS Drives](https://www.westerndigital.com/)** — CMR NAS drives built for 24/7 spinning. Buy from mixed batches, always keep a cold spare. _( $$ )_
-- **[Samsung T7 Portable SSD](https://www.samsung.com/)** — Fast, pocketable USB-C SSD — great for Time Machine, VM backups, or a bootable rescue drive. _( $$ )_
+- **[Synology DiskStation](https://www.amazon.com/s?k=Synology+DiskStation&tag=homeforge0a-20)** — The most polished turnkey NAS. Pay the premium if you want storage that your family can use too. _( $$$ )_
+- **[UGREEN NASync](https://www.amazon.com/s?k=UGREEN+NASync&tag=homeforge0a-20)** ⭐ — The value NAS challenger — strong hardware, and you can run TrueNAS/Unraid on it if you outgrow the stock OS. _( $$ )_
+- **[WD Red Plus NAS Drives](https://www.amazon.com/s?k=WD+Red+Plus+NAS+Drives&tag=homeforge0a-20)** — CMR NAS drives built for 24/7 spinning. Buy from mixed batches, always keep a cold spare. _( $$ )_
+- **[Samsung T7 Portable SSD](https://www.amazon.com/s?k=Samsung+T7+Portable+SSD&tag=homeforge0a-20)** — Fast, pocketable USB-C SSD — great for Time Machine, VM backups, or a bootable rescue drive. _( $$ )_
 
 ### Networking
 
-- **[UniFi (Ubiquiti)](https://ui.com/)** — Prosumer networking with a gorgeous controller. Once you VLAN off your IoT gear you won't go back. _( $$$ )_
-- **[GL.iNet Travel Router](https://www.gl-inet.com/)** ⭐ — Pocket router running OpenWrt with WireGuard/Tailscale baked in. The remote-access swiss army knife. _( $ )_
+- **[UniFi (Ubiquiti)](https://www.amazon.com/s?k=UniFi+%28Ubiquiti%29&tag=homeforge0a-20)** — Prosumer networking with a gorgeous controller. Once you VLAN off your IoT gear you won't go back. _( $$$ )_
+- **[GL.iNet Travel Router](https://www.amazon.com/s?k=GL.iNet+Travel+Router&tag=homeforge0a-20)** ⭐ — Pocket router running OpenWrt with WireGuard/Tailscale baked in. The remote-access swiss army knife. _( $ )_
 - **[Tailscale](https://tailscale.com/)** — Zero-config mesh VPN that makes your whole lab reachable from anywhere without opening a single port. _( Free tier )_
 
 ### Self-Hosted Software
@@ -124,7 +126,7 @@ _The boxes, drives, network, and software to run your own services and stop payi
 
 ### Power Protection
 
-- **[CyberPower UPS](https://www.cyberpowersystems.com/)** — Keeps your NAS and HA box alive through blips and lets them shut down cleanly. Non-negotiable once data matters. _( $$ )_
+- **[CyberPower UPS](https://www.amazon.com/s?k=CyberPower+UPS&tag=homeforge0a-20)** — Keeps your NAS and HA box alive through blips and lets them shut down cleanly. Non-negotiable once data matters. _( $$ )_
 
 ### Bench & Maintenance
 
@@ -145,21 +147,21 @@ _Printers, filament, upgrades and tools that earn their place on the bench — t
 ### Filament
 
 - **[Bambu PLA Basic](https://bambulab.com/en/filament)** — Consistent, RFID-tagged filament that the AMS reads automatically. The path of least resistance. _( $ )_
-- **[Polymaker PolyTerra PLA](https://polymaker.com/)** — Matte finish, great color range, eco-spool. A favorite for parts you want to look intentional. _( $ )_
-- **[Overture PETG](https://overture3d.com/)** ⭐ — Reliable, affordable PETG for functional parts that need to survive heat and stress. The go-to workhorse. _( $ )_
+- **[Polymaker PolyTerra PLA](https://www.amazon.com/s?k=Polymaker+PolyTerra+PLA&tag=homeforge0a-20)** — Matte finish, great color range, eco-spool. A favorite for parts you want to look intentional. _( $ )_
+- **[Overture PETG](https://www.amazon.com/s?k=Overture+PETG&tag=homeforge0a-20)** ⭐ — Reliable, affordable PETG for functional parts that need to survive heat and stress. The go-to workhorse. _( $ )_
 - **[ELEGOO Rapid PETG](https://www.amazon.com/s?k=ELEGOO+Rapid+PETG+filament&tag=homeforge0a-20)** ⭐ — Bench-tested (I go through this by the case): high-speed PETG that prints clean and cheap. My default workhorse spool. _( $ )_
 - **[DEEPLEE PLA (2kg / 4kg)](https://www.amazon.com/s?k=DEEPLEE+PLA+filament&tag=homeforge0a-20)** — Bench-tested. Big-spool value PLA that winds neatly and doesn't clog. What I reach for when cost-per-gram matters. _( $ )_
 
 ### Upgrades & Accessories
 
 - **[Bambu AMS](https://bambulab.com/en/ams)** — Multi-color and multi-material without babysitting. Also just a great auto-feeding filament pantry. _( $$ )_
-- **[Hardened Steel Nozzle](https://bambulab.com/)** — The five-dollar upgrade that saves your nozzle the first time you print carbon-fiber or glow filament. _( $ )_
-- **[Filament Dryer (Sunlu S4 / Eibos)](https://www.sunlu.com/)** — Wet filament ruins prints. A dryer fixes stringing and brittle parts — the upgrade people skip and regret. _( $ )_
+- **[Hardened Steel Nozzle](https://www.amazon.com/s?k=Hardened+Steel+Nozzle&tag=homeforge0a-20)** — The five-dollar upgrade that saves your nozzle the first time you print carbon-fiber or glow filament. _( $ )_
+- **[Filament Dryer (Sunlu S4 / Eibos)](https://www.amazon.com/s?k=Filament+Dryer+%28Sunlu+S4+%2F+Eibos%29&tag=homeforge0a-20)** — Wet filament ruins prints. A dryer fixes stringing and brittle parts — the upgrade people skip and regret. _( $ )_
 
 ### Tools & Software
 
 - **[OrcaSlicer](https://github.com/SoftFever/OrcaSlicer)** — The community slicer with the best calibration tooling. Free, and better than most stock slicers. _( Free )_
-- **[Digital Calipers](https://www.mitutoyo.com/)** ⭐ — You cannot design functional parts without measuring. Buy one decent pair, not three cheap ones. _( $ )_
+- **[Digital Calipers](https://www.amazon.com/s?k=Digital+Calipers&tag=homeforge0a-20)** ⭐ — You cannot design functional parts without measuring. Buy one decent pair, not three cheap ones. _( $ )_
 - **[MakerWorld](https://makerworld.com/)** — Huge, mostly-free model library with one-click print profiles for Bambu machines. Start here before modeling anything. _( Free )_
 
 ## 🤖 AI & Local LLMs
@@ -175,9 +177,9 @@ _Run models on your own hardware, and drive Claude & ChatGPT like a pro. The sam
 
 ### Hardware for Local AI
 
-- **[Mac mini (Apple Silicon)](https://www.apple.com/mac-mini/)** ⭐ — Unified memory makes it a shockingly good, quiet local-LLM box. The value pick for running mid-size models. _( $$ )_
-- **[NVIDIA GeForce RTX (VRAM is king)](https://www.nvidia.com/en-us/geforce/graphics-cards/)** — For local AI, buy the most VRAM you can afford. A used 3090's 24GB still punches above its price. _( $$$ )_
-- **[NVIDIA Jetson Orin Nano](https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-orin/)** — A tiny always-on edge box for running small models and vision at the edge of your network. _( $$ )_
+- **[Mac mini (Apple Silicon)](https://www.amazon.com/s?k=Mac+mini+%28Apple+Silicon%29&tag=homeforge0a-20)** ⭐ — Unified memory makes it a shockingly good, quiet local-LLM box. The value pick for running mid-size models. _( $$ )_
+- **[NVIDIA GeForce RTX (VRAM is king)](https://www.amazon.com/s?k=NVIDIA+GeForce+RTX+%28VRAM+is+king%29&tag=homeforge0a-20)** — For local AI, buy the most VRAM you can afford. A used 3090's 24GB still punches above its price. _( $$$ )_
+- **[NVIDIA Jetson Orin Nano](https://www.amazon.com/s?k=NVIDIA+Jetson+Orin+Nano&tag=homeforge0a-20)** — A tiny always-on edge box for running small models and vision at the edge of your network. _( $$ )_
 
 ### Manage Claude & ChatGPT
 

@@ -11,6 +11,7 @@ Usage:
 import json
 import pathlib
 import sys
+from urllib.parse import quote_plus
 from collections import OrderedDict
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -24,6 +25,14 @@ def slug(text: str) -> str:
     while "--" in s:
         s = s.replace("--", "-")
     return s.strip("-")
+
+
+def public_url(item: dict) -> str:
+    """Use a tagged Amazon discovery link for picks marked Amazon."""
+    url = item["url"]
+    if "Amazon" in item.get("program", "") and "amazon.com" not in url:
+        return f"https://www.amazon.com/s?k={quote_plus(item['name'])}&tag=homeforge0a-20"
+    return url
 
 
 def main() -> int:
@@ -95,7 +104,7 @@ def main() -> int:
                 star = " ⭐" if it.get("featured") else ""
                 tier = it.get("tier", "")
                 tier_str = f" _( {tier} )_" if tier else ""
-                a(f"- **[{it['name']}]({it['url']})**{star} — {it['blurb']}{tier_str}")
+                a(f"- **[{it['name']}]({public_url(it)})**{star} — {it['blurb']}{tier_str}")
             a("")
 
     # ---- Monetization / honesty note ----------------------------------
