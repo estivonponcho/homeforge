@@ -201,6 +201,12 @@ What this project will **never** do:
 - Pad the list with junk to inflate a count.
 - Hide that a link is an affiliate link.
 
+## Who curates this
+
+I hold MIT Sloan's certificate in Artificial Intelligence: Implications for Business Strategy — and I actually build this stuff: ESP firmware, a self-hosted homelab, 3D printing, board-level hardware mods, and custom apps. Everything here is gear and knowledge I use, not a scraped catalog.
+
+**Credential:** Certificate — Artificial Intelligence: Implications for Business Strategy, MIT Sloan School of Management
+
 ## Contributing
 
 Got a pick that genuinely belongs here? Open an issue or PR — see [CONTRIBUTING.md](CONTRIBUTING.md). Picks live in [`data/picks.json`](data/picks.json); this README is generated from it by [`scripts/build.py`](scripts/build.py), so edit the data, not the README.

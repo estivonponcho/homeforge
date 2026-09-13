@@ -109,6 +109,17 @@ def main() -> int:
     a("- Hide that a link is an affiliate link.")
     a("")
 
+    # ---- About the curator --------------------------------------------
+    author = data.get("author")
+    if author:
+        a("## Who curates this")
+        a("")
+        a(author.get("bio", ""))
+        if author.get("credential"):
+            a("")
+            a(f"**Credential:** {author['credential']}")
+        a("")
+
     # ---- Contributing --------------------------------------------------
     a("## Contributing")
     a("")

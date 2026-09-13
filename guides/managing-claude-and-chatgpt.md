@@ -130,12 +130,26 @@ capable, quiet box for it. See the [AI & Local LLMs picks](../README.md#-ai--loc
 
 ---
 
-> **[Your take — from coursework/projects]**
-> This is where your MIT AI cert and course learnings make the guide *yours*:
-> a section on how these tools map to what you learned about how LLMs actually
-> work (tokens, context, attention, RLHF), why the "context is everything" model
-> is true under the hood, and one worked example from your own projects. Tell me
-> the angle and I'll draft it from your private notes.
+## The strategy lens: don't just use it, deploy it
+
+Prompting well is table stakes. The real question — the one MIT Sloan's
+*Artificial Intelligence: Implications for Business Strategy* program is built
+around — is **where AI actually creates value, and where it doesn't.** A few
+principles that separate people who *use* these tools from people who *deploy*
+them:
+
+- **Automate the judgment-light, high-volume work first.** The wins are the
+  repetitive tasks with clear inputs and checkable outputs (drafting, triage,
+  extraction), not the one-off high-stakes calls.
+- **Keep a human on the decisions that carry risk.** Use the model to prepare and
+  accelerate; keep a person accountable for anything with real consequences.
+- **Design for where models fail.** They're confident when wrong. Build in
+  verification (grounding, source-checking) rather than trusting fluent output.
+- **The advantage is workflow, not the model.** Everyone has access to the same
+  models; the edge comes from how you wire them into a process nobody else has.
+
+> *This section reflects the author's MIT Sloan certificate in AI: Implications for
+> Business Strategy, written as original guidance.*
 
 ---
 
