@@ -32,6 +32,28 @@ The AI search also surfaced many tiny groups and several “make money with AI�
 
 **Best next candidates to inspect before joining:** 3D Printing Makers Group (project/tutorial fit), MakerWorld Projects (model/build fit), and Agentic AI (technical workflow fit). Check rules and recent posts first; do not join all of them at once.
 
+### ESP32, Raspberry Pi, and Quadra searches
+
+Read-only search results surfaced these additional candidates. No new groups were joined from this search.
+
+- **ESP32/ESP8266 projects** — public, about 57K members, 20+ posts/day: https://www.facebook.com/groups/754518470444906/
+- **ESP8266, ESP32 & Microcontrollers** — public, about 164K members, 6 posts/day: https://www.facebook.com/groups/esp8266microcontrollers/
+- **Arduino ESP8266, ESP32, STM32, Raspberry projects** — public, about 501K members, 10+ posts/day: https://www.facebook.com/groups/137714776872278/
+- **Arduino and ESP32 Microcontroller Projects** — public, about 3.4K members, 2 posts/day: https://www.facebook.com/groups/1222909626189620/
+- **Raspberry Pi Project Share** — public, about 49K members: https://www.facebook.com/groups/raspberrypiprojectshare/
+- **Raspberry Pi Guide** — public, about 72K members, 90+ posts/day: https://www.facebook.com/groups/raspberrypiguide/
+- **Raspberry Pi Pico & Pico 2** — public, about 23K members: https://www.facebook.com/groups/pipico/
+- **Raspberry Pi. Home automation** — public, about 40K members: https://www.facebook.com/groups/463937897339644/
+- **Inovato Quadra HamPC Users** — private, about 978 members: https://www.facebook.com/groups/708575314793027/
+
+### Contribution fit from existing HomeForge work
+
+- **ESP32 groups:** the ESP32 thermal-printer build, OLED/SSD1306, sensor-kit, logic-level-converter, Dupont-wire, and ESPHome material can become a wiring photo, troubleshooting note, or small code/config example. Lead with what was built and what failed; keep affiliate links out unless a rule explicitly allows them.
+- **Raspberry Pi groups:** the Quadra homelab-node write-up, Tailscale/AdGuard utility-node idea, power/usefulness audit, and local-AI research desk are the strongest fit. Do not call the Quadra a Raspberry Pi; frame it as an inexpensive ARM comparison where relevant.
+- **Quadra group:** the existing Quadra project is the obvious contribution, but the group is private and small. Request access only after checking its questions/rules; do not assume promotion is permitted.
+
+The best first contribution is a real ESP32 thermal-printer or Quadra power/utility write-up with a photo, parts list, and one lesson learned—not a HomeForge link drop.
+
 ## Recommended order
 
 Start with the **official Home Assistant group** only after Mike has a genuinely useful, finished build or can answer a real question from personal experience. The Ideas/Projects group is the better first showcase once its pending approval clears. The first post should explain the build and invite feedback; the HomeForge link should be a secondary reference only if group rules allow it. Do not lead with affiliate picks or the Starter Kit.
