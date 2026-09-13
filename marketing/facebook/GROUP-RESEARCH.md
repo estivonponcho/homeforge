@@ -102,3 +102,6 @@ Before any approved post, create a campaign-specific URL with UTM parameters suc
 `https://estivonponcho.github.io/homeforge/?utm_source=facebook&utm_medium=organic&utm_campaign=<group-or-topic>`
 
 Use distinct campaign values so clicks and newsletter signups can be attributed without paying for ads.
+
+### Posts actually made (log)
+- 2026-09-13 (Claude, Mike-authorized): Posted the ESP thermal-printer VALUE post to **ESP32/ESP8266 projects** (https://www.facebook.com/groups/754518470444906/). Value-first build story + link to the full build guide (`projects/esp-thermal-printer.html`, UTM `campaign=esp32-thermal-printer`) with FB rich preview. LIVE. Do NOT repost this same content in other groups — the remaining posts in `value-posts.md` are unique per group.
