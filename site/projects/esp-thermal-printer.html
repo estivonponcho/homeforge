@@ -3,41 +3,107 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Wi-Fi Thermal Receipt Printer &quot;Message Board&quot; — HomeForge</title>
-<meta name="description" content="---">
+<title>Wi-Fi thermal receipt printer: a full build guide — HomeForge</title>
+<meta name="description" content="An ESP8266 that hosts a little web page on your network. Open it on your phone, type a message, hit send — and it prints on a thermal receipt printer, time">
 <link rel="canonical" href="https://estivonponcho.github.io/homeforge/projects/esp-thermal-printer.html">
-<meta property="og:title" content="Wi-Fi Thermal Receipt Printer &quot;Message Board&quot; — HomeForge">
-<meta property="og:description" content="---">
+<meta property="og:title" content="Wi-Fi thermal receipt printer: a full build guide — HomeForge">
+<meta property="og:description" content="An ESP8266 that hosts a little web page on your network. Open it on your phone, type a message, hit send — and it prints on a thermal receipt printer, time">
 <meta property="og:url" content="https://estivonponcho.github.io/homeforge/projects/esp-thermal-printer.html">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="../hf.css">
-<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "Wi-Fi Thermal Receipt Printer \"Message Board\"", "description": "---", "url": "https://estivonponcho.github.io/homeforge/projects/esp-thermal-printer.html", "mainEntityOfPage": "https://estivonponcho.github.io/homeforge/projects/esp-thermal-printer.html", "author": {"@type": "Person", "name": "Mike Cage"}, "publisher": {"@type": "Organization", "name": "HomeForge"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "HomeForge", "item": "https://estivonponcho.github.io/homeforge/"}, {"@type": "ListItem", "position": 2, "name": "Builds", "item": "https://estivonponcho.github.io/homeforge/learn.html"}, {"@type": "ListItem", "position": 3, "name": "Wi-Fi Thermal Receipt Printer \"Message Board\"", "item": "https://estivonponcho.github.io/homeforge/projects/esp-thermal-printer.html"}]}]</script>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "Wi-Fi thermal receipt printer: a full build guide", "description": "An ESP8266 that hosts a little web page on your network. Open it on your phone, type a message, hit send \u2014 and it prints on a thermal receipt printer, time", "url": "https://estivonponcho.github.io/homeforge/projects/esp-thermal-printer.html", "mainEntityOfPage": "https://estivonponcho.github.io/homeforge/projects/esp-thermal-printer.html", "author": {"@type": "Person", "name": "Mike Cage"}, "publisher": {"@type": "Organization", "name": "HomeForge"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "HomeForge", "item": "https://estivonponcho.github.io/homeforge/"}, {"@type": "ListItem", "position": 2, "name": "Builds", "item": "https://estivonponcho.github.io/homeforge/learn.html"}, {"@type": "ListItem", "position": 3, "name": "Wi-Fi thermal receipt printer: a full build guide", "item": "https://estivonponcho.github.io/homeforge/projects/esp-thermal-printer.html"}]}]</script>
 </head>
 <body>
 <header><div class="wrap bar"><a class="brand" href="../index.html"><span>&#9650;</span> HomeForge</a><nav class="nav"><a href="../index.html">Home</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="../resources.html">Watch &amp; build</a><a href="../starter-kit.html">Starter kit</a></nav></div></header>
 <main class="wrap">
-<div class="article"><p class="crumb"><a href="../index.html">HomeForge</a> / <a href="../learn.html">Builds</a></p><h1>Wi-Fi Thermal Receipt Printer "Message Board"</h1>
-<p><em>An ESP8266 that hosts a little web page on your network; type a message, hit send, and it prints on a thermal receipt printer — timestamped, word-wrapped, and oriented so it reads correctly as the paper feeds out.</em></p>
-<blockquote>Inspired by the thermal-printer message-board concept popularized by Peter / Urban Circles. This is my own firmware build of the idea.</blockquote>
-<hr>
-<h2>What it does</h2>
-<ul><li>Runs a <strong>web server on a WeMos D1 Mini (ESP8266)</strong> — open its address on your phone and you get a clean "Leave a Message" page (Tailwind UI, a character counter, and a confetti burst on send).</li><li>On submit, the board <strong>prints the message on a thermal receipt printer</strong> over a serial connection, stamped with the current date from an <strong>NTP time server</strong>.</li><li>It's a fun, physical little inbox — leave notes for the household, print reminders, or wire it to anything that can hit a URL.</li></ul>
-<h2>The parts that were actually interesting</h2>
-<p><strong>Printing upside-down, on purpose.</strong> Thermal printers feed paper out the top, so a normally-printed receipt comes out reading bottom-to-top. The firmware enables the printer's 180° rotation mode <em>and</em> prints the wrapped lines in reverse order, so the finished slip reads top-to-bottom in your hand. Two bugs that cancel out by design.</p>
-<p><strong>Word-wrap at 32 characters.</strong> The printer is 32 chars wide, so the firmware wraps on the last space before the limit rather than mid-word — small touch, big difference in readability.</p>
-<p><strong>Tuning the burn.</strong> Thermal print quality is all in the heat settings (heating dots / time / interval via ESC/POS commands). Getting a crisp black without scorching or ghosting took a few passes.</p>
-<p><strong>NTP + custom dates.</strong> Pulls real time from <code>pool.ntp.org</code>, and also accepts a custom date through the form for backdated slips.</p>
-<h2>What I'd change next</h2>
-<ul><li>Move Wi-Fi credentials out of the sketch into an untracked <code>secrets.h</code> (<strong>never commit credentials</strong> — see the security note below).</li><li>Add a small OLED for status, and a physical "print" button.</li><li>Expose it to Home Assistant so automations can print (e.g., "print the day's calendar at 7am").</li></ul>
+<div class="article"><p class="crumb"><a href="../index.html">HomeForge</a> / <a href="../learn.html">Builds</a></p><h1>Wi-Fi thermal receipt printer: a full build guide</h1>
+<p>An ESP8266 that hosts a little web page on your network. Open it on your phone, type a message, hit send — and it prints on a thermal receipt printer, timestamped and correctly oriented as the paper feeds out. It's a genuinely fun first "it does a physical thing over Wi-Fi" project, and it teaches web serving, serial, and ESC/POS printer control in one go.</p>
+<blockquote>Inspired by the thermal-printer message-board concept popularized by Peter / Urban Circles. This is my own firmware build of the idea, written up so you can make your own.</blockquote>
+<h2>How it works, end to end</h2>
+<figure class="diagram">
+<svg viewBox="0 0 720 130" role="img" aria-label="Data flow from phone to printed slip">
+<rect class="box" x="8" y="36" width="140" height="58" rx="8" stroke-width="1.5"/>
+<text x="78" y="60" font-size="13" text-anchor="middle">Your phone</text>
+<text x="78" y="78" font-size="12" text-anchor="middle">(web form)</text>
+<rect class="box" x="196" y="36" width="140" height="58" rx="8" stroke-width="1.5"/>
+<text x="266" y="60" font-size="13" text-anchor="middle">D1 Mini</text>
+<text x="266" y="78" font-size="12" text-anchor="middle">web server</text>
+<rect class="box" x="384" y="36" width="140" height="58" rx="8" stroke-width="1.5"/>
+<text x="454" y="60" font-size="13" text-anchor="middle">Thermal</text>
+<text x="454" y="78" font-size="12" text-anchor="middle">printer</text>
+<rect class="box" x="572" y="36" width="140" height="58" rx="8" stroke-width="1.5"/>
+<text x="642" y="60" font-size="13" text-anchor="middle">Printed</text>
+<text x="642" y="78" font-size="12" text-anchor="middle">slip</text>
+<line class="wire" x1="150" y1="65" x2="192" y2="65" stroke-width="2"/>
+<polygon points="192,65 184,61 184,69" style="fill:var(--ink)"/>
+<text x="171" y="52" font-size="11" text-anchor="middle">Wi-Fi</text>
+<line class="data" x1="338" y1="65" x2="380" y2="65" stroke-width="2.5"/>
+<polygon points="380,65 372,61 372,69" style="fill:var(--accent)"/>
+<text x="360" y="52" font-size="11" text-anchor="middle">TX D8</text>
+<line class="wire" x1="526" y1="65" x2="568" y2="65" stroke-width="2"/>
+<polygon points="568,65 560,61 560,69" style="fill:var(--ink)"/>
+<text x="548" y="52" font-size="11" text-anchor="middle">paper</text>
+</svg>
+<figcaption>Phone → the ESP's web form → serial (TX pin D8) → the printer → a slip you can hold.</figcaption>
+</figure>
+<h2>Parts you need</h2>
+<ul><li>A <strong><a href="../picks.html#smart-home">WeMos D1 Mini (ESP8266)</a></strong> — the microcontroller.</li><li>A <strong>58mm thermal receipt printer</strong> with a TTL serial input (the small embeddable kind, not a USB desktop printer).</li><li>An <strong>external 5–9V power supply</strong> rated for <strong>2A or more</strong> — thermal printers pull a lot of current when the head fires.</li><li>A roll of <strong>58mm thermal paper</strong>, plus <a href="../picks.html#smart-home">jumper wires</a> and a <a href="../picks.html#smart-home">breadboard</a> to prototype.</li></ul>
+<h2>Wiring</h2>
+<p>The one thing beginners get wrong: <strong>do not power the printer from the D1 Mini.</strong> The print head can draw an amp or more in bursts — that will brown out the ESP and cause resets or garbage prints. Give the printer its own supply and just share a common ground.</p>
+<figure class="diagram">
+<svg viewBox="0 0 720 300" role="img" aria-label="Wiring diagram">
+<rect class="box" x="30" y="110" width="170" height="80" rx="8" stroke-width="1.5"/>
+<text x="115" y="145" font-size="14" text-anchor="middle">Wemos D1 Mini</text>
+<text x="115" y="165" font-size="12" text-anchor="middle">(ESP8266)</text>
+<rect class="box" x="520" y="70" width="170" height="80" rx="8" stroke-width="1.5"/>
+<text x="605" y="105" font-size="14" text-anchor="middle">Thermal printer</text>
+<text x="605" y="125" font-size="12" text-anchor="middle">(TTL serial)</text>
+<rect class="box" x="270" y="228" width="190" height="55" rx="8" stroke-width="1.5"/>
+<text x="365" y="251" font-size="13" text-anchor="middle">External 5–9V PSU</text>
+<text x="365" y="268" font-size="12" text-anchor="middle">(2A or more)</text>
+<line class="data" x1="200" y1="138" x2="520" y2="100" stroke-width="2.5"/>
+<text x="360" y="104" font-size="12" text-anchor="middle">D8 (TX) → RX · 9600 baud</text>
+<line class="wire" x1="400" y1="228" x2="545" y2="150" stroke-width="2"/>
+<text x="500" y="205" font-size="12" text-anchor="middle">power → VIN</text>
+<polyline class="wire" points="115,190 115,285 605,285 605,150" fill="none" stroke-width="1.6" stroke-dasharray="5 4"/>
+<line class="wire" x1="365" y1="283" x2="365" y2="285" stroke-width="1.6"/>
+<text x="360" y="299" font-size="12" text-anchor="middle">common ground — tie every GND together</text>
+</svg>
+<figcaption>Data on one wire, power on another, and a shared ground. That's the whole circuit.</figcaption>
+</figure>
+<p>The exact connections:</p>
+<div class="tablewrap"><table><thead><tr><th>From (D1 Mini)</th><th>To (thermal printer)</th><th>Why</th></tr></thead><tbody><tr><td>D8 (TX)</td><td>RX / DIN</td><td>Serial data at 9600 baud</td></tr><tr><td>GND</td><td>GND</td><td>Signals need a shared reference — required</td></tr><tr><td>—</td><td>VIN</td><td>Printer power, from the external PSU (not the D1 Mini)</td></tr><tr><td>5V / USB</td><td>—</td><td>Powers the D1 Mini itself</td></tr><tr><td>GND</td><td>PSU (−)</td><td>Tie the PSU ground to the common ground too</td></tr></tbody></table></div>
+<blockquote>Most 58mm TTL printers accept 3.3V logic on RX, so the D1 Mini's TX drives them directly. If yours is finicky, add a <a href="../picks.html#smart-home">logic level converter</a> between D8 and RX.</blockquote>
+<h2>The firmware, in the parts that matter</h2>
+<p><strong>Connect to Wi-Fi from a git-ignored secrets file</strong> (never hardcode credentials — see the security note below):</p>
+<pre><code>#include "secrets.h"      // WIFI_SSID / WIFI_PASSWORD live here, git-ignored
+const char* ssid     = WIFI_SSID;
+const char* password = WIFI_PASSWORD;</code></pre>
+<p><strong>Talk to the printer over SoftwareSerial</strong> on D8, TX-only, at 9600 baud, and send the ESC/POS init + heat settings. Print quality is almost entirely in the heat values — too low is faint, too high ghosts and scorches:</p>
+<pre><code>SoftwareSerial printer(D8, -1);   // D8 = TX, no RX pin
+printer.begin(9600);
+printer.write(0x1B); printer.write('@');   // ESC @  — reset
+printer.write(0x1B); printer.write('7');   // ESC 7  — heating config
+printer.write(15);                          // heating dots (max 15)
+printer.write(150);                         // heating time
+printer.write(250);                         // heating interval</code></pre>
+<p><strong>The fun bug-that's-a-feature — printing upside down.</strong> Thermal printers feed paper out the top, so a normally-printed receipt reads bottom-to-top in your hand. The fix is two wrongs making a right: enable the printer's 180° rotation <em>and</em> print the wrapped lines in reverse order, so the finished slip reads top-to-bottom:</p>
+<pre><code>printer.write(0x1B); printer.write('{'); printer.write(0x01);  // ESC { 1 — rotate 180°
+// ...then emit the word-wrapped lines last-to-first:
+for (int i = lineCount - 1; i &gt;= 0; i--) printLine(lines[i]);</code></pre>
+<p>The ESP also runs a tiny web server that serves the "Leave a Message" form and, on submit, hands the text to the printer with an NTP timestamp.</p>
+<h2>Troubleshooting</h2>
+<ul><li><strong>Garbage characters / resets:</strong> power problem. Give the printer its own 2A+ supply and check the common ground.</li><li><strong>Faint or scorched print:</strong> tune the three heat values above.</li><li><strong>Nothing prints:</strong> wrong baud (try 19200) or TX/RX swapped.</li><li><strong>Text reads bottom-to-top:</strong> you have the rotation but not the reversed line order (or vice-versa) — you need both.</li></ul>
+<h2>What I'd add next</h2>
+<ul><li>A small <a href="../picks.html#smart-home">OLED</a> for status and the current IP.</li><li>A Home Assistant hook so automations can print (e.g. the day's calendar at 7am).</li></ul>
 <h2>⚠️ Security note</h2>
-<p>The original sketch hardcodes the Wi-Fi SSID and password in plaintext. Before this (or any Arduino sketch) goes near a public repo, pull secrets into a separate file and add it to <code>.gitignore</code>:</p>
-<pre><code>// secrets.h  (git-ignored)
+<p>The sketch reads Wi-Fi credentials from a <strong>git-ignored <code>secrets.h</code></strong> — never commit them:</p>
+<pre><code>// secrets.h  (add to .gitignore)
 #define WIFI_SSID     "your-ssid"
 #define WIFI_PASSWORD "your-password"</code></pre>
 <h2>Gear used</h2>
-<ul><li><a href="../picks.html#smart-home">WeMos D1 Mini (ESP8266)</a> — the board it runs on</li><li>A 58mm thermal receipt printer (serial / TTL)</li><li><a href="../picks.html#smart-home">Dupont jumper wires</a> and a <a href="../picks.html#smart-home">breadboard</a> for prototyping</li><li><a href="../picks.html#smart-home">Silicone soldering mat</a> for the final wiring</li></ul>
-<p><em>Full source lives in my Arduino sketches (credentials scrubbed before publishing).</em></p><hr><a class="cta" href="../starter-kit.html">Get the free Starter Kit &rarr;</a></div>
+<ul><li><a href="../picks.html#smart-home">WeMos D1 Mini (ESP8266)</a></li><li>A 58mm TTL thermal receipt printer + external 5–9V/2A supply</li><li><a href="../picks.html#smart-home">Jumper wires</a>, a <a href="../picks.html#smart-home">breadboard</a>, and a <a href="../picks.html#smart-home">soldering mat</a> for the final build</li></ul><hr><a class="cta" href="../starter-kit.html">Get the free Starter Kit &rarr;</a></div>
 </main>
 <footer><div class="wrap">HomeForge is reader-supported; some links are affiliate links (no extra cost to you).<div class="fl"><a href="../index.html">Home</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="https://github.com/estivonponcho/homeforge/blob/main/AFFILIATE-DISCLOSURE.md">Disclosure</a><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></div></div></footer>
 </body>
