@@ -86,6 +86,7 @@ you're also considering a self-hosted or open-weight model instead.
 ---
 
 *Gear & tools referenced: [AI & Local LLMs picks](../README.md#-ai--local-llms).*
-*See also: [Managing Claude & ChatGPT](managing-claude-and-chatgpt.md) and
+*See also: [GPT-6 Astra: the deep dive](gpt-6-astra-deep-dive-2026.md),
+[Is GPT-6 Astra AGI?](is-gpt-6-astra-agi-2026.md), [Managing Claude & ChatGPT](managing-claude-and-chatgpt.md), and
 [DeepSeek V4.1 Flash vs. the other open-weight giants of 2026](deepseek-v4-1-flash-vs-open-weight-rivals-2026.md).*
 *Part of [HomeForge](../README.md).*
