@@ -1,0 +1,41 @@
+# How 2026's open-weight models actually work: MoE, linear attention, and why they all look alike now
+
+DeepSeek V4.1 Flash, Kimi K3, GLM-5.3-Flash, and Qwen3.8-Max all shipped within about eight weeks of each other, and they all converged on the same two ideas: mixture-of-experts (MoE) for scale without proportional compute cost, and some flavor of linear or hybrid attention to make a 1M-token context actually affordable. Here's what's actually happening under the hood of each, and why they all arrived at roughly the same place independently.
+
+### MoE 101: the one distinction that matters most
+Every model in this piece reports two parameter counts — a huge "total" number and a much smaller "active" number. Mixture-of-experts is why: instead of every parameter doing work on every token, the model routes each token through a small subset of specialized "expert" sub-networks, picked by a learned router. Total parameters is how much the model *knows*; active parameters is how much compute it *spends* per token.
+
+This distinction is why a "552B total / 8B active" model can be both enormous and fast — but it's also frequently misunderstood, because **active parameters describe compute, not memory**. Every expert has to sit in RAM or VRAM whether or not it fires on a given token, so a model's total parameter count — not its active count — is what actually determines whether you can load it at all. (More on why that matters in the [self-hosting deep dive](what-it-takes-to-self-host-a-2026-open-weight-model.md).)
+
+### DeepSeek V4.1 Flash: split the model in half, cache once
+DeepSeek's new architecture is a genuine departure, not a bigger MoE with the same shape. It's a **Causal Encoder-Decoder (CED)**: a 40-layer transformer split into a 20-layer causal encoder feeding a 20-layer decoder. The trick is in the KV cache — normally, every decoder layer computes and stores its own key/value cache from its own hidden states. In CED, the decoder's *entire* KV cache is projected once from the encoder's final hidden states, then reused across all 20 decoder layers instead of recomputed at each one. ([Medium: DeepSeek-V4.1-Flash Architecture Explained](https://medium.com/data-science-in-your-pocket/deepseek-v4-1-flash-architecture-explained-ea7068f5a273), [Latent.Space](https://www.latent.space/p/ainews-deepseek-v41-flash-763b-p8b))
+
+That's why it can run at 8B active parameters for input and only 16B for output despite a 552B-parameter backbone (DeepSeek's official figure — third-party trackers report ~763B when you add the ~196B Engram memory tables and ~14B DSpark drafter model that sit alongside the backbone; both numbers are real, they're just measuring different things). Stacked on top: SWA Bounded Replay (reconstructs sliding-window-attention KV state by replaying only the most recent tokens instead of persisting it to disk), Compressed Sparse Attention 2 (each layer gets a static Full/Reindex/Reuse mode so KV data and sparse-attention indices get shared instead of recomputed), and FP4 KV caching. Combined, DeepSeek says persistent KV cache footprint drops to roughly 1/8 of the previous V4 Flash. ([MindStudio](https://www.mindstudio.ai/blog/deepseek-v4-1-flash-specs-architecture))
+
+### Kimi K3: attention that remembers selectively, and reaches back through layers
+Kimi K3 pairs two custom mechanisms. **Kimi Delta Attention (KDA)** is a linear-attention mechanism — the class of attention that scales linearly with sequence length instead of quadratically, which is what makes a 1M-token context computationally survivable at all. KDA's specific twist: instead of one scalar "forget everything at rate X" gate, it uses vector-valued gates that let different feature subspaces decay at different rates, so the model can hold onto some kinds of information longer than others rather than forgetting uniformly. ([daily.dev technical breakdown](https://daily.dev/posts/kimi-k3-technical-explanation-breakdown-orajjiqjb))
+
+**Attention Residuals (AttnRes)** is the second piece — it lets a layer pull representations from earlier layers, not just earlier tokens. Think of it as attention across *depth* instead of just across *sequence position*: in a model with this many layers, important signal can otherwise get diluted by the time it reaches the output, and AttnRes gives later layers a way to reach back and grab it directly.
+
+On top of that, Kimi K3's MoE ("Stable LatentMoE") activates 16 of 896 experts per token — a much finer-grained routing pool than the other three models here — which Moonshot credits with roughly a 2.5x scaling-efficiency gain over the previous Kimi K2. ([VentureBeat](https://venturebeat.com/technology/chinas-moonshot-ai-releases-kimi-k3-the-largest-open-source-model-ever-rivaling-top-u-s-systems))
+
+### GLM-5.3-Flash: mix linear and full attention, layer by layer
+Zhipu's approach is the most literal "hybrid": GLM-5.3-Flash interleaves cheap linear-attention layers (handling local, nearby-token dependencies) with a smaller number of full sparse-attention layers (handling global, long-range recall via a lightweight indexer) across 45 total layers, routing each token through 8 of 288 experts. ([MarkTechPost](https://www.marktechpost.com/2026/08/26/z-ai-releases-glm-5-3-flash-a-320b-a18b-natively-multimodal-moe-with-a-1m-token-context/))
+
+The payoff is concrete and vendor-quantified: compared to the previous GLM-5.3, Zhipu reports 3.01x less attention compute and a 4.44x smaller KV cache. That second number matters more than it might look — KV cache size, not raw parameter count, is usually what caps how many concurrent users a self-hosted deployment can actually serve per GPU. ([ibl.ai](https://ibl.ai/blog/glm-53-flash-hybrid-attention-kv-cache-self-hosting))
+
+### Qwen3.8-Max: a fixed 3:1 ratio of linear to full attention
+Alibaba's hybrid design is the most explicitly engineered ratio of the four: 69 linear-attention layers (called GDN, for Gated Delta Network — combining a state-space model with causal convolution, so each layer holds a fixed-size recurrent state instead of a growing KV cache) interleaved with 23 full-attention (GQA) layers, a fixed 3:1 pattern across 92 layers total. The GDN layers give O(1) memory and O(N) compute as context grows; the GQA layers periodically give the model true long-range, token-to-token connectivity that pure linear attention can't fully replicate. Routing goes through 512 experts plus one always-on shared expert, top-10 per token. ([Alibaba Group / X](https://x.com/AlibabaGroup/status/2084127531633119656))
+
+### Why this generation looks different from 2024–2025's open models
+Two things changed at once, and neither one alone would have gotten here. Linear and hybrid attention made a genuine 1M-token context computationally survivable — quadratic full attention at that length was never going to be affordable, full stop. And increasingly aggressive MoE sparsity (Kimi K3's 16-of-896 routing is the extreme case) let total parameter counts climb into the trillions while active compute per token stayed in the tens of billions. Native multimodality (DeepSeek folding vision into the same backbone with no separate encoder; GLM and Qwen both trained on multimodal corpora from the start) rode along as a consequence of the same architectural rework, not a separate initiative bolted on afterward.
+
+None of this is confirmed by independent benchmarking of the underlying claims — these are the vendors' own descriptions of their own architectures, and in a few cases (DeepSeek's 1/8 KV-cache reduction, GLM's 3.01x/4.44x figures) they're vendor-reported deltas against their own previous models. Worth remembering when you're evaluating them, same as any benchmark number in this series.
+
+---
+
+*Gear & tools referenced: [AI & Local LLMs picks](../README.md#-ai--local-llms).*
+*See also: [What it actually takes to self-host a 2026 open-weight model](what-it-takes-to-self-host-a-2026-open-weight-model.md),
+[Open-weight AI licenses in 2026, actually explained](open-weight-ai-licenses-2026-explained.md), and
+[DeepSeek V4.1 Flash vs. the other open-weight giants of 2026](deepseek-v4-1-flash-vs-open-weight-rivals-2026.md).*
+*Part of [HomeForge](../README.md).*

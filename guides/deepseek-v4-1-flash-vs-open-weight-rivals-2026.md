@@ -84,6 +84,9 @@ once independent evals (not vendor-reported ones) are available for all five.
 ---
 
 *Gear & tools referenced: [AI & Local LLMs picks](../README.md#-ai--local-llms).*
-*See also: [Model Watch: DeepSeek V4.1 Flash](model-watch-deepseek-v4-1-flash-2026-09-14.md)
-and [Best way to run a local LLM](best-way-to-run-a-local-llm.md).*
+*See also: [Model Watch: DeepSeek V4.1 Flash](model-watch-deepseek-v4-1-flash-2026-09-14.md),
+[how these architectures actually work](how-2026-open-weight-models-actually-work.md),
+[what it really takes to self-host one](what-it-takes-to-self-host-a-2026-open-weight-model.md),
+[the license fine print](open-weight-ai-licenses-2026-explained.md), and
+[Best way to run a local LLM](best-way-to-run-a-local-llm.md).*
 *Part of [HomeForge](../README.md).*

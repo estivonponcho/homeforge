@@ -30,12 +30,18 @@ MODEL_WATCH_EXTRA = {
     "frontier-model-comparison-september-2026",
     "frontier-model-api-pricing-comparison-2026",
     "frontier-vs-open-weight-decision-guide-2026",
+    "how-2026-open-weight-models-actually-work",
+    "what-it-takes-to-self-host-a-2026-open-weight-model",
+    "open-weight-ai-licenses-2026-explained",
 }
 MODEL_WATCH_ORDER = [
     "model-watch-deepseek-v4-1-flash-2026-09-14",
     "frontier-model-comparison-september-2026",
     "frontier-model-api-pricing-comparison-2026",
     "deepseek-v4-1-flash-vs-open-weight-rivals-2026",
+    "how-2026-open-weight-models-actually-work",
+    "what-it-takes-to-self-host-a-2026-open-weight-model",
+    "open-weight-ai-licenses-2026-explained",
     "frontier-vs-open-weight-decision-guide-2026",
 ]
 
@@ -54,6 +60,9 @@ MODEL_WATCH_VENDORS = {
     "frontier-model-comparison-september-2026": "Claude · GPT · Gemini · Grok",
     "frontier-model-api-pricing-comparison-2026": "Claude · GPT · Gemini · Grok",
     "deepseek-v4-1-flash-vs-open-weight-rivals-2026": "DeepSeek · Kimi · GLM · Qwen",
+    "how-2026-open-weight-models-actually-work": "DeepSeek · Kimi · GLM · Qwen",
+    "what-it-takes-to-self-host-a-2026-open-weight-model": "DeepSeek · Kimi · GLM · Qwen",
+    "open-weight-ai-licenses-2026-explained": "DeepSeek · Kimi · GLM · Qwen",
     "frontier-vs-open-weight-decision-guide-2026": "Frontier vs open-weight",
 }
 
