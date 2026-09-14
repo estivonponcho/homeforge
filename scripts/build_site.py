@@ -43,6 +43,20 @@ MODEL_WATCH_ORDER = [
 def is_model_watch(slug: str) -> bool:
     return slug.startswith("model-watch-") or slug in MODEL_WATCH_EXTRA
 
+
+# Vendor/company badge shown on each Model Watch card, for scanning the section
+# by maker. Pieces covering multiple vendors list them; the frontier-vs-open-
+# weight piece is framed as a category rather than a vendor list. A future
+# model-watch-*.md file with no entry here just shows the "Model Watch" tag
+# alone — this is cosmetic, not required for the automation to work.
+MODEL_WATCH_VENDORS = {
+    "model-watch-deepseek-v4-1-flash-2026-09-14": "DeepSeek",
+    "frontier-model-comparison-september-2026": "Claude · GPT · Gemini · Grok",
+    "frontier-model-api-pricing-comparison-2026": "Claude · GPT · Gemini · Grok",
+    "deepseek-v4-1-flash-vs-open-weight-rivals-2026": "DeepSeek · Kimi · GLM · Qwen",
+    "frontier-vs-open-weight-decision-guide-2026": "Frontier vs open-weight",
+}
+
 ANCHOR_MAP = {
     "../README.md#-smart-home": "../picks.html#smart-home",
     "../README.md#-homelab--self-hosting": "../picks.html#homelab",
@@ -219,6 +233,7 @@ hr{border:none;border-top:1px solid var(--line);margin:32px 0}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:22px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;text-decoration:none;color:var(--ink);display:block}
 .card:hover{border-color:var(--accent)}.card .tag{font:500 .66rem "IBM Plex Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.card .tag.vtag{margin-left:8px;padding:1px 7px;border:1px solid var(--line);border-radius:6px;text-transform:none;letter-spacing:.02em;color:var(--ai)}
 .card h3{margin:8px 0 6px;font-size:1.15rem}.card p{margin:0;color:var(--muted);font-size:.9rem}
 .pillar{margin-top:40px}.pillar h2{font-size:1.6rem}.cat{font:500 .72rem "IBM Plex Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:20px 0 6px}
 .picklist{list-style:none;padding:0;margin:0}.picklist li{padding:12px 0;border-top:1px solid var(--line)}.picklist li:first-child{border-top:none}
@@ -420,7 +435,9 @@ def build_model_watch(pages):
     def cards(items):
         out = []
         for p in items:
-            out.append(f'<a class="card" href="{p["url"]}"><span class="tag">Model Watch</span>'
+            vendor = MODEL_WATCH_VENDORS.get(p["slug"])
+            vtag = f'<span class="tag vtag">{_html.escape(vendor)}</span>' if vendor else ""
+            out.append(f'<a class="card" href="{p["url"]}"><span class="tag">Model Watch</span>{vtag}'
                        f'<h3>{_html.escape(p["title"])}</h3><p>{_html.escape(p["desc"])}</p></a>')
         return "".join(out)
     body = ['<div class="article" style="max-width:none"><p class="crumb"><a href="index.html">HomeForge</a> / Model Watch</p>',

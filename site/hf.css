@@ -24,6 +24,7 @@ hr{border:none;border-top:1px solid var(--line);margin:32px 0}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:22px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;text-decoration:none;color:var(--ink);display:block}
 .card:hover{border-color:var(--accent)}.card .tag{font:500 .66rem "IBM Plex Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.card .tag.vtag{margin-left:8px;padding:1px 7px;border:1px solid var(--line);border-radius:6px;text-transform:none;letter-spacing:.02em;color:var(--ai)}
 .card h3{margin:8px 0 6px;font-size:1.15rem}.card p{margin:0;color:var(--muted);font-size:.9rem}
 .pillar{margin-top:40px}.pillar h2{font-size:1.6rem}.cat{font:500 .72rem "IBM Plex Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:20px 0 6px}
 .picklist{list-style:none;padding:0;margin:0}.picklist li{padding:12px 0;border-top:1px solid var(--line)}.picklist li:first-child{border-top:none}
