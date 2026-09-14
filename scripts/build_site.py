@@ -217,6 +217,9 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
          'family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&'
          'family=IBM+Plex+Sans:wght@400;500;600&display=swap">')
 
+ANALYTICS = ('<script data-goatcounter="https://homeforge.goatcounter.com/count" '
+             'async src="//gc.zgo.at/count.js"></script>')
+
 
 def page(title, description, canonical, body, root="", jsonld=""):
     desc = _html.escape(description, quote=True)
@@ -244,6 +247,7 @@ def page(title, description, canonical, body, root="", jsonld=""):
 {FONTS}
 <link rel="stylesheet" href="{root}hf.css">
 {jsonld}
+{ANALYTICS}
 </head>
 <body>
 <header><div class="wrap bar"><a class="brand" href="{root}index.html"><span>&#9650;</span> HomeForge</a><nav class="nav">{nav}</nav></div></header>
