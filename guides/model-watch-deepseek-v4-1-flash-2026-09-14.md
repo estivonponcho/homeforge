@@ -1,5 +1,7 @@
 # DeepSeek V4.1 Flash — what actually changed, and whether you should care
 
+DeepSeek's newest release ships a genuinely new MoE architecture, native multimodal input, a 1M-token context window, and open MIT-licensed weights — with pricing aimed squarely at repetitive agentic workloads.
+
 **Released:** September 10, 2026 · **Maker:** DeepSeek · **Type:** open-weight, multimodal (MoE)
 
 ### The one-line take

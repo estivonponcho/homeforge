@@ -21,6 +21,28 @@ SITE_URL = DATA.get("site_url", "https://estivonponcho.github.io/homeforge/").rs
 # guides/projects markdown that should NOT become public pages
 SKIP = {"README.md", "model-watch-template.md", "custom-apps-and-health-integrations.md"}
 
+# Guides that get their own "Model Watch" hub instead of the general Guides grid:
+# any file named model-watch-*.md (the recurring drafting routine), plus these
+# hand-written comparison pieces. Explicit order controls display order on the
+# Model Watch page; anything not listed here falls in after, in file order.
+MODEL_WATCH_EXTRA = {
+    "deepseek-v4-1-flash-vs-open-weight-rivals-2026",
+    "frontier-model-comparison-september-2026",
+    "frontier-model-api-pricing-comparison-2026",
+    "frontier-vs-open-weight-decision-guide-2026",
+}
+MODEL_WATCH_ORDER = [
+    "model-watch-deepseek-v4-1-flash-2026-09-14",
+    "frontier-model-comparison-september-2026",
+    "frontier-model-api-pricing-comparison-2026",
+    "deepseek-v4-1-flash-vs-open-weight-rivals-2026",
+    "frontier-vs-open-weight-decision-guide-2026",
+]
+
+
+def is_model_watch(slug: str) -> bool:
+    return slug.startswith("model-watch-") or slug in MODEL_WATCH_EXTRA
+
 ANCHOR_MAP = {
     "../README.md#-smart-home": "../picks.html#smart-home",
     "../README.md#-homelab--self-hosting": "../picks.html#homelab",
@@ -241,6 +263,7 @@ def page(title, description, canonical, body, root="", jsonld="", social_image="
     nav = (f'<a href="{root}index.html">Home</a>'
            f'<a href="{root}picks.html">The list</a>'
            f'<a href="{root}learn.html">Guides</a>'
+           f'<a href="{root}model-watch.html">Model Watch</a>'
            f'<a href="{root}resources.html">Watch &amp; build</a>'
            f'<a href="{root}starter-kit.html">Starter kit</a>')
     foot = (f'<a href="{root}index.html">Home</a><a href="{root}picks.html">The list</a>'
@@ -306,9 +329,12 @@ def build_md_pages(folder, kind):
         image_match = re.search(r'<img\s+[^>]*src="\.\./assets/([^"?#]+)', md, re.I)
         if image_match:
             social_image = f"{SITE_URL}assets/{image_match.group(1)}"
+        model_watch = folder == "guides" and is_model_watch(slug)
+        hub_label = "Model Watch" if model_watch else kind
+        hub_url = "model-watch.html" if model_watch else "learn.html"
         # strip the leading H1 from body (we render it in .article too, keep it once)
         body = (f'<div class="article">'
-                f'<p class="crumb"><a href="../index.html">HomeForge</a> / <a href="../learn.html">{kind}</a></p>'
+                f'<p class="crumb"><a href="../index.html">HomeForge</a> / <a href="../{hub_url}">{hub_label}</a></p>'
                 f'{md_to_html(md)}'
                 f'<hr><a class="cta" href="../starter-kit.html">Get the free Starter Kit &rarr;</a>'
                 f'</div>')
@@ -319,7 +345,7 @@ def build_md_pages(folder, kind):
              "publisher": {"@type": "Organization", "name": "HomeForge"}},
             {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
                 {"@type": "ListItem", "position": 1, "name": "HomeForge", "item": SITE_URL},
-                {"@type": "ListItem", "position": 2, "name": kind, "item": SITE_URL + "learn.html"},
+                {"@type": "ListItem", "position": 2, "name": hub_label, "item": SITE_URL + hub_url},
                 {"@type": "ListItem", "position": 3, "name": t, "item": canonical}]},
         ]
         jsonld = '<script type="application/ld+json">' + json.dumps(ld) + "</script>"
@@ -328,7 +354,7 @@ def build_md_pages(folder, kind):
             page(f"{t} — HomeForge", desc, canonical, body, root="../", jsonld=jsonld,
                  social_image=social_image), encoding="utf-8")
         pages.append({"slug": slug, "title": t, "desc": desc, "folder": folder,
-                      "url": f"{folder}/{slug}.html"})
+                      "url": f"{folder}/{slug}.html", "model_watch": model_watch})
     return pages
 
 
@@ -375,7 +401,9 @@ def build_learn(guides, projects):
     body = ['<div class="article" style="max-width:none"><p class="crumb"><a href="index.html">HomeForge</a> / Guides</p>',
             '<span class="eyebrow">Guides &amp; field notes</span>',
             "<h1>Guides &amp; builds</h1>",
-            '<p class="lede">Practical, honest write-ups: how to run the tools, and real builds from the bench. Every guide links to the gear it uses.</p>',
+            '<p class="lede">Practical, honest write-ups: how to run the tools, and real builds from the bench. Every guide links to the gear it uses. '
+            'Covering a specific AI model release or comparing models head-to-head? That\'s over in '
+            '<a href="model-watch.html">Model Watch</a>.</p>',
             "<h2>Guides</h2>", f'<div class="cards">{cards(guides, "Guide")}</div>',
             "<h2 style=\"margin-top:40px\">Builds</h2>", f'<div class="cards">{cards(projects, "Build")}</div>',
             '<hr><a class="cta" href="picks.html">Browse the full list &rarr;</a></div>']
@@ -385,8 +413,32 @@ def build_learn(guides, projects):
              f"{SITE_URL}learn.html", "\n".join(body), root=""), encoding="utf-8")
 
 
+def build_model_watch(pages):
+    ordered = sorted(pages, key=lambda p: MODEL_WATCH_ORDER.index(p["slug"])
+                      if p["slug"] in MODEL_WATCH_ORDER else len(MODEL_WATCH_ORDER))
+
+    def cards(items):
+        out = []
+        for p in items:
+            out.append(f'<a class="card" href="{p["url"]}"><span class="tag">Model Watch</span>'
+                       f'<h3>{_html.escape(p["title"])}</h3><p>{_html.escape(p["desc"])}</p></a>')
+        return "".join(out)
+    body = ['<div class="article" style="max-width:none"><p class="crumb"><a href="index.html">HomeForge</a> / Model Watch</p>',
+            '<span class="eyebrow">AI model releases &amp; comparisons</span>',
+            "<h1>Model Watch</h1>",
+            '<p class="lede">Notable AI model releases and honest head-to-head comparisons — frontier and open-weight alike — with '
+            'sourced benchmarks, real pricing math, and no padded hype. General AI usage guides live over in '
+            '<a href="learn.html">Guides</a>.</p>',
+            f'<div class="cards">{cards(ordered)}</div>',
+            '<hr><a class="cta" href="learn.html">Browse all guides &rarr;</a></div>']
+    (SITE / "model-watch.html").write_text(
+        page("Model Watch — AI model releases & comparisons — HomeForge",
+             "Notable AI model releases and head-to-head comparisons across frontier and open-weight models, with sourced benchmarks and real pricing math.",
+             f"{SITE_URL}model-watch.html", "\n".join(body), root=""), encoding="utf-8")
+
+
 def build_sitemap(guides, projects):
-    urls = ["", "picks.html", "learn.html", "starter-kit.html", "resources.html", "privacy.html", "terms.html"]
+    urls = ["", "picks.html", "learn.html", "model-watch.html", "starter-kit.html", "resources.html", "privacy.html", "terms.html"]
     urls += [p["url"] for p in guides] + [p["url"] for p in projects]
     body = ['<?xml version="1.0" encoding="UTF-8"?>',
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
@@ -400,10 +452,14 @@ def main():
     (SITE / "hf.css").write_text(CSS, encoding="utf-8")
     guides = build_md_pages("guides", "Guides")
     projects = build_md_pages("projects", "Builds")
+    model_watch = [p for p in guides if p["model_watch"]]
+    learn_guides = [p for p in guides if not p["model_watch"]]
     build_picks()
-    build_learn(guides, projects)
+    build_learn(learn_guides, projects)
+    build_model_watch(model_watch)
     build_sitemap(guides, projects)
-    print(f"Built: picks.html, learn.html, {len(guides)} guides, {len(projects)} builds, hf.css, sitemap.xml")
+    print(f"Built: picks.html, learn.html, model-watch.html ({len(model_watch)} items), "
+          f"{len(learn_guides)} guides, {len(projects)} builds, hf.css, sitemap.xml")
 
 
 if __name__ == "__main__":
