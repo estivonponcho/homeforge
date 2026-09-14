@@ -2,7 +2,7 @@
 
 > Own your home, your servers, and your AI — curated by someone who runs it.
 
-![Stars](https://img.shields.io/github/stars/estivonponcho/homeforge?style=flat-square) ![License](https://img.shields.io/badge/list-CC--BY--4.0-blue?style=flat-square) ![Picks](https://img.shields.io/badge/curated%20picks-86-brightgreen?style=flat-square) ![Updated](https://img.shields.io/badge/updated-2026--09--13-informational?style=flat-square)
+![Stars](https://img.shields.io/github/stars/estivonponcho/homeforge?style=flat-square) ![License](https://img.shields.io/badge/list-CC--BY--4.0-blue?style=flat-square) ![Picks](https://img.shields.io/badge/curated%20picks-96-brightgreen?style=flat-square) ![Updated](https://img.shields.io/badge/updated-2026--09--13-informational?style=flat-square)
 
 A hand-picked kit for the overlapping worlds of the smart home, the homelab, the 3D-printing bench, and running your own AI. No scraped catalogs, no filler — every item here is something worth owning, with an honest one-line take on why.
 
@@ -45,6 +45,8 @@ A hand-picked kit for the overlapping worlds of the smart home, the homelab, the
   - [Power & Cables](#power-cables)
   - [Audio](#audio)
   - [Phone Accessories](#phone-accessories)
+  - [iPad Accessories](#ipad-accessories)
+  - [Apple Watch](#apple-watch)
 - [How this list makes money (and stays honest)](#how-this-list-makes-money-and-stays-honest)
 - [Contributing](#contributing)
 
@@ -231,6 +233,22 @@ _The tech you actually carry — gadgets, power, audio, and the organizers that 
 
 - **[PopSockets Grip](https://www.amazon.com/s?k=PopSockets+grip&tag=homeforge0a-20)** — The one-handed grip + kickstand that quietly prevents dropped phones. MagSafe versions pop on and off cleanly. _( $ )_
 - **[MagSafe Wallet Stand](https://www.amazon.com/s?k=MagSafe+wallet+stand&tag=homeforge0a-20)** — Cards on the back, flips out to a stand for videos. Ditches the bulky case-wallet. _( $ )_
+- **[Spigen Tough Armor MagFit Case](https://www.amazon.com/s?k=Spigen+Tough+Armor+MagFit+case&tag=homeforge0a-20)** — Bench-tested — the case I run on my phone. Built-in kickstand, MagSafe, and genuine military-grade protection. _( $ )_
+- **[Tango Ultra-Thin MagSafe Grip](https://www.amazon.com/s?k=Tango+ultra+thin+MagSafe+grip&tag=homeforge0a-20)** — Bench-tested. Space-grade steel grip + stand that's half the thickness of a PopSocket and pops off for wireless charging. _( $ )_
+
+### iPad Accessories
+
+- **[MOFT Dynamic Folio (iPad mini)](https://www.amazon.com/s?k=MOFT+Dynamic+Folio+iPad+mini&tag=homeforge0a-20)** ⭐ — Bench-tested. Slim magnetic folio with 20+ viewing angles and auto wake/sleep — turns the mini into a stand anywhere. _( $$ )_
+- **[Spigen Rugged Armor Pro (iPad)](https://www.amazon.com/s?k=Spigen+Rugged+Armor+Pro+iPad+case&tag=homeforge0a-20)** — Bench-tested. Tri-fold rugged case with a built-in Pencil holder — protection without turning the iPad into a brick. _( $ )_
+- **[iPad Tempered-Glass Screen Protector](https://www.amazon.com/s?k=iPad+tempered+glass+screen+protector+install+tray&tag=homeforge0a-20)** — Bench-tested. 9H glass with an alignment/install tray so you don't trap bubbles or dust. Buy the two-pack. _( $ )_
+- **[MOFT Apple Pencil Holder](https://www.amazon.com/s?k=MOFT+Pencil+holder+Apple+Pencil&tag=homeforge0a-20)** — Bench-tested. Stick-on holder so the Apple Pencil stops rolling off the desk or vanishing in the bag. _( $ )_
+
+### Apple Watch
+
+- **[Nylon Sport Loop Bands](https://www.amazon.com/s?k=Apple+Watch+nylon+sport+loop+band&tag=homeforge0a-20)** — Bench-tested. Breathable nylon loops in every color for a few bucks each — the easy, cheap way to change the watch up daily. _( $ )_
+- **[Titanium Band (Ultra)](https://www.amazon.com/s?k=Apple+Watch+Ultra+titanium+band&tag=homeforge0a-20)** — Bench-tested. Titanium link band with a steel buckle — the premium metal look for a fraction of Apple's price. _( $$ )_
+- **[ESR Armorite Screen Protector](https://www.amazon.com/s?k=ESR+Armorite+Apple+Watch+screen+protector&tag=homeforge0a-20)** — Bench-tested. Tempered glass + alloy frame that actually saves the screen from bench dings and doorframes. _( $ )_
+- **[Portable USB-C Magnetic Watch Charger](https://www.amazon.com/s?k=USB-C+Apple+Watch+magnetic+charger+portable&tag=homeforge0a-20)** — Bench-tested. A tiny USB-C magnetic puck so you can top the watch off from any charger or power bank in the bag. _( $ )_
 
 ## How this list makes money (and stays honest)
 
