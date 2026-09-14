@@ -2,7 +2,7 @@
 
 > Own your home, your servers, and your AI — curated by someone who runs it.
 
-![Stars](https://img.shields.io/github/stars/estivonponcho/homeforge?style=flat-square) ![License](https://img.shields.io/badge/list-CC--BY--4.0-blue?style=flat-square) ![Picks](https://img.shields.io/badge/curated%20picks-96-brightgreen?style=flat-square) ![Updated](https://img.shields.io/badge/updated-2026--09--13-informational?style=flat-square)
+![Stars](https://img.shields.io/github/stars/estivonponcho/homeforge?style=flat-square) ![License](https://img.shields.io/badge/list-CC--BY--4.0-blue?style=flat-square) ![Picks](https://img.shields.io/badge/curated%20picks-99-brightgreen?style=flat-square) ![Updated](https://img.shields.io/badge/updated-2026--09--13-informational?style=flat-square)
 
 A hand-picked kit for the overlapping worlds of the smart home, the homelab, the 3D-printing bench, and running your own AI. No scraped catalogs, no filler — every item here is something worth owning, with an honest one-line take on why.
 
@@ -217,7 +217,10 @@ _The tech you actually carry — gadgets, power, audio, and the organizers that 
 - **[Flipper Zero](https://www.amazon.com/s?k=Flipper+Zero&tag=homeforge0a-20)** ⭐ — Bench-tested — mine runs Momentum firmware. A pocket multi-tool for RF, NFC, IR, and GPIO. The most fun thing in the bag. _( $$ )_
 - **[LOCHBY Tool Roll](https://www.lochby.com/)** — Waxed-canvas roll that keeps your bits, cables, and small tools organized and rugged. The grown-up alternative to a ziplock bag. _( $$ )_
 - **[iFixit Precision Bit Driver](https://www.amazon.com/s?k=iFixit+precision+bit+driver+set&tag=homeforge0a-20)** — The kit that opens every phone, console, and gadget. If you mod hardware, this lives in the bag. _( $ )_
-- **[Leatherman Multitool](https://www.amazon.com/s?k=Leatherman+multitool&tag=homeforge0a-20)** — Pliers, drivers, blade, and more in your pocket. Buy once, carry for a decade. _( $$ )_
+- **[Gerber Dual-Force Multitool](https://www.amazon.com/s?k=Gerber+Dual-Force+multitool&tag=homeforge0a-20)** — Bench-tested — the multitool I carry. One-thumb sliding pliers with serious clamping force, plus drivers, blade, and more. _( $$ )_
+- **[Clip & Carry Kydex Sheath (Dual-Force)](https://www.amazon.com/s?k=Clip+Carry+Kydex+sheath+Gerber+Dual-Force&tag=homeforge0a-20)** — Bench-tested. US-made Kydex holster that carries the Dual-Force on your belt, so the tool is actually on you when you need it. _( $ )_
+- **[Nite Ize Clip Pock-Its XL](https://www.amazon.com/s?k=Nite+Ize+Clip+Pock-Its+XL&tag=homeforge0a-20)** — Bench-tested. Clip-on utility holster with pockets for a multitool, pen, and small gear — keeps the loose stuff together. _( $ )_
+- **[EDC Ratchet Wrench (multitool bit adapter)](https://www.amazon.com/s?k=711L+EDC+ratchet+wrench+multitool+flat+bit&tag=homeforge0a-20)** — Bench-tested. A tiny ratchet that snaps onto a multitool's flat bit driver — turns it into a real ratcheting screwdriver. _( $ )_
 
 ### Power & Cables
 
