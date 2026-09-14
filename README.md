@@ -2,7 +2,7 @@
 
 > Own your home, your servers, and your AI — curated by someone who runs it.
 
-![Stars](https://img.shields.io/github/stars/estivonponcho/homeforge?style=flat-square) ![License](https://img.shields.io/badge/list-CC--BY--4.0-blue?style=flat-square) ![Picks](https://img.shields.io/badge/curated%20picks-100-brightgreen?style=flat-square) ![Updated](https://img.shields.io/badge/updated-2026--09--13-informational?style=flat-square)
+![Stars](https://img.shields.io/github/stars/estivonponcho/homeforge?style=flat-square) ![License](https://img.shields.io/badge/list-CC--BY--4.0-blue?style=flat-square) ![Picks](https://img.shields.io/badge/curated%20picks-103-brightgreen?style=flat-square) ![Updated](https://img.shields.io/badge/updated-2026--09--13-informational?style=flat-square)
 
 A hand-picked kit for the overlapping worlds of the smart home, the homelab, the 3D-printing bench, and running your own AI. No scraped catalogs, no filler — every item here is something worth owning, with an honest one-line take on why.
 
@@ -76,7 +76,10 @@ _Local-first home automation. Bias toward Home Assistant, Zigbee/Thread/Matter, 
 ### Switches, Plugs & Power
 
 - **[Shelly Plus 1PM](https://www.amazon.com/s?k=Shelly+Plus+1PM&tag=homeforge0a-20)** ⭐ — Relay + power metering that hides behind an existing switch. Local API, ESPHome-flashable, MQTT — the enthusiast favorite. _( $ )_
-- **[ThirdReality Zigbee Smart Plug](https://www.amazon.com/s?k=ThirdReality+Zigbee+Smart+Plug&tag=homeforge0a-20)** — Compact Zigbee plugs with power monitoring at a price that lets you buy a ten-pack. _( $ )_
+- **[ThirdReality Zigbee Smart Plug](https://www.amazon.com/s?k=ThirdReality+Zigbee+smart+plug&tag=homeforge0a-20)** — Compact Zigbee plug with power monitoring at a price that lets you buy a ten-pack. Doubles as a Zigbee repeater. _( $ )_
+- **[Aqara Smart Plug (Zigbee)](https://www.amazon.com/s?k=Aqara+Smart+Plug+zigbee&tag=homeforge0a-20)** — Zigbee plug with energy monitoring that also acts as a Zigbee router to extend your mesh. Rock-solid in Home Assistant. _( $ )_
+- **[Sonoff S60 Zigbee Smart Plug](https://www.amazon.com/s?k=Sonoff+S60+Zigbee+smart+plug&tag=homeforge0a-20)** — Cheap, reliable Zigbee plug with power metering. Pairs instantly with any Zigbee coordinator (ZHA/Z2M). _( $ )_
+- **[Eve Energy (Thread + Matter)](https://www.amazon.com/s?k=Eve+Energy+Thread+Matter+smart+plug&tag=homeforge0a-20)** — Thread + Matter plug with energy monitoring and no cloud or Wi-Fi — the closest thing to a set-and-forget local Matter plug. _( $$ )_
 - **[Emporia Vue Energy Monitor](https://www.amazon.com/s?k=Emporia+Vue+Energy+Monitor&tag=homeforge0a-20)** — Whole-panel, per-circuit energy monitoring for a fraction of the utility's price. Feeds beautifully into HA dashboards. _( $$ )_
 
 ### Lighting
