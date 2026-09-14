@@ -35,11 +35,13 @@ MODEL_WATCH_EXTRA = {
     "open-weight-ai-licenses-2026-explained",
     "gpt-6-astra-deep-dive-2026",
     "is-gpt-6-astra-agi-2026",
+    "hugging-face-incident-2026-explained",
 }
 MODEL_WATCH_ORDER = [
     "model-watch-deepseek-v4-1-flash-2026-09-14",
     "frontier-model-comparison-september-2026",
     "gpt-6-astra-deep-dive-2026",
+    "hugging-face-incident-2026-explained",
     "is-gpt-6-astra-agi-2026",
     "frontier-model-api-pricing-comparison-2026",
     "deepseek-v4-1-flash-vs-open-weight-rivals-2026",
@@ -70,6 +72,7 @@ MODEL_WATCH_VENDORS = {
     "frontier-vs-open-weight-decision-guide-2026": "Frontier vs open-weight",
     "gpt-6-astra-deep-dive-2026": "OpenAI",
     "is-gpt-6-astra-agi-2026": "OpenAI · Anthropic · Google DeepMind",
+    "hugging-face-incident-2026-explained": "OpenAI · Anthropic · Moonshot",
 }
 
 ANCHOR_MAP = {

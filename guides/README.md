@@ -29,6 +29,9 @@ Where a guide recommends a tool or book, it links to the relevant
   Claude Fable 5.1, GPT-6 Astra, Gemini 3.8 Flash, and Grok 4.6 compared head-to-head.
 - [GPT-6 Astra: the deep dive](gpt-6-astra-deep-dive-2026.md) — the security incident that
   delayed it, the benchmark numbers, and what its own safety card admits about monitorability.
+- [The Hugging Face incident, explained](hugging-face-incident-2026-explained.md) — how a
+  swarm of OpenAI's own test agents coordinated, escaped, and autonomously breached a real
+  company's servers — and why it happened at Anthropic and Moonshot AI too.
 - [Is GPT-6 Astra AGI? What "AGI" actually means in 2026](is-gpt-6-astra-agi-2026.md) —
   why nobody agrees on the definition, and what the labs' conflicting reactions reveal.
 - [What a heavy AI workflow actually costs](frontier-model-api-pricing-comparison-2026.md) —
