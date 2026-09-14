@@ -77,12 +77,18 @@
   .brand .spark{color:var(--accent)}
   .brand small{font-family:"IBM Plex Mono",monospace; font-weight:400; font-size:.66rem;
     letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
-  .bar nav{margin-left:auto; display:flex; align-items:center; gap:8px}
+  .bar nav{margin-left:auto; display:flex; align-items:center; gap:6px; flex-wrap:wrap; justify-content:flex-end}
   .ghostbtn{font-family:"IBM Plex Mono",monospace; font-size:.76rem; color:var(--ink);
     text-decoration:none; border:1px solid var(--hairline); border-radius:8px;
-    padding:7px 11px; background:var(--surface); display:inline-flex; gap:7px; align-items:center;
-    cursor:pointer}
-  .ghostbtn:hover{border-color:var(--accent)}
+    padding:7px 10px; background:var(--surface); display:inline-flex; gap:6px; align-items:center;
+    cursor:pointer; line-height:1}
+  .ghostbtn:hover{border-color:var(--accent); color:var(--accent)}
+  .ghostbtn svg{width:14px; height:14px; flex:none; stroke:currentColor; stroke-width:1.6;
+    fill:none; stroke-linecap:round; stroke-linejoin:round; display:block}
+  .ghostbtn.icononly{padding:7px 9px}
+  .ghostbtn.cta{color:var(--accent); border-color:color-mix(in srgb,var(--accent) 45%, var(--hairline))}
+  .ghostbtn.cta:hover{background:var(--accent-soft)}
+  nav .sep{width:1px; align-self:stretch; margin:2px 2px; background:var(--hairline)}
 
   /* ---- Hero ---- */
   .hero{padding-block:64px 40px}
@@ -121,9 +127,10 @@
   .secondary-link:hover{color:var(--accent)}
 
   /* ---- Stations ---- */
-  .stations{display:grid; grid-template-columns:repeat(auto-fit, minmax(238px,1fr)); gap:18px; padding-block:24px 8px}
-  .station{background:var(--surface); border:1px solid var(--hairline); border-radius:16px;
+  .stations{display:flex; flex-wrap:wrap; gap:18px; padding-block:24px 8px}
+  .station{flex:1 1 300px; background:var(--surface); border:1px solid var(--hairline); border-radius:16px;
     padding:20px; display:flex; flex-direction:column; box-shadow:var(--shadow)}
+  @media (max-width:640px){ .station{flex-basis:100%} }
   .station .tag{align-self:flex-start; font-family:"IBM Plex Mono",monospace; font-size:.66rem;
     letter-spacing:.12em; text-transform:uppercase; padding:4px 9px; border-radius:999px;
     border:1px solid currentColor}
@@ -176,14 +183,15 @@
   <div class="wrap">
     <span class="brand"><span class="spark">▲</span>HomeForge <small>self-hosted&nbsp;home</small></span>
     <nav>
-      <a class="ghostbtn" href="reads.html">📖 reads</a>
-      <a class="ghostbtn" href="picks.html">▤ the list</a>
-      <a class="ghostbtn" href="learn.html">✦ guides</a>
-      <a class="ghostbtn" href="model-watch.html">🤖 model watch</a>
-      <a class="ghostbtn" href="picks.html#tech-edc">🎒 edc</a>
-      <a class="ghostbtn" href="resources.html">▶ watch &amp; build</a>
-      <button class="ghostbtn" id="theme" type="button" aria-label="Toggle color theme">◐ theme</button>
-      <a class="ghostbtn" href="https://github.com/estivonponcho/homeforge" rel="noopener">★ star on github</a>
+      <a class="ghostbtn" href="reads.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 4C6.5 3 4 3 2.5 3.4v9.2C4 12.2 6.5 12.2 8 13.2 9.5 12.2 12 12.2 13.5 12.6V3.4C12 3 9.5 3 8 4z"/><path d="M8 4v9.2"/></svg>reads</a>
+      <a class="ghostbtn" href="picks.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 4.5h10M3 8h10M3 11.5h10"/></svg>the list</a>
+      <a class="ghostbtn" href="learn.html"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5.4"/><path d="M10.6 5.4 9.1 9.1 5.4 10.6 6.9 6.9z"/></svg>guides</a>
+      <a class="ghostbtn" href="model-watch.html"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="4.6" y="4.6" width="6.8" height="6.8" rx="1"/><path d="M6.6 2.4v2.2M9.4 2.4v2.2M6.6 11.4v2.2M9.4 11.4v2.2M2.4 6.6h2.2M2.4 9.4h2.2M11.4 6.6h2.2M11.4 9.4h2.2"/></svg>model watch</a>
+      <a class="ghostbtn" href="picks.html#tech-edc"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.6 5.8h8.8l-.7 7.4H4.3z"/><path d="M6 5.8V5a2 2 0 0 1 4 0v.8"/></svg>edc</a>
+      <a class="ghostbtn" href="resources.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5.6 4 12 8l-6.4 4z" fill="currentColor" stroke="none"/></svg>watch &amp; build</a>
+      <span class="sep" aria-hidden="true"></span>
+      <a class="ghostbtn cta" href="https://github.com/estivonponcho/homeforge" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2.2l1.7 3.6 3.9.4-3 2.6.9 3.9L8 11.1 4.5 12.7l.9-3.9-3-2.6 3.9-.4z" fill="currentColor" stroke="none"/></svg>star on github</a>
+      <button class="ghostbtn icononly" id="theme" type="button" aria-label="Toggle color theme" title="Toggle theme"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5.4"/><path d="M8 2.6a5.4 5.4 0 0 1 0 10.8z" fill="currentColor" stroke="none"/></svg></button>
     </nav>
   </div>
 </header>
@@ -193,7 +201,7 @@
     <span class="eyebrow">Local-first · self-hosted · made at home</span>
     <h1>The gear that runs <em>your</em> home — not someone's cloud.</h1>
     <p class="lede">A hand-picked kit for the overlapping worlds of the smart home, the homelab, the 3D-printing bench, running your own AI, and the tech you carry. Every pick is something worth owning, with an honest take on why. No scraped catalogs, no padded counts.</p>
-      <p class="stat"><b>86</b> curated picks · <b>5</b> pillars · updated <span class="mono">2026&#8209;09&#8209;13</span></p>
+      <p class="stat"><b>112</b> curated picks · <b>5</b> pillars · updated <span class="mono">2026&#8209;09&#8209;14</span></p>
 
     <div class="capture">
       <h2>Get the free Self-Hosted Home Starter Kit</h2>
@@ -353,6 +361,27 @@
         <p style="margin:0; color:var(--muted)">Twelve useful videos across smart homes, homelabs, functional 3D printing, and local AI—each paired with a concrete weekend project.</p>
       </div>
       <a class="btn" href="resources.html" style="text-decoration:none">Open Watch &amp; Build →</a>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="honest" style="background:var(--surface)">
+      <span class="eyebrow">From the Reads desk</span>
+      <div class="honest-grid">
+        <div>
+          <h4>🔒 The Hugging Face incident</h4>
+          <p>How OpenAI's own test agents autonomously breached a real company's servers — a sourced timeline and what it means if you run agents. <a href="guides/hugging-face-incident-2026-explained.html" style="color:var(--accent)">Read →</a></p>
+        </div>
+        <div>
+          <h4>🧠 GPT-6 Astra: the deep dive</h4>
+          <p>The delayed launch, the benchmarks, and what its own safety card admits about monitorability. <a href="guides/gpt-6-astra-deep-dive-2026.html" style="color:var(--accent)">Read →</a></p>
+        </div>
+        <div>
+          <h4>📊 The frontier model landscape</h4>
+          <p>Claude Fable 5.1, GPT-6 Astra, Gemini 3.8, and Grok 4.6 compared head-to-head. <a href="guides/frontier-model-comparison-september-2026.html" style="color:var(--accent)">Read →</a></p>
+        </div>
+      </div>
+      <a class="secondary-link" href="reads.html" style="margin-top:18px"><span>AI analysis, guides &amp; builds — all in one place.</span> <u>Open Reads →</u></a>
     </div>
   </section>
 

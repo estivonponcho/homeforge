@@ -480,44 +480,100 @@ FEATURED_READS = [
     "esp-thermal-printer",
 ]
 
+# Reads taxonomy: slug -> (section, topic tag). Unmapped pages fall back by type.
+READ_SECTION_ORDER = [
+    "AI News & Analysis",
+    "Model Releases & Comparisons",
+    "AI Explainers",
+    "Using AI",
+    "Buying Guides",
+    "How-To Guides",
+    "Builds",
+]
+READ_META = {
+    "hugging-face-incident-2026-explained": ("AI News & Analysis", "Security"),
+    "gpt-6-astra-deep-dive-2026": ("AI News & Analysis", "OpenAI"),
+    "is-gpt-6-astra-agi-2026": ("AI News & Analysis", "AGI debate"),
+    "model-watch-deepseek-v4-1-flash-2026-09-14": ("Model Releases & Comparisons", "DeepSeek"),
+    "deepseek-v4-1-flash-vs-open-weight-rivals-2026": ("Model Releases & Comparisons", "Open-weight"),
+    "frontier-model-comparison-september-2026": ("Model Releases & Comparisons", "Frontier"),
+    "frontier-model-api-pricing-comparison-2026": ("Model Releases & Comparisons", "Pricing"),
+    "frontier-vs-open-weight-decision-guide-2026": ("Model Releases & Comparisons", "Decision guide"),
+    "how-2026-open-weight-models-actually-work": ("AI Explainers", "Explainer"),
+    "what-it-takes-to-self-host-a-2026-open-weight-model": ("AI Explainers", "Self-hosting"),
+    "open-weight-ai-licenses-2026-explained": ("AI Explainers", "Licensing"),
+    "managing-claude-and-chatgpt": ("Using AI", "Claude & ChatGPT"),
+    "prompting-patterns": ("Using AI", "Prompting"),
+    "best-way-to-run-a-local-llm": ("Using AI", "Local LLMs"),
+    "best-zigbee-presence-sensors-home-assistant": ("Buying Guides", "Smart home"),
+    "best-smart-plugs-home-assistant": ("Buying Guides", "Smart home"),
+    "best-mini-pc-for-a-homelab": ("Buying Guides", "Homelab"),
+    "best-beginner-3d-printer": ("Buying Guides", "3D printing"),
+    "dry-and-store-3d-printing-filament": ("How-To Guides", "3D printing"),
+    "esphome-appliance-retrofits": ("How-To Guides", "Smart home"),
+    "esp-thermal-printer": ("Builds", "ESP"),
+    "esp32-oled-weather-display": ("Builds", "ESP"),
+    "quadra-homelab-node": ("Builds", "Homelab"),
+    "flipper-and-hardware-hacking": ("Builds", "Hardware"),
+}
+
+
+def _read_meta(p):
+    if p["slug"] in READ_META:
+        return READ_META[p["slug"]]
+    if p.get("model_watch"):
+        return ("Model Releases & Comparisons", MODEL_WATCH_VENDORS.get(p["slug"], "Model Watch"))
+    if p["folder"] == "projects":
+        return ("Builds", "Build")
+    return ("How-To Guides", "Guide")
+
+
+def _read_kind(p):
+    if p.get("model_watch"):
+        return "Analysis"
+    return "Build" if p["folder"] == "projects" else "Guide"
+
 
 def build_reads(guides, projects):
-    """Top-level editorial hub: featured long-form up top, then analysis, then guides/builds."""
+    """Top-level editorial hub: featured up top, then everything grouped by category with topic tags."""
+    from collections import OrderedDict
     bymap = {p["slug"]: p for p in (guides + projects)}
 
-    def kind_of(p):
-        if p.get("model_watch"):
-            return "Analysis"
-        return "Build" if p["folder"] == "projects" else "Guide"
-
     def card(p, feat=False):
+        _, tag = _read_meta(p)
+        kind = _read_kind(p)
         style = ' style="border-color:var(--accent)"' if feat else ""
-        tag = ("&#11088; Featured &middot; " + kind_of(p)) if feat else kind_of(p)
-        return (f'<a class="card" href="{p["url"]}"{style}><span class="tag">{tag}</span>'
+        kindlabel = ("&#11088; Featured &middot; " + kind) if feat else kind
+        vtag = f'<span class="tag vtag">{_html.escape(tag)}</span>' if tag else ""
+        return (f'<a class="card" href="{p["url"]}"{style}><span class="tag">{kindlabel}</span>{vtag}'
                 f'<h3>{_html.escape(p["title"])}</h3><p>{_html.escape(p["desc"])}</p></a>')
 
     featured = [bymap[s] for s in FEATURED_READS if s in bymap]
     fslugs = {p["slug"] for p in featured}
-    analysis = [p for p in guides if p.get("model_watch") and p["slug"] not in fslugs]
-    howtos = ([p for p in guides if not p.get("model_watch") and p["slug"] not in fslugs]
-              + [p for p in projects if p["slug"] not in fslugs])
+
+    sections = OrderedDict((s, []) for s in READ_SECTION_ORDER)
+    for p in (guides + projects):
+        if p["slug"] in fslugs:
+            continue
+        sec, _tag = _read_meta(p)
+        sections.setdefault(sec, []).append(p)
 
     body = ['<div class="article" style="max-width:none"><p class="crumb"><a href="index.html">HomeForge</a> / Reads</p>',
             '<span class="eyebrow">Long-form &amp; analysis</span>',
             "<h1>Reads</h1>",
-            '<p class="lede">The deep end of HomeForge: AI news and analysis, honest model breakdowns, and real build write-ups. Start with the featured pieces, then dig in.</p>']
+            '<p class="lede">The deep end of HomeForge: AI news and analysis, honest model breakdowns, buying guides, and real build write-ups — organized so you can find what you came for.</p>']
     if featured:
+        body.append('<h2>Featured</h2>')
         body.append('<div class="cards">' + "".join(card(p, True) for p in featured) + "</div>")
-    if analysis:
-        body.append('<h2 style="margin-top:40px">AI news &amp; analysis</h2>')
-        body.append('<div class="cards">' + "".join(card(p) for p in analysis) + "</div>")
-    if howtos:
-        body.append('<h2 style="margin-top:40px">Guides &amp; builds</h2>')
-        body.append('<div class="cards">' + "".join(card(p) for p in howtos) + "</div>")
+    for sec, items in sections.items():
+        if not items:
+            continue
+        body.append(f'<h2 style="margin-top:40px">{_html.escape(sec)}</h2>')
+        body.append('<div class="cards">' + "".join(card(p) for p in items) + "</div>")
     body.append('<hr><a class="cta" href="picks.html">Browse the gear list &rarr;</a></div>')
     (SITE / "reads.html").write_text(
         page("Reads — AI analysis, model breakdowns & builds — HomeForge",
-             "HomeForge's long-form: AI news and analysis, honest model breakdowns, and real hardware build write-ups.",
+             "HomeForge's long-form: AI news and analysis, honest model breakdowns, buying guides, and real hardware build write-ups, organized by category.",
              f"{SITE_URL}reads.html", "\n".join(body), root=""), encoding="utf-8")
 
 
