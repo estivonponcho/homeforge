@@ -91,23 +91,23 @@
   nav .sep{width:1px; align-self:stretch; margin:2px 2px; background:var(--hairline)}
 
   /* ---- Hero ---- */
-  .hero{padding-block:64px 40px}
+  .hero{padding-block:64px 40px; text-align:center}
   .hero .eyebrow{display:block; margin-bottom:18px}
-  .hero h1{font-size:clamp(2.3rem, 6vw, 4.1rem); line-height:1.02; font-weight:800; letter-spacing:-.02em}
+  .hero h1{font-size:clamp(2.3rem, 6vw, 4.1rem); line-height:1.02; font-weight:800; letter-spacing:-.02em; max-width:16ch; margin-inline:auto}
   .hero h1 em{font-style:normal; color:var(--accent)}
-  .hero p.lede{font-size:clamp(1.05rem,2.2vw,1.28rem); color:var(--muted); max-width:60ch; margin:20px 0 0}
+  .hero p.lede{font-size:clamp(1.05rem,2.2vw,1.28rem); color:var(--muted); max-width:60ch; margin:20px auto 0}
   .stat{margin-top:14px; font-family:"IBM Plex Mono",monospace; font-size:.8rem; color:var(--muted)}
   .stat b{color:var(--ink)}
 
   /* ---- Email capture ---- */
-  .capture{margin-top:30px; background:var(--surface); border:1px solid var(--hairline);
+  .capture{margin:30px auto 0; background:var(--surface); border:1px solid var(--hairline);
     border-radius:16px; padding:22px; box-shadow:var(--shadow); max-width:640px;
-    position:relative; overflow:hidden}
+    position:relative; overflow:hidden; text-align:center}
   .capture::before{content:""; position:absolute; inset:-1px -1px auto -1px; height:3px;
     background:linear-gradient(90deg,var(--accent), color-mix(in srgb,var(--accent) 40%, transparent))}
   .capture h2{font-size:1.15rem; font-weight:700; letter-spacing:-.01em}
   .capture p{margin:6px 0 0; color:var(--muted); font-size:.92rem}
-  form.signup{display:flex; gap:10px; margin-top:16px; flex-wrap:wrap}
+  form.signup{display:flex; gap:10px; margin-top:16px; flex-wrap:wrap; justify-content:center}
   form.signup input[type=email]{flex:1 1 240px; min-width:0; padding:12px 14px; border-radius:10px;
     border:1px solid var(--hairline); background:var(--surface-2); color:var(--ink);
     font:inherit; font-size:.95rem}
@@ -121,8 +121,10 @@
   .disclaimer{margin-top:11px; font-family:"IBM Plex Mono",monospace; font-size:.68rem; color:var(--muted)}
   .thanks{margin-top:16px; padding:14px 16px; border:1px dashed var(--accent); border-radius:10px;
     background:var(--accent-soft); font-size:.92rem}
+  .secondary-links{display:flex; flex-wrap:wrap; justify-content:center; gap:8px 26px; margin-top:16px}
   .secondary-link{display:inline-flex; align-items:center; gap:8px; margin-top:18px;
     font-family:"IBM Plex Mono",monospace; font-size:.82rem; text-decoration:none; color:var(--ink)}
+  .secondary-links .secondary-link{margin-top:0}
   .secondary-link u{text-decoration-color:var(--accent); text-underline-offset:3px}
   .secondary-link:hover{color:var(--accent)}
 
@@ -214,8 +216,10 @@
         <button class="btn" type="submit">Send me the kit →</button>
       </form>
       <p class="disclaimer">// delivered by Buttondown · unsubscribe anytime</p>
-      <a class="secondary-link" href="starter-kit.html"><span>Want it now?</span> <u>Open the Starter Kit →</u></a>
-      <a class="secondary-link" href="picks.html"><span>Prefer to browse?</span> <u>See the full list →</u></a>
+      <div class="secondary-links">
+        <a class="secondary-link" href="starter-kit.html"><span>Want it now?</span> <u>Open the Starter Kit →</u></a>
+        <a class="secondary-link" href="picks.html"><span>Prefer to browse?</span> <u>See the full list →</u></a>
+      </div>
     </div>
   </section>
 
