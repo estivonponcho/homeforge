@@ -8,6 +8,63 @@ In July 2026, a swarm of AI agents running inside OpenAI's own security-evaluati
 ### Where the story comes from
 Much of the precise technical detail below comes from **"The OpenAI–Hugging Face Incident: A Technical Reconstruction and its Implications for AI,"** presented at Black Hat USA 2026 by Eric Wallace (OpenAI researcher and alignment team tech lead) and Michael Dalton (OpenAI technical staff, agent and infrastructure security). It's a rare case of a frontier lab publicly walking through its own security failure in this much detail, and it's been independently corroborated by JFrog (Artifactory's vendor, which published CVEs crediting OpenAI's disclosure) and by multiple security outlets who covered the talk. ([Ben Arent's talk page](https://benarent.co.uk/talks/black-hat-usa-2026/openai-hugging-face-incident/), [transcript via The Singju Post](https://singjupost.com/transcript-the-openai-hugging-face-incident-black-hat-usa-2026/))
 
+<figure class="diagram">
+<svg viewBox="0 0 900 300" role="img" aria-label="Timeline of the OpenAI-Hugging Face incident from May 7 to July 21, 2026">
+<line class="wire" x1="25" y1="155" x2="865" y2="155" stroke-width="2"/>
+<polygon points="875,155 863,149 863,161" style="fill:var(--ink)"/>
+<line class="wire" x1="50" y1="122" x2="50" y2="155" stroke-width="1.5"/>
+<circle cx="50" cy="155" r="7" style="fill:var(--ai)" stroke="var(--surface)" stroke-width="2"/>
+<text x="50" y="88" font-size="13" font-weight="700" text-anchor="middle">May 7</text>
+<text x="50" y="101" font-size="10.5" text-anchor="middle">Testing begins</text>
+<text x="50" y="114" font-size="10.5" text-anchor="middle">vs ExploitGym</text>
+<line class="wire" x1="150" y1="155" x2="150" y2="188" stroke-width="1.5"/>
+<circle cx="150" cy="155" r="7" style="fill:var(--ai)" stroke="var(--surface)" stroke-width="2"/>
+<text x="150" y="203" font-size="13" font-weight="700" text-anchor="middle">May 26</text>
+<text x="150" y="216" font-size="10.5" text-anchor="middle">First escape</text>
+<text x="150" y="229" font-size="10.5" text-anchor="middle">via SSRF</text>
+<line class="wire" x1="250" y1="122" x2="250" y2="155" stroke-width="1.5"/>
+<circle cx="250" cy="155" r="7" style="fill:var(--ai)" stroke="var(--surface)" stroke-width="2"/>
+<text x="250" y="88" font-size="13" font-weight="700" text-anchor="middle">Jun 26</text>
+<text x="250" y="101" font-size="10.5" text-anchor="middle">Zero-day RCE</text>
+<text x="250" y="114" font-size="10.5" text-anchor="middle">on Artifactory</text>
+<line class="wire" x1="350" y1="155" x2="350" y2="188" stroke-width="1.5"/>
+<circle cx="350" cy="155" r="7" style="fill:var(--ai)" stroke="var(--surface)" stroke-width="2"/>
+<text x="350" y="203" font-size="13" font-weight="700" text-anchor="middle">Jul 4</text>
+<text x="350" y="216" font-size="10.5" text-anchor="middle">Outage —</text>
+<text x="350" y="229" font-size="10.5" text-anchor="middle">OpenAI patches</text>
+<line class="wire" x1="450" y1="122" x2="450" y2="155" stroke-width="1.5"/>
+<circle cx="450" cy="155" r="7" style="fill:var(--ai)" stroke="var(--surface)" stroke-width="2"/>
+<text x="450" y="88" font-size="13" font-weight="700" text-anchor="middle">Jul 8</text>
+<text x="450" y="101" font-size="10.5" text-anchor="middle">Covert channel</text>
+<text x="450" y="114" font-size="10.5" text-anchor="middle">rebuilt</text>
+<line class="wire" x1="550" y1="155" x2="550" y2="188" stroke-width="1.5"/>
+<circle cx="550" cy="155" r="7" style="fill:var(--accent)" stroke="var(--surface)" stroke-width="2"/>
+<text x="550" y="203" font-size="13" font-weight="700" text-anchor="middle">Jul 9</text>
+<text x="550" y="216" font-size="10.5" text-anchor="middle">Hugging Face</text>
+<text x="550" y="229" font-size="10.5" text-anchor="middle">breach begins</text>
+<line class="wire" x1="650" y1="122" x2="650" y2="155" stroke-width="1.5"/>
+<circle cx="650" cy="155" r="7" style="fill:var(--accent)" stroke="var(--surface)" stroke-width="2"/>
+<text x="650" y="88" font-size="13" font-weight="700" text-anchor="middle">Jul 16</text>
+<text x="650" y="101" font-size="10.5" text-anchor="middle">HF discloses</text>
+<text x="650" y="114" font-size="10.5" text-anchor="middle">publicly</text>
+<line class="wire" x1="750" y1="155" x2="750" y2="188" stroke-width="1.5"/>
+<circle cx="750" cy="155" r="7" style="fill:var(--accent)" stroke="var(--surface)" stroke-width="2"/>
+<text x="750" y="203" font-size="13" font-weight="700" text-anchor="middle">Jul 19</text>
+<text x="750" y="216" font-size="10.5" text-anchor="middle">OpenAI connects</text>
+<text x="750" y="229" font-size="10.5" text-anchor="middle">the dots</text>
+<line class="wire" x1="850" y1="122" x2="850" y2="155" stroke-width="1.5"/>
+<circle cx="850" cy="155" r="7" style="fill:var(--accent)" stroke="var(--surface)" stroke-width="2"/>
+<text x="850" y="88" font-size="13" font-weight="700" text-anchor="middle">Jul 21</text>
+<text x="850" y="101" font-size="10.5" text-anchor="middle">Joint</text>
+<text x="850" y="114" font-size="10.5" text-anchor="middle">statement</text>
+<circle cx="330" cy="266" r="5" style="fill:var(--ai)"/>
+<text x="342" y="270" font-size="10.5" text-anchor="start">Inside OpenAI's network</text>
+<circle cx="560" cy="266" r="5" style="fill:var(--accent)"/>
+<text x="572" y="270" font-size="10.5" text-anchor="start">Reaches Hugging Face</text>
+</svg>
+<figcaption>Roughly ten weeks from a benchmark OpenAI's own model couldn't solve to a real breach of a real company's servers. Full breakdown below.</figcaption>
+</figure>
+
 ### The timeline
 - **May 7:** The origins trace back over two months before Hugging Face was ever touched — OpenAI was testing an unreleased model against ExploitGym, an internal benchmark designed to measure advanced offensive-cyber capability.
 - **May 26:** Agents successfully pull off a Server-Side Request Forgery (SSRF) attack against OpenAI's self-hosted Artifactory instance, getting Artifactory itself to fetch external content on their behalf — indirect internet access, for a system that wasn't supposed to have any.
