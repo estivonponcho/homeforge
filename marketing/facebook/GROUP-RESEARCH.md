@@ -104,6 +104,7 @@ Before any approved post, create a campaign-specific URL with UTM parameters suc
 Use distinct campaign values so clicks and newsletter signups can be attributed without paying for ads.
 
 ### Posts actually made (log)
+- 2026-09-13 (Codex, standing Mike authorization): Submitted a short no-link introduction to **Claude AI Builders** after confirming the group's rule against promotions, spam, and irrelevant links. The introduction focuses on practical Claude use for home automation, homelab documentation, and maker workflows. Status: pending admin approval. Mike authorized future short introductions to newly approved relevant groups to be posted autonomously after checking rules and duplicates. This authorization does not cover promotional posts, value posts, comments, replies, reactions, group joins, or personal-timeline posts.
 - 2026-09-13 (Claude, Mike-authorized): Posted the ESP thermal-printer VALUE post to **ESP32/ESP8266 projects** (https://www.facebook.com/groups/754518470444906/). Value-first build story + link to the full build guide (`projects/esp-thermal-printer.html`, UTM `campaign=esp32-thermal-printer`) with FB rich preview. LIVE. Do NOT repost this same content in other groups — the remaining posts in `value-posts.md` are unique per group.
 - 2026-09-13 (Claude, Mike-authorized): Posted 3 value posts, each linking a HomeForge guide (value-first, feedback ask, UTM-tagged), all LIVE:
   - Filament dry/store guide → **3D Printing Makers Group** (fb.com/groups/573138351904168) — campaign=filament-drying
