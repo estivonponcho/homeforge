@@ -55,10 +55,30 @@ around single-GPU or Mac mini setups. Quantized GGUF community conversions repor
 exist for those determined to try, but expect a serious hardware and setup lift.
 
 ### My hands-on notes
-> [PLACEHOLDER — Mike to add hands-on notes before publishing]
+I haven't put V4.1 Flash through its paces myself yet — I want to be upfront about
+that rather than fake a test I haven't run. Everything above comes from vendor
+disclosures and third-party aggregator reporting, not my own keyboard time. Three
+things I'm specifically going to check before I trust it for anything real:
+
+- Whether the off-peak/peak pricing split actually plays nice with a scheduled
+  agent workflow, or whether "off-peak" ends up being an inconvenient window in
+  practice.
+- Whether the native-multimodal claim holds up on messy real-world images, not just
+  the benchmark sets DeepSeek picked.
+- How it actually behaves on a long agentic session at the top of that 1M-token
+  window — that's where a lot of "1M context" claims quietly fall apart.
+
+I'll update this section once I've actually run it.
 
 ### Bottom line
-> [PLACEHOLDER — Mike to add hands-on notes before publishing]
+Not a "wait and see" in the dismissive sense — the architecture change and the
+pricing are both genuinely interesting, and I'd rather flag something like this
+early than pretend I saw it coming after the fact. But I'm also not going to tell
+you to build on it today off the strength of DeepSeek's own numbers. My honest
+read: worth a personal trial run if you've got a cached, repetitive agentic
+workload where the price difference actually matters — not worth migrating
+anything production-critical to it until someone outside DeepSeek reproduces those
+benchmarks. I'll come back and firm this up once I've spent real time with it.
 
 ---
 

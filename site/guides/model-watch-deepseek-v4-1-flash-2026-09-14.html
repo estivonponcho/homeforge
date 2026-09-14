@@ -4,17 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DeepSeek V4.1 Flash — what actually changed, and whether you should care — HomeForge</title>
-<meta name="description" content="Own your home, your servers, and your AI — curated by someone who runs it.">
+<meta name="description" content="- Whether the off-peak/peak pricing split actually plays nice with a scheduled   agent workflow, or whether &quot;off-peak&quot; ends up being an inconvenient window">
 <link rel="canonical" href="https://estivonponcho.github.io/homeforge/guides/model-watch-deepseek-v4-1-flash-2026-09-14.html">
 <meta property="og:title" content="DeepSeek V4.1 Flash — what actually changed, and whether you should care — HomeForge">
-<meta property="og:description" content="Own your home, your servers, and your AI — curated by someone who runs it.">
+<meta property="og:description" content="- Whether the off-peak/peak pricing split actually plays nice with a scheduled   agent workflow, or whether &quot;off-peak&quot; ends up being an inconvenient window">
 <meta property="og:url" content="https://estivonponcho.github.io/homeforge/guides/model-watch-deepseek-v4-1-flash-2026-09-14.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="HomeForge">
 
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="../hf.css">
-<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "DeepSeek V4.1 Flash \u2014 what actually changed, and whether you should care", "description": "Own your home, your servers, and your AI \u2014 curated by someone who runs it.", "url": "https://estivonponcho.github.io/homeforge/guides/model-watch-deepseek-v4-1-flash-2026-09-14.html", "mainEntityOfPage": "https://estivonponcho.github.io/homeforge/guides/model-watch-deepseek-v4-1-flash-2026-09-14.html", "author": {"@type": "Person", "name": "Mike Cage"}, "publisher": {"@type": "Organization", "name": "HomeForge"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "HomeForge", "item": "https://estivonponcho.github.io/homeforge/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://estivonponcho.github.io/homeforge/learn.html"}, {"@type": "ListItem", "position": 3, "name": "DeepSeek V4.1 Flash \u2014 what actually changed, and whether you should care", "item": "https://estivonponcho.github.io/homeforge/guides/model-watch-deepseek-v4-1-flash-2026-09-14.html"}]}]</script>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "DeepSeek V4.1 Flash \u2014 what actually changed, and whether you should care", "description": "- Whether the off-peak/peak pricing split actually plays nice with a scheduled   agent workflow, or whether \"off-peak\" ends up being an inconvenient window", "url": "https://estivonponcho.github.io/homeforge/guides/model-watch-deepseek-v4-1-flash-2026-09-14.html", "mainEntityOfPage": "https://estivonponcho.github.io/homeforge/guides/model-watch-deepseek-v4-1-flash-2026-09-14.html", "author": {"@type": "Person", "name": "Mike Cage"}, "publisher": {"@type": "Organization", "name": "HomeForge"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "HomeForge", "item": "https://estivonponcho.github.io/homeforge/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://estivonponcho.github.io/homeforge/learn.html"}, {"@type": "ListItem", "position": 3, "name": "DeepSeek V4.1 Flash \u2014 what actually changed, and whether you should care", "item": "https://estivonponcho.github.io/homeforge/guides/model-watch-deepseek-v4-1-flash-2026-09-14.html"}]}]</script>
 <script data-goatcounter="https://homeforge.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -33,9 +33,11 @@
 <h3>Can you run it yourself?</h3>
 <p>Yes — weights are published on Hugging Face under an MIT license (DeepSeek says 48 shards), so it's fair game for self-hosting if you have the hardware. At ~552B total parameters this is not a homelab GPU job even with MoE sparsity; realistically this is a model you rent multi-GPU cloud time for, or use through an API provider like OpenRouter, rather than something that fits the <a href="../picks.html#ai">local-AI picks</a> built around single-GPU or Mac mini setups. Quantized GGUF community conversions reportedly exist for those determined to try, but expect a serious hardware and setup lift.</p>
 <h3>My hands-on notes</h3>
-<blockquote>[PLACEHOLDER — Mike to add hands-on notes before publishing]</blockquote>
+<p>I haven't put V4.1 Flash through its paces myself yet — I want to be upfront about that rather than fake a test I haven't run. Everything above comes from vendor disclosures and third-party aggregator reporting, not my own keyboard time. Three things I'm specifically going to check before I trust it for anything real:</p>
+<ul><li>Whether the off-peak/peak pricing split actually plays nice with a scheduled agent workflow, or whether "off-peak" ends up being an inconvenient window in practice.</li><li>Whether the native-multimodal claim holds up on messy real-world images, not just the benchmark sets DeepSeek picked.</li><li>How it actually behaves on a long agentic session at the top of that 1M-token window — that's where a lot of "1M context" claims quietly fall apart.</li></ul>
+<p>I'll update this section once I've actually run it.</p>
 <h3>Bottom line</h3>
-<blockquote>[PLACEHOLDER — Mike to add hands-on notes before publishing]</blockquote>
+<p>Not a "wait and see" in the dismissive sense — the architecture change and the pricing are both genuinely interesting, and I'd rather flag something like this early than pretend I saw it coming after the fact. But I'm also not going to tell you to build on it today off the strength of DeepSeek's own numbers. My honest read: worth a personal trial run if you've got a cached, repetitive agentic workload where the price difference actually matters — not worth migrating anything production-critical to it until someone outside DeepSeek reproduces those benchmarks. I'll come back and firm this up once I've spent real time with it.</p>
 <hr>
 <p><em>Gear &amp; tools referenced: <a href="../picks.html#ai">AI &amp; Local LLMs picks</a>.</em> <em>Part of <a href="../picks.html">HomeForge</a>.</em></p><hr><a class="cta" href="../starter-kit.html">Get the free Starter Kit &rarr;</a></div>
 </main>
