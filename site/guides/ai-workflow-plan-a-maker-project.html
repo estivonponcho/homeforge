@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>An AI workflow for planning a maker project without buying the wrong parts — HomeForge</title>
+<meta name="description" content="This workflow turns a rough build idea into a practical plan, a compatibility-checked parts list, and a definition of done. It works for ESP32 projects, Ra">
+<link rel="canonical" href="https://estivonponcho.github.io/homeforge/guides/ai-workflow-plan-a-maker-project.html">
+<meta property="og:title" content="An AI workflow for planning a maker project without buying the wrong parts — HomeForge">
+<meta property="og:description" content="This workflow turns a rough build idea into a practical plan, a compatibility-checked parts list, and a definition of done. It works for ESP32 projects, Ra">
+<meta property="og:url" content="https://estivonponcho.github.io/homeforge/guides/ai-workflow-plan-a-maker-project.html">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../hf.css">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "An AI workflow for planning a maker project without buying the wrong parts", "description": "This workflow turns a rough build idea into a practical plan, a compatibility-checked parts list, and a definition of done. It works for ESP32 projects, Ra", "url": "https://estivonponcho.github.io/homeforge/guides/ai-workflow-plan-a-maker-project.html", "mainEntityOfPage": "https://estivonponcho.github.io/homeforge/guides/ai-workflow-plan-a-maker-project.html", "author": {"@type": "Person", "name": "Mike Cage"}, "publisher": {"@type": "Organization", "name": "HomeForge"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "HomeForge", "item": "https://estivonponcho.github.io/homeforge/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://estivonponcho.github.io/homeforge/learn.html"}, {"@type": "ListItem", "position": 3, "name": "An AI workflow for planning a maker project without buying the wrong parts", "item": "https://estivonponcho.github.io/homeforge/guides/ai-workflow-plan-a-maker-project.html"}]}]</script>
+<script data-goatcounter="https://homeforge.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<header><div class="wrap bar"><a class="brand" href="../index.html"><span>&#9650;</span> HomeForge</a><nav class="nav"><a href="../index.html">Home</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="../resources.html">Watch &amp; build</a><a href="../starter-kit.html">Starter kit</a></nav></div></header>
+<main class="wrap">
+<div class="article"><p class="crumb"><a href="../index.html">HomeForge</a> / <a href="../learn.html">Guides</a></p><h1>An AI workflow for planning a maker project without buying the wrong parts</h1>
+<p>This workflow turns a rough build idea into a practical plan, a compatibility-checked parts list, and a definition of done. It works for ESP32 projects, Raspberry Pi builds, Home Assistant devices, and small homelab upgrades.</p>
+<p>The important part is not asking AI to invent the whole project. Give it your real constraints, make it expose uncertainty, and verify every hardware claim before money or voltage is involved.</p>
+<h2>What you need before prompting</h2>
+<p>Write down what is already true:</p>
+<ul><li>The outcome you want in one sentence.</li><li>Hardware you already own.</li><li>Your budget and deadline.</li><li>Required protocols, voltages, ports, and software.</li><li>Things you refuse to depend on, such as a cloud account or Wi-Fi.</li><li>How you will know the build works.</li></ul>
+<p>A photo, model number, manual, or existing configuration is more useful than a long description from memory.</p>
+<h2>Step 1: turn the idea into a build brief</h2>
+<p>Use this prompt:</p>
+<pre><code>Act as a cautious maker-project planner.
+
+Goal:
+[Describe the finished result in one sentence.]
+
+What I already own:
+[List exact models and quantities.]
+
+Constraints:
+[Budget, protocols, dimensions, power, local-only requirements, deadline.]
+
+Produce:
+1. A short definition of done.
+2. The smallest viable version of the project.
+3. A block diagram showing the major components and connections.
+4. A list of assumptions and unknowns that must be verified.
+5. Three likely failure points.
+
+Do not recommend products yet. Do not invent specifications. Mark anything that
+requires a datasheet or live source as VERIFY.</code></pre>
+<p>This separates the design problem from shopping. It also reveals whether the first version can be much smaller than the idea in your head.</p>
+<h2>Step 2: build a compatibility matrix</h2>
+<p>Now provide manuals, product pages, or datasheet excerpts for the components under consideration.</p>
+<pre><code>Using only the supplied source material, create a compatibility matrix.
+
+For every connection, show:
+- Source component and port or pin
+- Destination component and port or pin
+- Voltage and current requirements
+- Protocol or signal type
+- Evidence from the supplied source
+- Status: compatible, incompatible, or unverified
+
+If the sources do not establish compatibility, say unverified. Do not infer that
+matching connector shapes mean matching voltage, polarity, or protocol.</code></pre>
+<p>Do not buy anything while an essential row is marked unverified.</p>
+<h2>Step 3: create the shopping list</h2>
+<p>Once the matrix is clean, ask for three groups:</p>
+<ol><li>Required parts.</li><li>Parts you already own.</li><li>Optional upgrades that can wait.</li></ol>
+<p>Require an explanation for every item. A part that cannot be tied to a step in the plan does not belong in the cart.</p>
+<p>For HomeForge examples, browse the <a href="../picks.html">curated parts list</a> after the design is settled, not before.</p>
+<h2>Step 4: make the build testable</h2>
+<p>Ask the model to convert the plan into checkpoints:</p>
+<pre><code>Turn this plan into independently testable stages. Each stage must include:
+- The smallest assembly or configuration change
+- A test with a clear pass condition
+- The evidence I should save
+- A rollback step
+- What not to connect or change yet</code></pre>
+<p>For an ESP project, the first checkpoint might only prove that the board boots and joins the network. For a homelab change, it might confirm the backup before any upgrade begins.</p>
+<h2>Step 5: keep a tiny decision log</h2>
+<p>After each session, record:</p>
+<ul><li>What changed.</li><li>What passed or failed.</li><li>What you measured.</li><li>What you decided and why.</li><li>The next smallest test.</li></ul>
+<p>Feed that log into the next prompt. This prevents the model from rebuilding its understanding from scattered chat messages.</p>
+<h2>Human checks that stay mandatory</h2>
+<ul><li>Confirm voltage, polarity, current, and pin assignments from authoritative documentation.</li><li>Back up configurations before changing them.</li><li>Remove passwords, API keys, addresses, and device identifiers before sharing logs.</li><li>Stop if the plan touches mains voltage, life-safety equipment, batteries without protection, or anything outside your experience.</li><li>Treat product availability and prices as live information that must be checked again.</li></ul>
+<p>The useful outcome is not a clever prompt. It is a smaller first build, fewer incompatible purchases, and a record you can turn into a real project guide later.</p>
+<p><em>Related: <a href="prompting-patterns.html">Prompting patterns that actually work</a> and the <a href="../projects/esp-thermal-printer.html">ESP thermal-printer build</a>.</em></p><hr><a class="cta" href="../starter-kit.html">Get the free Starter Kit &rarr;</a></div>
+</main>
+<footer><div class="wrap">HomeForge is reader-supported; some links are affiliate links (no extra cost to you).<div class="fl"><a href="../index.html">Home</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="https://github.com/estivonponcho/homeforge/blob/main/AFFILIATE-DISCLOSURE.md">Disclosure</a><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></div></div></footer>
+</body>
+</html>

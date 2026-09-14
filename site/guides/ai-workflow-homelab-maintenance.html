@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>An AI workflow for safer homelab maintenance and change planning — HomeForge</title>
+<meta name="description" content="A homelab usually breaks during a reasonable change made with incomplete context. This workflow uses AI to assemble the context, expose dependencies, prepa">
+<link rel="canonical" href="https://estivonponcho.github.io/homeforge/guides/ai-workflow-homelab-maintenance.html">
+<meta property="og:title" content="An AI workflow for safer homelab maintenance and change planning — HomeForge">
+<meta property="og:description" content="A homelab usually breaks during a reasonable change made with incomplete context. This workflow uses AI to assemble the context, expose dependencies, prepa">
+<meta property="og:url" content="https://estivonponcho.github.io/homeforge/guides/ai-workflow-homelab-maintenance.html">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../hf.css">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "An AI workflow for safer homelab maintenance and change planning", "description": "A homelab usually breaks during a reasonable change made with incomplete context. This workflow uses AI to assemble the context, expose dependencies, prepa", "url": "https://estivonponcho.github.io/homeforge/guides/ai-workflow-homelab-maintenance.html", "mainEntityOfPage": "https://estivonponcho.github.io/homeforge/guides/ai-workflow-homelab-maintenance.html", "author": {"@type": "Person", "name": "Mike Cage"}, "publisher": {"@type": "Organization", "name": "HomeForge"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "HomeForge", "item": "https://estivonponcho.github.io/homeforge/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://estivonponcho.github.io/homeforge/learn.html"}, {"@type": "ListItem", "position": 3, "name": "An AI workflow for safer homelab maintenance and change planning", "item": "https://estivonponcho.github.io/homeforge/guides/ai-workflow-homelab-maintenance.html"}]}]</script>
+<script data-goatcounter="https://homeforge.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<header><div class="wrap bar"><a class="brand" href="../index.html"><span>&#9650;</span> HomeForge</a><nav class="nav"><a href="../index.html">Home</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="../resources.html">Watch &amp; build</a><a href="../starter-kit.html">Starter kit</a></nav></div></header>
+<main class="wrap">
+<div class="article"><p class="crumb"><a href="../index.html">HomeForge</a> / <a href="../learn.html">Guides</a></p><h1>An AI workflow for safer homelab maintenance and change planning</h1>
+<p>A homelab usually breaks during a reasonable change made with incomplete context. This workflow uses AI to assemble the context, expose dependencies, prepare a rollback, and turn the result into a reusable runbook.</p>
+<p>Use it for upgrades, container migrations, storage changes, reverse-proxy edits, and moving a service between machines.</p>
+<h2>Build a service card first</h2>
+<p>Create a compact record for the service you plan to touch:</p>
+<div class="tablewrap"><table><thead><tr><th>Field</th><th>Example</th></tr></thead><tbody><tr><td>Service</td><td>AdGuard Home</td></tr><tr><td>Host</td><td>Low-power ARM utility node</td></tr><tr><td>Runtime</td><td>Container or system service</td></tr><tr><td>Data</td><td>Configuration directory and local database</td></tr><tr><td>Network</td><td>IP, ports, DNS role, proxy dependencies</td></tr><tr><td>Dependents</td><td>Router, clients, monitoring</td></tr><tr><td>Backup</td><td>Location, date, and restore test</td></tr><tr><td>Recovery access</td><td>Local console, SSH, or alternate DNS</td></tr></tbody></table></div>
+<p>Do not send passwords, private keys, tokens, or public IP addresses to the model. Replace them with labels such as <code>[REDACTED_TOKEN]</code>.</p>
+<h2>Ask for dependency discovery</h2>
+<pre><code>Act as a conservative homelab change reviewer.
+
+Change goal:
+[Describe one change.]
+
+Current service card:
+[Paste the redacted card.]
+
+Relevant configuration and command output:
+&lt;evidence&gt;
+[Paste only the necessary excerpts.]
+&lt;/evidence&gt;
+
+Identify:
+1. Direct dependencies.
+2. Hidden dependencies I may have overlooked.
+3. What must be backed up.
+4. How I can retain recovery access.
+5. Checks that must pass before the change begins.
+
+Separate facts supported by the evidence from assumptions. Ask for missing
+evidence instead of inventing details.</code></pre>
+<p>The most important output is often the overlooked dependency, not the command sequence.</p>
+<h2>Generate a change plan with stop points</h2>
+<p>Once the inventory is correct, request a plan shaped like this:</p>
+<pre><code>Create a maintenance runbook with these sections:
+- Preconditions
+- Backup and restore verification
+- Commands or actions, one small step at a time
+- Validation after each step
+- Stop conditions
+- Rollback procedure
+- Final health checks
+
+Do not combine destructive and validation steps. Flag any command that deletes,
+overwrites, migrates, or recursively changes files. Do not assume the backup works
+unless the evidence includes a restore test.</code></pre>
+<p>Keep the generated plan as a draft until you verify commands against current documentation and your actual environment.</p>
+<h2>Use a three-window maintenance setup</h2>
+<p>Keep three things visible:</p>
+<ol><li>The runbook.</li><li>A terminal or management interface where you execute one step.</li><li>Monitoring or a simple health-check page.</li></ol>
+<p>Paste results back into the conversation after each checkpoint. If the output differs from the expected result, stop and update the plan before continuing.</p>
+<h2>Make rollback boring</h2>
+<p>A rollback should say exactly:</p>
+<ul><li>What condition triggers it.</li><li>Which service to stop.</li><li>Which file, snapshot, or container image to restore.</li><li>How to restore network access if DNS or routing fails.</li><li>How to confirm the old version is healthy.</li></ul>
+<p>“Restore from backup” is not a rollback plan unless the backup location and restoration procedure are known.</p>
+<h2>Finish with a change record</h2>
+<p>Ask for a compact summary based only on the session evidence:</p>
+<pre><code>Create a change record with: purpose, start state, actions taken, validation
+results, problems encountered, final state, rollback status, and follow-up work.
+If a fact is not present in the evidence, mark it unknown.</code></pre>
+<p>Save that record beside the service card. The next maintenance session starts with better context, and a future AI assistant does not have to reconstruct the system from scratch.</p>
+<h2>Where AI should stop</h2>
+<p>Keep human approval at commands that delete data, change firewall or routing rules, rotate credentials, modify storage layouts, or affect services other people rely on. AI can prepare and review the work. Accountability stays with the operator.</p>
+<p><em>Related: <a href="../projects/quadra-homelab-node.html">The Quadra low-power homelab node</a> and the <a href="../picks.html#homelab">HomeForge homelab picks</a>.</em></p><hr><a class="cta" href="../starter-kit.html">Get the free Starter Kit &rarr;</a></div>
+</main>
+<footer><div class="wrap">HomeForge is reader-supported; some links are affiliate links (no extra cost to you).<div class="fl"><a href="../index.html">Home</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="https://github.com/estivonponcho/homeforge/blob/main/AFFILIATE-DISCLOSURE.md">Disclosure</a><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></div></div></footer>
+</body>
+</html>

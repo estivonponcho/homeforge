@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>An AI workflow for troubleshooting Home Assistant without exposing your secrets — HomeForge</title>
+<meta name="description" content="Home Assistant problems are easier to solve when you give an AI a clean symptom timeline, a small configuration excerpt, and evidence from the right logs. ">
+<link rel="canonical" href="https://estivonponcho.github.io/homeforge/guides/ai-workflow-troubleshoot-home-assistant.html">
+<meta property="og:title" content="An AI workflow for troubleshooting Home Assistant without exposing your secrets — HomeForge">
+<meta property="og:description" content="Home Assistant problems are easier to solve when you give an AI a clean symptom timeline, a small configuration excerpt, and evidence from the right logs. ">
+<meta property="og:url" content="https://estivonponcho.github.io/homeforge/guides/ai-workflow-troubleshoot-home-assistant.html">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../hf.css">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "An AI workflow for troubleshooting Home Assistant without exposing your secrets", "description": "Home Assistant problems are easier to solve when you give an AI a clean symptom timeline, a small configuration excerpt, and evidence from the right logs. ", "url": "https://estivonponcho.github.io/homeforge/guides/ai-workflow-troubleshoot-home-assistant.html", "mainEntityOfPage": "https://estivonponcho.github.io/homeforge/guides/ai-workflow-troubleshoot-home-assistant.html", "author": {"@type": "Person", "name": "Mike Cage"}, "publisher": {"@type": "Organization", "name": "HomeForge"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "HomeForge", "item": "https://estivonponcho.github.io/homeforge/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://estivonponcho.github.io/homeforge/learn.html"}, {"@type": "ListItem", "position": 3, "name": "An AI workflow for troubleshooting Home Assistant without exposing your secrets", "item": "https://estivonponcho.github.io/homeforge/guides/ai-workflow-troubleshoot-home-assistant.html"}]}]</script>
+<script data-goatcounter="https://homeforge.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<header><div class="wrap bar"><a class="brand" href="../index.html"><span>&#9650;</span> HomeForge</a><nav class="nav"><a href="../index.html">Home</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="../resources.html">Watch &amp; build</a><a href="../starter-kit.html">Starter kit</a></nav></div></header>
+<main class="wrap">
+<div class="article"><p class="crumb"><a href="../index.html">HomeForge</a> / <a href="../learn.html">Guides</a></p><h1>An AI workflow for troubleshooting Home Assistant without exposing your secrets</h1>
+<p>Home Assistant problems are easier to solve when you give an AI a clean symptom timeline, a small configuration excerpt, and evidence from the right logs. Dumping the entire installation into a chat usually adds noise and can expose information that never needed to leave your network.</p>
+<p>This workflow prepares a focused diagnostic packet, ranks likely causes, and tests one change at a time.</p>
+<h2>Start with a precise symptom</h2>
+<p>Replace “my automation is broken” with an observable statement:</p>
+<ul><li>What should happen?</li><li>What actually happens?</li><li>When did it last work?</li><li>What changed immediately before the failure?</li><li>Is the device unavailable, or is only the automation failing?</li><li>Can you reproduce it on demand?</li></ul>
+<p>Example: “The hallway light turns on from the dashboard, but the motion automation stopped triggering after I renamed the sensor entity.”</p>
+<h2>Collect the smallest useful packet</h2>
+<p>Gather only what applies:</p>
+<ul><li>The automation trace for one failed run.</li><li>The relevant YAML or visual-editor fields.</li><li>Exact entity IDs used by the trigger, conditions, and actions.</li><li>The device and integration names.</li><li>A short log excerpt around the failure time.</li><li>The before-and-after change, if known.</li></ul>
+<p>Redact external URLs, location data, camera images, access tokens, webhook IDs, Wi-Fi details, and any secret stored in configuration files.</p>
+<h2>Use a diagnostic prompt</h2>
+<pre><code>Act as a careful Home Assistant troubleshooting partner.
+
+Expected behavior:
+[What should happen.]
+
+Observed behavior:
+[What happens instead.]
+
+Recent change:
+[The last relevant change, or “unknown”.]
+
+Evidence:
+&lt;configuration&gt;
+[Relevant automation or integration excerpt.]
+&lt;/configuration&gt;
+&lt;trace_or_log&gt;
+[Small trace or log excerpt.]
+&lt;/trace_or_log&gt;
+
+Return:
+1. Facts directly supported by the evidence.
+2. Up to three hypotheses ranked by likelihood.
+3. The single safest next test.
+4. The exact result that would confirm or reject that hypothesis.
+5. Any missing information needed before suggesting a configuration change.
+
+Do not invent entity IDs, services, integration behavior, or configuration keys.
+Do not propose multiple changes at once.</code></pre>
+<p>The request for one test matters. Five simultaneous changes can make the problem disappear without telling you which change fixed it.</p>
+<h2>Test from the bottom up</h2>
+<p>Use this order:</p>
+<ol><li>Confirm the physical device has power and network or mesh connectivity.</li><li>Confirm Home Assistant shows the correct entity state.</li><li>Trigger the device manually from Home Assistant.</li><li>Test the automation trigger.</li><li>Check conditions.</li><li>Test the action.</li><li>Run the complete automation.</li></ol>
+<p>If manual control fails, rewriting the automation is wasted effort. If the entity state never changes, debug the device or integration first.</p>
+<h2>Ask for a minimal patch</h2>
+<p>Once one cause is supported, request the smallest edit:</p>
+<pre><code>Propose the minimum change that addresses the confirmed cause.
+Show the original lines and replacement lines. Explain why each changed line is
+necessary. Include a rollback instruction and a test procedure. Do not modify
+unrelated names, formatting, or behavior.</code></pre>
+<p>Review the change before applying it. Check current Home Assistant documentation when a service, action, integration, or schema may have changed.</p>
+<h2>Turn the fix into prevention</h2>
+<p>After it works, ask the AI to produce a five-line incident note:</p>
+<ul><li>Symptom.</li><li>Root cause.</li><li>Evidence.</li><li>Fix.</li><li>Prevention.</li></ul>
+<p>Good prevention might be a clearer entity name, a backup before migration, a comment explaining a non-obvious condition, or an availability alert for the underlying device.</p>
+<h2>Never paste these into a model</h2>
+<ul><li>Long-lived access tokens.</li><li><code>secrets.yaml</code> contents.</li><li>Publicly reachable webhook URLs.</li><li>Alarm codes, door codes, precise presence history, or camera footage.</li><li>A full diagnostic download without reviewing and redacting it.</li></ul>
+<p>The goal is a repeatable troubleshooting method, not permission for the model to operate your home unsupervised.</p>
+<p><em>Related: <a href="best-zigbee-presence-sensors-home-assistant.html">Best Zigbee presence sensors for Home Assistant</a> and <a href="best-smart-plugs-home-assistant.html">smart plugs for local control</a>.</em></p><hr><a class="cta" href="../starter-kit.html">Get the free Starter Kit &rarr;</a></div>
+</main>
+<footer><div class="wrap">HomeForge is reader-supported; some links are affiliate links (no extra cost to you).<div class="fl"><a href="../index.html">Home</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="https://github.com/estivonponcho/homeforge/blob/main/AFFILIATE-DISCLOSURE.md">Disclosure</a><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></div></div></footer>
+</body>
+</html>

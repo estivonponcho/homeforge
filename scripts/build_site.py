@@ -266,7 +266,8 @@ def page(title, description, canonical, body, root="", jsonld=""):
 def first_para(md):
     for block in md.split("\n\n"):
         b = block.strip()
-        if b and not b.startswith("#") and not b.startswith(">") and not b.startswith("*"):
+        if (b and not b.startswith("#") and not b.startswith(">")
+                and not b.startswith("*") and not re.fullmatch(r"[-_]{3,}", b)):
             return re.sub(r"[\[\]*_`]", "", re.sub(r"\]\(([^)]+)\)", "", b)).replace("\n", " ")[:155]
     return DATA.get("tagline", "HomeForge")
 
