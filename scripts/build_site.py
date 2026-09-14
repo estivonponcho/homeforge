@@ -312,6 +312,7 @@ def page(title, description, canonical, body, root="", jsonld="", social_image="
 <title>{_html.escape(title)}</title>
 <meta name="description" content="{desc}">
 <link rel="canonical" href="{canonical}">
+<link rel="alternate" type="application/rss+xml" title="HomeForge" href="{SITE_URL}feed.xml">
 <meta property="og:title" content="{_html.escape(title)}">
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{canonical}">
@@ -588,6 +589,35 @@ def build_sitemap(guides, projects):
     (SITE / "sitemap.xml").write_text("\n".join(body) + "\n", encoding="utf-8")
 
 
+def build_feed(guides, projects):
+    items = []
+    for p in reversed(guides + projects):
+        title = _html.escape(p["title"])
+        desc = _html.escape(p["desc"])
+        url = f'{SITE_URL}{p["url"]}'
+        items.append(
+            "    <item>\n"
+            f"      <title>{title}</title>\n"
+            f"      <link>{url}</link>\n"
+            f"      <guid isPermaLink=\"true\">{url}</guid>\n"
+            f"      <description>{desc}</description>\n"
+            "    </item>"
+        )
+    body = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">',
+        "  <channel>",
+        "    <title>HomeForge</title>",
+        f"    <link>{SITE_URL}</link>",
+        "    <description>Practical smart-home, homelab, maker, and local-AI guides.</description>",
+        f'    <atom:link href="{SITE_URL}feed.xml" rel="self" type="application/rss+xml" />',
+        *items,
+        "  </channel>",
+        "</rss>",
+    ]
+    (SITE / "feed.xml").write_text("\n".join(body) + "\n", encoding="utf-8")
+
+
 def main():
     (SITE / "hf.css").write_text(CSS, encoding="utf-8")
     guides = build_md_pages("guides", "Guides")
@@ -599,8 +629,9 @@ def main():
     build_model_watch(model_watch)
     build_reads(guides, projects)
     build_sitemap(guides, projects)
+    build_feed(guides, projects)
     print(f"Built: reads.html, picks.html, learn.html, model-watch.html ({len(model_watch)} items), "
-          f"{len(learn_guides)} guides, {len(projects)} builds, hf.css, sitemap.xml")
+          f"{len(learn_guides)} guides, {len(projects)} builds, hf.css, sitemap.xml, feed.xml")
 
 
 if __name__ == "__main__":

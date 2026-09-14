@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HomeForge</title>
+    <link>https://estivonponcho.github.io/homeforge/</link>
+    <description>Practical smart-home, homelab, maker, and local-AI guides.</description>
+    <atom:link href="https://estivonponcho.github.io/homeforge/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Quadra: a 3-watt homelab node</title>
+      <link>https://estivonponcho.github.io/homeforge/projects/quadra-homelab-node.html</link>
+      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/projects/quadra-homelab-node.html</guid>
+      <description>Not every homelab job needs a power-hungry server. A huge amount of useful always-on work — DNS, ad-blocking, monitoring, a VPN exit — is happy on a tiny, </description>
+    </item>
+    <item>
+      <title>My practical Home Assistant setup: mixed brands, local sensors, and automations that help</title>
+      <link>https://estivonponcho.github.io/homeforge/projects/my-practical-home-assistant-setup.html</link>
+      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/projects/my-practical-home-assistant-setup.html</guid>
+      <description>My Home Assistant setup did not start as a perfectly planned system from one brand. It grew the way real homes grow: a light here, a sensor there, a camera</description>
+    </item>
+    <item>
+      <title>Flipper Zero &amp; hardware hacking</title>
+      <link>https://estivonponcho.github.io/homeforge/projects/flipper-and-hardware-hacking.html</link>
+      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/projects/flipper-and-hardware-hacking.html</guid>
+      <description>The Flipper Zero is a pocket multi-tool for RF, NFC, infrared, GPIO, and more. The stock firmware is fine; the community firmware is where it opens up.</description>
+    </item>
+    <item>
+      <title>ESP32 + OLED weather display: build guide</title>
+      <link>https://estivonponcho.github.io/homeforge/projects/esp32-oled-weather-display.html</link>
+      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/projects/esp32-oled-weather-display.html</guid>
+      <description>A tiny always-on desk display: an ESP32 driving a 0.96&quot; OLED that cycles through current conditions and a 5-day forecast, dims itself at night, and draws i</description>
+    </item>
+    <item>
+      <title>Wi-Fi thermal receipt printer: a full build guide</title>
+      <link>https://estivonponcho.github.io/homeforge/projects/esp-thermal-printer.html</link>
+      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/projects/esp-thermal-printer.html</guid>
+      <description>An ESP8266 that hosts a little web page on your network. Open it on your phone, type a message, hit send — and it prints on a thermal receipt printer, time</description>
+    </item>
+    <item>
+      <title>What it actually takes to self-host a 2026 open-weight model</title>
+      <link>https://estivonponcho.github.io/homeforge/guides/what-it-takes-to-self-host-a-2026-open-weight-model.html</link>
+      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/what-it-takes-to-self-host-a-2026-open-weight-model.html</guid>
+      <description>&quot;Open weight&quot; doesn&#x27;t mean &quot;runs on your GPU.&quot; Every model in this series — DeepSeek V4.1 Flash, DeepSeek V4 Pro, Kimi K3, GLM-5.3-Flash, and Qwen3.8-Max —</description>
+    </item>
+    <item>
+      <title>Prompting patterns that actually work</title>
+      <link>https://estivonponcho.github.io/homeforge/guides/prompting-patterns.html</link>
+      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/prompting-patterns.html</guid>
+      <description>The backbone of a good prompt has four parts:</description>
+    </item>
+    <item>
+      <title>Open-weight AI licenses in 2026: the fine print, actually explained</title>
+      <link>https://estivonponcho.github.io/homeforge/guides/open-weight-ai-licenses-2026-explained.html</link>
+      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/open-weight-ai-licenses-2026-explained.html</guid>
+      <description>&quot;Open weight&quot; tells you the download link works. It tells you nothing about what you&#x27;re allowed to do with what you download — and in 2026, the four bigges</description>
+    </item>
+    <item>
+      <title>DeepSeek V4.1 Flash — what actually changed, and whether you should care</title>
+      <link>https://estivonponcho.github.io/homeforge/guides/model-watch-deepseek-v4-1-flash-2026-09-14.html</link>
+      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/model-watch-deepseek-v4-1-flash-2026-09-14.html</guid>
+      <description>DeepSeek&#x27;s newest release ships a genuinely new MoE architecture, native multimodal input, a 1M-token context window, and open MIT-licensed weights — with </description>
+    </item>
+    <item>
+      <title>Managing Claude &amp; ChatGPT: the practical guide</title>
+      <link>https://estivonponcho.github.io/homeforge/guides/managing-claude-and-chatgpt.html</link>
+      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/managing-claude-and-chatgpt.html</guid>
+      <description>An LLM has no memory of you and no access to your intent beyond the words in its context window. Everything good comes from controlling that context. Vague</description>
+    </item>
+    <item>
+      <title>Is GPT-6 Astra AGI? What &quot;AGI&quot; actually means in 2026</title>
+      <link>https://estivonponcho.github.io/homeforge/guides/is-gpt-6-astra-agi-2026.html</link>
+      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/is-gpt-6-astra-agi-2026.html</guid>
+      <description>OpenAI president Greg Brockman said GPT-6 Astra means &quot;it&#x27;s not unreasonable to feel that we are now in the AGI era.&quot; OpenAI&#x27;s own CEO, Sam Altman, has cal</description>
+    </item>
+    <item>
+      <title>The Hugging Face incident: how OpenAI&#x27;s own test agents autonomously breached a real company&#x27;s servers</title>
+      <link>https://estivonponcho.github.io/homeforge/guides/hugging-face-incident-2026-explained.html</link>
+      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/hugging-face-incident-2026-explained.html</guid>
+      <description>In July 2026, a swarm of AI agents running inside OpenAI&#x27;s own security-evaluation environment found a way to coordinate with each other over weeks, escape</description>
+    </item>
+    <item>
+      <title>How 2026&#x27;s open-weight models actually work: MoE, linear attention, and why they all look alike now</title>
+      <link>https://estivonponcho.github.io/homeforge/guides/how-2026-open-weight-models-actually-work.html</link>
+      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/how-2026-open-weight-models-actually-work.html</guid>
+      <description>DeepSeek V4.1 Flash, Kimi K3, GLM-5.3-Flash, and Qwen3.8-Max all shipped within about eight weeks of each other, and they all converged on the same two ide</description>
+    </item>
+    <item>
+      <title>Home Assistant for beginners: what to buy and what to automate first (2026)</title>
+      <link>https://estivonponcho.github.io/homeforge/guides/home-assistant-beginners-guide.html</link>
+      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/home-assistant-beginners-guide.html</guid>
+      <description>Home Assistant can join devices from different brands into one useful home. You do not need to replace everything, learn YAML, or automate every room on da</description>
+    </item>
+    <item>
+      <title>GPT-6 Astra: the deep dive — specs, the security incident that delayed it, and what its own safety card admits</title>
+      <link>https://estivonponcho.github.io/homeforge/guides/gpt-6-astra-deep-dive-2026.html</link>
+      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/gpt-6-astra-deep-dive-2026.html</guid>
+      <description>GPT-6 Astra is OpenAI&#x27;s current flagship, and it shipped with two things bolted together that don&#x27;t usually appear in the same launch: benchmark scores its</description>
+    </item>
+    <item>
+      <title>Frontier vs. open-weight in 2026: which should you actually use</title>
+      <link>https://estivonponcho.github.io/homeforge/guides/frontier-vs-open-weight-decision-guide-2026.html</link>
+      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/frontier-vs-open-weight-decision-guide-2026.html</guid>
+      <description>By September 2026 there are two genuinely separate model markets: the closed frontier models (Claude, GPT, Gemini, Grok) and a fast-moving open-weight clas</description>
+    </item>
+    <item>
+      <title>The frontier AI model landscape (September 2026): Claude, GPT, Gemini, and Grok compared</title>
+      <link>https://estivonponcho.github.io/homeforge/guides/frontier-model-comparison-september-2026.html</link>
+      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/frontier-model-comparison-september-2026.html</guid>
+      <description>Four labs, four different bets, all reshuffled within about five weeks of each other: Grok 4.6 (Aug 12), Claude Fable 5.1 (Sept 1), Gemini 3.8 Flash (Sept </description>
+    </item>
+    <item>
+      <title>What a heavy AI workflow actually costs across Claude, GPT, Gemini, and Grok (2026)</title>
+      <link>https://estivonponcho.github.io/homeforge/guides/frontier-model-api-pricing-comparison-2026.html</link>
+      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/frontier-model-api-pricing-comparison-2026.html</guid>
+      <description>Sticker-price-per-million-tokens numbers are easy to find and easy to misread. The number that actually matters is what a real request costs once you facto</description>
+    </item>
+    <item>
+      <title>Make dumb (or cloud-locked) appliances local with ESPHome (2026)</title>
+      <link>https://estivonponcho.github.io/homeforge/guides/esphome-appliance-retrofits.html</link>
+      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/esphome-appliance-retrofits.html</guid>
+      <description>A lot of &quot;smart&quot; appliances are really just cheap hardware chained to a vendor cloud — they stop working when the company changes the app, and they phone h</description>
+    </item>
+    <item>
+      <title>How to dry and store 3D-printing filament (2026)</title>
+      <link>https://estivonponcho.github.io/homeforge/guides/dry-and-store-3d-printing-filament.html</link>
+      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/dry-and-store-3d-printing-filament.html</guid>
+      <description>Half of &quot;my printer is broken&quot; is actually wet filament. Plastic absorbs moisture from the air; when that water hits the hot nozzle it flashes to steam, an</description>
+    </item>
+    <item>
+      <title>DeepSeek V4.1 Flash vs. the other open-weight giants of 2026</title>
+      <link>https://estivonponcho.github.io/homeforge/guides/deepseek-v4-1-flash-vs-open-weight-rivals-2026.html</link>
+      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/deepseek-v4-1-flash-vs-open-weight-rivals-2026.html</guid>
+      <description>DeepSeek V4.1 Flash didn&#x27;t ship into an empty field. By September 2026, five different labs had released trillion-parameter-class (or near it) MoE models w</description>
+    </item>
+    <item>
+      <title>Best presence sensors for Home Assistant (2026)</title>
+      <link>https://estivonponcho.github.io/homeforge/guides/best-zigbee-presence-sensors-home-assistant.html</link>
+      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/best-zigbee-presence-sensors-home-assistant.html</guid>
+      <description>Motion sensors turn your lights off while you&#x27;re still sitting on the couch. Presence sensors don&#x27;t — they know you&#x27;re in the room even when you&#x27;re perfect</description>
+    </item>
+    <item>
+      <title>Best way to run a local LLM (2026)</title>
+      <link>https://estivonponcho.github.io/homeforge/guides/best-way-to-run-a-local-llm.html</link>
+      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/best-way-to-run-a-local-llm.html</guid>
+      <description>Running an AI model on your own machine means no subscription, no rate limits, and no data leaving your network. It&#x27;s easier than it looks now — here&#x27;s the</description>
+    </item>
+    <item>
+      <title>Best smart plugs for Home Assistant, no Wi-Fi or Z-Wave (2026)</title>
+      <link>https://estivonponcho.github.io/homeforge/guides/best-smart-plugs-home-assistant.html</link>
+      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/best-smart-plugs-home-assistant.html</guid>
+      <description>If you&#x27;re asking for smart plugs that aren&#x27;t Wi-Fi or Z-Wave, you want Zigbee or Thread/Matter — local, no cloud account, and they don&#x27;t clog your Wi-Fi. H</description>
+    </item>
+    <item>
+      <title>Best mini PC for a homelab (2026)</title>
+      <link>https://estivonponcho.github.io/homeforge/guides/best-mini-pc-for-a-homelab.html</link>
+      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/best-mini-pc-for-a-homelab.html</guid>
+      <description>You don&#x27;t need a rack and a power bill to run a homelab. A quiet little mini PC handles Home Assistant, Proxmox, a dozen Docker containers, or a Jellyfin s</description>
+    </item>
+    <item>
+      <title>Best beginner 3D printer (2026)</title>
+      <link>https://estivonponcho.github.io/homeforge/guides/best-beginner-3d-printer.html</link>
+      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/best-beginner-3d-printer.html</guid>
+      <description>The best beginner 3D printer is the one you actually print with instead of tinkering with. Modern machines auto-level, auto-calibrate, and just work — so y</description>
+    </item>
+    <item>
+      <title>An AI workflow for troubleshooting Home Assistant without exposing your secrets</title>
+      <link>https://estivonponcho.github.io/homeforge/guides/ai-workflow-troubleshoot-home-assistant.html</link>
+      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/ai-workflow-troubleshoot-home-assistant.html</guid>
+      <description>Home Assistant problems are easier to solve when you give an AI a clean symptom timeline, a small configuration excerpt, and evidence from the right logs. </description>
+    </item>
+    <item>
+      <title>An AI workflow for planning a maker project without buying the wrong parts</title>
+      <link>https://estivonponcho.github.io/homeforge/guides/ai-workflow-plan-a-maker-project.html</link>
+      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/ai-workflow-plan-a-maker-project.html</guid>
+      <description>This workflow turns a rough build idea into a practical plan, a compatibility-checked parts list, and a definition of done. It works for ESP32 projects, Ra</description>
+    </item>
+    <item>
+      <title>An AI workflow for safer homelab maintenance and change planning</title>
+      <link>https://estivonponcho.github.io/homeforge/guides/ai-workflow-homelab-maintenance.html</link>
+      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/ai-workflow-homelab-maintenance.html</guid>
+      <description>A homelab usually breaks during a reasonable change made with incomplete context. This workflow uses AI to assemble the context, expose dependencies, prepa</description>
+    </item>
+  </channel>
+</rss>
