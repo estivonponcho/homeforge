@@ -2,7 +2,7 @@
 
 > Own your home, your servers, and your AI — curated by someone who runs it.
 
-![Stars](https://img.shields.io/github/stars/estivonponcho/homeforge?style=flat-square) ![License](https://img.shields.io/badge/list-CC--BY--4.0-blue?style=flat-square) ![Picks](https://img.shields.io/badge/curated%20picks-110-brightgreen?style=flat-square) ![Updated](https://img.shields.io/badge/updated-2026--09--13-informational?style=flat-square)
+![Stars](https://img.shields.io/github/stars/estivonponcho/homeforge?style=flat-square) ![License](https://img.shields.io/badge/list-CC--BY--4.0-blue?style=flat-square) ![Picks](https://img.shields.io/badge/curated%20picks-112-brightgreen?style=flat-square) ![Updated](https://img.shields.io/badge/updated-2026--09--13-informational?style=flat-square)
 
 A hand-picked kit for the overlapping worlds of the smart home, the homelab, the 3D-printing bench, and running your own AI. No scraped catalogs, no filler — every item here is something worth owning, with an honest one-line take on why.
 
@@ -22,6 +22,7 @@ A hand-picked kit for the overlapping worlds of the smart home, the homelab, the
   - [Lighting](#lighting)
   - [Voice & DIY](#voice-diy)
   - [Bench & DIY Electronics](#bench-diy-electronics)
+  - [DIY & Retrofits](#diy-retrofits)
 - [🖥️ Homelab & Self-Hosting](#homelab-self-hosting)
   - [Mini PCs & SBCs](#mini-pcs-sbcs)
   - [NAS & Storage](#nas-storage)
@@ -111,6 +112,11 @@ _Local-first home automation. Bias toward Home Assistant, Zigbee/Thread/Matter, 
 - **[Logic Level Converter (3.3V ↔ 5V)](https://www.amazon.com/s?k=logic+level+converter+TXS0108E&tag=homeforge0a-20)** — Bench-tested. The part beginners skip and then fry a board. Bridges 3.3V ESP pins to 5V peripherals safely. _( $ )_
 - **[Silicone Soldering Mat](https://www.amazon.com/s?k=silicone+soldering+mat+heat+resistant&tag=homeforge0a-20)** — Bench-tested. Heat-resistant surface with magnetic wells for screws. Saves your desk and your sanity. _( $ )_
 - **[37-in-1 Sensor Kit](https://www.amazon.com/s?k=37+in+1+sensor+kit+arduino&tag=homeforge0a-20)** — Bench-tested. A grab-bag of sensors and modules to learn with. The fastest way to find your next project. _( $ )_
+
+### DIY & Retrofits
+
+- **[SiloCityLabs Core300-P ESPHome PCB](https://shop.silocitylabs.com/products/core300-p)** ⭐ — Drop-in ESP32-C6 board that replaces a Levoit Core 300-P's controller so the air purifier runs locally in Home Assistant via ESPHome — no cloud. Exposed GPIO for adding air-quality sensors. Check your Intertek model # first. _( $$ )_
+- **[ESP32-C6 Dev Board](https://www.amazon.com/s?k=ESP32-C6+development+board&tag=homeforge0a-20)** — The modern ESP chip for DIY retrofits and ESPHome — Wi-Fi 6 plus Thread/Zigbee/Matter radios, so one cheap board can bridge protocols or smart-ify a dumb appliance. _( $ )_
 
 ## 🖥️ Homelab & Self-Hosting
 
