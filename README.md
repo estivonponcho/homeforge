@@ -2,7 +2,7 @@
 
 > Own your home, your servers, and your AI — curated by someone who runs it.
 
-![Stars](https://img.shields.io/github/stars/estivonponcho/homeforge?style=flat-square) ![License](https://img.shields.io/badge/list-CC--BY--4.0-blue?style=flat-square) ![Picks](https://img.shields.io/badge/curated%20picks-99-brightgreen?style=flat-square) ![Updated](https://img.shields.io/badge/updated-2026--09--13-informational?style=flat-square)
+![Stars](https://img.shields.io/github/stars/estivonponcho/homeforge?style=flat-square) ![License](https://img.shields.io/badge/list-CC--BY--4.0-blue?style=flat-square) ![Picks](https://img.shields.io/badge/curated%20picks-100-brightgreen?style=flat-square) ![Updated](https://img.shields.io/badge/updated-2026--09--13-informational?style=flat-square)
 
 A hand-picked kit for the overlapping worlds of the smart home, the homelab, the 3D-printing bench, and running your own AI. No scraped catalogs, no filler — every item here is something worth owning, with an honest one-line take on why.
 
@@ -47,6 +47,7 @@ A hand-picked kit for the overlapping worlds of the smart home, the homelab, the
   - [Phone Accessories](#phone-accessories)
   - [iPad Accessories](#ipad-accessories)
   - [Apple Watch](#apple-watch)
+  - [Notes & Focus](#notes-focus)
 - [How this list makes money (and stays honest)](#how-this-list-makes-money-and-stays-honest)
 - [Contributing](#contributing)
 
@@ -252,6 +253,10 @@ _The tech you actually carry — gadgets, power, audio, and the organizers that 
 - **[Titanium Band (Ultra)](https://www.amazon.com/s?k=Apple+Watch+Ultra+titanium+band&tag=homeforge0a-20)** — Bench-tested. Titanium link band with a steel buckle — the premium metal look for a fraction of Apple's price. _( $$ )_
 - **[ESR Armorite Screen Protector](https://www.amazon.com/s?k=ESR+Armorite+Apple+Watch+screen+protector&tag=homeforge0a-20)** — Bench-tested. Tempered glass + alloy frame that actually saves the screen from bench dings and doorframes. _( $ )_
 - **[Portable USB-C Magnetic Watch Charger](https://www.amazon.com/s?k=USB-C+Apple+Watch+magnetic+charger+portable&tag=homeforge0a-20)** — Bench-tested. A tiny USB-C magnetic puck so you can top the watch off from any charger or power bank in the bag. _( $ )_
+
+### Notes & Focus
+
+- **[Supernote A6 X2 Nomad](https://supernote.com/)** ⭐ — Bench-tested — my e-ink notebook. Paper-like writing with zero notifications: the antidote to taking notes on a device that pings you every 30 seconds. _( $$$ )_
 
 ## How this list makes money (and stays honest)
 
