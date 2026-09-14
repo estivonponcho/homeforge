@@ -2,7 +2,7 @@
 
 > Own your home, your servers, and your AI — curated by someone who runs it.
 
-![Stars](https://img.shields.io/github/stars/estivonponcho/homeforge?style=flat-square) ![License](https://img.shields.io/badge/list-CC--BY--4.0-blue?style=flat-square) ![Picks](https://img.shields.io/badge/curated%20picks-103-brightgreen?style=flat-square) ![Updated](https://img.shields.io/badge/updated-2026--09--13-informational?style=flat-square)
+![Stars](https://img.shields.io/github/stars/estivonponcho/homeforge?style=flat-square) ![License](https://img.shields.io/badge/list-CC--BY--4.0-blue?style=flat-square) ![Picks](https://img.shields.io/badge/curated%20picks-110-brightgreen?style=flat-square) ![Updated](https://img.shields.io/badge/updated-2026--09--13-informational?style=flat-square)
 
 A hand-picked kit for the overlapping worlds of the smart home, the homelab, the 3D-printing bench, and running your own AI. No scraped catalogs, no filler — every item here is something worth owning, with an honest one-line take on why.
 
@@ -63,7 +63,7 @@ _Local-first home automation. Bias toward Home Assistant, Zigbee/Thread/Matter, 
 
 ### Radios & Coordinators
 
-- **[Home Assistant Connect ZBT-1](https://www.amazon.com/s?k=Home+Assistant+Connect+ZBT-1&tag=homeforge0a-20)** ⭐ — The SkyConnect successor — a USB Zigbee + Thread stick that keeps your radio off the main board and easy to relocate. _( $ )_
+- **[Home Assistant Connect ZBT-2](https://www.amazon.com/s?k=Home+Assistant+Connect+ZBT-2&tag=homeforge0a-20)** ⭐ — Home Assistant's current recommendation for a new ZHA network. Add it to Green or another Home Assistant host for a supported Zigbee radio. _( $ )_
 - **[Sonoff Zigbee 3.0 USB Dongle Plus (ZBDongle-E)](https://www.amazon.com/s?k=Sonoff+Zigbee+3.0+USB+Dongle+Plus+%28ZBDongle-E%29&tag=homeforge0a-20)** — The budget coordinator everyone recommends. Flash it, stick it on a USB extension, forget about it. _( $ )_
 
 ### Sensors & Presence
@@ -72,6 +72,9 @@ _Local-first home automation. Bias toward Home Assistant, Zigbee/Thread/Matter, 
 - **[Aqara Presence Sensor FP2](https://www.amazon.com/s?k=Aqara+Presence+Sensor+FP2&tag=homeforge0a-20)** ⭐ — mMWave presence done well — knows you're in the room even when you're sitting still. Zone mapping is the killer feature. _( $$ )_
 - **[Everything Presence Lite](https://shop.everythingsmart.io/)** — Open, ESPHome-based mmWave presence board. The tinkerer's answer to closed-box presence sensors. _( $ )_
 - **[SONOFF Zigbee Temp & Humidity Sensor](https://www.amazon.com/s?k=SONOFF+Zigbee+temperature+humidity+sensor&tag=homeforge0a-20)** — Bench-tested: cheap, accurate Zigbee climate sensors with a display. Great for rooms, fridges, and the 3D-printing enclosure. _( $ )_
+- **[Govee H5075 Temperature & Humidity Sensor](https://www.amazon.com/s?k=Govee+H5075&tag=homeforge0a-20)** — Used in my setup for simple room climate readings over Bluetooth. Affordable enough to place in several areas. _( $ )_
+- **[Govee H5121 Motion Sensor](https://www.amazon.com/s?k=Govee+H5121&tag=homeforge0a-20)** — Used in my setup for motion-triggered routines. Check the current integration path and exact model before buying. _( $ )_
+- **[Zigbee Water Leak Sensor](https://www.amazon.com/s?k=Zigbee+water+leak+sensor+Home+Assistant&tag=homeforge0a-20)** ⭐ — A small sensor with an outsized job. Put one near a water heater, washer, sink, or sump area and alert immediately when it reports wet. _( $ )_
 
 ### Switches, Plugs & Power
 
@@ -80,12 +83,16 @@ _Local-first home automation. Bias toward Home Assistant, Zigbee/Thread/Matter, 
 - **[Aqara Smart Plug (Zigbee)](https://www.amazon.com/s?k=Aqara+Smart+Plug+zigbee&tag=homeforge0a-20)** — Zigbee plug with energy monitoring that also acts as a Zigbee router to extend your mesh. Rock-solid in Home Assistant. _( $ )_
 - **[Sonoff S60 Zigbee Smart Plug](https://www.amazon.com/s?k=Sonoff+S60+Zigbee+smart+plug&tag=homeforge0a-20)** — Cheap, reliable Zigbee plug with power metering. Pairs instantly with any Zigbee coordinator (ZHA/Z2M). _( $ )_
 - **[Eve Energy (Thread + Matter)](https://www.amazon.com/s?k=Eve+Energy+Thread+Matter+smart+plug&tag=homeforge0a-20)** — Thread + Matter plug with energy monitoring and no cloud or Wi-Fi — the closest thing to a set-and-forget local Matter plug. _( $$ )_
+- **[Govee H5081 Smart Plug](https://www.amazon.com/s?k=Govee+H5081&tag=homeforge0a-20)** — Used in my setup to automate ordinary plug-in equipment. A practical fit when you already use Govee devices. _( $ )_
 - **[Emporia Vue Energy Monitor](https://www.amazon.com/s?k=Emporia+Vue+Energy+Monitor&tag=homeforge0a-20)** — Whole-panel, per-circuit energy monitoring for a fraction of the utility's price. Feeds beautifully into HA dashboards. _( $$ )_
 
 ### Lighting
 
 - **[Philips Hue](https://www.amazon.com/s?k=Philips+Hue&tag=homeforge0a-20)** — Still the gold standard for reliable, fast smart lighting. Expensive, but it just works — and now speaks Matter. _( $$ )_
 - **[Govee smart lights](https://www.amazon.com/s?k=Govee+smart+lights&tag=homeforge0a-20)** — Bright, affordable smart lighting with a huge range of strips, bulbs, and room kits. A strong value pick when local control is not the only priority. _( $ )_
+- **[Govee H6008 Smart Bulb](https://www.amazon.com/s?k=Govee+H6008&tag=homeforge0a-20)** — One of the exact Govee bulb models used in my setup. Good for affordable color lighting in the Govee ecosystem. _( $ )_
+- **[Govee H6159 LED Strip](https://www.amazon.com/s?k=Govee+H6159&tag=homeforge0a-20)** — Used in my setup for cabinet and accent lighting. It adds useful task light without changing the room's main fixtures. _( $ )_
+- **[Philips Hue Starter Kit](https://www.amazon.com/s?k=Philips+Hue+starter+kit&tag=homeforge0a-20)** ⭐ — A straightforward entry into the Hue ecosystem with a bridge and bulbs. My larger Hue setup has been a dependable lighting layer. _( $$ )_
 - **[Tuya smart lights](https://www.amazon.com/s?k=Tuya+smart+lights&tag=homeforge0a-20)** — A broad ecosystem of affordable bulbs, switches, and light strips. Check the exact device integration before buying because Tuya hardware varies by model. _( $ )_
 - **[WLED](https://kno.wled.ge/)** — Free firmware that turns an ESP32 + LED strip into gorgeous, HA-controllable lighting. The DIY entry point. _( Free / DIY )_
 

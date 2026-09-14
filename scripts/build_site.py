@@ -209,6 +209,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 48px;color:var(--muted);f
 footer a{color:var(--ink)}footer .fl{display:flex;gap:16px;flex-wrap:wrap;font-family:"IBM Plex Mono",monospace;font-size:.78rem;margin-top:8px}
 figure.diagram{margin:22px 0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow-x:auto}
 figure.diagram svg{max-width:100%;height:auto;display:block;margin:auto}
+figure.diagram img{max-width:100%;height:auto;display:block;margin:auto;border-radius:8px}
 figure.diagram text{fill:var(--ink)}figure.diagram .wire{stroke:var(--ink)}figure.diagram .data{stroke:var(--accent)}figure.diagram .box{fill:var(--surface2);stroke:var(--ink)}
 figure.diagram figcaption{margin-top:10px;color:var(--muted);font-size:.85rem;text-align:center}
 @media(max-width:720px){main{padding-top:34px}}
