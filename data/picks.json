@@ -34,6 +34,12 @@
       "emoji": "🤖",
       "title": "AI & Local LLMs",
       "blurb": "Run models on your own hardware, and drive Claude & ChatGPT like a pro. The same 'own it, don't rent it' ethos as the rest of the list."
+    },
+    {
+      "id": "tech-edc",
+      "emoji": "🎒",
+      "title": "Tech EDC",
+      "blurb": "The tech you actually carry — gadgets, power, audio, and the organizers that keep it all from becoming a tangle in your bag."
     }
   ],
   "picks": [
@@ -116,6 +122,17 @@
     {"pillar": "ai", "category": "Learn AI", "name": "AI Engineering (Chip Huyen)", "url": "https://www.amazon.com/s?k=AI+Engineering+Chip+Huyen&tag=homeforge0a-20", "blurb": "The field guide to building real products on top of foundation models. Start here if you're going pro.", "tier": "$$", "program": "Amazon", "featured": true},
     {"pillar": "ai", "category": "Learn AI", "name": "Hands-On Large Language Models", "url": "https://www.amazon.com/s?k=Hands-On+Large+Language+Models&tag=homeforge0a-20", "blurb": "The best illustrated, practical intro to how LLMs actually work and how to use them.", "tier": "$$", "program": "Amazon"},
     {"pillar": "ai", "category": "Learn AI", "name": "DeepLearning.AI Short Courses", "url": "https://www.deeplearning.ai/courses/", "blurb": "Free, focused, hour-long courses on prompting, RAG, agents, and more. The fastest way to skill up.", "tier": "Free", "program": "None"},
-    {"pillar": "ai", "category": "Learn AI", "name": "fast.ai", "url": "https://www.fast.ai/", "blurb": "The legendary free, top-down deep-learning course. Rigorous without being academic-for-its-own-sake.", "tier": "Free", "program": "None"}
+    {"pillar": "ai", "category": "Learn AI", "name": "fast.ai", "url": "https://www.fast.ai/", "blurb": "The legendary free, top-down deep-learning course. Rigorous without being academic-for-its-own-sake.", "tier": "Free", "program": "None"},
+
+    {"pillar": "tech-edc", "category": "Gadgets & Tools", "name": "Flipper Zero", "url": "https://www.amazon.com/s?k=Flipper+Zero&tag=homeforge0a-20", "blurb": "Bench-tested — mine runs Momentum firmware. A pocket multi-tool for RF, NFC, IR, and GPIO. The most fun thing in the bag.", "tier": "$$", "program": "Amazon", "featured": true},
+    {"pillar": "tech-edc", "category": "Gadgets & Tools", "name": "LOCHBY Tool Roll", "url": "https://www.lochby.com/", "blurb": "Waxed-canvas roll that keeps your bits, cables, and small tools organized and rugged. The grown-up alternative to a ziplock bag.", "tier": "$$", "program": "LOCHBY Ambassador (pending)"},
+    {"pillar": "tech-edc", "category": "Gadgets & Tools", "name": "iFixit Precision Bit Driver", "url": "https://www.amazon.com/s?k=iFixit+precision+bit+driver+set&tag=homeforge0a-20", "blurb": "The kit that opens every phone, console, and gadget. If you mod hardware, this lives in the bag.", "tier": "$", "program": "Amazon"},
+    {"pillar": "tech-edc", "category": "Gadgets & Tools", "name": "Leatherman Multitool", "url": "https://www.amazon.com/s?k=Leatherman+multitool&tag=homeforge0a-20", "blurb": "Pliers, drivers, blade, and more in your pocket. Buy once, carry for a decade.", "tier": "$$", "program": "Amazon"},
+    {"pillar": "tech-edc", "category": "Power & Cables", "name": "Anker GaN USB-C Charger", "url": "https://www.amazon.com/s?k=Anker+GaN+USB-C+charger&tag=homeforge0a-20", "blurb": "One small brick that fast-charges your phone, tablet, and laptop. GaN means tiny and cool-running.", "tier": "$", "program": "Amazon"},
+    {"pillar": "tech-edc", "category": "Power & Cables", "name": "USB-C Power Meter / Cable Tester", "url": "https://www.amazon.com/s?k=USB-C+power+meter+tester&tag=homeforge0a-20", "blurb": "Tells you what's actually charging and which cable is lying to you. A tinkerer's truth-teller.", "tier": "$", "program": "Amazon"},
+    {"pillar": "tech-edc", "category": "Power & Cables", "name": "Braided USB-C Cable", "url": "https://www.amazon.com/s?k=braided+USB-C+cable+100W&tag=homeforge0a-20", "blurb": "A 100W braided cable that won't fray. Carry two; you'll always need one more than you have.", "tier": "$", "program": "Amazon"},
+    {"pillar": "tech-edc", "category": "Audio", "name": "Soundcore Wireless Earbuds", "url": "https://www.amazon.com/s?k=Soundcore+by+Anker+wireless+earbuds&tag=homeforge0a-20", "blurb": "The value-per-dollar pick for calls, podcasts, and focus — most of the good stuff for a fraction of flagship prices.", "tier": "$", "program": "Amazon"},
+    {"pillar": "tech-edc", "category": "Phone Accessories", "name": "PopSockets Grip", "url": "https://www.amazon.com/s?k=PopSockets+grip&tag=homeforge0a-20", "blurb": "The one-handed grip + kickstand that quietly prevents dropped phones. MagSafe versions pop on and off cleanly.", "tier": "$", "program": "Amazon"},
+    {"pillar": "tech-edc", "category": "Phone Accessories", "name": "MagSafe Wallet Stand", "url": "https://www.amazon.com/s?k=MagSafe+wallet+stand&tag=homeforge0a-20", "blurb": "Cards on the back, flips out to a stand for videos. Ditches the bulky case-wallet.", "tier": "$", "program": "Amazon"}
   ]
 }

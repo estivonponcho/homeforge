@@ -1,8 +1,8 @@
-# 🏠 🖥️ 🧵 🤖 HomeForge
+# 🏠 🖥️ 🧵 🤖 🎒 HomeForge
 
 > Own your home, your servers, and your AI — curated by someone who runs it.
 
-![Stars](https://img.shields.io/github/stars/estivonponcho/homeforge?style=flat-square) ![License](https://img.shields.io/badge/list-CC--BY--4.0-blue?style=flat-square) ![Picks](https://img.shields.io/badge/curated%20picks-76-brightgreen?style=flat-square) ![Updated](https://img.shields.io/badge/updated-2026--09--13-informational?style=flat-square)
+![Stars](https://img.shields.io/github/stars/estivonponcho/homeforge?style=flat-square) ![License](https://img.shields.io/badge/list-CC--BY--4.0-blue?style=flat-square) ![Picks](https://img.shields.io/badge/curated%20picks-86-brightgreen?style=flat-square) ![Updated](https://img.shields.io/badge/updated-2026--09--13-informational?style=flat-square)
 
 A hand-picked kit for the overlapping worlds of the smart home, the homelab, the 3D-printing bench, and running your own AI. No scraped catalogs, no filler — every item here is something worth owning, with an honest one-line take on why.
 
@@ -40,6 +40,11 @@ A hand-picked kit for the overlapping worlds of the smart home, the homelab, the
   - [Hardware for Local AI](#hardware-for-local-ai)
   - [Manage Claude & ChatGPT](#manage-claude-chatgpt)
   - [Learn AI](#learn-ai)
+- [🎒 Tech EDC](#tech-edc)
+  - [Gadgets & Tools](#gadgets-tools)
+  - [Power & Cables](#power-cables)
+  - [Audio](#audio)
+  - [Phone Accessories](#phone-accessories)
 - [How this list makes money (and stays honest)](#how-this-list-makes-money-and-stays-honest)
 - [Contributing](#contributing)
 
@@ -200,6 +205,32 @@ _Run models on your own hardware, and drive Claude & ChatGPT like a pro. The sam
 - **[Hands-On Large Language Models](https://www.amazon.com/s?k=Hands-On+Large+Language+Models&tag=homeforge0a-20)** — The best illustrated, practical intro to how LLMs actually work and how to use them. _( $$ )_
 - **[DeepLearning.AI Short Courses](https://www.deeplearning.ai/courses/)** — Free, focused, hour-long courses on prompting, RAG, agents, and more. The fastest way to skill up. _( Free )_
 - **[fast.ai](https://www.fast.ai/)** — The legendary free, top-down deep-learning course. Rigorous without being academic-for-its-own-sake. _( Free )_
+
+## 🎒 Tech EDC
+
+_The tech you actually carry — gadgets, power, audio, and the organizers that keep it all from becoming a tangle in your bag._
+
+### Gadgets & Tools
+
+- **[Flipper Zero](https://www.amazon.com/s?k=Flipper+Zero&tag=homeforge0a-20)** ⭐ — Bench-tested — mine runs Momentum firmware. A pocket multi-tool for RF, NFC, IR, and GPIO. The most fun thing in the bag. _( $$ )_
+- **[LOCHBY Tool Roll](https://www.lochby.com/)** — Waxed-canvas roll that keeps your bits, cables, and small tools organized and rugged. The grown-up alternative to a ziplock bag. _( $$ )_
+- **[iFixit Precision Bit Driver](https://www.amazon.com/s?k=iFixit+precision+bit+driver+set&tag=homeforge0a-20)** — The kit that opens every phone, console, and gadget. If you mod hardware, this lives in the bag. _( $ )_
+- **[Leatherman Multitool](https://www.amazon.com/s?k=Leatherman+multitool&tag=homeforge0a-20)** — Pliers, drivers, blade, and more in your pocket. Buy once, carry for a decade. _( $$ )_
+
+### Power & Cables
+
+- **[Anker GaN USB-C Charger](https://www.amazon.com/s?k=Anker+GaN+USB-C+charger&tag=homeforge0a-20)** — One small brick that fast-charges your phone, tablet, and laptop. GaN means tiny and cool-running. _( $ )_
+- **[USB-C Power Meter / Cable Tester](https://www.amazon.com/s?k=USB-C+power+meter+tester&tag=homeforge0a-20)** — Tells you what's actually charging and which cable is lying to you. A tinkerer's truth-teller. _( $ )_
+- **[Braided USB-C Cable](https://www.amazon.com/s?k=braided+USB-C+cable+100W&tag=homeforge0a-20)** — A 100W braided cable that won't fray. Carry two; you'll always need one more than you have. _( $ )_
+
+### Audio
+
+- **[Soundcore Wireless Earbuds](https://www.amazon.com/s?k=Soundcore+by+Anker+wireless+earbuds&tag=homeforge0a-20)** — The value-per-dollar pick for calls, podcasts, and focus — most of the good stuff for a fraction of flagship prices. _( $ )_
+
+### Phone Accessories
+
+- **[PopSockets Grip](https://www.amazon.com/s?k=PopSockets+grip&tag=homeforge0a-20)** — The one-handed grip + kickstand that quietly prevents dropped phones. MagSafe versions pop on and off cleanly. _( $ )_
+- **[MagSafe Wallet Stand](https://www.amazon.com/s?k=MagSafe+wallet+stand&tag=homeforge0a-20)** — Cards on the back, flips out to a stand for videos. Ditches the bulky case-wallet. _( $ )_
 
 ## How this list makes money (and stays honest)
 

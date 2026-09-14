@@ -20,7 +20,7 @@
     --ground:#F4F3F0; --surface:#FFFFFF; --surface-2:#FBF9F6;
     --ink:#1B1712; --muted:#6E6559; --hairline:#E5E1D9;
     --accent:#C9531B; --accent-ink:#FFFFFF; --accent-soft:#F6E7DC;
-    --tag-smart:#B8531E; --tag-lab:#1C6E79; --tag-print:#6D42B8; --tag-ai:#2D5FB0;
+    --tag-smart:#B8531E; --tag-lab:#1C6E79; --tag-print:#6D42B8; --tag-ai:#2D5FB0; --tag-edc:#8A6D3B;
     --glow:rgba(201,83,27,.28);
     --grid:rgba(27,23,18,.035);
     --shadow:0 1px 2px rgba(27,23,18,.05), 0 12px 32px -18px rgba(27,23,18,.20);
@@ -30,7 +30,7 @@
       --ground:#161309; --surface:#211C13; --surface-2:#1B1710;
       --ink:#F1EADD; --muted:#A99C88; --hairline:#342C21;
       --accent:#F0743A; --accent-ink:#1A1206; --accent-soft:#2B1D12;
-      --tag-smart:#F0743A; --tag-lab:#46B7C2; --tag-print:#B48CF0; --tag-ai:#7EA8F0;
+      --tag-smart:#F0743A; --tag-lab:#46B7C2; --tag-print:#B48CF0; --tag-ai:#7EA8F0; --tag-edc:#C9A876;
       --glow:rgba(240,116,58,.30);
       --grid:rgba(241,234,221,.04);
       --shadow:0 1px 2px rgba(0,0,0,.4), 0 18px 40px -20px rgba(0,0,0,.7);
@@ -40,7 +40,7 @@
     --ground:#161309; --surface:#211C13; --surface-2:#1B1710;
     --ink:#F1EADD; --muted:#A99C88; --hairline:#342C21;
     --accent:#F0743A; --accent-ink:#1A1206; --accent-soft:#2B1D12;
-    --tag-smart:#F0743A; --tag-lab:#46B7C2; --tag-print:#B48CF0; --tag-ai:#7EA8F0;
+    --tag-smart:#F0743A; --tag-lab:#46B7C2; --tag-print:#B48CF0; --tag-ai:#7EA8F0; --tag-edc:#C9A876;
     --glow:rgba(240,116,58,.30);
     --grid:rgba(241,234,221,.04);
     --shadow:0 1px 2px rgba(0,0,0,.4), 0 18px 40px -20px rgba(0,0,0,.7);
@@ -131,6 +131,7 @@
   .station.lab   .tag{color:var(--tag-lab)}
   .station.print .tag{color:var(--tag-print)}
   .station.ai    .tag{color:var(--tag-ai)}
+  .station.edc   .tag{color:var(--tag-edc)}
   .station h3{font-size:1.35rem; font-weight:700; letter-spacing:-.01em; margin:14px 0 6px}
   .station>p{margin:0 0 6px; color:var(--muted); font-size:.9rem; min-height:2.4em}
   .picks{list-style:none; margin:12px 0 0; padding:0; display:flex; flex-direction:column}
@@ -177,6 +178,7 @@
     <nav>
       <a class="ghostbtn" href="picks.html">▤ the list</a>
       <a class="ghostbtn" href="learn.html">✦ guides</a>
+      <a class="ghostbtn" href="picks.html#tech-edc">🎒 edc</a>
       <a class="ghostbtn" href="resources.html">▶ watch &amp; build</a>
       <button class="ghostbtn" id="theme" type="button" aria-label="Toggle color theme">◐ theme</button>
       <a class="ghostbtn" href="https://github.com/estivonponcho/homeforge" rel="noopener">★ star on github</a>
@@ -188,8 +190,8 @@
   <section class="hero wrap">
     <span class="eyebrow">Local-first · self-hosted · made at home</span>
     <h1>The gear that runs <em>your</em> home — not someone's cloud.</h1>
-    <p class="lede">A hand-picked kit for the overlapping worlds of the smart home, the homelab, the 3D-printing bench, and running your own AI. Every pick is something worth owning, with an honest take on why. No scraped catalogs, no padded counts.</p>
-      <p class="stat"><b>74</b> curated picks · <b>4</b> pillars · updated <span class="mono">2026&#8209;09&#8209;13</span></p>
+    <p class="lede">A hand-picked kit for the overlapping worlds of the smart home, the homelab, the 3D-printing bench, running your own AI, and the tech you carry. Every pick is something worth owning, with an honest take on why. No scraped catalogs, no padded counts.</p>
+      <p class="stat"><b>86</b> curated picks · <b>5</b> pillars · updated <span class="mono">2026&#8209;09&#8209;13</span></p>
 
     <div class="capture">
       <h2>Get the free Self-Hosted Home Starter Kit</h2>
@@ -314,6 +316,30 @@
         <div class="seeall"><a href="picks.html#ai">See all AI picks →</a></div>
       </article>
 
+      <article class="station edc">
+        <span class="tag">🎒 Tech EDC</span>
+        <h3>What you carry</h3>
+        <p>Gadgets, power, audio, and organizers for the tech that lives in your bag.</p>
+        <ul class="picks">
+          <li class="pick">
+            <div class="pick-top"><a href="https://www.amazon.com/s?k=Flipper+Zero&amp;tag=homeforge0a-20" rel="nofollow sponsored noopener" target="_blank">Flipper Zero</a><span class="tier">$$</span></div>
+            <span class="blurb">Pocket multi-tool for RF, NFC, IR, GPIO — mine runs Momentum firmware.</span>
+            <span class="prog">via Amazon</span>
+          </li>
+          <li class="pick">
+            <div class="pick-top"><a href="https://www.lochby.com/" rel="noopener" target="_blank">LOCHBY Tool Roll</a><span class="tier">$$</span></div>
+            <span class="blurb">Waxed-canvas roll that keeps bits, cables, and tools organized and rugged.</span>
+            <span class="prog">via LOCHBY</span>
+          </li>
+          <li class="pick">
+            <div class="pick-top"><a href="https://www.amazon.com/s?k=Anker+GaN+USB-C+charger&amp;tag=homeforge0a-20" rel="nofollow sponsored noopener" target="_blank">Anker GaN Charger</a><span class="tier">$</span></div>
+            <span class="blurb">One small brick to fast-charge phone, tablet, and laptop.</span>
+            <span class="prog">via Amazon</span>
+          </li>
+        </ul>
+        <div class="seeall"><a href="picks.html#tech-edc">See all Tech EDC picks →</a></div>
+      </article>
+
     </div>
   </section>
 
@@ -362,7 +388,7 @@
         </div>
         <div>
           <h4><span class="n">03</span> &nbsp;Curated, not scraped</h4>
-          <p>72 picks chosen by hand — many bench-tested in my own projects — not 2,000 auto-scraped listings. If it's here, it earned the slot.</p>
+          <p>86 picks chosen by hand — many bench-tested in my own projects — not 2,000 auto-scraped listings. If it's here, it earned the slot.</p>
         </div>
       </div>
     </div>
@@ -388,6 +414,7 @@
     <div class="links">
       <a href="picks.html">The list</a>
       <a href="learn.html">Guides</a>
+      <a href="picks.html#tech-edc">EDC</a>
       <a href="resources.html">Watch &amp; Build</a>
       <a href="https://github.com/estivonponcho/homeforge">GitHub</a>
       <a href="https://github.com/estivonponcho/homeforge/blob/main/AFFILIATE-DISCLOSURE.md">Disclosure</a>
