@@ -105,3 +105,9 @@ Use distinct campaign values so clicks and newsletter signups can be attributed 
 
 ### Posts actually made (log)
 - 2026-09-13 (Claude, Mike-authorized): Posted the ESP thermal-printer VALUE post to **ESP32/ESP8266 projects** (https://www.facebook.com/groups/754518470444906/). Value-first build story + link to the full build guide (`projects/esp-thermal-printer.html`, UTM `campaign=esp32-thermal-printer`) with FB rich preview. LIVE. Do NOT repost this same content in other groups — the remaining posts in `value-posts.md` are unique per group.
+- 2026-09-13 (Claude, Mike-authorized): Posted 3 value posts, each linking a HomeForge guide (value-first, feedback ask, UTM-tagged), all LIVE:
+  - Filament dry/store guide → **3D Printing Makers Group** (fb.com/groups/573138351904168) — campaign=filament-drying
+  - Run a local LLM guide → **Agentic AI** (fb.com/groups/agentics) — campaign=local-llm
+  - Presence sensors guide → **Home Assistant** official group (fb.com/groups/HomeAssistant) — campaign=presence-sensors
+  Do NOT repost these in other groups. Remaining unused value post: #2 homelab/Quadra (Raspberry Pi groups pending approval).
+  STRATEGY GOING FORWARD: also monitor groups for questions we can answer with a genuine recommendation (e.g. "best smart plugs for HA, no z-wave/wifi" → Zigbee plug like ThirdReality). Answer in Mike's words; link an on-site guide (Amazon affiliate links can't go in FB comments). TODO: build a "best HA smart plugs (Zigbee/Matter)" page so we have something to link for that recurring question.
