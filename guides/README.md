@@ -19,6 +19,12 @@ Where a guide recommends a tool or book, it links to the relevant
   a new open-weight architecture family, MIT-licensed, with a 1M-token context window.
 - [DeepSeek V4.1 Flash vs. the other open-weight giants of 2026](deepseek-v4-1-flash-vs-open-weight-rivals-2026.md) —
   head-to-head against Kimi K3, GLM-5.3-Flash, Qwen3.8-Max, and DeepSeek's own V4 Pro.
+- [The frontier AI model landscape (September 2026)](frontier-model-comparison-september-2026.md) —
+  Claude Fable 5.1, GPT-6 Astra, Gemini 3.8 Flash, and Grok 4.6 compared head-to-head.
+- [What a heavy AI workflow actually costs](frontier-model-api-pricing-comparison-2026.md) —
+  real pricing math across the four frontier models, including their context-window cost cliffs.
+- [Frontier vs. open-weight in 2026: which should you actually use](frontier-vs-open-weight-decision-guide-2026.md) —
+  a decision guide tying the frontier and open-weight comparisons together.
 
 ## How to add a guide (keep it passive)
 
