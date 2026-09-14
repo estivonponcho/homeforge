@@ -15,6 +15,8 @@ Where a guide recommends a tool or book, it links to the relevant
   not one-off "magic prompts."
 - [Model-watch write-up template](model-watch-template.md) — a repeatable format
   for covering each new model release.
+- [Model Watch: DeepSeek V4.1 Flash](model-watch-deepseek-v4-1-flash-2026-09-14.md) —
+  a new open-weight architecture family, MIT-licensed, with a 1M-token context window.
 
 ## How to add a guide (keep it passive)
 
