@@ -17,6 +17,8 @@ Where a guide recommends a tool or book, it links to the relevant
   for covering each new model release.
 - [Model Watch: DeepSeek V4.1 Flash](model-watch-deepseek-v4-1-flash-2026-09-14.md) —
   a new open-weight architecture family, MIT-licensed, with a 1M-token context window.
+- [DeepSeek V4.1 Flash vs. the other open-weight giants of 2026](deepseek-v4-1-flash-vs-open-weight-rivals-2026.md) —
+  head-to-head against Kimi K3, GLM-5.3-Flash, Qwen3.8-Max, and DeepSeek's own V4 Pro.
 
 ## How to add a guide (keep it passive)
 
