@@ -74,6 +74,19 @@ For Hacker News, do not submit HomeForge's landing page or curated list as Show 
 - Disclose affiliate links clearly whenever a destination page contains them.
 - Never claim hands-on testing unless the repo documents it.
 
+## Approval queue workflow
+
+The Facebook watcher runs at 9 AM and 9 PM America/Chicago and proposes only the single highest-impact action at a time. Each proposal uses:
+
+- `ACTION`: post, comment, reply, join, or site change
+- `WHERE`: exact group and context
+- `WHY`: one-sentence fit
+- `COPY`: the exact text that would be published
+- `LINK`: the exact URL or `NONE`
+- `DISCLOSURE`: required affiliate disclosure or `NONE`
+
+Mike can reply `APPROVE`, `SKIP`, or `EDIT` followed by the requested change. Approval covers only the exact proposed action. After an approved action is completed, verify the live or pending state and record it below. The watcher is separate from the weekly newsletter automation.
+
 ## Candidate record
 
 For each candidate, capture:
