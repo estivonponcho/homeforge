@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ESP32 + OLED weather display: build guide — HomeForge</title>
+<meta name="description" content="A tiny always-on desk display: an ESP32 driving a 0.96&quot; OLED that cycles through current conditions and a 5-day forecast, dims itself at night, and draws i">
+<link rel="canonical" href="https://estivonponcho.github.io/homeforge/projects/esp32-oled-weather-display.html">
+<meta property="og:title" content="ESP32 + OLED weather display: build guide — HomeForge">
+<meta property="og:description" content="A tiny always-on desk display: an ESP32 driving a 0.96&quot; OLED that cycles through current conditions and a 5-day forecast, dims itself at night, and draws i">
+<meta property="og:url" content="https://estivonponcho.github.io/homeforge/projects/esp32-oled-weather-display.html">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../hf.css">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "ESP32 + OLED weather display: build guide", "description": "A tiny always-on desk display: an ESP32 driving a 0.96\" OLED that cycles through current conditions and a 5-day forecast, dims itself at night, and draws i", "url": "https://estivonponcho.github.io/homeforge/projects/esp32-oled-weather-display.html", "mainEntityOfPage": "https://estivonponcho.github.io/homeforge/projects/esp32-oled-weather-display.html", "author": {"@type": "Person", "name": "Mike Cage"}, "publisher": {"@type": "Organization", "name": "HomeForge"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "HomeForge", "item": "https://estivonponcho.github.io/homeforge/"}, {"@type": "ListItem", "position": 2, "name": "Builds", "item": "https://estivonponcho.github.io/homeforge/learn.html"}, {"@type": "ListItem", "position": 3, "name": "ESP32 + OLED weather display: build guide", "item": "https://estivonponcho.github.io/homeforge/projects/esp32-oled-weather-display.html"}]}]</script>
+</head>
+<body>
+<header><div class="wrap bar"><a class="brand" href="../index.html"><span>&#9650;</span> HomeForge</a><nav class="nav"><a href="../index.html">Home</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="../resources.html">Watch &amp; build</a><a href="../starter-kit.html">Starter kit</a></nav></div></header>
+<main class="wrap">
+<div class="article"><p class="crumb"><a href="../index.html">HomeForge</a> / <a href="../learn.html">Builds</a></p><h1>ESP32 + OLED weather display: build guide</h1>
+<p>A tiny always-on desk display: an ESP32 driving a 0.96" OLED that cycles through current conditions and a 5-day forecast, dims itself at night, and draws its own crisp weather icons. No app, no cloud dashboard — just a glanceable screen that pulls live data over Wi-Fi. It's a great second ESP project once you've blinked an LED, because it ties together Wi-Fi, a JSON API, NTP time, and an I2C display.</p>
+<h2>What it shows</h2>
+<ul><li><strong>Current screen (8s):</strong> big clock, date, location, temperature, humidity, wind, and a hand-drawn condition icon.</li><li><strong>5 forecast cards (4s each):</strong> hi/lo, rain chance + inches, wind, and average humidity per day.</li><li><strong>Auto night mode:</strong> dims and inverts between sunset and sunrise (using the sunrise/sunset times the weather API returns).</li><li><strong>Procedural icons:</strong> sun, moon, clouds, rain, snow, thunder, mist — drawn with lines and circles so they stay crisp on a 128×64 screen instead of blurry bitmaps.</li></ul>
+<h2>Parts</h2>
+<ul><li>An <strong>ESP32 dev board</strong> (see <a href="../picks.html#smart-home">ESP-WROOM-32</a>) — Wi-Fi + enough power to parse JSON comfortably.</li><li>A <strong>0.96" SSD1306 OLED</strong>, I2C version (4 pins) — see the <a href="../picks.html#smart-home">bench picks</a>.</li><li>Four <a href="../picks.html#smart-home">jumper wires</a>.</li></ul>
+<h2>Wiring (I2C — four wires)</h2>
+<figure class="diagram">
+<svg viewBox="0 0 680 250" role="img" aria-label="ESP32 to SSD1306 OLED I2C wiring">
+<rect class="box" x="30" y="55" width="180" height="150" rx="8" stroke-width="1.5"/>
+<text x="120" y="45" font-size="13" text-anchor="middle">ESP32</text>
+<text x="120" y="90" font-size="12" text-anchor="middle">3V3</text>
+<text x="120" y="120" font-size="12" text-anchor="middle">GND</text>
+<text x="120" y="150" font-size="12" text-anchor="middle">GPIO21 (SDA)</text>
+<text x="120" y="180" font-size="12" text-anchor="middle">GPIO22 (SCL)</text>
+<rect class="box" x="470" y="55" width="180" height="150" rx="8" stroke-width="1.5"/>
+<text x="560" y="45" font-size="13" text-anchor="middle">SSD1306 OLED</text>
+<text x="560" y="90" font-size="12" text-anchor="middle">VCC</text>
+<text x="560" y="120" font-size="12" text-anchor="middle">GND</text>
+<text x="560" y="150" font-size="12" text-anchor="middle">SDA</text>
+<text x="560" y="180" font-size="12" text-anchor="middle">SCL</text>
+<line class="wire" x1="210" y1="86" x2="470" y2="86" stroke-width="2"/>
+<text x="340" y="80" font-size="11" text-anchor="middle">3.3V power</text>
+<line class="wire" x1="210" y1="116" x2="470" y2="116" stroke-width="2"/>
+<text x="340" y="110" font-size="11" text-anchor="middle">ground</text>
+<line class="data" x1="210" y1="146" x2="470" y2="146" stroke-width="2.5"/>
+<text x="340" y="140" font-size="11" text-anchor="middle">SDA (data)</text>
+<line class="data" x1="210" y1="176" x2="470" y2="176" stroke-width="2.5"/>
+<text x="340" y="170" font-size="11" text-anchor="middle">SCL (clock)</text>
+<text x="340" y="222" font-size="11" text-anchor="middle">I2C address 0x3C · Wire.begin(21, 22)</text>
+</svg>
+<figcaption>Four wires: power, ground, and the two I2C lines. The OLED runs at 3.3V on address 0x3C.</figcaption>
+</figure>
+<div class="tablewrap"><table><thead><tr><th>ESP32</th><th>OLED</th><th>Purpose</th></tr></thead><tbody><tr><td>3V3</td><td>VCC</td><td>Power (3.3V)</td></tr><tr><td>GND</td><td>GND</td><td>Ground</td></tr><tr><td>GPIO21</td><td>SDA</td><td>I2C data</td></tr><tr><td>GPIO22</td><td>SCL</td><td>I2C clock</td></tr></tbody></table></div>
+<h2>How it works</h2>
+<p><strong>Data:</strong> it calls the OpenWeatherMap API twice — the <em>current</em> endpoint (every 10 min) and the <em>5-day/3-hour forecast</em> endpoint (every 30 min) — over HTTPS, then parses the JSON with ArduinoJson. The forecast comes in 3-hour slots, so the code buckets them into local days (hi/lo, max rain %, total precip, max wind, avg humidity) and picks the icon nearest noon.</p>
+<p><strong>Time:</strong> it syncs with NTP and sets the timezone (<code>CST6CDT,...</code>) so the clock and day bucketing are correct, including DST.</p>
+<p><strong>Config lives in a git-ignored <code>secrets.h</code></strong> — Wi-Fi and the API key never sit in the sketch:</p>
+<pre><code>#include "secrets.h"   // WIFI_SSID / WIFI_PASS / OWM_API_KEY / OWM_ZIP
+const char* SSID = WIFI_SSID;
+const char* PASS = WIFI_PASS;</code></pre>
+<p><strong>Display init</strong> is standard SSD1306 over I2C:</p>
+<pre><code>Wire.begin(21, 22);                         // SDA=21, SCL=22
+display.begin(SSD1306_SWITCHCAPVCC, 0x3C);  // most 0.96" OLEDs are 0x3C</code></pre>
+<p><strong>Night mode</strong> flips the panel when the current UTC time is past sunset or before sunrise (both returned by the API), so it isn't a glaring white square at 2am.</p>
+<h2>⚠️ Security note</h2>
+<p>Wi-Fi credentials, the OpenWeatherMap API key, and the ZIP are all in a <strong>git-ignored <code>secrets.h</code></strong> — never commit them. An exposed API key can be abused against your quota, so keep it out of screenshots and public repos too.</p>
+<h2>What I'd add next: pull room temps from Home Assistant</h2>
+<p>The natural upgrade is to add <em>indoor</em> readings next to the outdoor forecast. Home Assistant exposes a REST API, so the ESP32 can <code>GET /api/states/&lt;sensor&gt;</code> for a room temperature sensor (with a long-lived token in <code>secrets.h</code>) and show, say, "Living room 71°F" alongside the weather. Same display code — just another data source. That turns this from a weather clock into a whole-house glance panel.</p>
+<h2>Gear used</h2>
+<ul><li><a href="../picks.html#smart-home">ESP32 dev board</a></li><li>0.96" <a href="../picks.html#smart-home">SSD1306 OLED</a> (I2C)</li><li><a href="../picks.html#smart-home">Jumper wires</a></li></ul><hr><a class="cta" href="../starter-kit.html">Get the free Starter Kit &rarr;</a></div>
+</main>
+<footer><div class="wrap">HomeForge is reader-supported; some links are affiliate links (no extra cost to you).<div class="fl"><a href="../index.html">Home</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="https://github.com/estivonponcho/homeforge/blob/main/AFFILIATE-DISCLOSURE.md">Disclosure</a><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></div></div></footer>
+</body>
+</html>

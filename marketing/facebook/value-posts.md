@@ -56,12 +56,13 @@ Link: https://estivonponcho.github.io/homeforge/projects/quadra-homelab-node.htm
 > After a lot of "why is this stringy/brittle?", the answer was almost always
 > moisture. Since I started drying filament (especially PETG) before big prints, the
 > failures basically stopped. If your prints look fuzzy or snap easily, try a dried
-> spool before changing anything else. I keep a short, honest list of the bench gear
-> that actually earns its place here: [link]
+> spool before changing anything else. I wrote up my whole dry-and-store setup —
+> active dryer + rechargeable desiccant in the bins and the AMS, with rough temps by
+> material: [link]
 > **What's your go-to drying setup — temp and time by material? Always trying to
 > dial mine in, so tell me what I'm getting wrong.**
 
-Link: https://estivonponcho.github.io/homeforge/picks.html#3d-printing
+Link: https://estivonponcho.github.io/homeforge/guides/dry-and-store-3d-printing-filament.html
 
 ---
 

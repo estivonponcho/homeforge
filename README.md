@@ -2,7 +2,7 @@
 
 > Own your home, your servers, and your AI — curated by someone who runs it.
 
-![Stars](https://img.shields.io/github/stars/estivonponcho/homeforge?style=flat-square) ![License](https://img.shields.io/badge/list-CC--BY--4.0-blue?style=flat-square) ![Picks](https://img.shields.io/badge/curated%20picks-74-brightgreen?style=flat-square) ![Updated](https://img.shields.io/badge/updated-2026--09--13-informational?style=flat-square)
+![Stars](https://img.shields.io/github/stars/estivonponcho/homeforge?style=flat-square) ![License](https://img.shields.io/badge/list-CC--BY--4.0-blue?style=flat-square) ![Picks](https://img.shields.io/badge/curated%20picks-76-brightgreen?style=flat-square) ![Updated](https://img.shields.io/badge/updated-2026--09--13-informational?style=flat-square)
 
 A hand-picked kit for the overlapping worlds of the smart home, the homelab, the 3D-printing bench, and running your own AI. No scraped catalogs, no filler — every item here is something worth owning, with an honest one-line take on why.
 
@@ -33,6 +33,7 @@ A hand-picked kit for the overlapping worlds of the smart home, the homelab, the
   - [Printers](#printers)
   - [Filament](#filament)
   - [Upgrades & Accessories](#upgrades-accessories)
+  - [Filament Drying & Storage](#filament-drying-storage)
   - [Tools & Software](#tools-software)
 - [🤖 AI & Local LLMs](#ai-local-llms)
   - [Run AI Locally](#run-ai-locally)
@@ -156,7 +157,12 @@ _Printers, filament, upgrades and tools that earn their place on the bench — t
 
 - **[Bambu AMS](https://bambulab.com/en/ams)** — Multi-color and multi-material without babysitting. Also just a great auto-feeding filament pantry. _( $$ )_
 - **[Hardened Steel Nozzle](https://www.amazon.com/s?k=Hardened+Steel+Nozzle&tag=homeforge0a-20)** — The five-dollar upgrade that saves your nozzle the first time you print carbon-fiber or glow filament. _( $ )_
-- **[Filament Dryer (Sunlu S4 / Eibos)](https://www.amazon.com/s?k=Filament+Dryer+%28Sunlu+S4+%2F+Eibos%29&tag=homeforge0a-20)** — Wet filament ruins prints. A dryer fixes stringing and brittle parts — the upgrade people skip and regret. _( $ )_
+
+### Filament Drying & Storage
+
+- **[SUNLU S4 Filament Dryer](https://www.amazon.com/s?k=SUNLU+S4+filament+dryer&tag=homeforge0a-20)** ⭐ — Bench-tested — the one I use. 4-spool capacity, 3 circulation fans, 350W PTC heater to 70°C, with humidity readout. Wet filament ruins prints; this fixed my stringing and brittle parts. _( $$ )_
+- **[Fonday Rechargeable Silica Gel Desiccant Beads](https://www.amazon.com/s?k=Fonday+moisture+indicating+silica+gel+desiccant+beads+rechargeable&tag=homeforge0a-20)** — Bench-tested. Color-indicating beads (orange → green when spent) that I keep in the AMS and every storage bin. Bake them dry and reuse for years. _( $ )_
+- **[Shazo Airtight Storage Containers](https://www.amazon.com/dp/B0CZ1MGZGG?tag=homeforge0a-20)** — Bench-tested — the airtight containers I actually store spools in. Add a scoop of desiccant and filament stays dry for months. Cheapest insurance against wasted filament. _( $ )_
 
 ### Tools & Software
 
