@@ -294,12 +294,13 @@ def page(title, description, canonical, body, root="", jsonld="", social_image="
                        '<meta name="twitter:card" content="summary_large_image">\n'
                        f'<meta name="twitter:image" content="{image}">')
     nav = (f'<a href="{root}index.html">Home</a>'
+           f'<a href="{root}reads.html">Reads</a>'
            f'<a href="{root}picks.html">The list</a>'
            f'<a href="{root}learn.html">Guides</a>'
            f'<a href="{root}model-watch.html">Model Watch</a>'
            f'<a href="{root}resources.html">Watch &amp; build</a>'
            f'<a href="{root}starter-kit.html">Starter kit</a>')
-    foot = (f'<a href="{root}index.html">Home</a><a href="{root}picks.html">The list</a>'
+    foot = (f'<a href="{root}index.html">Home</a><a href="{root}reads.html">Reads</a><a href="{root}picks.html">The list</a>'
             f'<a href="{root}learn.html">Guides</a>'
             f'<a href="https://github.com/{DATA.get("repo","estivonponcho/homeforge")}/blob/main/AFFILIATE-DISCLOSURE.md">Disclosure</a>'
             f'<a href="{root}privacy.html">Privacy</a><a href="{root}terms.html">Terms</a>')
@@ -472,8 +473,56 @@ def build_model_watch(pages):
              f"{SITE_URL}model-watch.html", "\n".join(body), root=""), encoding="utf-8")
 
 
+FEATURED_READS = [
+    "hugging-face-incident-2026-explained",
+    "gpt-6-astra-deep-dive-2026",
+    "frontier-model-comparison-september-2026",
+    "esp-thermal-printer",
+]
+
+
+def build_reads(guides, projects):
+    """Top-level editorial hub: featured long-form up top, then analysis, then guides/builds."""
+    bymap = {p["slug"]: p for p in (guides + projects)}
+
+    def kind_of(p):
+        if p.get("model_watch"):
+            return "Analysis"
+        return "Build" if p["folder"] == "projects" else "Guide"
+
+    def card(p, feat=False):
+        style = ' style="border-color:var(--accent)"' if feat else ""
+        tag = ("&#11088; Featured &middot; " + kind_of(p)) if feat else kind_of(p)
+        return (f'<a class="card" href="{p["url"]}"{style}><span class="tag">{tag}</span>'
+                f'<h3>{_html.escape(p["title"])}</h3><p>{_html.escape(p["desc"])}</p></a>')
+
+    featured = [bymap[s] for s in FEATURED_READS if s in bymap]
+    fslugs = {p["slug"] for p in featured}
+    analysis = [p for p in guides if p.get("model_watch") and p["slug"] not in fslugs]
+    howtos = ([p for p in guides if not p.get("model_watch") and p["slug"] not in fslugs]
+              + [p for p in projects if p["slug"] not in fslugs])
+
+    body = ['<div class="article" style="max-width:none"><p class="crumb"><a href="index.html">HomeForge</a> / Reads</p>',
+            '<span class="eyebrow">Long-form &amp; analysis</span>',
+            "<h1>Reads</h1>",
+            '<p class="lede">The deep end of HomeForge: AI news and analysis, honest model breakdowns, and real build write-ups. Start with the featured pieces, then dig in.</p>']
+    if featured:
+        body.append('<div class="cards">' + "".join(card(p, True) for p in featured) + "</div>")
+    if analysis:
+        body.append('<h2 style="margin-top:40px">AI news &amp; analysis</h2>')
+        body.append('<div class="cards">' + "".join(card(p) for p in analysis) + "</div>")
+    if howtos:
+        body.append('<h2 style="margin-top:40px">Guides &amp; builds</h2>')
+        body.append('<div class="cards">' + "".join(card(p) for p in howtos) + "</div>")
+    body.append('<hr><a class="cta" href="picks.html">Browse the gear list &rarr;</a></div>')
+    (SITE / "reads.html").write_text(
+        page("Reads — AI analysis, model breakdowns & builds — HomeForge",
+             "HomeForge's long-form: AI news and analysis, honest model breakdowns, and real hardware build write-ups.",
+             f"{SITE_URL}reads.html", "\n".join(body), root=""), encoding="utf-8")
+
+
 def build_sitemap(guides, projects):
-    urls = ["", "picks.html", "learn.html", "model-watch.html", "starter-kit.html", "resources.html", "privacy.html", "terms.html"]
+    urls = ["", "reads.html", "picks.html", "learn.html", "model-watch.html", "starter-kit.html", "resources.html", "privacy.html", "terms.html"]
     urls += [p["url"] for p in guides] + [p["url"] for p in projects]
     body = ['<?xml version="1.0" encoding="UTF-8"?>',
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
@@ -492,8 +541,9 @@ def main():
     build_picks()
     build_learn(learn_guides, projects)
     build_model_watch(model_watch)
+    build_reads(guides, projects)
     build_sitemap(guides, projects)
-    print(f"Built: picks.html, learn.html, model-watch.html ({len(model_watch)} items), "
+    print(f"Built: reads.html, picks.html, learn.html, model-watch.html ({len(model_watch)} items), "
           f"{len(learn_guides)} guides, {len(projects)} builds, hf.css, sitemap.xml")
 
 
