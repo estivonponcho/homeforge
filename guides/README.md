@@ -27,6 +27,10 @@ Where a guide recommends a tool or book, it links to the relevant
   the real license terms, including the revenue thresholds buried in two of the four.
 - [The frontier AI model landscape (September 2026)](frontier-model-comparison-september-2026.md) —
   Claude Fable 5.1, GPT-6 Astra, Gemini 3.8 Flash, and Grok 4.6 compared head-to-head.
+- [GPT-6 Astra: the deep dive](gpt-6-astra-deep-dive-2026.md) — the security incident that
+  delayed it, the benchmark numbers, and what its own safety card admits about monitorability.
+- [Is GPT-6 Astra AGI? What "AGI" actually means in 2026](is-gpt-6-astra-agi-2026.md) —
+  why nobody agrees on the definition, and what the labs' conflicting reactions reveal.
 - [What a heavy AI workflow actually costs](frontier-model-api-pricing-comparison-2026.md) —
   real pricing math across the four frontier models, including their context-window cost cliffs.
 - [Frontier vs. open-weight in 2026: which should you actually use](frontier-vs-open-weight-decision-guide-2026.md) —
