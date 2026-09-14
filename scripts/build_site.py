@@ -225,8 +225,19 @@ ANALYTICS = ('<script data-goatcounter="https://homeforge.goatcounter.com/count"
              'async src="//gc.zgo.at/count.js"></script>')
 
 
-def page(title, description, canonical, body, root="", jsonld=""):
+def page(title, description, canonical, body, root="", jsonld="", social_image=""):
     desc = _html.escape(description, quote=True)
+    social_meta = ""
+    if social_image:
+        image = _html.escape(social_image, quote=True)
+        social_meta = (f'<meta property="og:image" content="{image}">\n'
+                       f'<meta property="og:image:secure_url" content="{image}">\n'
+                       '<meta property="og:image:type" content="image/png">\n'
+                       '<meta property="og:image:width" content="1122">\n'
+                       '<meta property="og:image:height" content="1402">\n'
+                       '<meta property="og:image:alt" content="HomeForge Home Assistant system diagram">\n'
+                       '<meta name="twitter:card" content="summary_large_image">\n'
+                       f'<meta name="twitter:image" content="{image}">')
     nav = (f'<a href="{root}index.html">Home</a>'
            f'<a href="{root}picks.html">The list</a>'
            f'<a href="{root}learn.html">Guides</a>'
@@ -248,6 +259,8 @@ def page(title, description, canonical, body, root="", jsonld=""):
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{canonical}">
 <meta property="og:type" content="article">
+<meta property="og:site_name" content="HomeForge">
+{social_meta}
 {FONTS}
 <link rel="stylesheet" href="{root}hf.css">
 {jsonld}
@@ -289,6 +302,10 @@ def build_md_pages(folder, kind):
         t = title_of(md, slug)
         desc = first_para(md)
         canonical = f"{SITE_URL}{folder}/{slug}.html"
+        social_image = ""
+        image_match = re.search(r'<img\s+[^>]*src="\.\./assets/([^"?#]+)', md, re.I)
+        if image_match:
+            social_image = f"{SITE_URL}assets/{image_match.group(1)}"
         # strip the leading H1 from body (we render it in .article too, keep it once)
         body = (f'<div class="article">'
                 f'<p class="crumb"><a href="../index.html">HomeForge</a> / <a href="../learn.html">{kind}</a></p>'
@@ -308,7 +325,8 @@ def build_md_pages(folder, kind):
         jsonld = '<script type="application/ld+json">' + json.dumps(ld) + "</script>"
         (SITE / folder).mkdir(parents=True, exist_ok=True)
         (SITE / folder / f"{slug}.html").write_text(
-            page(f"{t} — HomeForge", desc, canonical, body, root="../", jsonld=jsonld), encoding="utf-8")
+            page(f"{t} — HomeForge", desc, canonical, body, root="../", jsonld=jsonld,
+                 social_image=social_image), encoding="utf-8")
         pages.append({"slug": slug, "title": t, "desc": desc, "folder": folder,
                       "url": f"{folder}/{slug}.html"})
     return pages
