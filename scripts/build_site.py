@@ -47,8 +47,11 @@ def rewrite_link(url: str) -> str:
 def _inline(text: str) -> str:
     text = text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
     text = re.sub(r"`([^`]+)`", r"<code>\1</code>", text)
-    text = re.sub(r"\[([^\]]+)\]\(([^)]+)\)",
-                  lambda m: f'<a href="{rewrite_link(m.group(2))}">{m.group(1)}</a>', text)
+    def link(m):
+        url = rewrite_link(m.group(2))
+        rel = ' rel="nofollow sponsored noopener"' if "amazon.com" in url else (' rel="noopener"' if url.startswith("http") else "")
+        return f'<a href="{url}"{rel}>{m.group(1)}</a>'
+    text = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", link, text)
     text = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", text)
     text = re.sub(r"(?<!\*)\*([^*\n]+)\*(?!\*)", r"<em>\1</em>", text)
     text = re.sub(r"(?<![\w`])_([^_]+)_(?![\w`])", r"<em>\1</em>", text)

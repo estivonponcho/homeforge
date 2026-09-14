@@ -41,13 +41,14 @@ serial, and ESC/POS printer control in one go.
 
 ## Parts you need
 
-- A **[WeMos D1 Mini (ESP8266)](../picks.html#smart-home)** — the microcontroller.
-- A **58mm thermal receipt printer** with a TTL serial input (the small embeddable
-  kind, not a USB desktop printer).
-- An **external 5–9V power supply** rated for **2A or more** — thermal printers
-  pull a lot of current when the head fires.
-- A roll of **58mm thermal paper**, plus [jumper wires](../picks.html#smart-home)
-  and a [breadboard](../picks.html#smart-home) to prototype.
+Some links in this parts list are Amazon affiliate links. I may earn a commission
+from qualifying purchases at no extra cost to you.
+
+- A **[WeMos D1 Mini (ESP8266)](https://www.amazon.com/s?k=WeMos+D1+Mini+ESP8266&tag=homeforge0a-20)** for the microcontroller.
+- A **[58mm embedded thermal receipt printer with TTL serial input](https://www.amazon.com/s?k=58mm+TTL+embedded+thermal+receipt+printer&tag=homeforge0a-20)**. Check for TTL/UART input before buying; a USB-only desktop printer will not work with this wiring.
+- An **[external 5V or 9V power supply rated for at least 2A](https://www.amazon.com/s?k=5V+9V+2A+DC+power+supply+thermal+printer&tag=homeforge0a-20)**. Match the voltage and connector polarity printed on your specific printer.
+- A roll of **[58mm thermal paper](https://www.amazon.com/s?k=58mm+thermal+receipt+paper&tag=homeforge0a-20)**.
+- A **[Dupont jumper-wire kit](https://www.amazon.com/s?k=dupont+jumper+wires+M+F&tag=homeforge0a-20)** and **[breadboard kit](https://www.amazon.com/s?k=ELEGOO+breadboard+kit&tag=homeforge0a-20)** for prototyping.
 
 ## Wiring
 
@@ -90,7 +91,7 @@ The exact connections:
 
 > Most 58mm TTL printers accept 3.3V logic on RX, so the D1 Mini's TX drives them
 > directly. If yours is finicky, add a [logic level
-> converter](../picks.html#smart-home) between D8 and RX.
+> converter](https://www.amazon.com/s?k=3.3V+5V+logic+level+converter&tag=homeforge0a-20) between D8 and RX.
 
 ## The firmware, in the parts that matter
 
@@ -142,7 +143,7 @@ submit, hands the text to the printer with an NTP timestamp.
 
 ## What I'd add next
 
-- A small [OLED](../picks.html#smart-home) for status and the current IP.
+- A small [I2C OLED display](https://www.amazon.com/s?k=0.96+I2C+OLED+SSD1306&tag=homeforge0a-20) for status and the current IP.
 - A Home Assistant hook so automations can print (e.g. the day's calendar at 7am).
 
 ## ⚠️ Security note
@@ -158,6 +159,8 @@ commit them:
 
 ## Gear used
 
-- [WeMos D1 Mini (ESP8266)](../picks.html#smart-home)
-- A 58mm TTL thermal receipt printer + external 5–9V/2A supply
-- [Jumper wires](../picks.html#smart-home), a [breadboard](../picks.html#smart-home), and a [soldering mat](../picks.html#smart-home) for the final build
+- [WeMos D1 Mini (ESP8266)](https://www.amazon.com/s?k=WeMos+D1+Mini+ESP8266&tag=homeforge0a-20)
+- [58mm TTL thermal receipt printer](https://www.amazon.com/s?k=58mm+TTL+embedded+thermal+receipt+printer&tag=homeforge0a-20)
+- [Compatible 5V or 9V, 2A+ power supply](https://www.amazon.com/s?k=5V+9V+2A+DC+power+supply+thermal+printer&tag=homeforge0a-20)
+- [58mm thermal paper](https://www.amazon.com/s?k=58mm+thermal+receipt+paper&tag=homeforge0a-20)
+- [Jumper wires](https://www.amazon.com/s?k=dupont+jumper+wires+M+F&tag=homeforge0a-20), [breadboard](https://www.amazon.com/s?k=ELEGOO+breadboard+kit&tag=homeforge0a-20), and [soldering mat](https://www.amazon.com/s?k=silicone+soldering+mat+heat+resistant&tag=homeforge0a-20)
