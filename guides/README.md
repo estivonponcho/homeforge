@@ -19,6 +19,12 @@ Where a guide recommends a tool or book, it links to the relevant
   a new open-weight architecture family, MIT-licensed, with a 1M-token context window.
 - [DeepSeek V4.1 Flash vs. the other open-weight giants of 2026](deepseek-v4-1-flash-vs-open-weight-rivals-2026.md) —
   head-to-head against Kimi K3, GLM-5.3-Flash, Qwen3.8-Max, and DeepSeek's own V4 Pro.
+- [How 2026's open-weight models actually work](how-2026-open-weight-models-actually-work.md) —
+  a deep dive into the MoE and linear-attention architectures behind DeepSeek, Kimi, GLM, and Qwen.
+- [What it actually takes to self-host a 2026 open-weight model](what-it-takes-to-self-host-a-2026-open-weight-model.md) —
+  real GGUF sizes and VRAM math — none of them fit a homelab GPU, and here's what does.
+- [Open-weight AI licenses in 2026, actually explained](open-weight-ai-licenses-2026-explained.md) —
+  the real license terms, including the revenue thresholds buried in two of the four.
 - [The frontier AI model landscape (September 2026)](frontier-model-comparison-september-2026.md) —
   Claude Fable 5.1, GPT-6 Astra, Gemini 3.8 Flash, and Grok 4.6 compared head-to-head.
 - [What a heavy AI workflow actually costs](frontier-model-api-pricing-comparison-2026.md) —
