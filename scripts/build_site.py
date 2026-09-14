@@ -578,7 +578,7 @@ def build_reads(guides, projects):
 
 
 def build_sitemap(guides, projects):
-    urls = ["", "reads.html", "picks.html", "learn.html", "model-watch.html", "starter-kit.html", "resources.html", "privacy.html", "terms.html"]
+    urls = ["", "reads.html", "picks.html", "learn.html", "model-watch.html", "starter-kit.html", "home-assistant-first-five-automations-checklist.html", "resources.html", "privacy.html", "terms.html"]
     urls += [p["url"] for p in guides] + [p["url"] for p in projects]
     body = ['<?xml version="1.0" encoding="UTF-8"?>',
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']

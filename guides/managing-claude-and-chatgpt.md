@@ -106,7 +106,7 @@ short version:
 ## Which model, when
 
 A rough, honest heuristic (models change monthly — see the
-[model-watch template](model-watch-template.md)):
+[Model Watch](../model-watch.html)):
 
 | You want to… | Reach for |
 |---|---|
