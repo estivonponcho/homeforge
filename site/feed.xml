@@ -203,5 +203,11 @@
       <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/ai-safety-deep-research-departures-risks-mitigations.html</guid>
       <description>Researcher departures raise questions about accountability. Technical studies and incident reports show which failures have actually occurred, and which sa</description>
     </item>
+    <item>
+      <title>AI agent memory: five practical patterns and the evidence behind them</title>
+      <link>https://estivonponcho.github.io/homeforge/guides/ai-agent-memory-practical-patterns.html</link>
+      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/ai-agent-memory-practical-patterns.html</guid>
+      <description>Give your AI agent useful memory: keep current facts, trace changes, retire stale records, and test cost and accuracy before upgrading hardware.</description>
+    </item>
   </channel>
 </rss>

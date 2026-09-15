@@ -93,6 +93,8 @@ def rewrite_link(url: str) -> str:
         return ANCHOR_MAP[url]
     if url.startswith("../README.md#"):
         return "../picks.html"  # unknown anchor -> catalog top
+    if url.startswith(("../assets/", "assets/")):
+        return url  # downloadable source files are not generated article pages
     if url.endswith(".md"):
         return url[:-3] + ".html"
     return url
@@ -268,7 +270,7 @@ figure.diagram svg{max-width:100%;height:auto;display:block;margin:auto}
 figure.diagram img{max-width:100%;height:auto;display:block;margin:auto;border-radius:8px}
 figure.diagram text{fill:var(--ink)}figure.diagram .wire{stroke:var(--ink)}figure.diagram .data{stroke:var(--accent)}figure.diagram .box{fill:var(--surface2);stroke:var(--ink)}
 figure.diagram figcaption{margin-top:10px;color:var(--muted);font-size:.85rem;text-align:center}
-@media(max-width:720px){main{padding-top:34px}}
+@media(max-width:720px){main{padding-top:34px}header{position:static}.bar{display:block}.nav{margin-top:12px}}
 """
 
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
@@ -522,6 +524,7 @@ READ_SECTION_ORDER = [
     "Builds",
 ]
 READ_META = {
+    "ai-agent-memory-practical-patterns": ("Using AI", "Agent memory"),
     "ai-safety-deep-research-departures-risks-mitigations": ("AI Safety", "Deep research"),
     "ai-safety-frontier-debate-september-2026": ("AI Safety", "Current debate"),
     "ai-safety-researcher-departures-timeline": ("AI Safety", "Timeline"),

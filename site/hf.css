@@ -40,4 +40,4 @@ figure.diagram svg{max-width:100%;height:auto;display:block;margin:auto}
 figure.diagram img{max-width:100%;height:auto;display:block;margin:auto;border-radius:8px}
 figure.diagram text{fill:var(--ink)}figure.diagram .wire{stroke:var(--ink)}figure.diagram .data{stroke:var(--accent)}figure.diagram .box{fill:var(--surface2);stroke:var(--ink)}
 figure.diagram figcaption{margin-top:10px;color:var(--muted);font-size:.85rem;text-align:center}
-@media(max-width:720px){main{padding-top:34px}}
+@media(max-width:720px){main{padding-top:34px}header{position:static}.bar{display:block}.nav{margin-top:12px}}
