@@ -36,12 +36,6 @@
       <description>An ESP8266 that hosts a little web page on your network. Open it on your phone, type a message, hit send — and it prints on a thermal receipt printer, time</description>
     </item>
     <item>
-      <title>Turn a hand sketch into a scaled conceptual dock plan with AI</title>
-      <link>https://estivonponcho.github.io/homeforge/projects/ai-concept-site-plan-workflow.html</link>
-      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/projects/ai-concept-site-plan-workflow.html</guid>
-      <description>A chat model can help organize requirements and generate drawing code, but it should not guess dimensions or present a conceptual sketch as engineered work</description>
-    </item>
-    <item>
       <title>What it actually takes to self-host a 2026 open-weight model</title>
       <link>https://estivonponcho.github.io/homeforge/guides/what-it-takes-to-self-host-a-2026-open-weight-model.html</link>
       <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/what-it-takes-to-self-host-a-2026-open-weight-model.html</guid>
