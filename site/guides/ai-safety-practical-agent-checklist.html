@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Before you give an AI agent access: a practical safety checklist — HomeForge</title>
+<meta name="description" content="You do not need to settle the debate about superintelligence to reduce the damage an everyday automation can cause.">
+<link rel="canonical" href="https://estivonponcho.github.io/homeforge/guides/ai-safety-practical-agent-checklist.html">
+<link rel="alternate" type="application/rss+xml" title="HomeForge" href="https://estivonponcho.github.io/homeforge/feed.xml">
+<meta property="og:title" content="Before you give an AI agent access: a practical safety checklist — HomeForge">
+<meta property="og:description" content="You do not need to settle the debate about superintelligence to reduce the damage an everyday automation can cause.">
+<meta property="og:url" content="https://estivonponcho.github.io/homeforge/guides/ai-safety-practical-agent-checklist.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="HomeForge">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../hf.css">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "Before you give an AI agent access: a practical safety checklist", "description": "You do not need to settle the debate about superintelligence to reduce the damage an everyday automation can cause.", "url": "https://estivonponcho.github.io/homeforge/guides/ai-safety-practical-agent-checklist.html", "mainEntityOfPage": "https://estivonponcho.github.io/homeforge/guides/ai-safety-practical-agent-checklist.html", "author": {"@type": "Person", "name": "Mike Cage"}, "publisher": {"@type": "Organization", "name": "HomeForge"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "HomeForge", "item": "https://estivonponcho.github.io/homeforge/"}, {"@type": "ListItem", "position": 2, "name": "AI Safety", "item": "https://estivonponcho.github.io/homeforge/ai-safety.html"}, {"@type": "ListItem", "position": 3, "name": "Before you give an AI agent access: a practical safety checklist", "item": "https://estivonponcho.github.io/homeforge/guides/ai-safety-practical-agent-checklist.html"}]}]</script>
+<script data-goatcounter="https://homeforge.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<header><div class="wrap bar"><a class="brand" href="../index.html"><span>&#9650;</span> HomeForge</a><nav class="nav"><a href="../index.html">Home</a><a href="../reads.html">Reads</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="../model-watch.html">Model Watch</a><a href="../ai-safety.html">AI Safety</a><a href="../resources.html">Watch &amp; build</a><a href="../starter-kit.html">Starter kit</a></nav></div></header>
+<main class="wrap">
+<div class="article"><p class="crumb"><a href="../index.html">HomeForge</a> / <a href="../ai-safety.html">AI Safety</a></p><h1>Before you give an AI agent access: a practical safety checklist</h1>
+<p>You do not need to settle the debate about superintelligence to reduce the damage an everyday automation can cause.</p>
+<p><strong>Published and reviewed: September 14, 2026.</strong> HomeForge implementation advice, not a certification or guarantee of safety.</p>
+<h2>Start with permissions, not promises</h2>
+<p><a href="https://genai.owasp.org/llmrisk/llm062025-excessive-agency/" rel="noopener">OWASP's excessive-agency guidance</a> identifies unnecessary functions, permissions and autonomy as sources of risk. It recommends minimizing access, checking authorization outside the model, requiring approval for high-impact actions, and logging and limiting activity.</p>
+<p>Telling a model to be careful is not the same as preventing its account from deleting a file or sending a message.</p>
+<h2>A small checklist for a real workflow</h2>
+<p>The examples below are HomeForge's proposed operating rules. They are not claims that our projects have already passed an audit.</p>
+<ul><li><strong>Define the task.</strong> Write down what the agent may read, create and change. Also state what it must never do.</li><li><strong>Begin read-only.</strong> A newsletter researcher needs sources, not access to payments or your whole inbox.</li><li><strong>Separate preparation from execution.</strong> Drafting a post and publishing it should be different operations. Approval should cover the exact content and destination, and expire if either changes.</li><li><strong>Use a limited account.</strong> Restrict folders, services and credentials to the job. Keep unrelated personal and customer data out.</li><li><strong>Treat retrieved content as evidence, not authority.</strong> A web page, email or document can contain instructions aimed at the agent. It does not get to change your rules.</li><li><strong>Limit repeated actions.</strong> Set a maximum number of sends, retries and purchases. Stop on an unexpected result rather than repeating blindly.</li><li><strong>Make recovery possible.</strong> Keep version history or backups, and test a restore using disposable files.</li><li><strong>Record outcomes.</strong> Keep enough information to explain what ran and whether it succeeded, without filling logs with secrets.</li><li><strong>Provide a stop control.</strong> Know how to disable the schedule and revoke access. Test this before unattended operation.</li></ul>
+<h2>Three examples close to home</h2>
+<p><strong>Content publishing:</strong> approve the exact draft, destination and attached link. Check whether it already posted before retrying. A failed confirmation is not proof that nothing was published.</p>
+<p><strong>Personal information assistant:</strong> begin with a small selected folder. Decide what can leave the device and how long copies and logs remain. Running the model locally does not automatically make every connected service local.</p>
+<p><strong>Home automation:</strong> start with low-consequence suggestions or light controls. Keep safety-critical devices outside experimental agent control, and retain a manual way to operate the home.</p>
+<h2>A useful first test</h2>
+<p>Use dummy files and an account that cannot affect real customers. Try a normal request, a duplicate request, a missing-data case, and a document that tells the assistant to ignore its instructions. Check both the output and the actions actually taken. A passing small test reduces uncertainty; it does not prove universal safety.</p>
+<p>For the broader debate, read <a href="ai-safety-frontier-debate-september-2026.html">what is confirmed in the September frontier discussion</a>. This guide contains no affiliate links.</p><hr><a class="cta" href="../starter-kit.html">Get the free Starter Kit &rarr;</a></div>
+</main>
+<footer><div class="wrap">HomeForge is reader-supported; some links are affiliate links (no extra cost to you).<div class="fl"><a href="../index.html">Home</a><a href="../reads.html">Reads</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="https://github.com/estivonponcho/homeforge/blob/main/AFFILIATE-DISCLOSURE.md">Disclosure</a><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></div></div></footer>
+</body>
+</html>

@@ -20,6 +20,7 @@ SITE_URL = DATA.get("site_url", "https://estivonponcho.github.io/homeforge/").rs
 
 # guides/projects markdown that should NOT become public pages
 SKIP = {"README.md", "model-watch-template.md", "custom-apps-and-health-integrations.md"}
+AI_SAFETY_ORDER = ["ai-safety-frontier-debate-september-2026", "ai-safety-researcher-departures-timeline", "ai-safety-practical-agent-checklist"]
 
 # Guides that get their own "Model Watch" hub instead of the general Guides grid:
 # any file named model-watch-*.md (the recurring drafting routine), plus these
@@ -298,6 +299,7 @@ def page(title, description, canonical, body, root="", jsonld="", social_image="
            f'<a href="{root}picks.html">The list</a>'
            f'<a href="{root}learn.html">Guides</a>'
            f'<a href="{root}model-watch.html">Model Watch</a>'
+           f'<a href="{root}ai-safety.html">AI Safety</a>'
            f'<a href="{root}resources.html">Watch &amp; build</a>'
            f'<a href="{root}starter-kit.html">Starter kit</a>')
     foot = (f'<a href="{root}index.html">Home</a><a href="{root}reads.html">Reads</a><a href="{root}picks.html">The list</a>'
@@ -367,6 +369,8 @@ def build_md_pages(folder, kind):
         model_watch = folder == "guides" and is_model_watch(slug)
         hub_label = "Model Watch" if model_watch else kind
         hub_url = "model-watch.html" if model_watch else "learn.html"
+        if slug in AI_SAFETY_ORDER:
+            hub_label, hub_url = "AI Safety", "ai-safety.html"
         # strip the leading H1 from body (we render it in .article too, keep it once)
         body = (f'<div class="article">'
                 f'<p class="crumb"><a href="../index.html">HomeForge</a> / <a href="../{hub_url}">{hub_label}</a></p>'
@@ -448,6 +452,30 @@ def build_learn(guides, projects):
              f"{SITE_URL}learn.html", "\n".join(body), root=""), encoding="utf-8")
 
 
+def build_ai_safety(pages):
+    byslug = {p["slug"]: p for p in pages}
+    cards = "".join(
+        f'<a class="card" href="{byslug[s]["url"]}"><span class="tag">AI Safety</span>'
+        f'<h3>{_html.escape(byslug[s]["title"])}</h3><p>{_html.escape(byslug[s]["desc"])}</p></a>'
+        for s in AI_SAFETY_ORDER if s in byslug)
+    body = ('<div class="article" style="max-width:none"><p class="crumb"><a href="index.html">HomeForge</a> / AI Safety</p>'
+            '<span class="eyebrow">Evidence, accountability &amp; practical safeguards</span><h1>AI Safety</h1>'
+            '<p class="lede">What happened, what remains uncertain, and what you can do before giving an AI more access.</p>'
+            '<p>Last reviewed: September 14, 2026. This is a dated editorial collection, not a live incident monitor.</p>'
+            f'<div class="cards">{cards}</div>'
+            '<h2>How we cover this</h2><ul><li><strong>Documented:</strong> an original statement or identified reporting supports the event.</li>'
+            '<li><strong>Attributed:</strong> a researcher or company makes a claim. We name the source; attribution is not independent proof.</li>'
+            '<li><strong>Unresolved:</strong> implementation, causes, predictions or outcomes have not been established.</li></ul>'
+            '<p>We distinguish an evaluation result from a real-world incident, a resignation from proof of misconduct, and a safety promise from a verified safeguard. '
+            'Company statements and advocacy publications are identified as such. New evidence can change a conclusion.</p>'
+            '<p>These articles contain no product recommendations or affiliate links. HomeForge has affiliate-supported content elsewhere.</p>'
+            '<h2>Read the underlying evidence</h2><p><a href="https://internationalaisafetyreport.org/publication/international-ai-safety-report-2026">International AI Safety Report 2026</a> · '
+            '<a href="https://genai.owasp.org/llmrisk/llm062025-excessive-agency/">OWASP: excessive agency</a></p>'
+            '<p><a href="reads.html">Browse all HomeForge reads</a></p></div>')
+    (SITE / "ai-safety.html").write_text(page("AI Safety | HomeForge", "Sourced AI safety news, researcher departures, and practical safeguards for AI agents.",
+        f"{SITE_URL}ai-safety.html", body, root=""), encoding="utf-8")
+
+
 def build_model_watch(pages):
     ordered = sorted(pages, key=lambda p: MODEL_WATCH_ORDER.index(p["slug"])
                       if p["slug"] in MODEL_WATCH_ORDER else len(MODEL_WATCH_ORDER))
@@ -483,6 +511,7 @@ FEATURED_READS = [
 
 # Reads taxonomy: slug -> (section, topic tag). Unmapped pages fall back by type.
 READ_SECTION_ORDER = [
+    "AI Safety",
     "AI News & Analysis",
     "Model Releases & Comparisons",
     "AI Explainers",
@@ -492,6 +521,9 @@ READ_SECTION_ORDER = [
     "Builds",
 ]
 READ_META = {
+    "ai-safety-frontier-debate-september-2026": ("AI Safety", "Current debate"),
+    "ai-safety-researcher-departures-timeline": ("AI Safety", "Timeline"),
+    "ai-safety-practical-agent-checklist": ("AI Safety", "Practical safeguards"),
     "hugging-face-incident-2026-explained": ("AI News & Analysis", "Security"),
     "gpt-6-astra-deep-dive-2026": ("AI News & Analysis", "OpenAI"),
     "is-gpt-6-astra-agi-2026": ("AI News & Analysis", "AGI debate"),
@@ -579,7 +611,7 @@ def build_reads(guides, projects):
 
 
 def build_sitemap(guides, projects):
-    urls = ["", "reads.html", "picks.html", "learn.html", "model-watch.html", "starter-kit.html", "home-assistant-first-five-automations-checklist.html", "resources.html", "privacy.html", "terms.html"]
+    urls = ["", "reads.html", "picks.html", "learn.html", "model-watch.html", "ai-safety.html", "starter-kit.html", "home-assistant-first-five-automations-checklist.html", "resources.html", "privacy.html", "terms.html"]
     urls += [p["url"] for p in guides] + [p["url"] for p in projects]
     body = ['<?xml version="1.0" encoding="UTF-8"?>',
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
@@ -627,6 +659,7 @@ def main():
     build_picks()
     build_learn(learn_guides, projects)
     build_model_watch(model_watch)
+    build_ai_safety(guides)
     build_reads(guides, projects)
     build_sitemap(guides, projects)
     build_feed(guides, projects)
