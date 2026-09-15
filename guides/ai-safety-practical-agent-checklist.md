@@ -34,6 +34,8 @@ The examples below are HomeForge's proposed operating rules. They are not claims
 
 ## A useful first test
 
+For the evidence behind these recommendations and the limits of each control, see the [deep research report](ai-safety-deep-research-departures-risks-mitigations.md).
+
 Use dummy files and an account that cannot affect real customers. Try a normal request, a duplicate request, a missing-data case, and a document that tells the assistant to ignore its instructions. Check both the output and the actions actually taken. A passing small test reduces uncertainty; it does not prove universal safety.
 
 For the broader debate, read [what is confirmed in the September frontier discussion](ai-safety-frontier-debate-september-2026.md). This guide contains no affiliate links.

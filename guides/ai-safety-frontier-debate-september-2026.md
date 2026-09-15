@@ -36,4 +36,6 @@ Public agreement is worth documenting. Operational evidence deserves more weight
 
 ## Source and correction note
 
+For the expanded evidence review, company responses and mitigation analysis, read [AI safety: researcher departures, risks and mitigations](ai-safety-deep-research-departures-risks-mitigations.md).
+
 The essay is a first-party policy proposal. AP and Axios provide reporting; the international report supplies broader scientific context. We have not independently audited a lab or inspected evaluator contracts. Future revisions should record their date and explain any changed conclusion. No affiliate links appear in this article.

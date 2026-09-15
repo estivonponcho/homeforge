@@ -32,6 +32,8 @@ Avoid selecting only dramatic resignations and treating that sample as a poll of
 
 ## How to evaluate the next story
 
+The [deep research report](ai-safety-deep-research-departures-risks-mitigations.md) adds research-freedom disputes, the Right to Warn movement, company responses and a counterexample to inferred protest motives.
+
 - Locate the original statement and the date, not just a screenshot of a headline.
 - Separate what the person observed from what they predict.
 - Identify whether the claim concerns privacy, discrimination, security, misinformation or loss of control.

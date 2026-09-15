@@ -20,7 +20,7 @@ SITE_URL = DATA.get("site_url", "https://estivonponcho.github.io/homeforge/").rs
 
 # guides/projects markdown that should NOT become public pages
 SKIP = {"README.md", "model-watch-template.md", "custom-apps-and-health-integrations.md"}
-AI_SAFETY_ORDER = ["ai-safety-frontier-debate-september-2026", "ai-safety-researcher-departures-timeline", "ai-safety-practical-agent-checklist"]
+AI_SAFETY_ORDER = ["ai-safety-deep-research-departures-risks-mitigations", "ai-safety-frontier-debate-september-2026", "ai-safety-researcher-departures-timeline", "ai-safety-practical-agent-checklist"]
 
 # Guides that get their own "Model Watch" hub instead of the general Guides grid:
 # any file named model-watch-*.md (the recurring drafting routine), plus these
@@ -503,6 +503,7 @@ def build_model_watch(pages):
 
 
 FEATURED_READS = [
+    "ai-safety-deep-research-departures-risks-mitigations",
     "hugging-face-incident-2026-explained",
     "gpt-6-astra-deep-dive-2026",
     "frontier-model-comparison-september-2026",
@@ -521,6 +522,7 @@ READ_SECTION_ORDER = [
     "Builds",
 ]
 READ_META = {
+    "ai-safety-deep-research-departures-risks-mitigations": ("AI Safety", "Deep research"),
     "ai-safety-frontier-debate-september-2026": ("AI Safety", "Current debate"),
     "ai-safety-researcher-departures-timeline": ("AI Safety", "Timeline"),
     "ai-safety-practical-agent-checklist": ("AI Safety", "Practical safeguards"),
