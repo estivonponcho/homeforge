@@ -234,9 +234,13 @@ CSS = """:root{--ground:#F4F3F0;--surface:#fff;--surface2:#FBF9F6;--ink:#1B1712;
 .wrap{max-width:1040px;margin:auto;padding:0 22px}.article{max-width:74ch}
 a{color:var(--ink)}a:hover{color:var(--accent)}
 header{border-bottom:1px solid var(--line);padding:14px 0;position:sticky;top:0;background:color-mix(in srgb,var(--ground) 88%,transparent);backdrop-filter:blur(8px);z-index:10}
-.bar{display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand{color:var(--ink);font-family:"Bricolage Grotesque",sans-serif;font-weight:800;text-decoration:none;font-size:1.1rem}.brand span{color:var(--accent)}
-.nav{display:flex;gap:8px;flex-wrap:wrap}.nav a{font:500 .76rem "IBM Plex Mono",monospace;text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:7px 11px;background:var(--surface);color:var(--ink)}.nav a:hover{border-color:var(--accent)}
+.bar{display:flex;align-items:center;gap:12px;position:relative}
+.brand{color:var(--ink);font-family:"Bricolage Grotesque",sans-serif;font-weight:800;text-decoration:none;font-size:1.1rem;margin-right:auto}.brand span{color:var(--accent)}
+.nav{display:flex;gap:6px;align-items:center;flex-wrap:nowrap}
+.nav a,.navbtn{font:500 .76rem "IBM Plex Mono",monospace;text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:7px 10px;background:var(--surface);color:var(--ink);display:inline-flex;align-items:center;gap:6px;line-height:1;cursor:pointer}
+.nav a:hover,.navbtn:hover{border-color:var(--accent);color:var(--accent)}
+.nav svg,.navbtn svg{width:14px;height:14px;flex:none;stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round;display:block}
+.bar .navtoggle{display:none}
 main{padding:48px 0 64px}
 .eyebrow{font:500 .72rem "IBM Plex Mono",monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
 h1,h2,h3,h4{font-family:"Bricolage Grotesque",sans-serif;line-height:1.15;text-wrap:balance}
@@ -270,8 +274,32 @@ figure.diagram svg{max-width:100%;height:auto;display:block;margin:auto}
 figure.diagram img{max-width:100%;height:auto;display:block;margin:auto;border-radius:8px}
 figure.diagram text{fill:var(--ink)}figure.diagram .wire{stroke:var(--ink)}figure.diagram .data{stroke:var(--accent)}figure.diagram .box{fill:var(--surface2);stroke:var(--ink)}
 figure.diagram figcaption{margin-top:10px;color:var(--muted);font-size:.85rem;text-align:center}
-@media(max-width:720px){main{padding-top:34px}header{position:static}.bar{display:block}.nav{margin-top:12px}}
+@media(max-width:900px){
+.bar .navtoggle{display:inline-flex}
+.nav{position:absolute;top:calc(100% + 8px);right:0;left:0;z-index:40;flex-direction:column;align-items:stretch;gap:6px;padding:10px;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 32px -18px rgba(27,23,18,.35);max-height:0;overflow:hidden;opacity:0;pointer-events:none;transform:translateY(-6px);transition:opacity .16s,transform .16s}
+.nav.open{max-height:none;overflow:visible;opacity:1;pointer-events:auto;transform:none}
+.nav a{width:100%;justify-content:flex-start;font-size:.9rem;padding:11px 13px}.nav svg{width:16px;height:16px}
+}
 """
+
+# Cohesive monochrome nav icons (match the hand-authored homepage set)
+NAV_ICONS = {
+    "home": '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.8 7.5 8 3l5.2 4.5"/><path d="M4.4 6.7v6.5h7.2V6.7"/></svg>',
+    "reads": '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 4C6.5 3 4 3 2.5 3.4v9.2C4 12.2 6.5 12.2 8 13.2 9.5 12.2 12 12.2 13.5 12.6V3.4C12 3 9.5 3 8 4z"/><path d="M8 4v9.2"/></svg>',
+    "list": '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 4.5h10M3 8h10M3 11.5h10"/></svg>',
+    "guides": '<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5.4"/><path d="M10.6 5.4 9.1 9.1 5.4 10.6 6.9 6.9z"/></svg>',
+    "model": '<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="4.6" y="4.6" width="6.8" height="6.8" rx="1"/><path d="M6.6 2.4v2.2M9.4 2.4v2.2M6.6 11.4v2.2M9.4 11.4v2.2M2.4 6.6h2.2M2.4 9.4h2.2M11.4 6.6h2.2M11.4 9.4h2.2"/></svg>',
+    "safety": '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2.2 3 4v3.6c0 3 2.1 4.9 5 6.2 2.9-1.3 5-3.2 5-6.2V4z"/></svg>',
+    "watch": '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5.6 4 12 8l-6.4 4z" fill="currentColor" stroke="none"/></svg>',
+    "starter": '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.7 5.4 8 2.6l5.3 2.8v5.2L8 13.4 2.7 10.6z"/><path d="M2.7 5.4 8 8.2l5.3-2.8M8 8.2v5.2"/></svg>',
+}
+HAMBURGER = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 4.5h11M2.5 8h11M2.5 11.5h11"/></svg>'
+MENU_JS = ('<script>(function(){var b=document.getElementById("navtoggle"),n=document.getElementById("nav");'
+           'if(!b||!n)return;function s(o){n.classList.toggle("open",o);b.setAttribute("aria-expanded",o?"true":"false");}'
+           'b.addEventListener("click",function(e){e.stopPropagation();s(!n.classList.contains("open"));});'
+           'n.addEventListener("click",function(e){if(e.target.closest("a"))s(false);});'
+           'document.addEventListener("click",function(e){if(n.classList.contains("open")&&!n.contains(e.target)&&e.target!==b)s(false);});'
+           'document.addEventListener("keydown",function(e){if(e.key==="Escape")s(false);});})();</script>')
 
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
          '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
@@ -296,14 +324,14 @@ def page(title, description, canonical, body, root="", jsonld="", social_image="
                        '<meta property="og:image:alt" content="HomeForge Home Assistant system diagram">\n'
                        '<meta name="twitter:card" content="summary_large_image">\n'
                        f'<meta name="twitter:image" content="{image}">')
-    nav = (f'<a href="{root}index.html">Home</a>'
-           f'<a href="{root}reads.html">Reads</a>'
-           f'<a href="{root}picks.html">The list</a>'
-           f'<a href="{root}learn.html">Guides</a>'
-           f'<a href="{root}model-watch.html">Model Watch</a>'
-           f'<a href="{root}ai-safety.html">AI Safety</a>'
-           f'<a href="{root}resources.html">Watch &amp; build</a>'
-           f'<a href="{root}starter-kit.html">Starter kit</a>')
+    nav = (f'<a href="{root}index.html">{NAV_ICONS["home"]}Home</a>'
+           f'<a href="{root}reads.html">{NAV_ICONS["reads"]}Reads</a>'
+           f'<a href="{root}picks.html">{NAV_ICONS["list"]}The list</a>'
+           f'<a href="{root}learn.html">{NAV_ICONS["guides"]}Guides</a>'
+           f'<a href="{root}model-watch.html">{NAV_ICONS["model"]}Model Watch</a>'
+           f'<a href="{root}ai-safety.html">{NAV_ICONS["safety"]}AI Safety</a>'
+           f'<a href="{root}resources.html">{NAV_ICONS["watch"]}Watch &amp; build</a>'
+           f'<a href="{root}starter-kit.html">{NAV_ICONS["starter"]}Starter kit</a>')
     foot = (f'<a href="{root}index.html">Home</a><a href="{root}reads.html">Reads</a><a href="{root}picks.html">The list</a>'
             f'<a href="{root}learn.html">Guides</a>'
             f'<a href="https://github.com/{DATA.get("repo","estivonponcho/homeforge")}/blob/main/AFFILIATE-DISCLOSURE.md">Disclosure</a>'
@@ -329,11 +357,12 @@ def page(title, description, canonical, body, root="", jsonld="", social_image="
 {ANALYTICS}
 </head>
 <body>
-<header><div class="wrap bar"><a class="brand" href="{root}index.html"><span>&#9650;</span> HomeForge</a><nav class="nav">{nav}</nav></div></header>
+<header><div class="wrap bar"><a class="brand" href="{root}index.html"><span>&#9650;</span> HomeForge</a><nav class="nav" id="nav">{nav}</nav><button class="navbtn navtoggle" id="navtoggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav">{HAMBURGER}</button></div></header>
 <main class="wrap">
 {body}
 </main>
 <footer><div class="wrap">HomeForge is reader-supported; some links are affiliate links (no extra cost to you).<div class="fl">{foot}</div></div></footer>
+{MENU_JS}
 </body>
 </html>
 """
