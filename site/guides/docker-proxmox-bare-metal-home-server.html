@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Docker, Proxmox, or bare metal for a first home server? — HomeForge</title>
+<meta name="description" content="Choose the failure and recovery model before choosing the dashboard. All three approaches can run useful services; they differ in isolation…">
+<link rel="canonical" href="https://estivonponcho.github.io/homeforge/guides/docker-proxmox-bare-metal-home-server.html">
+<link rel="alternate" type="application/rss+xml" title="HomeForge" href="https://estivonponcho.github.io/homeforge/feed.xml">
+<meta property="og:title" content="Docker, Proxmox, or bare metal for a first home server? — HomeForge">
+<meta property="og:description" content="Choose the failure and recovery model before choosing the dashboard. All three approaches can run useful services; they differ in isolation…">
+<meta property="og:url" content="https://estivonponcho.github.io/homeforge/guides/docker-proxmox-bare-metal-home-server.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="HomeForge">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../hf.css">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "Docker, Proxmox, or bare metal for a first home server?", "description": "Choose the failure and recovery model before choosing the dashboard. All three approaches can run useful services; they differ in isolation\u2026", "url": "https://estivonponcho.github.io/homeforge/guides/docker-proxmox-bare-metal-home-server.html", "mainEntityOfPage": "https://estivonponcho.github.io/homeforge/guides/docker-proxmox-bare-metal-home-server.html", "author": {"@type": "Person", "name": "Mike Cage"}, "publisher": {"@type": "Organization", "name": "HomeForge"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "HomeForge", "item": "https://estivonponcho.github.io/homeforge/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://estivonponcho.github.io/homeforge/learn.html"}, {"@type": "ListItem", "position": 3, "name": "Docker, Proxmox, or bare metal for a first home server?", "item": "https://estivonponcho.github.io/homeforge/guides/docker-proxmox-bare-metal-home-server.html"}]}]</script>
+<script data-goatcounter="https://homeforge.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<header><div class="wrap bar"><a class="brand" href="../index.html"><span>&#9650;</span> HomeForge</a><nav class="nav"><a href="../index.html">Home</a><a href="../reads.html">Reads</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="../model-watch.html">Model Watch</a><a href="../ai-safety.html">AI Safety</a><a href="../resources.html">Watch &amp; build</a><a href="../starter-kit.html">Starter kit</a></nav></div></header>
+<main class="wrap">
+<div class="article"><p class="crumb"><a href="../index.html">HomeForge</a> / <a href="../learn.html">Guides</a></p><h1>Docker, Proxmox, or bare metal for a first home server?</h1>
+<p>Choose the failure and recovery model before choosing the dashboard. All three approaches can run useful services; they differ in isolation, operational layers, and what must be restored after a host fails.</p>
+<p><em>Last checked September 22, 2026 · HomeForge</em></p>
+<h2>Bare metal</h2>
+<p>Install services directly on one operating system when the workload is small, hardware access matters, and you are prepared to document package and configuration changes.</p>
+<p>The advantage is fewer layers. The cost is weaker separation and more chance that one dependency or upgrade affects another service.</p>
+<h2>Docker Engine</h2>
+<p>Docker Engine manages images, containers, networks, and volumes. Containers are isolated processes sharing the host kernel. Compose files can make service definitions portable, but persistent volumes, secrets, databases, and host configuration still need a backup and restore plan.</p>
+<p>Use Docker when services are available as supported containers and you want repeatable application deployment without a full guest operating system for each service.</p>
+<p>Publishing container ports can interact with host firewall behavior. Docker's Ubuntu installation documentation warns that exposed ports can bypass rules managed through <code>ufw</code> or <code>firewalld</code>; review the current networking guidance before exposing services.</p>
+<h2>Proxmox VE</h2>
+<p>Proxmox VE manages KVM virtual machines and LXC containers from a web interface. VMs provide a separate guest kernel and strong workload boundaries at a higher resource cost. LXC containers share the Linux host kernel and are lighter, with different hardware-access and security tradeoffs.</p>
+<p>Use Proxmox when you need multiple operating systems, snapshots and VM-level recovery, or clear workload separation. It adds a virtualization host that also requires updates, backups, and recovery knowledge.</p>
+<h2>Decision table</h2>
+<div class="tablewrap"><table><thead><tr><th>Need</th><th>Start with</th></tr></thead><tbody><tr><td>One supported appliance on dedicated hardware</td><td>Bare metal or its recommended OS image</td></tr><tr><td>Several Linux services with repeatable definitions</td><td>Docker Engine</td></tr><tr><td>Multiple operating systems or strong VM boundaries</td><td>Proxmox VE</td></tr><tr><td>USB/radio hardware with official installation guidance</td><td>Follow the application's supported path</td></tr></tbody></table></div>
+<h2>The restore question</h2>
+<p>For each choice, write down:</p>
+<ul><li>Where service definitions live.</li><li>Where persistent data lives.</li><li>How secrets are restored.</li><li>How hardware devices are mapped.</li><li>How long a blank host takes to become useful.</li><li>Which configuration is stored outside the host.</li></ul>
+<p>The best first platform is the one you can rebuild and explain.</p>
+<h2>Sources</h2>
+<ul><li><a href="https://docs.docker.com/engine/" rel="noopener">Docker Engine documentation</a></li><li><a href="https://docs.docker.com/engine/network/" rel="noopener">Docker networking</a></li><li><a href="https://pve.proxmox.com/pve-docs/pve-admin-guide.pdf" rel="noopener">Proxmox VE Administration Guide</a></li></ul><hr><a class="cta" href="../starter-kit.html">Get the free Starter Kit &rarr;</a></div>
+</main>
+<footer><div class="wrap">HomeForge is reader-supported; some links are affiliate links (no extra cost to you).<div class="fl"><a href="../index.html">Home</a><a href="../reads.html">Reads</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="https://github.com/estivonponcho/homeforge/blob/main/AFFILIATE-DISCLOSURE.md">Disclosure</a><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></div></div></footer>
+</body>
+</html>

@@ -324,6 +324,11 @@ def page(title, description, canonical, body, root="", jsonld="", social_image="
                        '<meta property="og:image:alt" content="HomeForge Home Assistant system diagram">\n'
                        '<meta name="twitter:card" content="summary_large_image">\n'
                        f'<meta name="twitter:image" content="{image}">')
+    if not jsonld:
+        ld = {"@context": "https://schema.org", "@type": "WebPage",
+              "name": title, "description": description, "url": canonical,
+              "isPartOf": {"@type": "WebSite", "name": "HomeForge", "url": SITE_URL}}
+        jsonld = '<script type="application/ld+json">' + json.dumps(ld) + "</script>"
     nav = (f'<a href="{root}index.html">{NAV_ICONS["home"]}Home</a>'
            f'<a href="{root}reads.html">{NAV_ICONS["reads"]}Reads</a>'
            f'<a href="{root}picks.html">{NAV_ICONS["list"]}The list</a>'
@@ -373,7 +378,11 @@ def first_para(md):
         b = block.strip()
         if (b and not b.startswith("#") and not b.startswith(">")
                 and not b.startswith("*") and not re.fullmatch(r"[-_]{3,}", b)):
-            return re.sub(r"[\[\]*_`]", "", re.sub(r"\]\(([^)]+)\)", "", b)).replace("\n", " ")[:155]
+            clean = re.sub(r"[\[\]*_`]", "", re.sub(r"\]\(([^)]+)\)", "", b)).replace("\n", " ")
+            clean = re.sub(r"\s+", " ", clean).strip()
+            if len(clean) <= 155:
+                return clean
+            return clean[:152].rsplit(" ", 1)[0].rstrip(".,;:") + "…"
     return DATA.get("tagline", "HomeForge")
 
 
@@ -582,6 +591,16 @@ READ_META = {
     "esp32-oled-weather-display": ("Builds", "ESP"),
     "quadra-homelab-node": ("Builds", "Homelab"),
     "flipper-and-hardware-hacking": ("Builds", "Hardware"),
+    "home-assistant-backup-restore-drill": ("How-To Guides", "Smart home"),
+    "is-your-smart-home-feature-local-test": ("How-To Guides", "Smart home"),
+    "zigbee-thread-matter-home-assistant": ("How-To Guides", "Smart home"),
+    "fix-unreliable-zigbee-network": ("How-To Guides", "Smart home"),
+    "home-assistant-energy-watts-kwh": ("How-To Guides", "Smart home"),
+    "docker-proxmox-bare-metal-home-server": ("How-To Guides", "Homelab"),
+    "homelab-backup-restore-drill": ("How-To Guides", "Homelab"),
+    "choose-nas-by-recovery-path": ("Buying Guides", "Homelab"),
+    "first-functional-3d-printed-part": ("How-To Guides", "3D printing"),
+    "one-charger-tech-edc-power-budget": ("Buying Guides", "Tech EDC"),
 }
 
 

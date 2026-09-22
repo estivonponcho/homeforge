@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your First Functional 3D-Printed Part: A Fit-Test Workflow — HomeForge</title>
+<meta name="description" content="Decorative prints can hide small dimensional errors. A bracket, spacer, clip, or enclosure cannot. The fastest route to a useful first part is to test…">
+<link rel="canonical" href="https://estivonponcho.github.io/homeforge/guides/first-functional-3d-printed-part.html">
+<link rel="alternate" type="application/rss+xml" title="HomeForge" href="https://estivonponcho.github.io/homeforge/feed.xml">
+<meta property="og:title" content="Your First Functional 3D-Printed Part: A Fit-Test Workflow — HomeForge">
+<meta property="og:description" content="Decorative prints can hide small dimensional errors. A bracket, spacer, clip, or enclosure cannot. The fastest route to a useful first part is to test…">
+<meta property="og:url" content="https://estivonponcho.github.io/homeforge/guides/first-functional-3d-printed-part.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="HomeForge">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../hf.css">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "Your First Functional 3D-Printed Part: A Fit-Test Workflow", "description": "Decorative prints can hide small dimensional errors. A bracket, spacer, clip, or enclosure cannot. The fastest route to a useful first part is to test\u2026", "url": "https://estivonponcho.github.io/homeforge/guides/first-functional-3d-printed-part.html", "mainEntityOfPage": "https://estivonponcho.github.io/homeforge/guides/first-functional-3d-printed-part.html", "author": {"@type": "Person", "name": "Mike Cage"}, "publisher": {"@type": "Organization", "name": "HomeForge"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "HomeForge", "item": "https://estivonponcho.github.io/homeforge/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://estivonponcho.github.io/homeforge/learn.html"}, {"@type": "ListItem", "position": 3, "name": "Your First Functional 3D-Printed Part: A Fit-Test Workflow", "item": "https://estivonponcho.github.io/homeforge/guides/first-functional-3d-printed-part.html"}]}]</script>
+<script data-goatcounter="https://homeforge.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<header><div class="wrap bar"><a class="brand" href="../index.html"><span>&#9650;</span> HomeForge</a><nav class="nav"><a href="../index.html">Home</a><a href="../reads.html">Reads</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="../model-watch.html">Model Watch</a><a href="../ai-safety.html">AI Safety</a><a href="../resources.html">Watch &amp; build</a><a href="../starter-kit.html">Starter kit</a></nav></div></header>
+<main class="wrap">
+<div class="article"><p class="crumb"><a href="../index.html">HomeForge</a> / <a href="../learn.html">Guides</a></p><h1>Your First Functional 3D-Printed Part: A Fit-Test Workflow</h1>
+<p><strong>Last checked:</strong> September 22, 2026</p>
+<p>Decorative prints can hide small dimensional errors. A bracket, spacer, clip, or enclosure cannot. The fastest route to a useful first part is to test one critical feature at a time instead of printing the whole design repeatedly.</p>
+<h2>Start with one job and one measurement</h2>
+<p>Choose a low-risk part whose failure will be inconvenient rather than dangerous: a cable guide, drawer divider, tool holder, or electronics spacer. Avoid mains-electric enclosures, load-bearing mounts, food-contact parts, and anything used in a hot car until you understand the material and failure mode.</p>
+<p>Measure the mating object with calipers and write down the dimension that decides whether the part works. Then design only the smallest slice needed to test that fit. For a snap-on cable clip, that could be a 10 mm-wide ring rather than the entire mounting plate.</p>
+<h2>Run a three-coupon fit test</h2>
+<p>Print three small coupons around the measured size:</p>
+<ol><li>nominal size;</li><li>nominal size plus 0.2 mm clearance;</li><li>nominal size plus 0.4 mm clearance.</li></ol>
+<p>Those values are a starting experiment, not universal tolerances. Printer calibration, material, orientation, wall count, and slicer compensation all change the result. Record which coupon gives the fit you want, then transfer that clearance into the final model.</p>
+<h2>Check the first layer before blaming the model</h2>
+<p>A first layer that is too close to the bed can flare outward and tighten holes or slots. Prusa documents this as “elephant foot” and provides a slicer compensation setting for precise fits. Its first-layer guide also recommends recalibration after major hardware changes, including nozzle or axis work.</p>
+<p>Before redesigning the part, confirm that the first layer is evenly adhered without ridges, gaps, or excessive squish. Reprint the same coupon after any calibration change so you do not mix two variables.</p>
+<h2>Orient for the force the part will see</h2>
+<p>Layer lines create a direction that matters. A thin hook printed upright may split between layers when pulled; rotating it can make the continuous extrusion paths carry more of the load. Print a cheap orientation test and bend it by hand before committing to the full part.</p>
+<p>For a first functional print, use a familiar material and the printer maker’s normal profile. Change only one of orientation, walls, infill, or material per test. A short experiment log is more useful than a pile of mystery revisions.</p>
+<h2>The finish line</h2>
+<p>The part is done when it fits repeatedly, survives the expected hand force, and can be reprinted from the saved model and slicer settings. Save the measurement, clearance, orientation, material, and profile next to the design file. That small record turns one successful print into a reusable process.</p>
+<h2>Sources</h2>
+<ul><li><a href="https://help.prusa3d.com/article/first-layer-calibration-i3_112364" rel="noopener">Prusa Knowledge Base: First Layer Calibration</a></li><li><a href="https://help.prusa3d.com/en/article/elephant-foot-compensation_114487" rel="noopener">Prusa Knowledge Base: Elephant foot compensation</a></li></ul><hr><a class="cta" href="../starter-kit.html">Get the free Starter Kit &rarr;</a></div>
+</main>
+<footer><div class="wrap">HomeForge is reader-supported; some links are affiliate links (no extra cost to you).<div class="fl"><a href="../index.html">Home</a><a href="../reads.html">Reads</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="https://github.com/estivonponcho/homeforge/blob/main/AFFILIATE-DISCLOSURE.md">Disclosure</a><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></div></div></footer>
+</body>
+</html>

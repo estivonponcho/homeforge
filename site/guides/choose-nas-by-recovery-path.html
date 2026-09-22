@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Choose a NAS by failure and recovery, not bay count — HomeForge</title>
+<meta name="description" content="Drive bays tell you how many disks fit. They do not tell you whether your applications can be restored, how long a rebuild takes, or where the…">
+<link rel="canonical" href="https://estivonponcho.github.io/homeforge/guides/choose-nas-by-recovery-path.html">
+<link rel="alternate" type="application/rss+xml" title="HomeForge" href="https://estivonponcho.github.io/homeforge/feed.xml">
+<meta property="og:title" content="Choose a NAS by failure and recovery, not bay count — HomeForge">
+<meta property="og:description" content="Drive bays tell you how many disks fit. They do not tell you whether your applications can be restored, how long a rebuild takes, or where the…">
+<meta property="og:url" content="https://estivonponcho.github.io/homeforge/guides/choose-nas-by-recovery-path.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="HomeForge">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../hf.css">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "Choose a NAS by failure and recovery, not bay count", "description": "Drive bays tell you how many disks fit. They do not tell you whether your applications can be restored, how long a rebuild takes, or where the\u2026", "url": "https://estivonponcho.github.io/homeforge/guides/choose-nas-by-recovery-path.html", "mainEntityOfPage": "https://estivonponcho.github.io/homeforge/guides/choose-nas-by-recovery-path.html", "author": {"@type": "Person", "name": "Mike Cage"}, "publisher": {"@type": "Organization", "name": "HomeForge"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "HomeForge", "item": "https://estivonponcho.github.io/homeforge/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://estivonponcho.github.io/homeforge/learn.html"}, {"@type": "ListItem", "position": 3, "name": "Choose a NAS by failure and recovery, not bay count", "item": "https://estivonponcho.github.io/homeforge/guides/choose-nas-by-recovery-path.html"}]}]</script>
+<script data-goatcounter="https://homeforge.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<header><div class="wrap bar"><a class="brand" href="../index.html"><span>&#9650;</span> HomeForge</a><nav class="nav"><a href="../index.html">Home</a><a href="../reads.html">Reads</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="../model-watch.html">Model Watch</a><a href="../ai-safety.html">AI Safety</a><a href="../resources.html">Watch &amp; build</a><a href="../starter-kit.html">Starter kit</a></nav></div></header>
+<main class="wrap">
+<div class="article"><p class="crumb"><a href="../index.html">HomeForge</a> / <a href="../learn.html">Guides</a></p><h1>Choose a NAS by failure and recovery, not bay count</h1>
+<p>Drive bays tell you how many disks fit. They do not tell you whether your applications can be restored, how long a rebuild takes, or where the independent backup lives.</p>
+<p><em>Last checked September 22, 2026 · HomeForge</em></p>
+<h2>Start with workloads</h2>
+<p>List the jobs separately:</p>
+<ul><li>File sharing and documents.</li><li>Photos and media.</li><li>Application databases and container volumes.</li><li>Computer backups.</li><li>Surveillance recording.</li><li>Virtual-machine storage.</li></ul>
+<p>For each one, estimate current data, annual growth, performance needs, downtime tolerance, and whether another copy exists.</p>
+<h2>Calculate usable capacity</h2>
+<p>Raw capacity is not usable capacity. Redundancy, filesystem overhead, snapshots, free-space requirements, and reserved growth reduce what is available. Use the vendor or filesystem calculator for the exact layout and confirm drive-size constraints.</p>
+<p>RAID or parity protects service availability during some drive failures. It does not protect against deletion, corruption, theft, fire, credential compromise, or every controller and filesystem failure.</p>
+<h2>Ask the recovery questions</h2>
+<ol><li>Can the data be read without the vendor account?</li><li>Can configuration and application data be exported?</li><li>Where is the independent backup?</li><li>How is the backup encrypted and how is its key recovered?</li><li>What happens if the NAS hardware, not a drive, fails?</li><li>How long will restore or rebuild take at the actual data size?</li><li>Which checks prove files and applications are usable?</li></ol>
+<h2>Compare the complete system</h2>
+<p>Include the enclosure, supported drives, additional memory, network adapters, backup destination, UPS, replacement parts, and electricity. More bays can improve layout choices but also increase cost, heat, and rebuild exposure.</p>
+<h2>A simple acceptance test</h2>
+<p>Before moving the only copy of anything important, create synthetic files, record checksums, back them up to the independent destination, delete the working copy from a test share, and restore it. Confirm names, timestamps where required, contents, and permissions.</p>
+<p>For an application, restore its database and configuration into an isolated instance and open representative records. A storage pool reporting healthy is different from the service being recoverable.</p>
+<p>Use the <a href="homelab-backup-restore-drill.html">homelab restore drill</a> to document the result.</p>
+<h2>Sources</h2>
+<ul><li><a href="https://www.truenas.com/docs/" rel="noopener">TrueNAS documentation</a></li><li><a href="https://www.cisa.gov/news-events/news/back-business-data" rel="noopener">CISA: Back Up Business Data</a></li></ul><hr><a class="cta" href="../starter-kit.html">Get the free Starter Kit &rarr;</a></div>
+</main>
+<footer><div class="wrap">HomeForge is reader-supported; some links are affiliate links (no extra cost to you).<div class="fl"><a href="../index.html">Home</a><a href="../reads.html">Reads</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="https://github.com/estivonponcho/homeforge/blob/main/AFFILIATE-DISCLOSURE.md">Disclosure</a><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></div></div></footer>
+</body>
+</html>

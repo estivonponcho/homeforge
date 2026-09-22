@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Restore your Home Assistant backup before you need it — HomeForge</title>
+<meta name="description" content="A green backup status proves that Home Assistant created an archive. It does not prove that you still have the encryption material, that the archive…">
+<link rel="canonical" href="https://estivonponcho.github.io/homeforge/guides/home-assistant-backup-restore-drill.html">
+<link rel="alternate" type="application/rss+xml" title="HomeForge" href="https://estivonponcho.github.io/homeforge/feed.xml">
+<meta property="og:title" content="Restore your Home Assistant backup before you need it — HomeForge">
+<meta property="og:description" content="A green backup status proves that Home Assistant created an archive. It does not prove that you still have the encryption material, that the archive…">
+<meta property="og:url" content="https://estivonponcho.github.io/homeforge/guides/home-assistant-backup-restore-drill.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="HomeForge">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../hf.css">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "Restore your Home Assistant backup before you need it", "description": "A green backup status proves that Home Assistant created an archive. It does not prove that you still have the encryption material, that the archive\u2026", "url": "https://estivonponcho.github.io/homeforge/guides/home-assistant-backup-restore-drill.html", "mainEntityOfPage": "https://estivonponcho.github.io/homeforge/guides/home-assistant-backup-restore-drill.html", "author": {"@type": "Person", "name": "Mike Cage"}, "publisher": {"@type": "Organization", "name": "HomeForge"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "HomeForge", "item": "https://estivonponcho.github.io/homeforge/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://estivonponcho.github.io/homeforge/learn.html"}, {"@type": "ListItem", "position": 3, "name": "Restore your Home Assistant backup before you need it", "item": "https://estivonponcho.github.io/homeforge/guides/home-assistant-backup-restore-drill.html"}]}]</script>
+<script data-goatcounter="https://homeforge.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<header><div class="wrap bar"><a class="brand" href="../index.html"><span>&#9650;</span> HomeForge</a><nav class="nav"><a href="../index.html">Home</a><a href="../reads.html">Reads</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="../model-watch.html">Model Watch</a><a href="../ai-safety.html">AI Safety</a><a href="../resources.html">Watch &amp; build</a><a href="../starter-kit.html">Starter kit</a></nav></div></header>
+<main class="wrap">
+<div class="article"><p class="crumb"><a href="../index.html">HomeForge</a> / <a href="../learn.html">Guides</a></p><h1>Restore your Home Assistant backup before you need it</h1>
+<p>A green backup status proves that Home Assistant created an archive. It does not prove that you still have the encryption material, that the archive exists away from the failed machine, or that you can restore the services your home depends on.</p>
+<p><em>Last checked September 22, 2026 · HomeForge</em></p>
+<p>This guide turns a backup into a recovery test. Use spare or disposable hardware when possible. A restore overwrites the selected parts of the target system.</p>
+<h2>What a Home Assistant backup contains</h2>
+<p>Home Assistant's current backup documentation says a full backup can contain <code>config</code>, <code>share</code>, manually installed apps, <code>ssl</code>, and <code>media</code>. Automatic backups can run on a schedule, retain a chosen number of versions, and write to configured locations. Backups are encrypted; the emergency kit is required to restore them.</p>
+<p>Large media and shared folders can make backups and restores slower. Decide whether they belong in the Home Assistant archive or in a separate media-backup process.</p>
+<h2>The restore drill</h2>
+<h3>1. Record the recovery target</h3>
+<p>Write down what must work after recovery:</p>
+<ul><li>You can sign in.</li><li>Core integrations load.</li><li>One local light or test entity changes state.</li><li>One important automation runs with a harmless test input.</li><li>Add-ons or apps required by the system start.</li><li>Historical data you chose to preserve is available.</li></ul>
+<p>Do not use a production door lock, alarm, garage door, heater, or other consequential device as the first test.</p>
+<h3>2. Export what the failed host cannot provide</h3>
+<p>Keep at least one backup away from the Home Assistant host. Store the matching emergency kit separately and test that you can locate it without relying on the failed machine.</p>
+<p>Record the backup date, Home Assistant version, installation type, archive location, and emergency-kit location. Do not put secrets into a public checklist.</p>
+<h3>3. Prepare a disposable target</h3>
+<p>Install a fresh supported Home Assistant image on spare hardware or a temporary test environment appropriate for your installation. Isolate the target from production automations until the restore is complete.</p>
+<p>During onboarding, choose the restore option and provide the archive and required key. Home Assistant notes that a large restore can take around 45 minutes because Core and apps are reinstalled.</p>
+<h3>4. Verify in layers</h3>
+<div class="tablewrap"><table><thead><tr><th>Layer</th><th>Check</th><th>Evidence</th></tr></thead><tbody><tr><td>Access</td><td>Sign in with the restored credentials</td><td>Successful login</td></tr><tr><td>Configuration</td><td>Expected integrations and helpers exist</td><td>Screenshot or checklist</td></tr><tr><td>Services</td><td>Required apps start without repeated errors</td><td>App status and logs</td></tr><tr><td>Devices</td><td>A harmless local test entity responds</td><td>State change and timestamp</td></tr><tr><td>Automations</td><td>A test automation reaches the expected result</td><td>Trace or log</td></tr><tr><td>History</td><td>Required long-term data is present</td><td>Known date range</td></tr></tbody></table></div>
+<h3>5. Record recovery time and failures</h3>
+<p>Measure from starting the restore to the first verified useful automation. List missing credentials, unavailable backup locations, incompatible hardware, app failures, and manual steps. These are the real recovery plan.</p>
+<h2>Pass or fail</h2>
+<p>Pass only when a fresh target reaches the written recovery outcome. A completed backup job, readable archive, or successful login is useful evidence but not the whole result.</p>
+<p>Repeat the drill after major installation changes, moving storage, changing encryption material, or adding a service that matters to household operation.</p>
+<h2>Sources</h2>
+<ul><li><a href="https://www.home-assistant.io/common-tasks/general/" rel="noopener">Home Assistant: backups and restores</a></li><li><a href="https://www.home-assistant.io/actions/hassio.restore_full/" rel="noopener">Home Assistant: restore from full backup action</a></li></ul><hr><a class="cta" href="../starter-kit.html">Get the free Starter Kit &rarr;</a></div>
+</main>
+<footer><div class="wrap">HomeForge is reader-supported; some links are affiliate links (no extra cost to you).<div class="fl"><a href="../index.html">Home</a><a href="../reads.html">Reads</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="https://github.com/estivonponcho/homeforge/blob/main/AFFILIATE-DISCLOSURE.md">Disclosure</a><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></div></div></footer>
+</body>
+</html>

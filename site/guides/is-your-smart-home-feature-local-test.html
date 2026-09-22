@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Is that smart-home feature actually local? Run five tests — HomeForge</title>
+<meta name="description" content="“Works with Home Assistant” does not tell you whether discovery, control, history, automations, or account recovery depend on a vendor cloud. Test the…">
+<link rel="canonical" href="https://estivonponcho.github.io/homeforge/guides/is-your-smart-home-feature-local-test.html">
+<link rel="alternate" type="application/rss+xml" title="HomeForge" href="https://estivonponcho.github.io/homeforge/feed.xml">
+<meta property="og:title" content="Is that smart-home feature actually local? Run five tests — HomeForge">
+<meta property="og:description" content="“Works with Home Assistant” does not tell you whether discovery, control, history, automations, or account recovery depend on a vendor cloud. Test the…">
+<meta property="og:url" content="https://estivonponcho.github.io/homeforge/guides/is-your-smart-home-feature-local-test.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="HomeForge">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../hf.css">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "Is that smart-home feature actually local? Run five tests", "description": "\u201cWorks with Home Assistant\u201d does not tell you whether discovery, control, history, automations, or account recovery depend on a vendor cloud. Test the\u2026", "url": "https://estivonponcho.github.io/homeforge/guides/is-your-smart-home-feature-local-test.html", "mainEntityOfPage": "https://estivonponcho.github.io/homeforge/guides/is-your-smart-home-feature-local-test.html", "author": {"@type": "Person", "name": "Mike Cage"}, "publisher": {"@type": "Organization", "name": "HomeForge"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "HomeForge", "item": "https://estivonponcho.github.io/homeforge/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://estivonponcho.github.io/homeforge/learn.html"}, {"@type": "ListItem", "position": 3, "name": "Is that smart-home feature actually local? Run five tests", "item": "https://estivonponcho.github.io/homeforge/guides/is-your-smart-home-feature-local-test.html"}]}]</script>
+<script data-goatcounter="https://homeforge.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<header><div class="wrap bar"><a class="brand" href="../index.html"><span>&#9650;</span> HomeForge</a><nav class="nav"><a href="../index.html">Home</a><a href="../reads.html">Reads</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="../model-watch.html">Model Watch</a><a href="../ai-safety.html">AI Safety</a><a href="../resources.html">Watch &amp; build</a><a href="../starter-kit.html">Starter kit</a></nav></div></header>
+<main class="wrap">
+<div class="article"><p class="crumb"><a href="../index.html">HomeForge</a> / <a href="../learn.html">Guides</a></p><h1>Is that smart-home feature actually local? Run five tests</h1>
+<p>“Works with Home Assistant” does not tell you whether discovery, control, history, automations, or account recovery depend on a vendor cloud. Test the behavior you care about before buying ten more devices.</p>
+<p><em>Last checked September 22, 2026 · HomeForge</em></p>
+<p>Use a non-critical device and a reversible test. Do not disconnect safety equipment, medical devices, locks, alarms, heating, or anything whose failure could harm someone.</p>
+<h2>Define the feature</h2>
+<p>Test a specific outcome, such as “the wall button turns on the lamp and Home Assistant records the new state.” A device can expose basic local control while advanced scenes, firmware, history, or voice features remain cloud-dependent.</p>
+<p>Record the integration name, device model, firmware, Home Assistant version, and control path before changing anything.</p>
+<h2>Test 1: internet unavailable</h2>
+<p>Temporarily block only the test device or test network from reaching the internet. Keep local networking available. Trigger the feature from Home Assistant and from its physical control.</p>
+<p>Record command success, state feedback, latency, and any missing feature. A phone app working over cellular is not proof of local control.</p>
+<h2>Test 2: vendor app signed out</h2>
+<p>Sign out of the vendor app on a test device or use a separate browser profile. Confirm whether the Home Assistant integration continues operating. Do not remove the vendor account or factory-reset the device during this test.</p>
+<h2>Test 3: Home Assistant restart</h2>
+<p>Restart Home Assistant during a safe maintenance window, then repeat the test. Check whether credentials, entity identifiers, and automations recover without manual repair.</p>
+<h2>Test 4: device or hub restart</h2>
+<p>Power-cycle only the non-critical test device or its local bridge. Confirm reconnection time and whether state is accurate after it returns. Avoid repeated power cycling of devices not designed for it.</p>
+<h2>Test 5: automation receipt</h2>
+<p>Run one harmless automation and save the trace or log. Verify the trigger, action, device response, and final state. A command being sent is different from the result being observed.</p>
+<h2>Score the control path</h2>
+<div class="tablewrap"><table><thead><tr><th>Capability</th><th>Local</th><th>Cloud-dependent</th><th>Unknown</th></tr></thead><tbody><tr><td>Physical control</td><td></td><td></td><td></td></tr><tr><td>Home Assistant command</td><td></td><td></td><td></td></tr><tr><td>State feedback</td><td></td><td></td><td></td></tr><tr><td>Automation after restart</td><td></td><td></td><td></td></tr><tr><td>History and energy data</td><td></td><td></td><td></td></tr><tr><td>Setup and account recovery</td><td></td><td></td><td></td></tr><tr><td>Firmware updates</td><td></td><td></td><td></td></tr></tbody></table></div>
+<p>“Local” is not one badge. Publish the result by feature and tested version. Repeat the test after a major firmware or integration change.</p>
+<p>Continue with <a href="home-assistant-beginners-guide.html">Home Assistant for beginners</a> or the <a href="esphome-appliance-retrofits.html">ESPHome appliance retrofit guide</a>.</p>
+<h2>Sources</h2>
+<ul><li><a href="https://www.home-assistant.io/integrations/" rel="noopener">Home Assistant integrations</a></li><li><a href="https://www.home-assistant.io/docs/automation/troubleshooting/" rel="noopener">Home Assistant automation traces</a></li></ul><hr><a class="cta" href="../starter-kit.html">Get the free Starter Kit &rarr;</a></div>
+</main>
+<footer><div class="wrap">HomeForge is reader-supported; some links are affiliate links (no extra cost to you).<div class="fl"><a href="../index.html">Home</a><a href="../reads.html">Reads</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="https://github.com/estivonponcho/homeforge/blob/main/AFFILIATE-DISCLOSURE.md">Disclosure</a><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></div></div></footer>
+</body>
+</html>

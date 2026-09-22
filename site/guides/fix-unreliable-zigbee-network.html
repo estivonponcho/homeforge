@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fix an unreliable Zigbee network before buying more devices — HomeForge</title>
+<meta name="description" content="Random dropouts are often blamed on the farthest sensor. Start with the coordinator, interference, and router mesh before replacing battery devices.">
+<link rel="canonical" href="https://estivonponcho.github.io/homeforge/guides/fix-unreliable-zigbee-network.html">
+<link rel="alternate" type="application/rss+xml" title="HomeForge" href="https://estivonponcho.github.io/homeforge/feed.xml">
+<meta property="og:title" content="Fix an unreliable Zigbee network before buying more devices — HomeForge">
+<meta property="og:description" content="Random dropouts are often blamed on the farthest sensor. Start with the coordinator, interference, and router mesh before replacing battery devices.">
+<meta property="og:url" content="https://estivonponcho.github.io/homeforge/guides/fix-unreliable-zigbee-network.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="HomeForge">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../hf.css">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "Fix an unreliable Zigbee network before buying more devices", "description": "Random dropouts are often blamed on the farthest sensor. Start with the coordinator, interference, and router mesh before replacing battery devices.", "url": "https://estivonponcho.github.io/homeforge/guides/fix-unreliable-zigbee-network.html", "mainEntityOfPage": "https://estivonponcho.github.io/homeforge/guides/fix-unreliable-zigbee-network.html", "author": {"@type": "Person", "name": "Mike Cage"}, "publisher": {"@type": "Organization", "name": "HomeForge"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "HomeForge", "item": "https://estivonponcho.github.io/homeforge/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://estivonponcho.github.io/homeforge/learn.html"}, {"@type": "ListItem", "position": 3, "name": "Fix an unreliable Zigbee network before buying more devices", "item": "https://estivonponcho.github.io/homeforge/guides/fix-unreliable-zigbee-network.html"}]}]</script>
+<script data-goatcounter="https://homeforge.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<header><div class="wrap bar"><a class="brand" href="../index.html"><span>&#9650;</span> HomeForge</a><nav class="nav"><a href="../index.html">Home</a><a href="../reads.html">Reads</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="../model-watch.html">Model Watch</a><a href="../ai-safety.html">AI Safety</a><a href="../resources.html">Watch &amp; build</a><a href="../starter-kit.html">Starter kit</a></nav></div></header>
+<main class="wrap">
+<div class="article"><p class="crumb"><a href="../index.html">HomeForge</a> / <a href="../learn.html">Guides</a></p><h1>Fix an unreliable Zigbee network before buying more devices</h1>
+<p>Random dropouts are often blamed on the farthest sensor. Start with the coordinator, interference, and router mesh before replacing battery devices.</p>
+<p><em>Last checked September 22, 2026 · HomeForge</em></p>
+<h2>Freeze the evidence</h2>
+<p>Record which devices fail, when they fail, their power source, route if available, coordinator model and firmware, Zigbee channel, nearby Wi-Fi channel, and recent changes. Do not repair five variables at once.</p>
+<h2>1. Move the coordinator away from interference</h2>
+<p>Home Assistant's ZHA documentation specifically warns about USB 3.x equipment and unshielded cables interfering with low-power 2.4 GHz radios. Use a shielded USB extension cable, prefer a USB 2.0 connection when available, and move the adapter away from computers, storage devices, power supplies, and dense wiring.</p>
+<p>Change placement first, then observe the same failing devices for a defined period.</p>
+<h2>2. Map the mesh</h2>
+<p>Zigbee networks have one coordinator. Mains-powered devices commonly act as routers; battery devices are usually end devices. Add routers where coverage is weak, starting near the coordinator and extending outward.</p>
+<p>Do not assume every powered product routes well or supports every end device. Record the exact model and observe the resulting topology.</p>
+<h2>3. Check channel overlap</h2>
+<p>Zigbee and 2.4 GHz Wi-Fi share spectrum. Record both channel plans before changing them. A channel migration can require devices to reconnect and should be treated as a controlled maintenance event with a backup and rollback plan.</p>
+<h2>4. Separate pairing from steady-state placement</h2>
+<p>Pair according to the integration and manufacturer guidance. Then place the device where it will operate and confirm it stays connected through the intended routers. A successful pairing next to the coordinator does not prove the final path is reliable.</p>
+<h2>5. Check firmware cautiously</h2>
+<p>Update the coordinator with the manufacturer's supported process when outdated firmware is a plausible cause. Device OTA updates can change or break features; Home Assistant warns that some updates may require reconfiguration or can rarely brick a device. Read device-specific reports before updating.</p>
+<h2>Change log</h2>
+<div class="tablewrap"><table><thead><tr><th>Time</th><th>Change</th><th>Devices observed</th><th>Dropouts</th><th>Rollback needed</th></tr></thead><tbody><tr><td>Baseline</td><td>None</td><td></td><td></td><td></td></tr><tr><td>Test 1</td><td>Coordinator placement</td><td></td><td></td><td></td></tr><tr><td>Test 2</td><td>Added router</td><td></td><td></td><td></td></tr><tr><td>Test 3</td><td>Channel plan</td><td></td><td></td><td></td></tr></tbody></table></div>
+<p>Stop when the evidence improves. More repeaters and more channel changes are not automatically better.</p>
+<h2>Source</h2>
+<ul><li><a href="https://www.home-assistant.io/integrations/zha" rel="noopener">Home Assistant ZHA troubleshooting and interference guidance</a></li></ul><hr><a class="cta" href="../starter-kit.html">Get the free Starter Kit &rarr;</a></div>
+</main>
+<footer><div class="wrap">HomeForge is reader-supported; some links are affiliate links (no extra cost to you).<div class="fl"><a href="../index.html">Home</a><a href="../reads.html">Reads</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="https://github.com/estivonponcho/homeforge/blob/main/AFFILIATE-DISCLOSURE.md">Disclosure</a><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></div></div></footer>
+</body>
+</html>

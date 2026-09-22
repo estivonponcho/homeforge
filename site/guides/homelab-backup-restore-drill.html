@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A homelab backup is not finished until you restore it — HomeForge</title>
+<meta name="description" content="A copied folder is useful. A recovery plan identifies every service dependency, restores it to a clean target, and proves that the service works with…">
+<link rel="canonical" href="https://estivonponcho.github.io/homeforge/guides/homelab-backup-restore-drill.html">
+<link rel="alternate" type="application/rss+xml" title="HomeForge" href="https://estivonponcho.github.io/homeforge/feed.xml">
+<meta property="og:title" content="A homelab backup is not finished until you restore it — HomeForge">
+<meta property="og:description" content="A copied folder is useful. A recovery plan identifies every service dependency, restores it to a clean target, and proves that the service works with…">
+<meta property="og:url" content="https://estivonponcho.github.io/homeforge/guides/homelab-backup-restore-drill.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="HomeForge">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../hf.css">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "A homelab backup is not finished until you restore it", "description": "A copied folder is useful. A recovery plan identifies every service dependency, restores it to a clean target, and proves that the service works with\u2026", "url": "https://estivonponcho.github.io/homeforge/guides/homelab-backup-restore-drill.html", "mainEntityOfPage": "https://estivonponcho.github.io/homeforge/guides/homelab-backup-restore-drill.html", "author": {"@type": "Person", "name": "Mike Cage"}, "publisher": {"@type": "Organization", "name": "HomeForge"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "HomeForge", "item": "https://estivonponcho.github.io/homeforge/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://estivonponcho.github.io/homeforge/learn.html"}, {"@type": "ListItem", "position": 3, "name": "A homelab backup is not finished until you restore it", "item": "https://estivonponcho.github.io/homeforge/guides/homelab-backup-restore-drill.html"}]}]</script>
+<script data-goatcounter="https://homeforge.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<header><div class="wrap bar"><a class="brand" href="../index.html"><span>&#9650;</span> HomeForge</a><nav class="nav"><a href="../index.html">Home</a><a href="../reads.html">Reads</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="../model-watch.html">Model Watch</a><a href="../ai-safety.html">AI Safety</a><a href="../resources.html">Watch &amp; build</a><a href="../starter-kit.html">Starter kit</a></nav></div></header>
+<main class="wrap">
+<div class="article"><p class="crumb"><a href="../index.html">HomeForge</a> / <a href="../learn.html">Guides</a></p><h1>A homelab backup is not finished until you restore it</h1>
+<p>A copied folder is useful. A recovery plan identifies every service dependency, restores it to a clean target, and proves that the service works with representative data.</p>
+<p><em>Last checked September 22, 2026 · HomeForge</em></p>
+<h2>Inventory by service</h2>
+<p>Do not start with disks. Start with what must return.</p>
+<div class="tablewrap"><table><thead><tr><th>Service</th><th>Definition</th><th>Persistent data</th><th>Secrets</th><th>External dependency</th><th>Recovery target</th></tr></thead><tbody><tr><td>Example app</td><td>Compose file</td><td>Volume/database</td><td>Environment file</td><td>DNS name</td><td>Spare host</td></tr></tbody></table></div>
+<p>Separate reproducible application files from irreplaceable data. Container images can often be downloaded again; a family photo library or original configuration cannot.</p>
+<h2>Keep recovery material off the host</h2>
+<p>If the only backup is mounted by the failed server, one host or credential failure can take both copies away. Keep an independent copy and document how to reach it from a clean machine. Encrypt sensitive backups and protect the recovery key separately.</p>
+<p>The familiar 3-2-1 pattern—three copies, two types of storage, one copy away from the primary site—is a useful starting structure. It is not proof of recoverability.</p>
+<h2>Run a clean-target drill</h2>
+<ol><li>Choose one bounded service.</li><li>Prepare a blank spare system or isolated virtual machine.</li><li>Restore definitions, data, and secrets from documented locations.</li><li>Start the service without reading from the production host.</li><li>Test sign-in, a representative record, one write, and one export.</li><li>Measure time and record every undocumented step.</li><li>Destroy the disposable target when the evidence is saved.</li></ol>
+<p>Do not connect a restored automation system to consequential devices until its identities, schedules, and outputs are reviewed.</p>
+<h2>Test the awkward cases</h2>
+<ul><li>The newest backup is corrupt.</li><li>The database version changed.</li><li>DNS points to the old address.</li><li>The backup key is unavailable.</li><li>A container definition exists but its volume does not.</li><li>The restore completes but the application cannot open its data.</li></ul>
+<h2>Recovery scorecard</h2>
+<p>Record recovery-point objective, recovery-time objective, newest usable backup, actual recovery time, data lost, failed checks, and the next corrective action. Repeat after major upgrades and storage changes.</p>
+<p>Pair the drill with the <a href="ai-workflow-homelab-maintenance.html">homelab maintenance workflow</a> and choose hardware using the <a href="best-mini-pc-for-a-homelab.html">mini-PC decision guide</a>.</p>
+<h2>Source</h2>
+<ul><li><a href="https://www.cisa.gov/news-events/news/back-business-data" rel="noopener">CISA: Back Up Business Data</a></li></ul><hr><a class="cta" href="../starter-kit.html">Get the free Starter Kit &rarr;</a></div>
+</main>
+<footer><div class="wrap">HomeForge is reader-supported; some links are affiliate links (no extra cost to you).<div class="fl"><a href="../index.html">Home</a><a href="../reads.html">Reads</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="https://github.com/estivonponcho/homeforge/blob/main/AFFILIATE-DISCLOSURE.md">Disclosure</a><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></div></div></footer>
+</body>
+</html>
