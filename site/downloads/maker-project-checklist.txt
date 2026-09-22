@@ -1,0 +1,24 @@
+HomeForge maker project checklist
+https://estivonponcho.github.io/homeforge/
+
+1. Define the result
+[ ] Write one sentence describing what the finished project should do.
+[ ] Name a test that would prove it works.
+[ ] Decide what is outside this first version.
+
+2. Check the parts
+[ ] List the board, power source, sensors, outputs, cables, and enclosure.
+[ ] Check voltage, current, connector, and pin compatibility from each part's documentation.
+[ ] Identify any mains voltage, heat, battery, water, or moving-part risk.
+
+3. Build a small test
+[ ] Test one input and one output before assembling the whole system.
+[ ] Record the wiring and firmware version.
+[ ] Test missing input, lost network, restart, and power recovery where relevant.
+
+4. Make it maintainable
+[ ] Label cables and save configuration outside the device.
+[ ] Keep a manual override or safe off state where needed.
+[ ] Record the parts, changes, observed result, and unresolved issues.
+
+Use this as a planning aid. Follow the manufacturers' safety instructions, and get qualified help for mains wiring.
