@@ -174,6 +174,12 @@
       <description>A lot of &quot;smart&quot; appliances are really just cheap hardware chained to a vendor cloud — they stop working when the company changes the app, and they…</description>
     </item>
     <item>
+      <title>Which ESP32 Ethernet + PoE board should you buy?</title>
+      <link>https://estivonponcho.github.io/homeforge/guides/esp32-ethernet-poe-board-choices.html</link>
+      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/esp32-ethernet-poe-board-choices.html</guid>
+      <description>If you need an ESP32 that gets both network and power through one Ethernet cable, check the exact board variant before buying. An RJ45 jack alone does…</description>
+    </item>
+    <item>
       <title>How to dry and store 3D-printing filament (2026)</title>
       <link>https://estivonponcho.github.io/homeforge/guides/dry-and-store-3d-printing-filament.html</link>
       <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/dry-and-store-3d-printing-filament.html</guid>
