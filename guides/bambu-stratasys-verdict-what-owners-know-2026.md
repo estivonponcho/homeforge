@@ -4,6 +4,8 @@
 
 A U.S. jury awarded Stratasys about $27.6 million in its patent case against Bambu Lab. The headline is significant, but it does not mean an X1, P1, or A1 on your workbench has stopped working or must be replaced. The useful question for an owner is what has actually changed—and what has not been decided yet.
 
+<figure class="diagram"><img src="../assets/bambu-stratasys-verdict-printer.png" alt="Illustration of a generic enclosed 3D printer making a turquoise geometric object" width="1672" height="941"><figcaption>Illustration of a generic desktop 3D printer; no specific manufacturer or model is depicted.</figcaption></figure>
+
 ## The result, without the leap to a sales ban
 
 On September 17, a jury in the Eastern District of Texas found Bambu-related companies liable for infringement of four U.S. patents and awarded roughly $27.6 million. The disputed technology includes aspects of purge towers and force-based bed probing. [Tom’s Hardware’s September 21 report](https://www.tomshardware.com/3d-printing/texas-jury-hits-bambu-lab-with-usd27-6m-verdict-in-stratasys-patent-fight-x1-p1-and-a1-printers-found-to-infringe-prime-tower-and-bed-leveling-tech) identifies the X1, P1, and A1 families in its account of the case. [Bloomberg Law](https://news.bloomberglaw.com/tech-and-telecom-law/stratasys-wins-27-million-from-bambu-in-3d-printing-patent-suit) independently reports the verdict, amount, and four patents.

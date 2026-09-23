@@ -311,7 +311,9 @@ ANALYTICS = ('<script data-goatcounter="https://homeforge.goatcounter.com/count"
              'async src="//gc.zgo.at/count.js"></script>')
 
 
-def page(title, description, canonical, body, root="", jsonld="", social_image=""):
+def page(title, description, canonical, body, root="", jsonld="", social_image="",
+         social_image_width=1122, social_image_height=1402,
+         social_image_alt="HomeForge Home Assistant system diagram"):
     desc = _html.escape(description, quote=True)
     social_meta = ""
     if social_image:
@@ -319,9 +321,9 @@ def page(title, description, canonical, body, root="", jsonld="", social_image="
         social_meta = (f'<meta property="og:image" content="{image}">\n'
                        f'<meta property="og:image:secure_url" content="{image}">\n'
                        '<meta property="og:image:type" content="image/png">\n'
-                       '<meta property="og:image:width" content="1122">\n'
-                       '<meta property="og:image:height" content="1402">\n'
-                       '<meta property="og:image:alt" content="HomeForge Home Assistant system diagram">\n'
+                       f'<meta property="og:image:width" content="{social_image_width}">\n'
+                       f'<meta property="og:image:height" content="{social_image_height}">\n'
+                       f'<meta property="og:image:alt" content="{_html.escape(social_image_alt, quote=True)}">\n'
                        '<meta name="twitter:card" content="summary_large_image">\n'
                        f'<meta name="twitter:image" content="{image}">')
     if not jsonld:
@@ -406,6 +408,13 @@ def build_md_pages(folder, kind):
         image_match = re.search(r'<img\s+[^>]*src="\.\./assets/([^"?#]+)', md, re.I)
         if image_match:
             social_image = f"{SITE_URL}assets/{image_match.group(1)}"
+        social_image_meta = {}
+        if slug == "bambu-stratasys-verdict-what-owners-know-2026":
+            social_image_meta = {
+                "social_image_width": 1672,
+                "social_image_height": 941,
+                "social_image_alt": "Illustration of a generic enclosed 3D printer making a turquoise object",
+            }
         model_watch = folder == "guides" and is_model_watch(slug)
         hub_label = "Model Watch" if model_watch else kind
         hub_url = "model-watch.html" if model_watch else "learn.html"
@@ -431,7 +440,7 @@ def build_md_pages(folder, kind):
         (SITE / folder).mkdir(parents=True, exist_ok=True)
         (SITE / folder / f"{slug}.html").write_text(
             page(f"{t} — HomeForge", desc, canonical, body, root="../", jsonld=jsonld,
-                 social_image=social_image), encoding="utf-8")
+                 social_image=social_image, **social_image_meta), encoding="utf-8")
         pages.append({"slug": slug, "title": t, "desc": desc, "folder": folder,
                       "url": f"{folder}/{slug}.html", "model_watch": model_watch})
     return pages
