@@ -1,43 +1,51 @@
-# Best presence sensors for Home Assistant (2026)
+# Motion vs presence sensors for Home Assistant (2026)
 
-Motion sensors turn your lights off while you're still sitting on the couch.
-**Presence** sensors don't — they know you're in the room even when you're
-perfectly still. If you've ever been left in the dark mid-movie, this is the
-upgrade that fixes it. Here's how the real options compare.
+Why do lights turn off while someone is sitting still? A PIR motion sensor
+detects movement, then clears after its timeout. A mmWave sensor can detect
+smaller movements and may keep an occupied room from going dark. Placement,
+sensitivity, and the automation's timeout all matter.
 
 ## PIR vs mmWave — the one thing to understand first
 
-- **PIR (passive infrared)** detects *motion* (heat moving across the sensor).
-  Cheap, battery-powered, instant — but it can't tell that a still person is
-  present, so it "times out" on someone sitting quietly.
-- **mmWave (radar)** detects *presence* — tiny movements like breathing — so it
-  holds the room "occupied" while you're still. Costs more, usually needs USB
-  power, and can need a little tuning.
+- **PIR (passive infrared)** reacts to changes in infrared radiation as a
+  person moves through its view. Battery-powered PIR sensors are useful for
+  starting an automation, but may stop reporting when someone sits quietly.
+- **mmWave (radar)** can detect smaller movements. It is useful for holding
+  occupancy, but can report unwanted presence from nearby areas if placement
+  and sensitivity are not tuned. The options below require continuous power.
 
-Most good setups use **both**: PIR for instant trigger, mmWave to hold presence.
+You can use PIR to turn lights on and mmWave to keep them on. Test one sensor's
+behavior in your room before buying a second.
 
 ## The picks
 
-| Sensor | Type | Best for | Notes |
+| Sensor | Sensing and connection | Best for | Check before buying |
 |---|---|---|---|
-| **Aqara FP2** | mmWave | Whole-room + zones | Multi-zone mapping is the killer feature — "couch occupied" vs "doorway." Wi-Fi + USB power. |
-| **Everything Presence Lite** | mmWave + PIR | Tinkerers who want it local | Open, ESPHome-based, fully local to Home Assistant. The enthusiast pick. |
-| **Aqara Motion Sensor P1** | PIR | Cheap, instant, battery | Great trigger sensor; pair with mmWave for holding presence. Zigbee. |
+| **[Aqara Presence Sensor FP2](https://www.aqara.com/us/product/presence-sensor-fp2/)** | mmWave; Wi-Fi; USB power | Room zones and multi-person tracking | Confirm the current Home Assistant integration meets your needs. It is not a Zigbee sensor. |
+| **[Everything Presence Lite](https://shop.everythingsmart.io/products/everything-presence-lite)** | mmWave and ambient light; Wi-Fi/ESPHome; USB-C power | Local configuration and zone tuning | **Lite has no PIR sensor.** For one device combining PIR and mmWave, compare the manufacturer's [Everything Presence Pro](https://shop.everythingsmart.io/products/everything-presence-pro). |
+| **[Aqara Motion Sensor P1](https://www.aqara.com/en/product/motion-sensor-p1)** | PIR; Zigbee 3.0; battery | Motion-triggered lights where wiring is inconvenient | It detects motion, not continuous still-person presence. Check hub compatibility. |
 
-## Which should you buy?
+## A practical first-room setup
 
-- **Just want it to work, room-wide, with zones:** the **Aqara FP2**.
-- **Want it open, local, and hackable:** the **Everything Presence Lite**.
-- **On a budget or need battery power:** start with a PIR like the **Aqara P1**,
-  add mmWave later.
+1. Identify where someone sits still and where someone enters. Check the
+   sensor's field of view and a safe power location.
+2. Start with a motion trigger if quick entry detection matters. If lights
+   still time out during seated use, add mmWave or adjust the occupancy logic.
+3. Test in the actual room: enter, sit quietly, leave, and check for false
+   occupancy from adjoining spaces. Tune sensitivity and the off-delay before
+   trusting an automatic lights-off rule.
 
-A solid first build: one PIR + one mmWave in your most-used room, with a Home
-Assistant automation that turns the lights on with motion and only off when
-mmWave says the room is truly empty.
+This comparison uses [Aqara's FP2](https://www.aqara.com/us/product/presence-sensor-fp2/)
+and [P1](https://www.aqara.com/en/product/motion-sensor-p1) product information
+and the manufacturer's [Lite](https://shop.everythingsmart.io/products/everything-presence-lite)
+and [Pro](https://shop.everythingsmart.io/products/everything-presence-pro)
+specifications, checked September 23, 2026. It is not a hands-on test of these
+four sensors.
 
 See all of these in the [full smart-home list](../picks.html#smart-home).
 
 ---
 
-*HomeForge is reader-supported; some links are affiliate links, at no extra cost
-to you. We only recommend gear worth owning.*
+*Some HomeForge hardware links are affiliate links; we may earn a commission
+at no extra cost to you. As an Amazon Associate I earn from qualifying
+purchases.*

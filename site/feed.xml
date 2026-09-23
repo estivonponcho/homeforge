@@ -204,10 +204,10 @@
       <description>Drive bays tell you how many disks fit. They do not tell you whether your applications can be restored, how long a rebuild takes, or where the…</description>
     </item>
     <item>
-      <title>Best presence sensors for Home Assistant (2026)</title>
+      <title>Motion vs presence sensors for Home Assistant (2026)</title>
       <link>https://estivonponcho.github.io/homeforge/guides/best-zigbee-presence-sensors-home-assistant.html</link>
       <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/best-zigbee-presence-sensors-home-assistant.html</guid>
-      <description>Motion sensors turn your lights off while you&#x27;re still sitting on the couch. Presence sensors don&#x27;t — they know you&#x27;re in the room even when you&#x27;re…</description>
+      <description>Why do lights turn off while someone is sitting still? A PIR motion sensor detects movement, then clears after its timeout. A mmWave sensor can detect…</description>
     </item>
     <item>
       <title>Best way to run a local LLM (2026)</title>
