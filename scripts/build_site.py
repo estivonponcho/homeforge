@@ -20,7 +20,7 @@ SITE_URL = DATA.get("site_url", "https://estivonponcho.github.io/homeforge/").rs
 
 # guides/projects markdown that should NOT become public pages
 SKIP = {"README.md", "model-watch-template.md", "custom-apps-and-health-integrations.md"}
-AI_SAFETY_ORDER = ["ai-safety-deep-research-departures-risks-mitigations", "ai-safety-frontier-debate-september-2026", "ai-safety-researcher-departures-timeline", "ai-safety-practical-agent-checklist"]
+AI_SAFETY_ORDER = ["ai-safety-deep-research-departures-risks-mitigations", "ai-agent-compaction-summary-security", "ai-safety-frontier-debate-september-2026", "ai-safety-researcher-departures-timeline", "ai-safety-practical-agent-checklist"]
 
 # Guides that get their own "Model Watch" hub instead of the general Guides grid:
 # any file named model-watch-*.md (the recurring drafting routine), plus these
@@ -563,6 +563,7 @@ READ_SECTION_ORDER = [
     "Builds",
 ]
 READ_META = {
+    "ai-agent-compaction-summary-security": ("AI Safety", "Agent memory"),
     "bambu-stratasys-verdict-what-owners-know-2026": ("Maker News", "3D printing"),
     "ai-agent-memory-practical-patterns": ("Using AI", "Agent memory"),
     "ai-safety-deep-research-departures-risks-mitigations": ("AI Safety", "Deep research"),
