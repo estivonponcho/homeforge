@@ -66,6 +66,12 @@
       <description>A charger can have enough watts on the box and still fail your everyday carry. The useful question is whether its ports, cable ratings, and…</description>
     </item>
     <item>
+      <title>How to Monitor AI Agents With Actions, Traces, and Receipts</title>
+      <link>https://estivonponcho.github.io/homeforge/guides/monitor-ai-agents-with-receipts.html</link>
+      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/monitor-ai-agents-with-receipts.html</guid>
+      <description>When an AI agent can use tools, the practical safety question is whether you can reconstruct what it did, stop a risky action before it runs, and…</description>
+    </item>
+    <item>
       <title>DeepSeek V4.1 Flash — what actually changed, and whether you should care</title>
       <link>https://estivonponcho.github.io/homeforge/guides/model-watch-deepseek-v4-1-flash-2026-09-14.html</link>
       <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/model-watch-deepseek-v4-1-flash-2026-09-14.html</guid>
