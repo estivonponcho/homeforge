@@ -554,6 +554,7 @@ FEATURED_READS = [
 READ_SECTION_ORDER = [
     "AI Safety",
     "AI News & Analysis",
+    "Maker News",
     "Model Releases & Comparisons",
     "AI Explainers",
     "Using AI",
@@ -562,6 +563,7 @@ READ_SECTION_ORDER = [
     "Builds",
 ]
 READ_META = {
+    "bambu-stratasys-verdict-what-owners-know-2026": ("Maker News", "3D printing"),
     "ai-agent-memory-practical-patterns": ("Using AI", "Agent memory"),
     "ai-safety-deep-research-departures-risks-mitigations": ("AI Safety", "Deep research"),
     "ai-safety-frontier-debate-september-2026": ("AI Safety", "Current debate"),
