@@ -12,6 +12,7 @@ Outputs (all under site/):
 Run: python3 scripts/build_site.py   (stdlib only; run after editing picks/guides/projects)
 """
 import json, re, pathlib, html as _html
+from urllib.parse import parse_qs, urlparse
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = ROOT / "site"
@@ -98,6 +99,23 @@ def rewrite_link(url: str) -> str:
     if url.endswith(".md"):
         return url[:-3] + ".html"
     return url
+
+
+def track_affiliate_clicks(body: str, canonical: str) -> str:
+    """Mark tagged Amazon links as GoatCounter events scoped to this page."""
+    page_key = re.sub(r"[^a-z0-9-]+", "-", urlparse(canonical).path.strip("/").lower()).strip("-") or "home"
+
+    def mark(match):
+        tag = match.group(0)
+        href_match = re.search(r'\bhref="([^"]+)"', tag)
+        if not href_match or "data-goatcounter-click=" in tag:
+            return tag
+        url = urlparse(_html.unescape(href_match.group(1)))
+        if url.hostname not in {"amazon.com", "www.amazon.com"} or not parse_qs(url.query).get("tag"):
+            return tag
+        return tag[:-1] + f' data-goatcounter-click="retailer-amazon-{page_key}">'
+
+    return re.sub(r"<a\b[^>]*>", mark, body)
 
 
 # ---------- minimal markdown -> html ----------
@@ -267,6 +285,15 @@ hr{border:none;border-top:1px solid var(--line);margin:32px 0}
 .blurb{display:block;color:var(--muted);font-size:.9rem;margin-top:3px}
 .disc{margin:22px 0;padding:14px 16px;border:1px dashed var(--line);border-radius:12px;color:var(--muted);font-size:.9rem}
 .cta{display:inline-block;margin-top:26px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:10px}
+.newsletter-inline{margin:32px 0 0;padding:22px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.newsletter-inline h2{margin:0 0 8px}.newsletter-inline p{margin:0 0 14px}
+.newsletter-inline form{display:flex;gap:10px;flex-wrap:wrap;align-items:end}
+.newsletter-inline label{display:block;font-weight:600;font-size:.9rem;margin-bottom:5px}
+.newsletter-inline input[type=email]{width:min(100%,340px);padding:11px 12px;border:1px solid var(--line);border-radius:8px;background:var(--ground);color:var(--ink);font:inherit}
+.newsletter-inline input[type=email]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.newsletter-inline button{padding:11px 16px;border:0;border-radius:8px;background:var(--accent);color:#fff;font:600 1rem "IBM Plex Sans",sans-serif;cursor:pointer}
+.newsletter-inline button:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.newsletter-inline .small{margin:12px 0 0;color:var(--muted);font-size:.82rem}
 footer{border-top:1px solid var(--line);padding:26px 0 48px;color:var(--muted);font-size:.85rem}
 footer a{color:var(--ink)}footer .fl{display:flex;gap:16px;flex-wrap:wrap;font-family:"IBM Plex Mono",monospace;font-size:.78rem;margin-top:8px}
 figure.diagram{margin:22px 0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow-x:auto}
@@ -314,6 +341,7 @@ ANALYTICS = ('<script data-goatcounter="https://homeforge.goatcounter.com/count"
 def page(title, description, canonical, body, root="", jsonld="", social_image="",
          social_image_width=1122, social_image_height=1402,
          social_image_alt="HomeForge Home Assistant system diagram"):
+    body = track_affiliate_clicks(body, canonical)
     desc = _html.escape(description, quote=True)
     social_meta = ""
     if social_image:
@@ -393,6 +421,22 @@ def title_of(md, fallback):
     return (re.sub(r"[*_`]", "", m.group(1)).strip() if m else fallback)
 
 
+def newsletter_signup(source, root="../"):
+    return (f'<section class="newsletter-inline" aria-labelledby="newsletter-heading">'
+            '<h2 id="newsletter-heading">Get HomeForge Field Notes</h2>'
+            '<p>One practical build, buying lesson, or AI workflow each week. '
+            'Get the steps and checks you can use, without daily email.</p>'
+            '<form action="https://buttondown.com/api/emails/embed-subscribe/homeforge" method="post">'
+            '<div><label for="article-email">Email address</label>'
+            '<input id="article-email" type="email" name="email" autocomplete="email" '
+            'placeholder="you@example.com" required></div>'
+            f'<input type="hidden" name="tag" value="{source}">'
+            '<input type="hidden" name="embed" value="1">'
+            '<button type="submit">Subscribe free</button></form>'
+            f'<p class="small">Sent through Buttondown. Unsubscribe anytime. <a href="{root}privacy.html">Privacy</a>.</p>'
+            '</section>')
+
+
 def build_md_pages(folder, kind):
     pages = []
     d = ROOT / folder
@@ -424,7 +468,8 @@ def build_md_pages(folder, kind):
         body = (f'<div class="article">'
                 f'<p class="crumb"><a href="../index.html">HomeForge</a> / <a href="../{hub_url}">{hub_label}</a></p>'
                 f'{md_to_html(md)}'
-                f'<hr><a class="cta" href="../starter-kit.html">Get the free Starter Kit &rarr;</a>'
+                f'{newsletter_signup("guide-reader" if folder == "guides" else "project-reader")}'
+                f'<p><a href="../starter-kit.html">Read the free Starter Kit &rarr;</a></p>'
                 f'</div>')
         ld = [
             {"@context": "https://schema.org", "@type": "Article", "headline": t,
