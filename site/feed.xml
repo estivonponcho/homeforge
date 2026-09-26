@@ -183,7 +183,7 @@
       <title>How to dry and store 3D-printing filament (2026)</title>
       <link>https://estivonponcho.github.io/homeforge/guides/dry-and-store-3d-printing-filament.html</link>
       <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/dry-and-store-3d-printing-filament.html</guid>
-      <description>Half of &quot;my printer is broken&quot; is actually wet filament. Plastic absorbs moisture from the air; when that water hits the hot nozzle it flashes to…</description>
+      <description>Moisture can contribute to print defects, but a defect alone does not prove the filament needs drying. Check the material instructions and your print…</description>
     </item>
     <item>
       <title>Docker, Proxmox, or bare metal for a first home server?</title>

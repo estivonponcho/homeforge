@@ -1,18 +1,20 @@
 # How to dry and store 3D-printing filament (2026)
 
-Half of "my printer is broken" is actually wet filament. Plastic absorbs moisture
-from the air; when that water hits the hot nozzle it flashes to steam, and you get
-stringing, popping, weak layers, and a rough surface. The fix is cheap and it's the
-single biggest quality upgrade most people skip. Here's the exact system I use.
+Moisture can contribute to print defects, but a defect alone does not prove the
+filament needs drying. Check the material instructions and your print settings
+before buying equipment. This guide separates active drying from storage and
+explains the limits to check for your exact filament, spool and dryer.
 
-## Signs your filament is wet
+## Symptoms worth investigating
 
-- Stringing and wisps between parts that tuning won't fix
+- Stringing and wisps between parts
 - Popping or crackling sounds from the nozzle
 - Rough, bumpy, or hazy surfaces
 - Parts that snap instead of flex (brittle layers)
 
-PETG, TPU, and nylon drink moisture fast; even PLA does over time.
+These symptoms can have multiple causes. Moisture sensitivity varies by material
+and formulation; follow the filament manufacturer's guidance rather than
+treating this list as a diagnosis.
 
 ## The three-part system
 
@@ -58,8 +60,8 @@ Do not choose a drying cycle from the material name alone. Follow the filament m
 - **Treat the readout as context:** a chamber humidity reading describes conditions near the sensor; it is not a direct measurement of water inside the filament.
 
 ### 2. Store it — an airtight bin + desiccant
-Once dry, keep it dry. A gasketed **[airtight bin](../picks.html#3d-printing)** with
-a scoop of desiccant is all it takes. I use **[Fonday rechargeable silica-gel
+Once dry, suitable sealed storage and maintained desiccant can help limit further
+moisture exposure. Check the seal and storage conditions. I use **[Fonday rechargeable silica-gel
 beads](../picks.html#3d-printing)** — they're orange and turn green when spent, so
 you can see at a glance when to recharge them. Recharge them only according to the exact desiccant product instructions, including its container limits. Do not assume a filament-drying cycle is suitable for desiccant regeneration.
 
