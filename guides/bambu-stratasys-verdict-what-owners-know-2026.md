@@ -28,6 +28,19 @@ The patents are U.S. patents. A separate European proceeding has had a different
 
 Watch for three concrete updates: a new court order, an official Bambu support or firmware notice, and a change to model availability or warranty terms in your region. Until one of those appears, the verdict is an important industry story, not a reason to abandon a working printer.
 
+## Get more from the printer you already own
+
+If your next decision is about a project rather than a replacement printer, start
+with the tools and material you have:
+
+- [Make a small fit test before printing a whole functional part](first-functional-3d-printed-part.html).
+  Work through measurements, a low-risk test piece and the settings to record.
+- [Separate filament drying from storage](dry-and-store-3d-printing-filament.html).
+  Check your material's instructions and existing setup before buying equipment.
+
+Both guides include optional shopping links after the practical checks. Some are
+affiliate links; as an Amazon Associate I earn from qualifying purchases.
+
 ## Sources
 
 - [Tom’s Hardware: Texas jury hits Bambu Lab with $27.6M verdict](https://www.tomshardware.com/3d-printing/texas-jury-hits-bambu-lab-with-usd27-6m-verdict-in-stratasys-patent-fight-x1-p1-and-a1-printers-found-to-infringe-prime-tower-and-bed-leveling-tech) (September 21, 2026; includes Bambu’s response and the injunction status at publication)
