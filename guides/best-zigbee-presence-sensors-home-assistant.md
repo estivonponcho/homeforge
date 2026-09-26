@@ -49,3 +49,12 @@ See all of these in the [full smart-home list](../picks.html#smart-home).
 *Some HomeForge hardware links are affiliate links; we may earn a commission
 at no extra cost to you. As an Amazon Associate I earn from qualifying
 purchases.*
+
+## Optional shopping checklist
+
+Choose motion versus still-person presence first. FP2 uses Wi-Fi, not Zigbee; P1 is a Zigbee motion sensor. Confirm the exact listing, power requirements and current integration before buying.
+
+**Affiliate disclosure:** As an Amazon Associate I earn from qualifying purchases. These are Amazon search links, not guarantees of stock, price, seller quality or compatibility.
+
+- [Aqara FP2 listings on Amazon](https://www.amazon.com/s?k=Aqara+Presence+Sensor+FP2&tag=homeforge0a-20)
+- [Aqara P1 listings on Amazon](https://www.amazon.com/s?k=Aqara+Motion+Sensor+P1&tag=homeforge0a-20)

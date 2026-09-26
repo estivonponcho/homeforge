@@ -51,3 +51,11 @@ Pair the drill with the [homelab maintenance workflow](ai-workflow-homelab-maint
 
 - [CISA: Back Up Business Data](https://www.cisa.gov/news-events/news/back-business-data)
 
+## Optional shopping checklist
+
+Choose capacity from retained backups and expected growth, then check the interface and restore path. Test recovery before relying on a new drive. No single drive removes the need for independent copies.
+
+**Affiliate disclosure:** As an Amazon Associate I earn from qualifying purchases. These are Amazon search links, not guarantees of stock, price, seller quality or compatibility.
+
+- [External backup drives on Amazon](https://www.amazon.com/s?k=external+USB+hard+drive&tag=homeforge0a-20)
+- [USB SSD enclosures on Amazon](https://www.amazon.com/s?k=USB+NVMe+SSD+enclosure&tag=homeforge0a-20)

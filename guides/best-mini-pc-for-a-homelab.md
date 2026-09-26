@@ -40,3 +40,13 @@ and the self-hosted apps to put on it.
 
 *HomeForge is reader-supported; some links are affiliate links, at no extra cost
 to you. We only recommend gear worth owning.*
+
+## Optional shopping checklist
+
+Compare exact CPU, upgradeable RAM, storage slots, network ports and included components. Brand names cover many configurations; confirm virtualization and operating-system support for the model you choose.
+
+**Affiliate disclosure:** As an Amazon Associate I earn from qualifying purchases. These are Amazon search links, not guarantees of stock, price, seller quality or compatibility.
+
+- [Beelink mini PCs on Amazon](https://www.amazon.com/s?k=Beelink+mini+PC&tag=homeforge0a-20)
+- [Minisforum mini PCs on Amazon](https://www.amazon.com/s?k=Minisforum+mini+PC&tag=homeforge0a-20)
+- [Raspberry Pi 5 listings on Amazon](https://www.amazon.com/s?k=Raspberry+Pi+5&tag=homeforge0a-20)

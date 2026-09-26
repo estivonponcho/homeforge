@@ -45,8 +45,18 @@ For an application, restore its database and configuration into an isolated inst
 
 Use the [homelab restore drill](homelab-backup-restore-drill.html) to document the result.
 
+
+## Optional shopping checklist
+
+Start with usable capacity and the restore test above. Check the NAS compatibility list and exact drive recording technology. An independent backup needs its own destination; adding another disk to the same pool is not that backup.
+
+**Affiliate disclosure:** As an Amazon Associate I earn from qualifying purchases. These are Amazon search links, not guarantees of stock, price, seller quality or compatibility.
+
+- [NAS enclosures on Amazon](https://www.amazon.com/s?k=NAS+enclosure+diskless&tag=homeforge0a-20)
+- [NAS hard drives on Amazon](https://www.amazon.com/s?k=NAS+hard+drive&tag=homeforge0a-20)
+- [External backup drives on Amazon](https://www.amazon.com/s?k=external+USB+hard+drive&tag=homeforge0a-20)
+
 ## Sources
 
 - [TrueNAS documentation](https://www.truenas.com/docs/)
 - [CISA: Back Up Business Data](https://www.cisa.gov/news-events/news/back-business-data)
-

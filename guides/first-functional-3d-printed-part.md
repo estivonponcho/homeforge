@@ -36,8 +36,17 @@ For a first functional print, use a familiar material and the printer maker’s 
 
 The part is done when it fits repeatedly, survives the expected hand force, and can be reprinted from the saved model and slicer settings. Save the measurement, clearance, orientation, material, and profile next to the design file. That small record turns one successful print into a reusable process.
 
+
+## Optional shopping checklist
+
+Use tools you already own first. If measurement is the missing step, compare caliper range, resolution and repeatability; a display reading alone does not establish accuracy.
+
+**Affiliate disclosure:** As an Amazon Associate I earn from qualifying purchases. These are Amazon search links, not guarantees of stock, price, seller quality or compatibility.
+
+- [Digital calipers on Amazon](https://www.amazon.com/s?k=digital+caliper&tag=homeforge0a-20)
+- [PLA filament on Amazon](https://www.amazon.com/s?k=PLA+filament+1.75mm&tag=homeforge0a-20)
+
 ## Sources
 
 - [Prusa Knowledge Base: First Layer Calibration](https://help.prusa3d.com/article/first-layer-calibration-i3_112364)
 - [Prusa Knowledge Base: Elephant foot compensation](https://help.prusa3d.com/en/article/elephant-foot-compensation_114487)
-

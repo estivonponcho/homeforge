@@ -89,3 +89,13 @@ That's it — a one-time dryer purchase plus a few dollars of reusable desiccant
 
 *HomeForge is reader-supported; some links are affiliate links, at no extra cost to
 you. This is the exact drying/storage setup I run.*
+
+## Optional shopping checklist
+
+Check the filament maker’s drying temperature and time, spool temperature limit, dryer capacity and ventilation instructions. Buy only what your existing setup lacks; sealed storage helps keep already-dried material dry.
+
+**Affiliate disclosure:** As an Amazon Associate I earn from qualifying purchases. These are Amazon search links, not guarantees of stock, price, seller quality or compatibility.
+
+- [SUNLU S4 listings on Amazon](https://www.amazon.com/s?k=SUNLU+S4+filament+dryer&tag=homeforge0a-20)
+- [Rechargeable silica-gel desiccant on Amazon](https://www.amazon.com/s?k=rechargeable+silica+gel+desiccant&tag=homeforge0a-20)
+- [Airtight filament storage bins on Amazon](https://www.amazon.com/s?k=airtight+filament+storage+bins&tag=homeforge0a-20)

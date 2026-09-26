@@ -61,3 +61,13 @@ and the rest of a local-first setup.
 
 *HomeForge is reader-supported; some links are affiliate links, at no extra cost to
 you. We only recommend gear worth owning.*
+
+## Optional shopping checklist
+
+Compare the exact model, radio, regional plug type and rated load. Confirm its current Home Assistant integration and energy-monitoring support; a family name or Matter logo alone is insufficient.
+
+**Affiliate disclosure:** As an Amazon Associate I earn from qualifying purchases. These are Amazon search links, not guarantees of stock, price, seller quality or compatibility.
+
+- [ThirdReality Zigbee plugs on Amazon](https://www.amazon.com/s?k=ThirdReality+Zigbee+smart+plug&tag=homeforge0a-20)
+- [Aqara Zigbee plugs on Amazon](https://www.amazon.com/s?k=Aqara+Smart+Plug+Zigbee&tag=homeforge0a-20)
+- [Eve Energy on Amazon](https://www.amazon.com/s?k=Eve+Energy+Thread+Matter+smart+plug&tag=homeforge0a-20)

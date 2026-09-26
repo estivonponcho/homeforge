@@ -60,8 +60,16 @@ Pass only when a fresh target reaches the written recovery outcome. A completed 
 
 Repeat the drill after major installation changes, moving storage, changing encryption material, or adding a service that matters to household operation.
 
+
+## Optional shopping checklist
+
+Confirm where the backup file and encryption key are stored before buying storage. Check capacity and the restore workflow for your installation type; a drive connected to the same failed host may not be accessible.
+
+**Affiliate disclosure:** As an Amazon Associate I earn from qualifying purchases. These are Amazon search links, not guarantees of stock, price, seller quality or compatibility.
+
+- [External backup drives on Amazon](https://www.amazon.com/s?k=external+USB+hard+drive&tag=homeforge0a-20)
+
 ## Sources
 
 - [Home Assistant: backups and restores](https://www.home-assistant.io/common-tasks/general/)
 - [Home Assistant: restore from full backup action](https://www.home-assistant.io/actions/hassio.restore_full/)
-

@@ -12,6 +12,7 @@ Outputs (all under site/):
 Run: python3 scripts/build_site.py   (stdlib only; run after editing picks/guides/projects)
 """
 import json, re, pathlib, html as _html
+from urllib.parse import parse_qs, urlparse
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = ROOT / "site"
@@ -98,6 +99,23 @@ def rewrite_link(url: str) -> str:
     if url.endswith(".md"):
         return url[:-3] + ".html"
     return url
+
+
+def track_affiliate_clicks(body: str, canonical: str) -> str:
+    """Mark tagged Amazon links as GoatCounter events scoped to this page."""
+    page_key = re.sub(r"[^a-z0-9-]+", "-", urlparse(canonical).path.strip("/").lower()).strip("-") or "home"
+
+    def mark(match):
+        tag = match.group(0)
+        href_match = re.search(r'\bhref="([^"]+)"', tag)
+        if not href_match or "data-goatcounter-click=" in tag:
+            return tag
+        url = urlparse(_html.unescape(href_match.group(1)))
+        if url.hostname not in {"amazon.com", "www.amazon.com"} or not parse_qs(url.query).get("tag"):
+            return tag
+        return tag[:-1] + f' data-goatcounter-click="retailer-amazon-{page_key}">'
+
+    return re.sub(r"<a\b[^>]*>", mark, body)
 
 
 # ---------- minimal markdown -> html ----------
@@ -729,6 +747,13 @@ def main():
     build_reads(guides, projects)
     build_sitemap(guides, projects)
     build_feed(guides, projects)
+    # Include hand-authored home/landing pages as well as generated articles.
+    for document in SITE.rglob("*.html"):
+        original = document.read_text(encoding="utf-8")
+        canonical = SITE_URL + document.relative_to(SITE).as_posix()
+        tracked = track_affiliate_clicks(original, canonical)
+        if tracked != original:
+            document.write_text(tracked, encoding="utf-8")
     print(f"Built: reads.html, picks.html, learn.html, model-watch.html ({len(model_watch)} items), "
           f"{len(learn_guides)} guides, {len(projects)} builds, hf.css, sitemap.xml, feed.xml")
 

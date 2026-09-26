@@ -50,8 +50,17 @@ Run one harmless automation and save the trace or log. Verify the trigger, actio
 
 Continue with [Home Assistant for beginners](home-assistant-beginners-guide.html) or the [ESPHome appliance retrofit guide](esphome-appliance-retrofits.html).
 
+
+## Optional shopping checklist
+
+Run the tests above before replacing working hardware. For a first Home Assistant system, confirm the hub, radio and exact sensor work together; a local radio does not prove every device feature is local.
+
+**Affiliate disclosure:** As an Amazon Associate I earn from qualifying purchases. These are Amazon search links, not guarantees of stock, price, seller quality or compatibility.
+
+- [Home Assistant Green listings on Amazon](https://www.amazon.com/s?k=Home+Assistant+Green&tag=homeforge0a-20)
+- [Home Assistant Connect ZBT-2 listings on Amazon](https://www.amazon.com/s?k=Home+Assistant+Connect+ZBT-2&tag=homeforge0a-20)
+
 ## Sources
 
 - [Home Assistant integrations](https://www.home-assistant.io/integrations/)
 - [Home Assistant automation traces](https://www.home-assistant.io/docs/automation/troubleshooting/)
-
