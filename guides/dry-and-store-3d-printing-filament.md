@@ -46,37 +46,34 @@ An active dryer heats and circulates air to pull moisture back out. I use the
 to 70°C, with a humidity readout so you can watch it drop. You can also print
 straight from it, which is the move for TPU and nylon.
 
-Rough temps and times (start conservative; the S4 tops out at 70°C):
+Do not choose a drying cycle from the material name alone. Follow the filament maker's instructions for the exact formulation, check the spool's temperature limit, and confirm the dryer can safely provide that cycle. A dryer that cannot reach the specified conditions is not a substitute for a suitable one.
 
-| Material | Dryer temp | Time |
-|---|---|---|
-| PLA | 45–55°C | 4–6 h |
-| PETG | 55–65°C | 4–6 h |
-| TPU | 45–55°C | 4–8 h |
-| ABS / ASA | 65–70°C | 4–6 h |
-| Nylon (PA) | 70°C | 8–12 h |
+[Prusa's drying guidance](https://help.prusa3d.com/article/drying-filament_332086) distinguishes filament formulations and spool versions. Its settings are for its materials; they are not a universal recipe for every brand. Follow the dryer manual for loading, airflow and placement.
+
+### Before buying a dryer
+
+- **Keep what works:** if your material prints reliably and is stored appropriately, buying a larger dryer is not automatically the next step.
+- **Match the job:** check the number and dimensions of spools you actually use, the required cycle, and the supported feed path if printing from the dryer.
+- **Separate diagnosis from shopping:** stringing and rough surfaces can have other causes. Save the slicer profile and compare one change at a time.
+- **Treat the readout as context:** a chamber humidity reading describes conditions near the sensor; it is not a direct measurement of water inside the filament.
 
 ### 2. Store it — an airtight bin + desiccant
 Once dry, keep it dry. A gasketed **[airtight bin](../picks.html#3d-printing)** with
 a scoop of desiccant is all it takes. I use **[Fonday rechargeable silica-gel
 beads](../picks.html#3d-printing)** — they're orange and turn green when spent, so
-you can see at a glance when to recharge them. Bake them dry (or run them in the
-dryer) and reuse for years.
+you can see at a glance when to recharge them. Recharge them only according to the exact desiccant product instructions, including its container limits. Do not assume a filament-drying cycle is suitable for desiccant regeneration.
 
 ### 3. Keep desiccant in the AMS
-The AMS isn't sealed enough to dry filament, but a pod of the same rechargeable
-desiccant inside it keeps loaded spools from creeping back up in humidity between
-prints. Swap or recharge when the beads turn green.
+Check the exact AMS or feeder model: storage and active-drying capabilities differ. Desiccant helps control the storage environment but does not replace a specified active drying cycle. Follow that model's instructions for desiccant placement and replacement.
 
 ## The routine that keeps prints clean
 
-1. New spool → dry it before the first big print.
+1. Check the new spool and its material instructions; dry it when the documented use requires it.
 2. Store dried spools in a sealed bin with desiccant.
-3. Keep desiccant in the AMS and check the color monthly.
-4. Recharge green beads in the dryer and reuse.
+3. Check storage conditions and the exact feeder's desiccant instructions.
+4. Regenerate or replace desiccant using its own product instructions.
 
-That's it — a one-time dryer purchase plus a few dollars of reusable desiccant, and
-"why is this stringy?" mostly disappears.
+Keep a short log of the material, drying cycle, storage conditions and print profile. Moisture control is one part of diagnosis; it does not guarantee that a print defect disappears.
 
 ## Gear used
 
@@ -99,3 +96,6 @@ Check the filament maker’s drying temperature and time, spool temperature limi
 - [SUNLU S4 listings on Amazon](https://www.amazon.com/s?k=SUNLU+S4+filament+dryer&tag=homeforge0a-20)
 - [Rechargeable silica-gel desiccant on Amazon](https://www.amazon.com/s?k=rechargeable+silica+gel+desiccant&tag=homeforge0a-20)
 - [Airtight filament storage bins on Amazon](https://www.amazon.com/s?k=airtight+filament+storage+bins&tag=homeforge0a-20)
+
+
+*Editorial review September 26, 2026: replaced generic drying ranges with exact-material/spool checks and clarified storage, feeder and desiccant limits. Existing owner equipment notes are not comparative performance tests.*
