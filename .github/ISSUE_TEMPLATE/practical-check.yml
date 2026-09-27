@@ -1,0 +1,36 @@
+name: Practical check question or correction
+description: Suggest a worked example or report a problem in a HomeForge worksheet.
+title: "[Practical check] "
+body:
+  - type: markdown
+    attributes:
+      value: "Please share only public, non-sensitive information. Do not include credentials, serial numbers, addresses or private household details. We cannot promise a response time or equipment testing."
+  - type: input
+    id: resource
+    attributes:
+      label: Resource or guide
+      description: Public URL or filename and revision.
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Question or correction
+      description: What is unclear, incorrect or missing? Describe the result you expected.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and limitations
+      description: Optional public source, reproducible steps, or non-sensitive measurements. Distinguish observations from assumptions.
+  - type: dropdown
+    id: reuse
+    attributes:
+      label: May HomeForge paraphrase this question in a public lesson?
+      options:
+        - No - reply in this issue only
+        - Yes - without identifying me
+        - Ask me first
+    validations:
+      required: true

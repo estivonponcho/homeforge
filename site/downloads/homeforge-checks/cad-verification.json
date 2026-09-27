@@ -1,0 +1,62 @@
+{
+  "kind": "Actual generated CAD geometry, not screen recording or physical testing",
+  "variants": [
+    {
+      "file": "slot-10.0mm.stl",
+      "slot_mm": [
+        10.0,
+        6
+      ],
+      "bounds_mm": [
+        30,
+        20,
+        3
+      ],
+      "triangles": 32,
+      "closed_edges": true,
+      "signed_volume_mm3": 1620.0,
+      "expected_volume_mm3": 1620.0,
+      "sha256": "00b73bd68bd38c08fabb99dd50a88cb02d69fb1cd2ee990d032959a884db9226"
+    },
+    {
+      "file": "slot-10.2mm.stl",
+      "slot_mm": [
+        10.2,
+        6
+      ],
+      "bounds_mm": [
+        30,
+        20,
+        3
+      ],
+      "triangles": 32,
+      "closed_edges": true,
+      "signed_volume_mm3": 1616.4000000000003,
+      "expected_volume_mm3": 1616.3999999999999,
+      "sha256": "c97e284da9c493715ecd275a4e6f78f8d4cc174fefcf725bccf0ade57210b2cb"
+    },
+    {
+      "file": "slot-10.4mm.stl",
+      "slot_mm": [
+        10.4,
+        6
+      ],
+      "bounds_mm": [
+        30,
+        20,
+        3
+      ],
+      "triangles": 32,
+      "closed_edges": true,
+      "signed_volume_mm3": 1612.8000000000004,
+      "expected_volume_mm3": 1612.8000000000002,
+      "sha256": "eb23cc1a0bd422f14bea215e180b82c3be8873717d70711db3f691a98f9d6c60"
+    }
+  ],
+  "arithmetic_check": {
+    "bundle_a": 339,
+    "bundle_b": 329,
+    "difference": 10
+  },
+  "physical_fit_verified": false
+}
