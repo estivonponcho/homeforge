@@ -632,6 +632,7 @@ READ_META = {
     "choose-nas-by-recovery-path": ("Buying Guides", "Homelab"),
     "first-functional-3d-printed-part": ("How-To Guides", "3D printing"),
     "one-charger-tech-edc-power-budget": ("Buying Guides", "Tech EDC"),
+    "backyard-office-pod-vs-she-shed-work-from-home": ("Buying Guides", "Home office"),
 }
 
 
