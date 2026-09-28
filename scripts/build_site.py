@@ -292,6 +292,11 @@ figure.diagram svg{max-width:100%;height:auto;display:block;margin:auto}
 figure.diagram img{max-width:100%;height:auto;display:block;margin:auto;border-radius:8px}
 figure.diagram text{fill:var(--ink)}figure.diagram .wire{stroke:var(--ink)}figure.diagram .data{stroke:var(--accent)}figure.diagram .box{fill:var(--surface2);stroke:var(--ink)}
 figure.diagram figcaption{margin-top:10px;color:var(--muted);font-size:.85rem;text-align:center}
+.product-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:24px 0}
+.product-shot{margin:0;border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden}
+.product-shot a{display:block;background:var(--surface2)}.product-shot img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;transition:transform .2s ease}.product-shot a:hover img{transform:scale(1.015)}
+.product-shot figcaption{display:flex;flex-direction:column;gap:2px;padding:12px 14px}.product-shot figcaption strong{font-family:"Bricolage Grotesque",sans-serif}.product-shot figcaption span{color:var(--muted);font-size:.85rem}
+@media(max-width:680px){.product-gallery{grid-template-columns:1fr}}
 @media(max-width:900px){
 .bar .navtoggle{display:inline-flex}
 .nav{position:absolute;top:calc(100% + 8px);right:0;left:0;z-index:40;flex-direction:column;align-items:stretch;gap:6px;padding:10px;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 32px -18px rgba(27,23,18,.35);max-height:0;overflow:hidden;opacity:0;pointer-events:none;transform:translateY(-6px);transition:opacity .16s,transform .16s}
@@ -331,14 +336,15 @@ ANALYTICS = ('<script data-goatcounter="https://homeforge.goatcounter.com/count"
 
 def page(title, description, canonical, body, root="", jsonld="", social_image="",
          social_image_width=1122, social_image_height=1402,
-         social_image_alt="HomeForge Home Assistant system diagram"):
+         social_image_alt="HomeForge Home Assistant system diagram",
+         social_image_type="image/png"):
     desc = _html.escape(description, quote=True)
     social_meta = ""
     if social_image:
         image = _html.escape(social_image, quote=True)
         social_meta = (f'<meta property="og:image" content="{image}">\n'
                        f'<meta property="og:image:secure_url" content="{image}">\n'
-                       '<meta property="og:image:type" content="image/png">\n'
+                       f'<meta property="og:image:type" content="{social_image_type}">\n'
                        f'<meta property="og:image:width" content="{social_image_width}">\n'
                        f'<meta property="og:image:height" content="{social_image_height}">\n'
                        f'<meta property="og:image:alt" content="{_html.escape(social_image_alt, quote=True)}">\n'
@@ -432,6 +438,13 @@ def build_md_pages(folder, kind):
                 "social_image_width": 1672,
                 "social_image_height": 941,
                 "social_image_alt": "Illustration of a generic enclosed 3D printer making a turquoise object",
+            }
+        elif slug == "backyard-office-pod-vs-she-shed-work-from-home":
+            social_image_meta = {
+                "social_image_width": 1200,
+                "social_image_height": 800,
+                "social_image_alt": "Original HomeForge illustration of a modern backyard office pod",
+                "social_image_type": "image/webp",
             }
         model_watch = folder == "guides" and is_model_watch(slug)
         hub_label = "Model Watch" if model_watch else kind

@@ -44,6 +44,11 @@ figure.diagram svg{max-width:100%;height:auto;display:block;margin:auto}
 figure.diagram img{max-width:100%;height:auto;display:block;margin:auto;border-radius:8px}
 figure.diagram text{fill:var(--ink)}figure.diagram .wire{stroke:var(--ink)}figure.diagram .data{stroke:var(--accent)}figure.diagram .box{fill:var(--surface2);stroke:var(--ink)}
 figure.diagram figcaption{margin-top:10px;color:var(--muted);font-size:.85rem;text-align:center}
+.product-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:24px 0}
+.product-shot{margin:0;border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden}
+.product-shot a{display:block;background:var(--surface2)}.product-shot img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;transition:transform .2s ease}.product-shot a:hover img{transform:scale(1.015)}
+.product-shot figcaption{display:flex;flex-direction:column;gap:2px;padding:12px 14px}.product-shot figcaption strong{font-family:"Bricolage Grotesque",sans-serif}.product-shot figcaption span{color:var(--muted);font-size:.85rem}
+@media(max-width:680px){.product-gallery{grid-template-columns:1fr}}
 @media(max-width:900px){
 .bar .navtoggle{display:inline-flex}
 .nav{position:absolute;top:calc(100% + 8px);right:0;left:0;z-index:40;flex-direction:column;align-items:stretch;gap:6px;padding:10px;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 32px -18px rgba(27,23,18,.35);max-height:0;overflow:hidden;opacity:0;pointer-events:none;transform:translateY(-6px);transition:opacity .16s,transform .16s}

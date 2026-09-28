@@ -17,6 +17,17 @@ It is not the only version, and it is not automatically the best one.
 > availability and specifications can change. Verify every exact listing and
 > local requirement before buying.
 
+<div class="product-gallery" aria-label="Workspace option gallery">
+<figure class="product-shot"><a href="https://www.amazon.com/dp/B0HG5ZJHVH?tag=homeforge0a-20" rel="nofollow sponsored noopener"><img src="../assets/backyard-office-pod-editorial.webp" alt="Original editorial illustration of a modern black backyard office pod with a desk visible through large windows" width="1200" height="800" loading="eager"></a><figcaption><strong>Prefab office pod</strong><span>Purpose-built separation from the house.</span></figcaption></figure>
+<figure class="product-shot"><a href="https://www.amazon.com/s?k=finished+backyard+office+shed+kit&tag=homeforge0a-20" rel="nofollow sponsored noopener"><img src="../assets/she-shed-office-editorial.webp" alt="Original editorial illustration of a finished wooden she shed used as a backyard office" width="1200" height="800" loading="lazy"></a><figcaption><strong>Finished she shed</strong><span>A more customizable outdoor-room path.</span></figcaption></figure>
+<figure class="product-shot"><a href="https://www.amazon.com/s?k=electric+standing+desk+dual+motor&tag=homeforge0a-20" rel="nofollow sponsored noopener"><img src="../assets/remote-work-desk-setup-editorial.webp" alt="Original editorial illustration of a complete remote-work desk with chair, dual monitors, microphone and lighting" width="1200" height="800" loading="lazy"></a><figcaption><strong>Complete desk setup</strong><span>Gear that can move from an inside room to a future pod.</span></figcaption></figure>
+<figure class="product-shot"><a href="https://www.amazon.com/s?k=home+office+room+divider+storage+lighting&tag=homeforge0a-20" rel="nofollow sponsored noopener"><img src="../assets/indoor-office-refresh-editorial.webp" alt="Original editorial illustration of a redesigned spare-room office with a bookcase divider, storage and warm lighting" width="1200" height="800" loading="lazy"></a><figcaption><strong>Indoor office refresh</strong><span>A reversible option for renters and smaller budgets.</span></figcaption></figure>
+</div>
+
+*These are original HomeForge editorial illustrations, not manufacturer or
+Amazon listing photos. Select a card to review the exact linked product or
+current category results.*
+
 ## The product that started the question
 
 The [prefab backyard office pod on Amazon](https://www.amazon.com/dp/B0HG5ZJHVH?tag=homeforge0a-20)
