@@ -17,6 +17,15 @@ Where a guide recommends a tool or book, it links to the relevant
   for covering each new model release.
 - [Model Watch: DeepSeek V4.1 Flash](model-watch-deepseek-v4-1-flash-2026-09-14.md) —
   a new open-weight architecture family, MIT-licensed, with a 1M-token context window.
+- [Model Watch: Claude Opus 5.5](model-watch-claude-opus-5-5-2026-09-28.md) —
+  Anthropic's first release since its "pace the frontier" pledge: cheaper, faster,
+  matching Fable 5.1 on agentic benchmarks rather than beating it.
+- [Model Watch: GPT-6 Sol & Luna](model-watch-gpt-6-sol-luna-2026-09-28.md) —
+  OpenAI's mid-tier and budget GPT-6 models, with roughly 50% lower API pricing
+  than GPT-5.6.
+- [Model Watch: Grok 4.7](model-watch-grok-4-7-2026-09-28.md) —
+  real agentic-coding gains, but a token-hungry "xhigh" mode that can erase the
+  cost advantage, against Musk's "Opus-class" framing.
 - [DeepSeek V4.1 Flash vs. the other open-weight giants of 2026](deepseek-v4-1-flash-vs-open-weight-rivals-2026.md) —
   head-to-head against Kimi K3, GLM-5.3-Flash, Qwen3.8-Max, and DeepSeek's own V4 Pro.
 - [How 2026's open-weight models actually work](how-2026-open-weight-models-actually-work.md) —
