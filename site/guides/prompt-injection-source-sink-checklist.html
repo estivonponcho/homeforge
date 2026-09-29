@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prompt injection is not just a bad prompt: map the source and the action — HomeForge</title>
+<meta name="description" content="The dangerous part of a prompt injection is not the sentence hidden in a webpage. It is the action an AI agent can take after reading that sentence.">
+<link rel="canonical" href="https://estivonponcho.github.io/homeforge/guides/prompt-injection-source-sink-checklist.html">
+<link rel="alternate" type="application/rss+xml" title="HomeForge" href="https://estivonponcho.github.io/homeforge/feed.xml">
+<meta property="og:title" content="Prompt injection is not just a bad prompt: map the source and the action — HomeForge">
+<meta property="og:description" content="The dangerous part of a prompt injection is not the sentence hidden in a webpage. It is the action an AI agent can take after reading that sentence.">
+<meta property="og:url" content="https://estivonponcho.github.io/homeforge/guides/prompt-injection-source-sink-checklist.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="HomeForge">
+<meta property="og:image" content="https://estivonponcho.github.io/homeforge/assets/prompt-injection-source-sink-editorial.webp">
+<meta property="og:image:secure_url" content="https://estivonponcho.github.io/homeforge/assets/prompt-injection-source-sink-editorial.webp">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1122">
+<meta property="og:image:height" content="1402">
+<meta property="og:image:alt" content="HomeForge Home Assistant system diagram">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://estivonponcho.github.io/homeforge/assets/prompt-injection-source-sink-editorial.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../hf.css">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "Prompt injection is not just a bad prompt: map the source and the action", "description": "The dangerous part of a prompt injection is not the sentence hidden in a webpage. It is the action an AI agent can take after reading that sentence.", "url": "https://estivonponcho.github.io/homeforge/guides/prompt-injection-source-sink-checklist.html", "mainEntityOfPage": "https://estivonponcho.github.io/homeforge/guides/prompt-injection-source-sink-checklist.html", "author": {"@type": "Person", "name": "Mike Cage"}, "publisher": {"@type": "Organization", "name": "HomeForge"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "HomeForge", "item": "https://estivonponcho.github.io/homeforge/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://estivonponcho.github.io/homeforge/learn.html"}, {"@type": "ListItem", "position": 3, "name": "Prompt injection is not just a bad prompt: map the source and the action", "item": "https://estivonponcho.github.io/homeforge/guides/prompt-injection-source-sink-checklist.html"}]}]</script>
+<script data-goatcounter="https://homeforge.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<header><div class="wrap bar"><a class="brand" href="../index.html"><span>&#9650;</span> HomeForge</a><nav class="nav" id="nav"><a href="../index.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.8 7.5 8 3l5.2 4.5"/><path d="M4.4 6.7v6.5h7.2V6.7"/></svg>Home</a><a href="../reads.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 4C6.5 3 4 3 2.5 3.4v9.2C4 12.2 6.5 12.2 8 13.2 9.5 12.2 12 12.2 13.5 12.6V3.4C12 3 9.5 3 8 4z"/><path d="M8 4v9.2"/></svg>Reads</a><a href="../picks.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 4.5h10M3 8h10M3 11.5h10"/></svg>The list</a><a href="../learn.html"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5.4"/><path d="M10.6 5.4 9.1 9.1 5.4 10.6 6.9 6.9z"/></svg>Guides</a><a href="../model-watch.html"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="4.6" y="4.6" width="6.8" height="6.8" rx="1"/><path d="M6.6 2.4v2.2M9.4 2.4v2.2M6.6 11.4v2.2M9.4 11.4v2.2M2.4 6.6h2.2M2.4 9.4h2.2M11.4 6.6h2.2M11.4 9.4h2.2"/></svg>Model Watch</a><a href="../ai-safety.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2.2 3 4v3.6c0 3 2.1 4.9 5 6.2 2.9-1.3 5-3.2 5-6.2V4z"/></svg>AI Safety</a><a href="../resources.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5.6 4 12 8l-6.4 4z" fill="currentColor" stroke="none"/></svg>Watch &amp; build</a><a href="../starter-kit.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.7 5.4 8 2.6l5.3 2.8v5.2L8 13.4 2.7 10.6z"/><path d="M2.7 5.4 8 8.2l5.3-2.8M8 8.2v5.2"/></svg>Starter kit</a></nav><button class="navbtn navtoggle" id="navtoggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 4.5h11M2.5 8h11M2.5 11.5h11"/></svg></button></div></header>
+<main class="wrap">
+<div class="article"><p class="crumb"><a href="../index.html">HomeForge</a> / <a href="../learn.html">Guides</a></p><h1>Prompt injection is not just a bad prompt: map the source and the action</h1>
+<p><em>Published September 28, 2026 · HomeForge</em></p>
+<p>The dangerous part of a prompt injection is not the sentence hidden in a webpage. It is the action an AI agent can take after reading that sentence.</p>
+<p>An assistant that only summarizes a public page has a smaller blast radius than one that can also read private files, send messages, change cloud data, or open links while signed in. That makes prompt injection a systems problem: <strong>untrusted content enters through a source, then tries to reach a consequential action.</strong></p>
+<p>This guide turns that idea into a checklist you can use before connecting an agent to browsers, email, cloud storage, code repositories, or Model Context Protocol tools.</p>
+<figure class="product-shot"><img src="../assets/prompt-injection-source-sink-editorial.webp" alt="Original editorial diagram showing untrusted content separated from sensitive AI-agent actions by a policy gate" width="1536" height="1024" loading="eager"><figcaption><strong>Map the path, not only the prompt</strong><span>Untrusted content becomes dangerous when it can reach a sensitive action.</span></figcaption></figure>
+<h2>1. List every source the agent can read</h2>
+<p>Start with material an attacker or third party can influence:</p>
+<ul><li>webpages and search results;</li><li>email bodies and attachments;</li><li>shared documents and comments;</li><li>repository files, issues, and pull requests;</li><li>MCP tool results and connector data;</li><li>persistent notes or memory loaded from an earlier session.</li></ul>
+<p>Do not assume a trusted connector makes every returned document trustworthy. Anthropic gives the example of a reviewed GitHub connector loading a poisoned README into an agent's context. The software path may be approved while the content remains attacker-controlled.</p>
+<h2>2. List every sink that can create harm</h2>
+<p>OpenAI describes agentic prompt injection with a source-and-sink model. A sink is a capability that becomes dangerous in the wrong context. Common examples include:</p>
+<ul><li>sending data to a third party;</li><li>publishing or editing a public post;</li><li>deleting or moving cloud data;</li><li>running code or shell commands;</li><li>using a credentialed browser session;</li><li>approving a purchase or changing permissions;</li><li>writing to persistent memory that future sessions will trust.</li></ul>
+<p>The same untrusted email has a different risk profile when the agent can only summarize it than when the agent can also forward attachments or update account settings.</p>
+<h2>3. Draw the shortest path between them</h2>
+<p>For each source, ask which sinks it can influence. The most useful diagram is usually small:</p>
+<p><code>untrusted page -&gt; agent context -&gt; tool arguments -&gt; external action</code></p>
+<p>Then mark the deterministic controls on that path. A classifier or model instruction can reduce risk, but it is probabilistic. A permission boundary, schema validator, network rule, or tool-level policy can block a class of actions even when the model is persuaded.</p>
+<h2>4. Pass facts across trust boundaries, not prose</h2>
+<p>When possible, isolate untrusted material and extract only the fields the next step needs. Instead of sending a whole email thread into a payment tool, pass a validated invoice number, vendor identifier, currency, and amount. Instead of letting a webpage choose a tool call, require the application to map a small set of allowed values into a fixed operation.</p>
+<p>OpenAI's agent safety guidance recommends preventing untrusted data from directly driving agent behavior and using validated structured fields between steps. Structure reduces the room available for hidden instructions. It does not prove the content is true, so the application still needs authorization and business-rule checks.</p>
+<h2>5. Put review beside the side effect</h2>
+<p>A broad input guardrail at the start of a workflow does not automatically protect every later tool call. Put validation at the boundary that creates the effect.</p>
+<p>For a message send, review the recipient, exact body, attachments, and sending identity. For a file deletion, review the exact files and scope. For a public post, review the destination account and final media and copy. Resume the same paused operation after approval; do not start a second attempt that can create a duplicate.</p>
+<h2>6. Cap the blast radius before trusting detection</h2>
+<p>Assume one malicious instruction eventually gets through. Then ask what it can reach.</p>
+<ul><li>Keep credentials outside the agent's runtime when they are unnecessary.</li><li>Prefer read-only access for research tasks.</li><li>Limit filesystem writes to the active workspace.</li><li>Deny network access by default when the task does not need it.</li><li>Use separate identities and short-lived tokens for automated work.</li><li>Test new connectors against fake data first.</li></ul>
+<p>Anthropic's containment guidance makes the same point: the environment defines what the agent is able to do, while model-layer defenses influence what it tends to do. Those layers should overlap.</p>
+<h2>7. Treat persistent memory as another sink</h2>
+<p>A one-time injection can become a recurring problem if it is written into a note, project instruction, or memory record that loads at startup. Store provenance with durable records: source, observation time, review state, and expiration or replacement rule. Re-scan persistent context before loading it into a privileged workflow.</p>
+<h2>A five-minute preflight</h2>
+<p>Before enabling a new agent connection, answer five questions:</p>
+<ol><li>Which content can outsiders influence?</li><li>Which tools can transmit, modify, delete, spend, or publish?</li><li>Can raw outside text reach those tools?</li><li>What deterministic boundary limits the worst result?</li><li>What receipt proves the final action, and how will an ambiguous attempt be reconciled?</li></ol>
+<p>If you cannot answer those questions, adding a longer system prompt is not the first fix. Narrow the tools, isolate the content, and put policy beside the action.</p>
+<h2>Sources</h2>
+<ul><li><a href="https://openai.com/index/designing-agents-to-resist-prompt-injection/" rel="noopener">OpenAI: Designing AI agents to resist prompt injection</a>, for the source-and-sink framing and the goal of constraining impact when manipulation succeeds.</li><li><a href="https://developers.openai.com/api/docs/guides/agent-builder-safety" rel="noopener">OpenAI API: Safety in building agents</a>, for structured handoffs, tool approvals, guardrails, and trace evaluation.</li><li><a href="https://developers.openai.com/api/docs/guides/agents/guardrails-approvals" rel="noopener">OpenAI API: Guardrails and human review</a>, for placing validation at tool boundaries and resuming paused runs.</li><li><a href="https://www.anthropic.com/engineering/how-we-contain-claude" rel="noopener">Anthropic: How we contain Claude across products</a>, for environment, model, and external-content defenses and the poisoned connector-output example.</li></ul><hr><a class="cta" href="../starter-kit.html">Get the free Starter Kit &rarr;</a></div>
+</main>
+<footer><div class="wrap">HomeForge is reader-supported; some links are affiliate links (no extra cost to you).<div class="fl"><a href="../index.html">Home</a><a href="../reads.html">Reads</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="https://github.com/estivonponcho/homeforge/blob/main/AFFILIATE-DISCLOSURE.md">Disclosure</a><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></div></div></footer>
+<script>(function(){var b=document.getElementById("navtoggle"),n=document.getElementById("nav");if(!b||!n)return;function s(o){n.classList.toggle("open",o);b.setAttribute("aria-expanded",o?"true":"false");}b.addEventListener("click",function(e){e.stopPropagation();s(!n.classList.contains("open"));});n.addEventListener("click",function(e){if(e.target.closest("a"))s(false);});document.addEventListener("click",function(e){if(n.classList.contains("open")&&!n.contains(e.target)&&e.target!==b)s(false);});document.addEventListener("keydown",function(e){if(e.key==="Escape")s(false);});})();</script>
+</body>
+</html>

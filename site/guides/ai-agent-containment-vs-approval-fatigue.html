@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Another permission popup will not contain your AI agent — HomeForge</title>
+<meta name="description" content="If an AI agent asks for approval every thirty seconds, users eventually stop reviewing and start clicking. The safety feature becomes a reflex test.">
+<link rel="canonical" href="https://estivonponcho.github.io/homeforge/guides/ai-agent-containment-vs-approval-fatigue.html">
+<link rel="alternate" type="application/rss+xml" title="HomeForge" href="https://estivonponcho.github.io/homeforge/feed.xml">
+<meta property="og:title" content="Another permission popup will not contain your AI agent — HomeForge">
+<meta property="og:description" content="If an AI agent asks for approval every thirty seconds, users eventually stop reviewing and start clicking. The safety feature becomes a reflex test.">
+<meta property="og:url" content="https://estivonponcho.github.io/homeforge/guides/ai-agent-containment-vs-approval-fatigue.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="HomeForge">
+<meta property="og:image" content="https://estivonponcho.github.io/homeforge/assets/agent-containment-rings-editorial.webp">
+<meta property="og:image:secure_url" content="https://estivonponcho.github.io/homeforge/assets/agent-containment-rings-editorial.webp">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1122">
+<meta property="og:image:height" content="1402">
+<meta property="og:image:alt" content="HomeForge Home Assistant system diagram">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://estivonponcho.github.io/homeforge/assets/agent-containment-rings-editorial.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../hf.css">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "Another permission popup will not contain your AI agent", "description": "If an AI agent asks for approval every thirty seconds, users eventually stop reviewing and start clicking. The safety feature becomes a reflex test.", "url": "https://estivonponcho.github.io/homeforge/guides/ai-agent-containment-vs-approval-fatigue.html", "mainEntityOfPage": "https://estivonponcho.github.io/homeforge/guides/ai-agent-containment-vs-approval-fatigue.html", "author": {"@type": "Person", "name": "Mike Cage"}, "publisher": {"@type": "Organization", "name": "HomeForge"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "HomeForge", "item": "https://estivonponcho.github.io/homeforge/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://estivonponcho.github.io/homeforge/learn.html"}, {"@type": "ListItem", "position": 3, "name": "Another permission popup will not contain your AI agent", "item": "https://estivonponcho.github.io/homeforge/guides/ai-agent-containment-vs-approval-fatigue.html"}]}]</script>
+<script data-goatcounter="https://homeforge.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<header><div class="wrap bar"><a class="brand" href="../index.html"><span>&#9650;</span> HomeForge</a><nav class="nav" id="nav"><a href="../index.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.8 7.5 8 3l5.2 4.5"/><path d="M4.4 6.7v6.5h7.2V6.7"/></svg>Home</a><a href="../reads.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 4C6.5 3 4 3 2.5 3.4v9.2C4 12.2 6.5 12.2 8 13.2 9.5 12.2 12 12.2 13.5 12.6V3.4C12 3 9.5 3 8 4z"/><path d="M8 4v9.2"/></svg>Reads</a><a href="../picks.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 4.5h10M3 8h10M3 11.5h10"/></svg>The list</a><a href="../learn.html"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5.4"/><path d="M10.6 5.4 9.1 9.1 5.4 10.6 6.9 6.9z"/></svg>Guides</a><a href="../model-watch.html"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="4.6" y="4.6" width="6.8" height="6.8" rx="1"/><path d="M6.6 2.4v2.2M9.4 2.4v2.2M6.6 11.4v2.2M9.4 11.4v2.2M2.4 6.6h2.2M2.4 9.4h2.2M11.4 6.6h2.2M11.4 9.4h2.2"/></svg>Model Watch</a><a href="../ai-safety.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2.2 3 4v3.6c0 3 2.1 4.9 5 6.2 2.9-1.3 5-3.2 5-6.2V4z"/></svg>AI Safety</a><a href="../resources.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5.6 4 12 8l-6.4 4z" fill="currentColor" stroke="none"/></svg>Watch &amp; build</a><a href="../starter-kit.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.7 5.4 8 2.6l5.3 2.8v5.2L8 13.4 2.7 10.6z"/><path d="M2.7 5.4 8 8.2l5.3-2.8M8 8.2v5.2"/></svg>Starter kit</a></nav><button class="navbtn navtoggle" id="navtoggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 4.5h11M2.5 8h11M2.5 11.5h11"/></svg></button></div></header>
+<main class="wrap">
+<div class="article"><p class="crumb"><a href="../index.html">HomeForge</a> / <a href="../learn.html">Guides</a></p><h1>Another permission popup will not contain your AI agent</h1>
+<p><em>Published September 28, 2026 · HomeForge</em></p>
+<p>If an AI agent asks for approval every thirty seconds, users eventually stop reviewing and start clicking. The safety feature becomes a reflex test.</p>
+<p>The practical alternative is containment: decide what the agent can reach before it starts, then reserve human approval for the small number of actions whose consequences cannot be safely bounded.</p>
+<figure class="product-shot"><img src="../assets/agent-containment-rings-editorial.webp" alt="Original editorial illustration of an AI agent working inside nested workspace, network, identity, and approval boundaries" width="1536" height="1024" loading="eager"><figcaption><strong>Bound the environment first</strong><span>Workspace, network, identity, and approval controls should overlap.</span></figcaption></figure>
+<h2>The problem with approving commands one by one</h2>
+<p>Approval dialogs can be useful when the operator understands the proposed action and has enough context to judge it. They work poorly when prompts are frequent, vague, or presented to someone who cannot assess the underlying command.</p>
+<p>Anthropic reports that after adding an operating-system sandbox to Claude Code, permission prompts fell by 84%. The specific number describes Anthropic's implementation, not a universal benchmark. The design lesson is broader: a reliable boundary can remove routine prompts while preserving review for actions that leave the boundary.</p>
+<h2>Four containment layers for a small agent</h2>
+<h3>1. Workspace boundary</h3>
+<p>Give the agent a dedicated project directory. Allow writes there and deny writes elsewhere. Mount sensitive folders only when the task requires them, preferably read-only. A repository review should not automatically expose a password manager export, tax records, or every other project on the machine.</p>
+<h3>2. Network boundary</h3>
+<p>Start with no outbound network access. Add only the destinations the task needs. Separate read-only research from authenticated sessions. A browser agent that needs public documentation does not automatically need an already signed-in email or cloud-storage tab.</p>
+<p>Network policy also limits exfiltration. If private data enters the runtime but the runtime can contact any host, a single manipulated tool call may transmit it through a permitted-looking request.</p>
+<h3>3. Identity boundary</h3>
+<p>Avoid handing the agent a user's full, long-lived authority. Use a separate service identity, narrow scopes, and short-lived credentials. Keep the original credential in the host or credential broker and issue a revocable token for the active session.</p>
+<p>The permission should match both the task and destination. Reading one repository does not imply permission to administer an organization. Drafting a post does not imply permission to publish it from every connected account.</p>
+<h3>4. Action boundary</h3>
+<p>Require a review for actions that remain consequential even inside the sandbox: publishing, sending, deleting, spending, changing access, deploying, or controlling a physical device.</p>
+<p>Show the reviewer the exact proposed action: destination, identity, arguments, affected data, and whether the operation can be reversed. Save the approval decision with the eventual receipt.</p>
+<h2>What still needs model-level defenses</h2>
+<p>Containment does not decide whether a generated answer is correct. Use model instructions, classifiers, and evals to improve behavior inside the boundary. Test known failure modes and review traces. But treat those controls as one layer rather than a wall.</p>
+<p>Anthropic's engineering account says model defenses shape what an agent tends to do, while deterministic environment controls limit what it can do. OpenAI similarly recommends combining structured data flow, guardrails, approvals, and evaluations rather than relying on a single prompt-injection detector.</p>
+<h2>A practical default policy</h2>
+<p>For a coding or content agent, a workable default is:</p>
+<ul><li>read the active workspace;</li><li>write only inside that workspace;</li><li>no network unless a task needs it;</li><li>public-web research in a session without private account access;</li><li>approval before uploading, publishing, deleting, spending, deploying, or changing permissions;</li><li>exact receipts for completed external actions;</li><li>reconciliation before retrying an interrupted or ambiguous submission.</li></ul>
+<p>Then add permissions for a specific task rather than enabling a broad permanent profile.</p>
+<h2>How to decide what deserves approval</h2>
+<p>Ask two questions:</p>
+<ol><li>Can a hard boundary make the worst plausible result small and reversible?</li><li>Can the reviewer understand the proposed action well enough to make a real decision?</li></ol>
+<p>If the first answer is yes, automate inside the boundary. If the second answer is no, improve the presentation or keep the action unavailable. A confusing popup is not meaningful oversight.</p>
+<h2>Sources</h2>
+<ul><li><a href="https://www.anthropic.com/engineering/how-we-contain-claude" rel="noopener">Anthropic: How we contain Claude across products</a>, for environment containment, permission-prompt reduction, external-content risk, and layered defenses.</li><li><a href="https://developers.openai.com/api/docs/guides/agents/guardrails-approvals" rel="noopener">OpenAI API: Guardrails and human review</a>, for tool-level review, exact action context, resumable approval state, and fail-closed behavior.</li><li><a href="https://developers.openai.com/api/docs/guides/agent-builder-safety" rel="noopener">OpenAI API: Safety in building agents</a>, for combining tool approvals, structured data, guardrails, and evals.</li></ul><hr><a class="cta" href="../starter-kit.html">Get the free Starter Kit &rarr;</a></div>
+</main>
+<footer><div class="wrap">HomeForge is reader-supported; some links are affiliate links (no extra cost to you).<div class="fl"><a href="../index.html">Home</a><a href="../reads.html">Reads</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="https://github.com/estivonponcho/homeforge/blob/main/AFFILIATE-DISCLOSURE.md">Disclosure</a><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></div></div></footer>
+<script>(function(){var b=document.getElementById("navtoggle"),n=document.getElementById("nav");if(!b||!n)return;function s(o){n.classList.toggle("open",o);b.setAttribute("aria-expanded",o?"true":"false");}b.addEventListener("click",function(e){e.stopPropagation();s(!n.classList.contains("open"));});n.addEventListener("click",function(e){if(e.target.closest("a"))s(false);});document.addEventListener("click",function(e){if(n.classList.contains("open")&&!n.contains(e.target)&&e.target!==b)s(false);});document.addEventListener("keydown",function(e){if(e.key==="Escape")s(false);});})();</script>
+</body>
+</html>

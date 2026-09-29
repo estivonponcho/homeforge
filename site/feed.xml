@@ -54,6 +54,12 @@
       <description>The backbone of a good prompt has four parts:</description>
     </item>
     <item>
+      <title>Prompt injection is not just a bad prompt: map the source and the action</title>
+      <link>https://estivonponcho.github.io/homeforge/guides/prompt-injection-source-sink-checklist.html</link>
+      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/prompt-injection-source-sink-checklist.html</guid>
+      <description>The dangerous part of a prompt injection is not the sentence hidden in a webpage. It is the action an AI agent can take after reading that sentence.</description>
+    </item>
+    <item>
       <title>Open-weight AI licenses in 2026: the fine print, actually explained</title>
       <link>https://estivonponcho.github.io/homeforge/guides/open-weight-ai-licenses-2026-explained.html</link>
       <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/open-weight-ai-licenses-2026-explained.html</guid>
@@ -76,6 +82,12 @@
       <link>https://estivonponcho.github.io/homeforge/guides/model-watch-deepseek-v4-1-flash-2026-09-14.html</link>
       <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/model-watch-deepseek-v4-1-flash-2026-09-14.html</guid>
       <description>DeepSeek&#x27;s newest release ships a genuinely new MoE architecture, native multimodal input, a 1M-token context window, and open MIT-licensed weights —…</description>
+    </item>
+    <item>
+      <title>MCP changed in 2026: an authorization checklist for agent connections</title>
+      <link>https://estivonponcho.github.io/homeforge/guides/mcp-2026-authorization-checklist.html</link>
+      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/mcp-2026-authorization-checklist.html</guid>
+      <description>An MCP connection can work in a demo and still be unsafe in production. The protocol moves tool descriptions and calls between an AI host and a server…</description>
     </item>
     <item>
       <title>Managing Claude &amp; ChatGPT: the practical guide</title>
@@ -292,6 +304,12 @@
       <link>https://estivonponcho.github.io/homeforge/guides/ai-agent-memory-practical-patterns.html</link>
       <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/ai-agent-memory-practical-patterns.html</guid>
       <description>Give your AI agent useful memory: keep current facts, trace changes, retire stale records, and test cost and accuracy before upgrading hardware.</description>
+    </item>
+    <item>
+      <title>Another permission popup will not contain your AI agent</title>
+      <link>https://estivonponcho.github.io/homeforge/guides/ai-agent-containment-vs-approval-fatigue.html</link>
+      <guid isPermaLink="true">https://estivonponcho.github.io/homeforge/guides/ai-agent-containment-vs-approval-fatigue.html</guid>
+      <description>If an AI agent asks for approval every thirty seconds, users eventually stop reviewing and start clicking. The safety feature becomes a reflex test.</description>
     </item>
     <item>
       <title>When an AI Summary Tries to Become an Instruction</title>

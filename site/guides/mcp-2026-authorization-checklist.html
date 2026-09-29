@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MCP changed in 2026: an authorization checklist for agent connections — HomeForge</title>
+<meta name="description" content="An MCP connection can work in a demo and still be unsafe in production. The protocol moves tool descriptions and calls between an AI host and a server…">
+<link rel="canonical" href="https://estivonponcho.github.io/homeforge/guides/mcp-2026-authorization-checklist.html">
+<link rel="alternate" type="application/rss+xml" title="HomeForge" href="https://estivonponcho.github.io/homeforge/feed.xml">
+<meta property="og:title" content="MCP changed in 2026: an authorization checklist for agent connections — HomeForge">
+<meta property="og:description" content="An MCP connection can work in a demo and still be unsafe in production. The protocol moves tool descriptions and calls between an AI host and a server…">
+<meta property="og:url" content="https://estivonponcho.github.io/homeforge/guides/mcp-2026-authorization-checklist.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="HomeForge">
+<meta property="og:image" content="https://estivonponcho.github.io/homeforge/assets/mcp-authorization-gateway-editorial.webp">
+<meta property="og:image:secure_url" content="https://estivonponcho.github.io/homeforge/assets/mcp-authorization-gateway-editorial.webp">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1122">
+<meta property="og:image:height" content="1402">
+<meta property="og:image:alt" content="HomeForge Home Assistant system diagram">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://estivonponcho.github.io/homeforge/assets/mcp-authorization-gateway-editorial.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../hf.css">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "MCP changed in 2026: an authorization checklist for agent connections", "description": "An MCP connection can work in a demo and still be unsafe in production. The protocol moves tool descriptions and calls between an AI host and a server\u2026", "url": "https://estivonponcho.github.io/homeforge/guides/mcp-2026-authorization-checklist.html", "mainEntityOfPage": "https://estivonponcho.github.io/homeforge/guides/mcp-2026-authorization-checklist.html", "author": {"@type": "Person", "name": "Mike Cage"}, "publisher": {"@type": "Organization", "name": "HomeForge"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "HomeForge", "item": "https://estivonponcho.github.io/homeforge/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://estivonponcho.github.io/homeforge/learn.html"}, {"@type": "ListItem", "position": 3, "name": "MCP changed in 2026: an authorization checklist for agent connections", "item": "https://estivonponcho.github.io/homeforge/guides/mcp-2026-authorization-checklist.html"}]}]</script>
+<script data-goatcounter="https://homeforge.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<header><div class="wrap bar"><a class="brand" href="../index.html"><span>&#9650;</span> HomeForge</a><nav class="nav" id="nav"><a href="../index.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.8 7.5 8 3l5.2 4.5"/><path d="M4.4 6.7v6.5h7.2V6.7"/></svg>Home</a><a href="../reads.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 4C6.5 3 4 3 2.5 3.4v9.2C4 12.2 6.5 12.2 8 13.2 9.5 12.2 12 12.2 13.5 12.6V3.4C12 3 9.5 3 8 4z"/><path d="M8 4v9.2"/></svg>Reads</a><a href="../picks.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 4.5h10M3 8h10M3 11.5h10"/></svg>The list</a><a href="../learn.html"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5.4"/><path d="M10.6 5.4 9.1 9.1 5.4 10.6 6.9 6.9z"/></svg>Guides</a><a href="../model-watch.html"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="4.6" y="4.6" width="6.8" height="6.8" rx="1"/><path d="M6.6 2.4v2.2M9.4 2.4v2.2M6.6 11.4v2.2M9.4 11.4v2.2M2.4 6.6h2.2M2.4 9.4h2.2M11.4 6.6h2.2M11.4 9.4h2.2"/></svg>Model Watch</a><a href="../ai-safety.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2.2 3 4v3.6c0 3 2.1 4.9 5 6.2 2.9-1.3 5-3.2 5-6.2V4z"/></svg>AI Safety</a><a href="../resources.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5.6 4 12 8l-6.4 4z" fill="currentColor" stroke="none"/></svg>Watch &amp; build</a><a href="../starter-kit.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.7 5.4 8 2.6l5.3 2.8v5.2L8 13.4 2.7 10.6z"/><path d="M2.7 5.4 8 8.2l5.3-2.8M8 8.2v5.2"/></svg>Starter kit</a></nav><button class="navbtn navtoggle" id="navtoggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 4.5h11M2.5 8h11M2.5 11.5h11"/></svg></button></div></header>
+<main class="wrap">
+<div class="article"><p class="crumb"><a href="../index.html">HomeForge</a> / <a href="../learn.html">Guides</a></p><h1>MCP changed in 2026: an authorization checklist for agent connections</h1>
+<p><em>Published September 28, 2026 · HomeForge</em></p>
+<p>An MCP connection can work in a demo and still be unsafe in production. The protocol moves tool descriptions and calls between an AI host and a server; it does not replace account authorization, scope design, token validation, or review of consequential actions.</p>
+<p>The July 28, 2026 Model Context Protocol specification made the transport more stateless and hardened authorization. Builders upgrading an existing server should check both compatibility and the trust boundary around every tool.</p>
+<figure class="product-shot"><img src="../assets/mcp-authorization-gateway-editorial.webp" alt="Original editorial diagram of an AI client passing a narrowly scoped request through an authorization gateway to an MCP tool server" width="1536" height="1024" loading="eager"><figcaption><strong>MCP is the connection, not the policy</strong><span>Identity, scope, approval, and receipts still belong to the application.</span></figcaption></figure>
+<h2>What changed in the 2026-07-28 specification</h2>
+<p>The protocol removed the old <code>initialize</code>/<code>initialized</code> exchange and the <code>Mcp-Session-Id</code> header. Requests now carry the protocol version, client identity, and capabilities in metadata. A server can expose its capabilities through the optional <code>server/discover</code> method.</p>
+<p>Streamable HTTP requests also carry <code>Mcp-Method</code> and <code>Mcp-Name</code> headers. Gateways, rate limiters, and web application firewalls can use those headers to route or meter calls without parsing every JSON body.</p>
+<p>For long-running work, Tasks moved out of the experimental core into an extension. Roots, Sampling, Logging, and the legacy HTTP+SSE transport are deprecated with a minimum twelve-month window.</p>
+<h2>The authorization changes that matter</h2>
+<p>The release added several OAuth-related protections:</p>
+<ul><li>authorization responses should identify their issuer, and clients must validate it before exchanging a code;</li><li>client credentials are bound to the authorization server that issued them;</li><li>Dynamic Client Registration is deprecated in favor of Client ID Metadata Documents;</li><li>desktop and command-line clients declare their application type for standards-compliant redirect handling.</li></ul>
+<p>These details help close protocol-level gaps. They do not answer which tools a person or agent should be allowed to call.</p>
+<h2>Seven checks before connecting an MCP server</h2>
+<h3>1. Verify the server and deployment model</h3>
+<p>Know who operates it, where it runs, how it updates, and whether behavior can change without a new local install. Pin and review local code when practical. Treat a remote server as a service that can change after the initial approval.</p>
+<h3>2. Separate public and protected tools</h3>
+<p>If some tools need authentication, enforce authorization at the HTTP boundary. Per-tool authorization can keep public discovery available while returning a proper <code>401</code> challenge for protected calls. Check authorization again inside sensitive handlers as defense in depth.</p>
+<h3>3. Validate tokens for this resource</h3>
+<p>Verify issuer, signature, audience or resource, expiration, and intended scope. Do not accept a token merely because a familiar provider issued it. Bind the resulting identity to the user and tenant data the tool may access.</p>
+<h3>4. Design narrow scopes around actions</h3>
+<p>Split read, draft, publish, delete, and administrative capabilities. Avoid one catch-all scope that turns a research connection into write access. A tool name should say what it does, and its parameters should make the destination and affected object explicit.</p>
+<h3>5. Treat tool results as untrusted content</h3>
+<p>An authenticated tool can return text from an attacker-controlled document. Keep tool output from directly selecting a sensitive operation. Extract and validate the fields the next step requires.</p>
+<h3>6. Require approval at the consequential boundary</h3>
+<p>Authentication answers who may call a tool. Approval answers whether this exact action should run now. Show the user the target, arguments, identity, scope, and expected effect before sending, publishing, deleting, spending, or changing access.</p>
+<h3>7. Save an external receipt</h3>
+<p>Record a stable request or attempt identifier, the approved arguments, the server response, and the final evidence from the destination. A successful JSON-RPC response is not always proof that the external system reached the intended state.</p>
+<h2>A small homelab example</h2>
+<p>Imagine an MCP server that can inspect and restart services.</p>
+<ul><li><code>service_status</code> can be read-only and available to a monitoring agent.</li><li><code>restart_service</code> should identify one allowed host and service.</li><li>production hosts need a narrower scope than a test machine.</li><li>the restart request should pause for approval when the impact is not already bounded by policy.</li><li>the receipt should include the requested service, exit status, and a health check after restart.</li></ul>
+<p>Do not give the same server unrestricted shell access merely because the first use case is simple.</p>
+<h2>The one-line rule</h2>
+<p><strong>MCP standardizes the conversation between a host and a tool server. Your application still owns trust, authorization, approval, isolation, and proof.</strong></p>
+<h2>Sources</h2>
+<ul><li><a href="https://blog.modelcontextprotocol.io/posts/2026-07-28/" rel="noopener">Model Context Protocol: The 2026-07-28 specification</a>, for the stateless core, headers, authorization hardening, Tasks extension, and deprecations.</li><li><a href="https://apps.extensions.modelcontextprotocol.io/api/documents/authorization.html" rel="noopener">MCP Apps: Authorization</a>, for per-server and per-tool authorization, <code>401</code> challenges, token verification, and defense in depth.</li><li><a href="https://developers.openai.com/api/docs/guides/agent-builder-safety" rel="noopener">OpenAI API: Safety in building agents</a>, for MCP tool approvals and structured boundaries around untrusted content.</li><li><a href="https://www.anthropic.com/engineering/how-we-contain-claude" rel="noopener">Anthropic: How we contain Claude across products</a>, for the distinction between auditing a connector and trusting the data it returns.</li></ul><hr><a class="cta" href="../starter-kit.html">Get the free Starter Kit &rarr;</a></div>
+</main>
+<footer><div class="wrap">HomeForge is reader-supported; some links are affiliate links (no extra cost to you).<div class="fl"><a href="../index.html">Home</a><a href="../reads.html">Reads</a><a href="../picks.html">The list</a><a href="../learn.html">Guides</a><a href="https://github.com/estivonponcho/homeforge/blob/main/AFFILIATE-DISCLOSURE.md">Disclosure</a><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></div></div></footer>
+<script>(function(){var b=document.getElementById("navtoggle"),n=document.getElementById("nav");if(!b||!n)return;function s(o){n.classList.toggle("open",o);b.setAttribute("aria-expanded",o?"true":"false");}b.addEventListener("click",function(e){e.stopPropagation();s(!n.classList.contains("open"));});n.addEventListener("click",function(e){if(e.target.closest("a"))s(false);});document.addEventListener("click",function(e){if(n.classList.contains("open")&&!n.contains(e.target)&&e.target!==b)s(false);});document.addEventListener("keydown",function(e){if(e.key==="Escape")s(false);});})();</script>
+</body>
+</html>

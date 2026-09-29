@@ -38,6 +38,12 @@ Where a guide recommends a tool or book, it links to the relevant
   real pricing math across the four frontier models, including their context-window cost cliffs.
 - [Frontier vs. open-weight in 2026: which should you actually use](frontier-vs-open-weight-decision-guide-2026.md) —
   a decision guide tying the frontier and open-weight comparisons together.
+- [Prompt injection is not just a bad prompt](prompt-injection-source-sink-checklist.md) —
+  map untrusted sources, consequential actions, deterministic boundaries, and receipts.
+- [Another permission popup will not contain your AI agent](ai-agent-containment-vs-approval-fatigue.md) —
+  use workspace, network, identity, and approval boundaries to reduce approval fatigue.
+- [MCP changed in 2026](mcp-2026-authorization-checklist.md) —
+  a practical authorization and upgrade checklist for agent tool connections.
 
 ## How to add a guide (keep it passive)
 
